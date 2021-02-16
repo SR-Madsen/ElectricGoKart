@@ -1,0 +1,13 @@
+# Ignore cache files
+fp-info-cache
+fp-lib-table
+sym-lib-table
+*-cache.lib
+
+# Ignore backups
+*.sch-bak
+*.kicad_pcb-bak
+*.bak
+
+# Ignore Temporary files
+*.tmp
