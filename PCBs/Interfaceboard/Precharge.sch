@@ -1,0 +1,226 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 8
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 1400 4000 0    50   Input ~ 0
+PreCharge_En
+$Comp
+L Device:R R?
+U 1 1 6065FB71
+P 1700 4000
+F 0 "R?" V 1493 4000 50  0000 C CNN
+F 1 "1k" V 1584 4000 50  0000 C CNN
+F 2 "" V 1630 4000 50  0001 C CNN
+F 3 "~" H 1700 4000 50  0001 C CNN
+	1    1700 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 606602DB
+P 2800 3100
+F 0 "#PWR?" H 2800 2950 50  0001 C CNN
+F 1 "+BATT" H 2815 3273 50  0000 C CNN
+F 2 "" H 2800 3100 50  0001 C CNN
+F 3 "" H 2800 3100 50  0001 C CNN
+	1    2800 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 606608CA
+P 2800 3350
+F 0 "R?" H 2730 3304 50  0000 R CNN
+F 1 "33k" H 2730 3395 50  0000 R CNN
+F 2 "" V 2730 3350 50  0001 C CNN
+F 3 "~" H 2800 3350 50  0001 C CNN
+	1    2800 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6066158C
+P 2800 3900
+F 0 "R?" H 2730 3854 50  0000 R CNN
+F 1 "100k" H 2730 3945 50  0000 R CNN
+F 2 "" V 2730 3900 50  0001 C CNN
+F 3 "~" H 2800 3900 50  0001 C CNN
+	1    2800 3900
+	-1   0    0    1   
+$EndComp
+Text Notes 3250 3700 0    50   ~ 0
+transistor
+Wire Wire Line
+	2800 3100 2800 3150
+Text Notes 2450 4000 2    50   ~ 0
+optocoupler
+$Comp
+L Device:R R?
+U 1 1 60662136
+P 3300 4300
+F 0 "R?" V 3300 4550 50  0000 R CNN
+F 1 "20" H 3230 4345 50  0001 R CNN
+F 2 "" V 3230 4300 50  0001 C CNN
+F 3 "~" H 3300 4300 50  0001 C CNN
+	1    3300 4300
+	-1   0    0    1   
+$EndComp
+Text Notes 3700 4350 0    50   ~ 0
+4 x 20R (2512)
+$Comp
+L Device:R R?
+U 1 1 60662706
+P 3400 4300
+F 0 "R?" V 3400 4550 50  0000 R CNN
+F 1 "20" H 3330 4345 50  0001 R CNN
+F 2 "" V 3330 4300 50  0001 C CNN
+F 3 "~" H 3400 4300 50  0001 C CNN
+	1    3400 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 606628BE
+P 3500 4300
+F 0 "R?" V 3500 4550 50  0000 R CNN
+F 1 "20" H 3430 4345 50  0001 R CNN
+F 2 "" V 3430 4300 50  0001 C CNN
+F 3 "~" H 3500 4300 50  0001 C CNN
+	1    3500 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 606629E0
+P 3600 4300
+F 0 "R?" V 3600 4550 50  0000 R CNN
+F 1 "20" H 3530 4345 50  0001 R CNN
+F 2 "" V 3530 4300 50  0001 C CNN
+F 3 "~" H 3600 4300 50  0001 C CNN
+	1    3600 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60663FCA
+P 3300 4750
+F 0 "R?" V 3300 5000 50  0000 R CNN
+F 1 "20" H 3230 4795 50  0001 R CNN
+F 2 "" V 3230 4750 50  0001 C CNN
+F 3 "~" H 3300 4750 50  0001 C CNN
+	1    3300 4750
+	-1   0    0    1   
+$EndComp
+Text Notes 3700 4800 0    50   ~ 0
+4 x 20R (2512)
+$Comp
+L Device:R R?
+U 1 1 60663FD1
+P 3400 4750
+F 0 "R?" V 3400 5000 50  0000 R CNN
+F 1 "20" H 3330 4795 50  0001 R CNN
+F 2 "" V 3330 4750 50  0001 C CNN
+F 3 "~" H 3400 4750 50  0001 C CNN
+	1    3400 4750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60663FD7
+P 3500 4750
+F 0 "R?" V 3500 5000 50  0000 R CNN
+F 1 "20" H 3430 4795 50  0001 R CNN
+F 2 "" V 3430 4750 50  0001 C CNN
+F 3 "~" H 3500 4750 50  0001 C CNN
+	1    3500 4750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60663FDD
+P 3600 4750
+F 0 "R?" V 3600 5000 50  0000 R CNN
+F 1 "20" H 3530 4795 50  0001 R CNN
+F 2 "" V 3530 4750 50  0001 C CNN
+F 3 "~" H 3600 4750 50  0001 C CNN
+	1    3600 4750
+	-1   0    0    1   
+$EndComp
+Text HLabel 3700 5150 2    50   Output ~ 0
+Precharge_Out
+Wire Wire Line
+	3700 5150 3600 5150
+Wire Wire Line
+	3300 5150 3300 4900
+Wire Wire Line
+	3400 4900 3400 5150
+Connection ~ 3400 5150
+Wire Wire Line
+	3400 5150 3300 5150
+Wire Wire Line
+	3500 4900 3500 5150
+Connection ~ 3500 5150
+Wire Wire Line
+	3500 5150 3400 5150
+Wire Wire Line
+	3600 4900 3600 5150
+Connection ~ 3600 5150
+Wire Wire Line
+	3600 5150 3500 5150
+Wire Wire Line
+	3600 4600 3600 4450
+Wire Wire Line
+	3500 4450 3500 4600
+Wire Wire Line
+	3400 4600 3400 4450
+Wire Wire Line
+	3300 4450 3300 4600
+Wire Wire Line
+	2800 3150 3450 3150
+Connection ~ 2800 3150
+Wire Wire Line
+	2800 3150 2800 3200
+Wire Wire Line
+	3450 3150 3450 3600
+Wire Wire Line
+	2800 3750 2800 3650
+Wire Wire Line
+	2800 3650 3250 3650
+Connection ~ 2800 3650
+Wire Wire Line
+	2800 3650 2800 3500
+Wire Wire Line
+	3450 3750 3450 4050
+Wire Wire Line
+	3450 4050 3500 4050
+Wire Wire Line
+	3600 4050 3600 4150
+Wire Wire Line
+	3500 4150 3500 4050
+Connection ~ 3500 4050
+Wire Wire Line
+	3500 4050 3600 4050
+Wire Wire Line
+	3450 4050 3400 4050
+Wire Wire Line
+	3400 4050 3400 4150
+Connection ~ 3450 4050
+Wire Wire Line
+	3300 4150 3300 4050
+Wire Wire Line
+	3300 4050 3400 4050
+Connection ~ 3400 4050
+Wire Wire Line
+	1400 4000 1550 4000
+$EndSCHEMATC

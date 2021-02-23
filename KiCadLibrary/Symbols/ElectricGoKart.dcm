@@ -1,0 +1,78 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +12V_Float
+D Power flag, +12V_Float
+K power-flag
+$ENDCMP
+#
+$CMP +3V3_Ref
+D Power flag, +3V3_Ref
+K power-flag
+$ENDCMP
+#
+$CMP +5V_Batt
+D Power flag, +5V_Batt
+K power-flag
+$ENDCMP
+#
+$CMP +5V_Float
+D Power flag, +5V_Float
+K power-flag
+$ENDCMP
+#
+$CMP +5V_Ref
+D Power flag, +5V_Ref
+K power-flag
+$ENDCMP
+#
+$CMP 22-23-2041
+D 2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination
+F http://www.molex.com/pdm_docs/sd/022232041_sd.pdf
+$ENDCMP
+#
+$CMP 22-23-2051
+D Headers & Wire Housings VERT PCB HDR 5P TIN FRICTION LOCK
+F http://docs-emea.rs-online.com/webdocs/1363/0900766b8136318b.pdf
+$ENDCMP
+#
+$CMP 39-29-9042
+D Headers & Wire Housings 4 CKT VERT HEADER
+F http://www.farnell.com/datasheets/2696058.pdf
+$ENDCMP
+#
+$CMP 776231-1
+D Ampseal Header Vertical, 35 pins, 3 rows
+F https://datasheet.lcsc.com/szlcsc/1908201437_TE-Connectivity-776231-1_C412124.pdf
+$ENDCMP
+#
+$CMP AD8606ARMZ-REEL
+D Precision, Low Noise, CMOS, Rail-to-Rail,%D Input/Output Operational Amplifiers
+F http://www.analog.com/media/en/technical-documentation/data-sheets/AD8605_8606_8608.pdf
+$ENDCMP
+#
+$CMP GND_Batt
+D Power symbol creates a global label with name "GND_Batt" , ground
+K power-flag
+$ENDCMP
+#
+$CMP GND_Float
+D Power symbol creates a global label with name "GND_Float" , ground
+K power-flag
+$ENDCMP
+#
+$CMP NVT2006PW,118
+D Translation - Voltage Levels +/-50mA 1.5ns 2.1-5V
+F http://www.nxp.com/docs/en/data-sheet/NVT2003_04_06.pdf
+$ENDCMP
+#
+$CMP Si8660AB-B-IS1
+D Isolator, Si8660AB-B-IS1 Silicon Labs Si8660AB-B-IS1 PCB SMT 6-channel Digital Isolator, 2500 Vrms, 16-Pin SOIC
+F https://www.silabs.com/documents/public/data-sheets/Si86xx.pdf
+$ENDCMP
+#
+$CMP TVN_5-4811WI
+D 48 Vin, 5 Vout, 5W isolated converter
+F https://www.mouser.dk/datasheet/2/687/tvn5wi-datasheet-1149125.pdf
+$ENDCMP
+#
+#End Doc Library
