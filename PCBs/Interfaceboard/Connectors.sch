@@ -3,12 +3,12 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 8
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Sheet 7 9
+Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
+Date "2021-02-23"
+Rev "Version 1"
+Comp "University of Southern Denmark"
+Comment1 "Group 1"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -115,12 +115,12 @@ Drive_Switch
 $Comp
 L power:+5V #PWR?
 U 1 1 602FE034
-P 2550 1850
-F 0 "#PWR?" H 2550 1700 50  0001 C CNN
-F 1 "+5V" V 2565 1978 50  0000 L CNN
-F 2 "" H 2550 1850 50  0001 C CNN
-F 3 "" H 2550 1850 50  0001 C CNN
-	1    2550 1850
+P 2600 1850
+F 0 "#PWR?" H 2600 1700 50  0001 C CNN
+F 1 "+5V" V 2600 1950 50  0000 L CNN
+F 2 "" H 2600 1850 50  0001 C CNN
+F 3 "" H 2600 1850 50  0001 C CNN
+	1    2600 1850
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -145,10 +145,8 @@ Wire Notes Line
 	800  800  3150 800 
 Wire Notes Line
 	800  3350 3150 3350
-Text Notes 2850 5000 0    50   ~ 0
+Text Notes 3800 4500 0    50   ~ 0
 CONNECTOR FOR PHASE CURRENT SENSORS
-Text Notes 2850 5150 0    50   ~ 0
-CONNECTOR FOR ZYBO BOARD
 $Comp
 L ElectricGoKart:22-23-2051 J?
 U 1 1 60311868
@@ -255,51 +253,27 @@ Thermistor connector
 $Comp
 L ElectricGoKart:22-23-2041 J?
 U 1 1 6031F23C
-P 5500 950
-F 0 "J?" H 6128 846 50  0000 L CNN
-F 1 "22-23-2041" H 6128 755 50  0000 L CNN
-F 2 "ElectricGoKart:22-23-2041" H 6150 1050 50  0001 L CNN
-F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6150 950 50  0001 L CNN
-F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6150 950 50  0001 L CNN "Description"
-	1    5500 950 
+P 5650 950
+F 0 "J?" H 6278 846 50  0000 L CNN
+F 1 "22-23-2041" H 6278 755 50  0000 L CNN
+F 2 "ElectricGoKart:22-23-2041" H 6300 1050 50  0001 L CNN
+F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6300 950 50  0001 L CNN
+F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6300 950 50  0001 L CNN "Description"
+	1    5650 950 
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND1 #PWR?
-U 1 1 603233A5
-P 5450 1050
-F 0 "#PWR?" H 5450 800 50  0001 C CNN
-F 1 "GND1" V 5455 922 50  0000 R CNN
-F 2 "" H 5450 1050 50  0001 C CNN
-F 3 "" H 5450 1050 50  0001 C CNN
-	1    5450 1050
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND1 #PWR?
-U 1 1 60323735
-P 5450 1250
-F 0 "#PWR?" H 5450 1000 50  0001 C CNN
-F 1 "GND1" V 5455 1122 50  0000 R CNN
-F 2 "" H 5450 1250 50  0001 C CNN
-F 3 "" H 5450 1250 50  0001 C CNN
-	1    5450 1250
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	5450 1050 5500 1050
+	5600 1050 5650 1050
 Wire Wire Line
-	5500 1250 5450 1250
-Text HLabel 5450 950  0    50   Input ~ 0
-PWM1_P
-Text HLabel 5450 1150 0    50   Input ~ 0
-PWM1_N
+	5650 1250 5600 1250
+Text HLabel 5600 950  0    50   Input ~ 0
+PWM1_A
+Text HLabel 5600 1150 0    50   Input ~ 0
+PWM1_B
 Wire Wire Line
-	5450 950  5500 950 
+	5600 950  5650 950 
 Wire Wire Line
-	5500 1150 5450 1150
-Wire Notes Line
-	6700 800  5000 800 
+	5650 1150 5600 1150
 $Comp
 L Connector:Barrel_Jack_Switch J?
 U 1 1 60335EE4
@@ -354,156 +328,305 @@ Wire Notes Line
 	3200 2600 3200 3350
 Text Notes 3200 3450 0    50   ~ 0
 Barrel jack connector for Zybo power
-Text Notes 2850 4850 0    50   ~ 0
-CONNECTOR FOR PRECHARGE
 Text Notes 5000 3450 0    50   ~ 0
 Isolated gate driver signals
 Wire Notes Line
-	5000 3350 6700 3350
-Wire Notes Line
 	5000 800  5000 3350
-Wire Notes Line
-	6700 800  6700 3350
 $Comp
 L ElectricGoKart:22-23-2041 J?
 U 1 1 603215D5
-P 5500 2900
-F 0 "J?" H 6128 2796 50  0000 L CNN
-F 1 "22-23-2041" H 6128 2705 50  0000 L CNN
-F 2 "ElectricGoKart:22-23-2041" H 6150 3000 50  0001 L CNN
-F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6150 2900 50  0001 L CNN
-F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6150 2900 50  0001 L CNN "Description"
-	1    5500 2900
+P 5650 2900
+F 0 "J?" H 6278 2796 50  0000 L CNN
+F 1 "22-23-2041" H 6278 2705 50  0000 L CNN
+F 2 "ElectricGoKart:22-23-2041" H 6300 3000 50  0001 L CNN
+F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6300 2900 50  0001 L CNN
+F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6300 2900 50  0001 L CNN "Description"
+	1    5650 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND1 #PWR?
-U 1 1 60324435
-P 5450 3200
-F 0 "#PWR?" H 5450 2950 50  0001 C CNN
-F 1 "GND1" V 5455 3072 50  0000 R CNN
-F 2 "" H 5450 3200 50  0001 C CNN
-F 3 "" H 5450 3200 50  0001 C CNN
-	1    5450 3200
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	5450 3200 5500 3200
+	5600 3200 5650 3200
 Wire Wire Line
-	5500 3100 5450 3100
+	5650 3100 5600 3100
 Wire Wire Line
-	5450 3100 5450 3200
-Connection ~ 5450 3200
-$Comp
-L power:+12V #PWR?
-U 1 1 6032C418
-P 5450 2900
-F 0 "#PWR?" H 5450 2750 50  0001 C CNN
-F 1 "+12V" V 5450 3050 50  0000 L CNN
-F 2 "" H 5450 2900 50  0001 C CNN
-F 3 "" H 5450 2900 50  0001 C CNN
-	1    5450 2900
-	0    -1   -1   0   
-$EndComp
+	5600 3100 5600 3200
 Wire Wire Line
-	5450 2900 5500 2900
+	5600 2900 5650 2900
 Wire Wire Line
-	5500 3000 5450 3000
+	5650 3000 5600 3000
 Wire Wire Line
-	5450 3000 5450 2900
-Connection ~ 5450 2900
+	5600 3000 5600 2900
 $Comp
 L ElectricGoKart:22-23-2041 J?
 U 1 1 60320CD7
-P 5500 1600
-F 0 "J?" H 6128 1496 50  0000 L CNN
-F 1 "22-23-2041" H 6128 1405 50  0000 L CNN
-F 2 "ElectricGoKart:22-23-2041" H 6150 1700 50  0001 L CNN
-F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6150 1600 50  0001 L CNN
-F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6150 1600 50  0001 L CNN "Description"
-	1    5500 1600
+P 5650 1600
+F 0 "J?" H 6278 1496 50  0000 L CNN
+F 1 "22-23-2041" H 6278 1405 50  0000 L CNN
+F 2 "ElectricGoKart:22-23-2041" H 6300 1700 50  0001 L CNN
+F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6300 1600 50  0001 L CNN
+F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6300 1600 50  0001 L CNN "Description"
+	1    5650 1600
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND1 #PWR?
-U 1 1 603238D8
-P 5450 1700
-F 0 "#PWR?" H 5450 1450 50  0001 C CNN
-F 1 "GND1" V 5455 1572 50  0000 R CNN
-F 2 "" H 5450 1700 50  0001 C CNN
-F 3 "" H 5450 1700 50  0001 C CNN
-	1    5450 1700
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND1 #PWR?
-U 1 1 60323AB3
-P 5450 1900
-F 0 "#PWR?" H 5450 1650 50  0001 C CNN
-F 1 "GND1" V 5455 1772 50  0000 R CNN
-F 2 "" H 5450 1900 50  0001 C CNN
-F 3 "" H 5450 1900 50  0001 C CNN
-	1    5450 1900
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	5450 1700 5500 1700
+	5600 1700 5650 1700
 Wire Wire Line
-	5500 1900 5450 1900
-Text HLabel 5450 1600 0    50   Input ~ 0
-PWM2_P
-Text HLabel 5450 1800 0    50   Input ~ 0
-PWM2_N
+	5650 1900 5600 1900
+Text HLabel 5600 1600 0    50   Input ~ 0
+PWM2_A
+Text HLabel 5600 1800 0    50   Input ~ 0
+PWM2_B
 Wire Wire Line
-	5450 1600 5500 1600
+	5600 1600 5650 1600
 Wire Wire Line
-	5450 1800 5500 1800
+	5600 1800 5650 1800
 $Comp
 L ElectricGoKart:22-23-2041 J?
 U 1 1 6032106E
-P 5500 2250
-F 0 "J?" H 6128 2146 50  0000 L CNN
-F 1 "22-23-2041" H 6128 2055 50  0000 L CNN
-F 2 "ElectricGoKart:22-23-2041" H 6150 2350 50  0001 L CNN
-F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6150 2250 50  0001 L CNN
-F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6150 2250 50  0001 L CNN "Description"
-	1    5500 2250
+P 5650 2250
+F 0 "J?" H 6278 2146 50  0000 L CNN
+F 1 "22-23-2041" H 6278 2055 50  0000 L CNN
+F 2 "ElectricGoKart:22-23-2041" H 6300 2350 50  0001 L CNN
+F 3 "http://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 6300 2250 50  0001 L CNN
+F 4 "2.54mm,header,KK,vert,Sn,frictn lock,4w Molex KK 254 Series, Series Number 6373, 2.54mm Pitch 4 Way 1 Row Straight PCB Header, Through Hole, Solder Termination" H 6300 2250 50  0001 L CNN "Description"
+	1    5650 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2350 5650 2350
+Wire Wire Line
+	5650 2550 5600 2550
+Text HLabel 5600 2250 0    50   Input ~ 0
+PWM3_A
+Text HLabel 5600 2450 0    50   Input ~ 0
+PWM3_B
+Wire Wire Line
+	5600 2250 5650 2250
+Wire Wire Line
+	5600 2450 5650 2450
+Text Notes 3800 4800 0    50   ~ 0
+CONNECTOR FOR ANALOG INTERFACE BOARD?
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 60388A32
+P 5600 1050
+F 0 "#PWR?" H 5600 800 50  0001 C CNN
+F 1 "GND_Float" V 5605 923 50  0000 R CNN
+F 2 "" H 5600 1050 50  0001 C CNN
+F 3 "" H 5600 1050 50  0001 C CNN
+	1    5600 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 60388F96
+P 5600 1250
+F 0 "#PWR?" H 5600 1000 50  0001 C CNN
+F 1 "GND_Float" V 5605 1123 50  0000 R CNN
+F 2 "" H 5600 1250 50  0001 C CNN
+F 3 "" H 5600 1250 50  0001 C CNN
+	1    5600 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 6038910C
+P 5600 1700
+F 0 "#PWR?" H 5600 1450 50  0001 C CNN
+F 1 "GND_Float" V 5605 1573 50  0000 R CNN
+F 2 "" H 5600 1700 50  0001 C CNN
+F 3 "" H 5600 1700 50  0001 C CNN
+	1    5600 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 60389322
+P 5600 1900
+F 0 "#PWR?" H 5600 1650 50  0001 C CNN
+F 1 "GND_Float" V 5605 1773 50  0000 R CNN
+F 2 "" H 5600 1900 50  0001 C CNN
+F 3 "" H 5600 1900 50  0001 C CNN
+	1    5600 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 60389538
+P 5600 2350
+F 0 "#PWR?" H 5600 2100 50  0001 C CNN
+F 1 "GND_Float" V 5605 2223 50  0000 R CNN
+F 2 "" H 5600 2350 50  0001 C CNN
+F 3 "" H 5600 2350 50  0001 C CNN
+	1    5600 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 603897DE
+P 5600 2550
+F 0 "#PWR?" H 5600 2300 50  0001 C CNN
+F 1 "GND_Float" V 5605 2423 50  0000 R CNN
+F 2 "" H 5600 2550 50  0001 C CNN
+F 3 "" H 5600 2550 50  0001 C CNN
+	1    5600 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Float #PWR?
+U 1 1 6038990B
+P 5600 3200
+F 0 "#PWR?" H 5600 2950 50  0001 C CNN
+F 1 "GND_Float" V 5605 3073 50  0000 R CNN
+F 2 "" H 5600 3200 50  0001 C CNN
+F 3 "" H 5600 3200 50  0001 C CNN
+	1    5600 3200
+	0    1    1    0   
+$EndComp
+Connection ~ 5600 3200
+$Comp
+L ElectricGoKart:+12V_Float #PWR?
+U 1 1 6038F32C
+P 5600 2900
+F 0 "#PWR?" H 5600 2750 50  0001 C CNN
+F 1 "+12V_Float" V 5600 3050 50  0000 L CNN
+F 2 "" H 5600 2900 50  0001 C CNN
+F 3 "" H 5600 2900 50  0001 C CNN
+	1    5600 2900
+	0    -1   -1   0   
+$EndComp
+Connection ~ 5600 2900
+Wire Notes Line
+	6800 3350 6800 800 
+Wire Notes Line
+	5000 800  6800 800 
+Wire Notes Line
+	5000 3350 6800 3350
+Wire Wire Line
+	2600 1850 2550 1850
+$Comp
+L ElectricGoKart:39-29-9042 J?
+U 1 1 604A6385
+P 1600 3950
+F 0 "J?" H 2000 4215 50  0000 C CNN
+F 1 "39-29-9042" H 2000 4124 50  0000 C CNN
+F 2 "ElectricGoKart:39299042" H 2250 4050 50  0001 L CNN
+F 3 "http://www.farnell.com/datasheets/2696058.pdf" H 2250 3950 50  0001 L CNN
+F 4 "Headers & Wire Housings 4 CKT VERT HEADER" H 2250 3850 50  0001 L CNN "Description"
+	1    1600 3950
+	1    0    0    -1  
+$EndComp
+Text HLabel 1550 4050 0    50   Input ~ 0
+Precharge_Out
+Wire Wire Line
+	1550 4050 1600 4050
+Wire Wire Line
+	1600 4050 1600 4250
+Wire Wire Line
+	1600 4250 2400 4250
+Wire Wire Line
+	2400 4250 2400 4050
+Connection ~ 1600 4050
+Wire Wire Line
+	2400 3950 2450 3950
+Wire Wire Line
+	1600 3950 1550 3950
+$Comp
+L ElectricGoKart:39-29-9042 J?
+U 1 1 604B3F56
+P 1600 5000
+F 0 "J?" H 2000 5265 50  0000 C CNN
+F 1 "39-29-9042" H 2000 5174 50  0000 C CNN
+F 2 "ElectricGoKart:39299042" H 2250 5100 50  0001 L CNN
+F 3 "http://www.farnell.com/datasheets/2696058.pdf" H 2250 5000 50  0001 L CNN
+F 4 "Headers & Wire Housings 4 CKT VERT HEADER" H 2250 4900 50  0001 L CNN "Description"
+	1    1600 5000
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND1 #PWR?
-U 1 1 60323CF9
-P 5450 2350
-F 0 "#PWR?" H 5450 2100 50  0001 C CNN
-F 1 "GND1" V 5455 2222 50  0000 R CNN
-F 2 "" H 5450 2350 50  0001 C CNN
-F 3 "" H 5450 2350 50  0001 C CNN
-	1    5450 2350
+L power:GND #PWR?
+U 1 1 604B7005
+P 1600 5000
+F 0 "#PWR?" H 1600 4750 50  0001 C CNN
+F 1 "GND" V 1605 4872 50  0000 R CNN
+F 2 "" H 1600 5000 50  0001 C CNN
+F 3 "" H 1600 5000 50  0001 C CNN
+	1    1600 5000
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND1 #PWR?
-U 1 1 60323F9B
-P 5450 2550
-F 0 "#PWR?" H 5450 2300 50  0001 C CNN
-F 1 "GND1" V 5455 2422 50  0000 R CNN
-F 2 "" H 5450 2550 50  0001 C CNN
-F 3 "" H 5450 2550 50  0001 C CNN
-	1    5450 2550
+L power:GND #PWR?
+U 1 1 604B7564
+P 1600 5100
+F 0 "#PWR?" H 1600 4850 50  0001 C CNN
+F 1 "GND" V 1605 4972 50  0000 R CNN
+F 2 "" H 1600 5100 50  0001 C CNN
+F 3 "" H 1600 5100 50  0001 C CNN
+	1    1600 5100
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5450 2350 5500 2350
-Wire Wire Line
-	5500 2550 5450 2550
-Text HLabel 5450 2250 0    50   Input ~ 0
-PWM3_P
-Text HLabel 5450 2450 0    50   Input ~ 0
-PWM3_N
-Wire Wire Line
-	5450 2250 5500 2250
-Wire Wire Line
-	5450 2450 5500 2450
-Text Notes 2850 5300 0    50   ~ 0
-CONNECTOR FOR ANALOG INTERFACE BOARD?
+$Comp
+L power:GND #PWR?
+U 1 1 604B769C
+P 2400 5000
+F 0 "#PWR?" H 2400 4750 50  0001 C CNN
+F 1 "GND" V 2405 4872 50  0000 R CNN
+F 2 "" H 2400 5000 50  0001 C CNN
+F 3 "" H 2400 5000 50  0001 C CNN
+	1    2400 5000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 604B7C2D
+P 2400 5100
+F 0 "#PWR?" H 2400 4850 50  0001 C CNN
+F 1 "GND" V 2405 4972 50  0000 R CNN
+F 2 "" H 2400 5100 50  0001 C CNN
+F 3 "" H 2400 5100 50  0001 C CNN
+	1    2400 5100
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	800  3600 3150 3600
+Wire Notes Line
+	3150 3600 3150 4350
+Wire Notes Line
+	3150 4350 800  4350
+Wire Notes Line
+	800  4350 800  3600
+Text Notes 800  4450 0    50   ~ 0
+Precharge connector
+Wire Notes Line
+	800  4600 3150 4600
+Wire Notes Line
+	3150 4600 3150 5350
+Wire Notes Line
+	3150 5350 800  5350
+Wire Notes Line
+	800  4600 800  5350
+Text Notes 800  5450 0    50   ~ 0
+Ground connector
+$Comp
+L ElectricGoKart:GND_Batt #PWR?
+U 1 1 604D0790
+P 2450 3950
+F 0 "#PWR?" H 2450 3700 50  0001 C CNN
+F 1 "GND_Batt" V 2455 3822 50  0000 R CNN
+F 2 "" H 2450 3950 50  0001 C CNN
+F 3 "" H 2450 3950 50  0001 C CNN
+	1    2450 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ElectricGoKart:GND_Batt #PWR?
+U 1 1 604D0E2B
+P 1550 3950
+F 0 "#PWR?" H 1550 3700 50  0001 C CNN
+F 1 "GND_Batt" V 1555 3823 50  0000 R CNN
+F 2 "" H 1550 3950 50  0001 C CNN
+F 3 "" H 1550 3950 50  0001 C CNN
+	1    1550 3950
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

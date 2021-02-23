@@ -3,14 +3,482 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 8
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Sheet 3 9
+Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
+Date "2021-02-23"
+Rev "Version 1"
+Comp "University of Southern Denmark"
+Comment1 "Group 1"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 1400 2050 0    50   Input ~ 0
+PreCharge_En
+$Comp
+L Device:R R?
+U 1 1 60356048
+P 1700 2050
+AR Path="/60303A2D/60356048" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356048" Ref="R?"  Part="1" 
+F 0 "R?" V 1493 2050 50  0000 C CNN
+F 1 "1k" V 1584 2050 50  0000 C CNN
+F 2 "" V 1630 2050 50  0001 C CNN
+F 3 "~" H 1700 2050 50  0001 C CNN
+	1    1700 2050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 6035604E
+P 2650 950
+AR Path="/60303A2D/6035604E" Ref="#PWR?"  Part="1" 
+AR Path="/60303AF1/6035604E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2650 800 50  0001 C CNN
+F 1 "+BATT" H 2665 1123 50  0000 C CNN
+F 2 "" H 2650 950 50  0001 C CNN
+F 3 "" H 2650 950 50  0001 C CNN
+	1    2650 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60356054
+P 2650 1200
+AR Path="/60303A2D/60356054" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356054" Ref="R?"  Part="1" 
+F 0 "R?" H 2580 1154 50  0000 R CNN
+F 1 "33k" H 2580 1245 50  0000 R CNN
+F 2 "" V 2580 1200 50  0001 C CNN
+F 3 "~" H 2650 1200 50  0001 C CNN
+	1    2650 1200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6035605A
+P 2650 1750
+AR Path="/60303A2D/6035605A" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035605A" Ref="R?"  Part="1" 
+F 0 "R?" H 2580 1704 50  0000 R CNN
+F 1 "100k" H 2580 1795 50  0000 R CNN
+F 2 "" V 2580 1750 50  0001 C CNN
+F 3 "~" H 2650 1750 50  0001 C CNN
+	1    2650 1750
+	-1   0    0    1   
+$EndComp
+Text Notes 3100 1550 0    50   ~ 0
+transistor
+Wire Wire Line
+	2650 950  2650 1000
+Text Notes 2450 2050 2    50   ~ 0
+optocoupler
+$Comp
+L Device:R R?
+U 1 1 60356063
+P 3150 2150
+AR Path="/60303A2D/60356063" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356063" Ref="R?"  Part="1" 
+F 0 "R?" V 3150 2400 50  0000 R CNN
+F 1 "20" H 3080 2195 50  0001 R CNN
+F 2 "" V 3080 2150 50  0001 C CNN
+F 3 "~" H 3150 2150 50  0001 C CNN
+	1    3150 2150
+	-1   0    0    1   
+$EndComp
+Text Notes 3550 2200 0    50   ~ 0
+4 x 20R (2512)
+$Comp
+L Device:R R?
+U 1 1 6035606A
+P 3250 2150
+AR Path="/60303A2D/6035606A" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035606A" Ref="R?"  Part="1" 
+F 0 "R?" V 3250 2400 50  0000 R CNN
+F 1 "20" H 3180 2195 50  0001 R CNN
+F 2 "" V 3180 2150 50  0001 C CNN
+F 3 "~" H 3250 2150 50  0001 C CNN
+	1    3250 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60356070
+P 3350 2150
+AR Path="/60303A2D/60356070" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356070" Ref="R?"  Part="1" 
+F 0 "R?" V 3350 2400 50  0000 R CNN
+F 1 "20" H 3280 2195 50  0001 R CNN
+F 2 "" V 3280 2150 50  0001 C CNN
+F 3 "~" H 3350 2150 50  0001 C CNN
+	1    3350 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60356076
+P 3450 2150
+AR Path="/60303A2D/60356076" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356076" Ref="R?"  Part="1" 
+F 0 "R?" V 3450 2400 50  0000 R CNN
+F 1 "20" H 3380 2195 50  0001 R CNN
+F 2 "" V 3380 2150 50  0001 C CNN
+F 3 "~" H 3450 2150 50  0001 C CNN
+	1    3450 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6035607C
+P 3150 2600
+AR Path="/60303A2D/6035607C" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035607C" Ref="R?"  Part="1" 
+F 0 "R?" V 3150 2850 50  0000 R CNN
+F 1 "20" H 3080 2645 50  0001 R CNN
+F 2 "" V 3080 2600 50  0001 C CNN
+F 3 "~" H 3150 2600 50  0001 C CNN
+	1    3150 2600
+	-1   0    0    1   
+$EndComp
+Text Notes 3550 2650 0    50   ~ 0
+4 x 20R (2512)
+$Comp
+L Device:R R?
+U 1 1 60356083
+P 3250 2600
+AR Path="/60303A2D/60356083" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356083" Ref="R?"  Part="1" 
+F 0 "R?" V 3250 2850 50  0000 R CNN
+F 1 "20" H 3180 2645 50  0001 R CNN
+F 2 "" V 3180 2600 50  0001 C CNN
+F 3 "~" H 3250 2600 50  0001 C CNN
+	1    3250 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60356089
+P 3350 2600
+AR Path="/60303A2D/60356089" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356089" Ref="R?"  Part="1" 
+F 0 "R?" V 3350 2850 50  0000 R CNN
+F 1 "20" H 3280 2645 50  0001 R CNN
+F 2 "" V 3280 2600 50  0001 C CNN
+F 3 "~" H 3350 2600 50  0001 C CNN
+	1    3350 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6035608F
+P 3450 2600
+AR Path="/60303A2D/6035608F" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035608F" Ref="R?"  Part="1" 
+F 0 "R?" V 3450 2850 50  0000 R CNN
+F 1 "20" H 3380 2645 50  0001 R CNN
+F 2 "" V 3380 2600 50  0001 C CNN
+F 3 "~" H 3450 2600 50  0001 C CNN
+	1    3450 2600
+	-1   0    0    1   
+$EndComp
+Text HLabel 3550 3000 2    50   Output ~ 0
+Precharge_Out
+Wire Wire Line
+	3550 3000 3450 3000
+Wire Wire Line
+	3150 3000 3150 2750
+Wire Wire Line
+	3250 2750 3250 3000
+Connection ~ 3250 3000
+Wire Wire Line
+	3250 3000 3150 3000
+Wire Wire Line
+	3350 2750 3350 3000
+Connection ~ 3350 3000
+Wire Wire Line
+	3350 3000 3250 3000
+Wire Wire Line
+	3450 2750 3450 3000
+Connection ~ 3450 3000
+Wire Wire Line
+	3450 3000 3350 3000
+Wire Wire Line
+	3450 2450 3450 2300
+Wire Wire Line
+	3350 2300 3350 2450
+Wire Wire Line
+	3250 2450 3250 2300
+Wire Wire Line
+	3150 2300 3150 2450
+Wire Wire Line
+	2650 1000 3300 1000
+Connection ~ 2650 1000
+Wire Wire Line
+	2650 1000 2650 1050
+Wire Wire Line
+	3300 1000 3300 1450
+Wire Wire Line
+	2650 1600 2650 1500
+Wire Wire Line
+	2650 1500 3100 1500
+Connection ~ 2650 1500
+Wire Wire Line
+	2650 1500 2650 1350
+Wire Wire Line
+	3300 1600 3300 1900
+Wire Wire Line
+	3300 1900 3350 1900
+Wire Wire Line
+	3450 1900 3450 2000
+Wire Wire Line
+	3350 2000 3350 1900
+Connection ~ 3350 1900
+Wire Wire Line
+	3350 1900 3450 1900
+Wire Wire Line
+	3300 1900 3250 1900
+Wire Wire Line
+	3250 1900 3250 2000
+Connection ~ 3300 1900
+Wire Wire Line
+	3150 2000 3150 1900
+Wire Wire Line
+	3150 1900 3250 1900
+Connection ~ 3250 1900
+Wire Wire Line
+	1400 2050 1550 2050
+Text HLabel 1100 4900 0    50   Input ~ 0
+Relay_En
+$Comp
+L Device:R R?
+U 1 1 60356F99
+P 1400 4900
+AR Path="/60303A2D/60356F99" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60356F99" Ref="R?"  Part="1" 
+F 0 "R?" V 1193 4900 50  0000 C CNN
+F 1 "1k" V 1284 4900 50  0000 C CNN
+F 2 "" V 1330 4900 50  0001 C CNN
+F 3 "~" H 1400 4900 50  0001 C CNN
+	1    1400 4900
+	0    -1   -1   0   
+$EndComp
+Text Notes 2150 4900 2    50   ~ 0
+optocoupler
+Wire Wire Line
+	1100 4900 1250 4900
+$Comp
+L power:GND #PWR?
+U 1 1 6035A3AB
+P 1650 5350
+F 0 "#PWR?" H 1650 5100 50  0001 C CNN
+F 1 "GND" H 1650 5200 50  0000 C CNN
+F 2 "" H 1650 5350 50  0001 C CNN
+F 3 "" H 1650 5350 50  0001 C CNN
+	1    1650 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6035A846
+P 1900 2350
+F 0 "#PWR?" H 1900 2100 50  0001 C CNN
+F 1 "GND" H 1900 2200 50  0000 C CNN
+F 2 "" H 1900 2350 50  0001 C CNN
+F 3 "" H 1900 2350 50  0001 C CNN
+	1    1900 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 6035D4F7
+P 2300 3700
+AR Path="/60303A2D/6035D4F7" Ref="#PWR?"  Part="1" 
+AR Path="/60303AF1/6035D4F7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2300 3550 50  0001 C CNN
+F 1 "+BATT" H 2315 3873 50  0000 C CNN
+F 2 "" H 2300 3700 50  0001 C CNN
+F 3 "" H 2300 3700 50  0001 C CNN
+	1    2300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6035D4FD
+P 2300 3950
+AR Path="/60303A2D/6035D4FD" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035D4FD" Ref="R?"  Part="1" 
+F 0 "R?" H 2230 3904 50  0000 R CNN
+F 1 "47k" H 2230 3995 50  0000 R CNN
+F 2 "" V 2230 3950 50  0001 C CNN
+F 3 "~" H 2300 3950 50  0001 C CNN
+	1    2300 3950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6035D503
+P 2300 4550
+AR Path="/60303A2D/6035D503" Ref="R?"  Part="1" 
+AR Path="/60303AF1/6035D503" Ref="R?"  Part="1" 
+F 0 "R?" H 2230 4504 50  0000 R CNN
+F 1 "47k" H 2230 4595 50  0000 R CNN
+F 2 "" V 2230 4550 50  0001 C CNN
+F 3 "~" H 2300 4550 50  0001 C CNN
+	1    2300 4550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2300 3700 2300 3750
+$Comp
+L Diode:1N4148W D?
+U 1 1 6035E701
+P 2950 4800
+F 0 "D?" V 2904 4880 50  0000 L CNN
+F 1 "1N4148W" V 2995 4880 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 2950 4625 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 2950 4800 50  0001 C CNN
+	1    2950 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2950 4500 3100 4500
+Wire Wire Line
+	2950 4500 2950 4650
+Text HLabel 3100 4500 2    50   Output ~ 0
+Relay_Out
+Text HLabel 3100 5100 2    50   Input ~ 0
+Relay_In
+Wire Wire Line
+	2950 5100 3100 5100
+Wire Wire Line
+	2950 4950 2950 5100
+Wire Wire Line
+	2950 5100 2950 5600
+Connection ~ 2950 5100
+Text Notes 2900 5700 0    50   ~ 0
+optocoupler
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60361AEE
+P 3500 5600
+F 0 "#PWR?" H 3500 5450 50  0001 C CNN
+F 1 "+3V3" H 3515 5773 50  0000 C CNN
+F 2 "" H 3500 5600 50  0001 C CNN
+F 3 "" H 3500 5600 50  0001 C CNN
+	1    3500 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60361E9E
+P 3500 6000
+AR Path="/60303A2D/60361E9E" Ref="R?"  Part="1" 
+AR Path="/60303AF1/60361E9E" Ref="R?"  Part="1" 
+F 0 "R?" H 3650 6050 50  0000 C CNN
+F 1 "10k" H 3650 5950 50  0000 C CNN
+F 2 "" V 3430 6000 50  0001 C CNN
+F 3 "~" H 3500 6000 50  0001 C CNN
+	1    3500 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60362725
+P 3500 6250
+F 0 "#PWR?" H 3500 6000 50  0001 C CNN
+F 1 "GND" H 3500 6100 50  0000 C CNN
+F 2 "" H 3500 6250 50  0001 C CNN
+F 3 "" H 3500 6250 50  0001 C CNN
+	1    3500 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 6250 3500 6150
+$Comp
+L Transistor_BJT:BC856 Q?
+U 1 1 60363FF4
+P 3050 4150
+F 0 "Q?" H 3241 4104 50  0000 L CNN
+F 1 "BC856" H 3241 4195 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3250 4075 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BC/BC856.pdf" H 3050 4150 50  0001 L CNN
+	1    3050 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2950 3750 2950 3950
+Wire Wire Line
+	2950 4350 2950 4500
+Connection ~ 2950 4500
+Text Label 2500 4250 2    50   ~ 0
+Base
+Wire Wire Line
+	2300 4250 2500 4250
+Text Label 3450 4150 2    50   ~ 0
+Base
+Wire Wire Line
+	3250 4150 3450 4150
+Wire Wire Line
+	2300 3750 2950 3750
+Connection ~ 2300 3750
+Wire Wire Line
+	2300 3750 2300 3800
+Connection ~ 2300 4250
+Wire Wire Line
+	2300 4100 2300 4250
+Wire Wire Line
+	2300 4250 2300 4400
+Wire Notes Line
+	700  700  4250 700 
+Wire Notes Line
+	4250 700  4250 3200
+Wire Notes Line
+	4250 3200 700  3200
+Wire Notes Line
+	700  700  700  3200
+Text Notes 700  3300 0    50   ~ 0
+Precharge circuit
+Wire Notes Line
+	4250 3450 700  3450
+Wire Notes Line
+	700  3450 700  6600
+Wire Notes Line
+	700  6600 4250 6600
+Wire Notes Line
+	4250 6600 4250 3450
+Text Notes 700  6700 0    50   ~ 0
+Main relay control circuit
+$Comp
+L ElectricGoKart:GND_Batt #PWR?
+U 1 1 604D46E7
+P 2600 2350
+F 0 "#PWR?" H 2600 2100 50  0001 C CNN
+F 1 "GND_Batt" H 2600 2200 50  0000 C CNN
+F 2 "" H 2600 2350 50  0001 C CNN
+F 3 "" H 2600 2350 50  0001 C CNN
+	1    2600 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ElectricGoKart:GND_Batt #PWR?
+U 1 1 604D4C8C
+P 2300 5350
+F 0 "#PWR?" H 2300 5100 50  0001 C CNN
+F 1 "GND_Batt" H 2300 5200 50  0000 C CNN
+F 2 "" H 2300 5350 50  0001 C CNN
+F 3 "" H 2300 5350 50  0001 C CNN
+	1    2300 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ElectricGoKart:GND_Batt #PWR?
+U 1 1 604D59AA
+P 2950 6250
+F 0 "#PWR?" H 2950 6000 50  0001 C CNN
+F 1 "GND_Batt" H 2950 6100 50  0000 C CNN
+F 2 "" H 2950 6250 50  0001 C CNN
+F 3 "" H 2950 6250 50  0001 C CNN
+	1    2950 6250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
