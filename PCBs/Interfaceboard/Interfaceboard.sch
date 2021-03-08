@@ -35,6 +35,10 @@ S 3550 2400 950  1200
 U 6040B450
 F0 "Currents" 50
 F1 "Currents.sch" 50
+F2 "Phase1_In" I R 4500 2500 50 
+F3 "Phase2_In" I R 4500 2600 50 
+F4 "Phase1_ADC" O R 4500 2800 50 
+F5 "Phase2_ADC" O R 4500 2900 50 
 $EndSheet
 $Sheet
 S 6350 2400 900  550 
