@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 3 4
 Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
 Date "2021-03-04"
 Rev "Version 1"
@@ -13,4 +13,317 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L ElectricGoKart:+3V3_Ref #PWR0110
+U 1 1 605366D1
+P 1700 1250
+F 0 "#PWR0110" H 1700 1100 50  0001 C CNN
+F 1 "+3V3_Ref" H 1700 1400 50  0000 C CNN
+F 2 "" H 1700 1250 50  0001 C CNN
+F 3 "" H 1700 1250 50  0001 C CNN
+	1    1700 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 60536ECE
+P 1700 1500
+F 0 "R15" H 1750 1500 50  0000 L CNN
+F 1 "9.88k" V 1700 1400 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1630 1500 50  0001 C CNN
+F 3 "~" H 1700 1500 50  0001 C CNN
+	1    1700 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R19
+U 1 1 605377F3
+P 1700 2000
+F 0 "R19" H 1500 2000 50  0000 L CNN
+F 1 "10k" V 1700 1950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1630 2000 50  0001 C CNN
+F 3 "~" H 1700 2000 50  0001 C CNN
+	1    1700 2000
+	1    0    0    -1  
+$EndComp
+Text HLabel 1500 1750 0    50   Output ~ 0
+Torque_Pedal
+$Comp
+L power:GND #PWR0111
+U 1 1 60538157
+P 1700 2200
+F 0 "#PWR0111" H 1700 1950 50  0001 C CNN
+F 1 "GND" H 1700 2050 50  0000 C CNN
+F 2 "" H 1700 2200 50  0001 C CNN
+F 3 "" H 1700 2200 50  0001 C CNN
+	1    1700 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1350 1700 1250
+Wire Wire Line
+	1700 1650 1700 1750
+Wire Wire Line
+	1500 1750 1700 1750
+Connection ~ 1700 1750
+Wire Wire Line
+	1700 1750 1700 1850
+$Comp
+L Device:R R16
+U 1 1 6053992D
+P 2200 1750
+F 0 "R16" V 2100 1750 50  0000 C CNN
+F 1 "7.5k" V 2200 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2130 1750 50  0001 C CNN
+F 3 "~" H 2200 1750 50  0001 C CNN
+	1    2200 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 60539F21
+P 2600 1750
+F 0 "R17" V 2500 1750 50  0000 C CNN
+F 1 "7.5k" V 2600 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2530 1750 50  0001 C CNN
+F 3 "~" H 2600 1750 50  0001 C CNN
+	1    2600 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2750 1750 2900 1750
+$Comp
+L Device:C C16
+U 1 1 6053A36B
+P 2900 2000
+F 0 "C16" H 3015 2046 50  0000 L CNN
+F 1 "30n" H 3015 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2938 1850 50  0001 C CNN
+F 3 "~" H 2900 2000 50  0001 C CNN
+	1    2900 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C18
+U 1 1 6053B790
+P 2800 2550
+F 0 "C18" V 2950 2550 50  0000 C CNN
+F 1 "56n" V 3050 2550 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2838 2400 50  0001 C CNN
+F 3 "~" H 2800 2550 50  0001 C CNN
+	1    2800 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2050 1750 1900 1750
+$Comp
+L Device:R R18
+U 1 1 6053E9D7
+P 4250 1850
+F 0 "R18" V 4150 1850 50  0000 C CNN
+F 1 "147" V 4250 1850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4180 1850 50  0001 C CNN
+F 3 "~" H 4250 1850 50  0001 C CNN
+	1    4250 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C17
+U 1 1 6053EFB5
+P 4500 2050
+F 0 "C17" H 4615 2096 50  0000 L CNN
+F 1 "33n" H 4615 2005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4538 1900 50  0001 C CNN
+F 3 "~" H 4500 2050 50  0001 C CNN
+	1    4500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6L01x-xOT U3
+U 1 1 6053FC25
+P 3550 1850
+F 0 "U3" H 3550 2150 50  0000 L CNN
+F 1 "MCP6L01x-xOT" H 3550 2050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3450 1650 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/devicedoc/22140b.pdf" H 3550 2050 50  0001 C CNN
+	1    3550 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 1750 2400 1750
+Wire Wire Line
+	2400 1750 2400 2550
+Connection ~ 2400 1750
+Wire Wire Line
+	2400 1750 2450 1750
+Wire Wire Line
+	3250 1950 3200 1950
+Wire Wire Line
+	3200 1950 3200 2550
+Wire Wire Line
+	3200 2550 4000 2550
+Wire Wire Line
+	4000 2550 4000 1850
+Wire Wire Line
+	4000 1850 3850 1850
+Connection ~ 3200 2550
+$Comp
+L power:GND #PWR0112
+U 1 1 60545452
+P 3450 2200
+F 0 "#PWR0112" H 3450 1950 50  0001 C CNN
+F 1 "GND" H 3450 2050 50  0000 C CNN
+F 2 "" H 3450 2200 50  0001 C CNN
+F 3 "" H 3450 2200 50  0001 C CNN
+	1    3450 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 2200 3450 2150
+Wire Wire Line
+	2900 1750 2900 1850
+Connection ~ 2900 1750
+$Comp
+L power:GND #PWR0113
+U 1 1 6054651B
+P 2900 2200
+F 0 "#PWR0113" H 2900 1950 50  0001 C CNN
+F 1 "GND" H 2900 2050 50  0000 C CNN
+F 2 "" H 2900 2200 50  0001 C CNN
+F 3 "" H 2900 2200 50  0001 C CNN
+	1    2900 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 2200 2900 2150
+Wire Wire Line
+	2950 2550 3200 2550
+Wire Wire Line
+	2650 2550 2400 2550
+Wire Wire Line
+	2900 1750 3250 1750
+$Comp
+L power:+5V #PWR0114
+U 1 1 6054823E
+P 3450 1150
+F 0 "#PWR0114" H 3450 1000 50  0001 C CNN
+F 1 "+5V" H 3450 1300 50  0000 C CNN
+F 2 "" H 3450 1150 50  0001 C CNN
+F 3 "" H 3450 1150 50  0001 C CNN
+	1    3450 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C15
+U 1 1 605488B0
+P 3300 1450
+F 0 "C15" V 3250 1300 50  0000 C CNN
+F 1 "100n" V 3350 1300 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3338 1300 50  0001 C CNN
+F 3 "~" H 3300 1450 50  0001 C CNN
+	1    3300 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C14
+U 1 1 605497B3
+P 3300 1250
+F 0 "C14" V 3250 1100 50  0000 C CNN
+F 1 "10µ" V 3350 1100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3338 1100 50  0001 C CNN
+F 3 "~" H 3300 1250 50  0001 C CNN
+	1    3300 1250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3450 1150 3450 1250
+Connection ~ 3450 1250
+Wire Wire Line
+	3450 1250 3450 1450
+Connection ~ 3450 1450
+Wire Wire Line
+	3450 1450 3450 1550
+$Comp
+L power:GND #PWR0115
+U 1 1 6054B1FA
+P 3000 1350
+F 0 "#PWR0115" H 3000 1100 50  0001 C CNN
+F 1 "GND" V 3000 1150 50  0000 C CNN
+F 2 "" H 3000 1350 50  0001 C CNN
+F 3 "" H 3000 1350 50  0001 C CNN
+	1    3000 1350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 1250 3050 1250
+Wire Wire Line
+	3050 1250 3050 1350
+Wire Wire Line
+	3150 1450 3050 1450
+Wire Wire Line
+	3050 1450 3050 1350
+Connection ~ 3050 1350
+Wire Wire Line
+	4000 1850 4100 1850
+Connection ~ 4000 1850
+Wire Wire Line
+	4400 1850 4500 1850
+Wire Wire Line
+	4500 1850 4500 1900
+$Comp
+L power:GND #PWR0116
+U 1 1 6054E100
+P 4500 2200
+F 0 "#PWR0116" H 4500 1950 50  0001 C CNN
+F 1 "GND" H 4500 2050 50  0000 C CNN
+F 2 "" H 4500 2200 50  0001 C CNN
+F 3 "" H 4500 2200 50  0001 C CNN
+	1    4500 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1850 4600 1850
+Connection ~ 4500 1850
+Text HLabel 4600 1850 2    50   Output ~ 0
+Torque_ADC
+Wire Notes Line
+	900  950  5150 950 
+Wire Notes Line
+	5150 950  5150 2850
+Wire Notes Line
+	5150 2850 900  2850
+Wire Notes Line
+	900  950  900  2850
+Text Notes 900  2950 0    50   ~ 0
+Torque pedal measurement
+Text Notes 3700 3450 0    50   ~ 0
+Sallen-Key cutoff:\n517 Hz\n\nRC cutoff:\n1/(2*pi*147*33*10^-9) = 32.8 kHz
+Wire Wire Line
+	1700 2150 1700 2200
+Wire Wire Line
+	3000 1350 3050 1350
+Connection ~ 1900 1750
+Wire Wire Line
+	1900 1750 1700 1750
+Wire Wire Line
+	1900 2200 1700 2200
+Connection ~ 1700 2200
+$Comp
+L Device:D_Zener_Small D3
+U 1 1 6049516C
+P 1900 2000
+F 0 "D3" V 1854 2070 50  0000 L CNN
+F 1 "2.5 V" V 1945 2070 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" V 1900 2000 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/308/ESD5Z2_5T1_D-1522641.pdf" V 1900 2000 50  0001 C CNN
+F 4 "ESD5Z2.5T5G" V 1900 2000 50  0001 C CNN "Name"
+	1    1900 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 1750 1900 1900
+Wire Wire Line
+	1900 2100 1900 2200
+Text Notes 900  3450 0    50   ~ 0
+R_pot = 0 Ohm to 7.5 kOhm\n\nTorque output:\n3.3 V * (R_pot || R_L) / (R_pot || R_L + R_H) = 0 V to 1 V
 $EndSCHEMATC

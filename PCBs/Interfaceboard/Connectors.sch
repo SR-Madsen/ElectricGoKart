@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 4 4
 Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
 Date "2021-03-04"
 Rev "Version 1"
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J?
+L ElectricGoKart:TSW-105-07-T-D J1
 U 1 1 6040AB8C
 P 2250 1700
-F 0 "J?" H 2700 1965 50  0000 C CNN
+F 0 "J1" H 2700 1965 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 2700 1874 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 3000 1800 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 3000 1700 50  0001 L CNN
@@ -26,10 +26,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 3000 1700 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J?
+L ElectricGoKart:TSW-105-07-T-D J2
 U 1 1 6040AF1F
 P 4250 1700
-F 0 "J?" H 4700 1965 50  0000 C CNN
+F 0 "J2" H 4700 1965 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 4700 1874 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 5000 1800 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 5000 1700 50  0001 L CNN
@@ -38,10 +38,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 5000 1700 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J?
+L ElectricGoKart:TSW-105-07-T-D J4
 U 1 1 6040B5C6
 P 4250 3000
-F 0 "J?" H 4700 3265 50  0000 C CNN
+F 0 "J4" H 4700 3265 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 4700 3174 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 5000 3100 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 5000 3000 50  0001 L CNN
@@ -50,10 +50,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 5000 3000 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J?
+L ElectricGoKart:TSW-105-07-T-D J3
 U 1 1 6040BAA5
 P 2250 3000
-F 0 "J?" H 2700 3265 50  0000 C CNN
+F 0 "J3" H 2700 3265 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 2700 3174 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 3000 3100 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 3000 3000 50  0001 L CNN
@@ -62,10 +62,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 3000 3000 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0117
 U 1 1 6040C8EC
 P 3200 2150
-F 0 "#PWR?" H 3200 1900 50  0001 C CNN
+F 0 "#PWR0117" H 3200 1900 50  0001 C CNN
 F 1 "GND" H 3200 2000 50  0000 C CNN
 F 2 "" H 3200 2150 50  0001 C CNN
 F 3 "" H 3200 2150 50  0001 C CNN
@@ -97,10 +97,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 1700 3200 1700
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0118
 U 1 1 60410024
 P 3200 3450
-F 0 "#PWR?" H 3200 3200 50  0001 C CNN
+F 0 "#PWR0118" H 3200 3200 50  0001 C CNN
 F 1 "GND" H 3200 3300 50  0000 C CNN
 F 2 "" H 3200 3450 50  0001 C CNN
 F 3 "" H 3200 3450 50  0001 C CNN
@@ -132,10 +132,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 3000 3200 3000
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0119
 U 1 1 604113DC
 P 5200 3450
-F 0 "#PWR?" H 5200 3200 50  0001 C CNN
+F 0 "#PWR0119" H 5200 3200 50  0001 C CNN
 F 1 "GND" H 5200 3300 50  0000 C CNN
 F 2 "" H 5200 3450 50  0001 C CNN
 F 3 "" H 5200 3450 50  0001 C CNN
@@ -167,10 +167,10 @@ Wire Wire Line
 Wire Wire Line
 	5150 3000 5200 3000
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0120
 U 1 1 60411AB6
 P 5200 2150
-F 0 "#PWR?" H 5200 1900 50  0001 C CNN
+F 0 "#PWR0120" H 5200 1900 50  0001 C CNN
 F 1 "GND" H 5200 2000 50  0000 C CNN
 F 2 "" H 5200 2150 50  0001 C CNN
 F 3 "" H 5200 2150 50  0001 C CNN
@@ -202,10 +202,10 @@ Wire Wire Line
 Wire Wire Line
 	5150 1700 5200 1700
 $Comp
-L power:+5V #PWR?
+L power:+5V #PWR0121
 U 1 1 604132E9
 P 2200 1700
-F 0 "#PWR?" H 2200 1550 50  0001 C CNN
+F 0 "#PWR0121" H 2200 1550 50  0001 C CNN
 F 1 "+5V" V 2200 1850 50  0000 L CNN
 F 2 "" H 2200 1700 50  0001 C CNN
 F 3 "" H 2200 1700 50  0001 C CNN
@@ -215,10 +215,10 @@ $EndComp
 Wire Wire Line
 	2200 1700 2250 1700
 $Comp
-L ElectricGoKart:+5V_Ref #PWR?
+L ElectricGoKart:+5V_Ref #PWR0122
 U 1 1 6041414F
 P 2200 1800
-F 0 "#PWR?" H 2200 1650 50  0001 C CNN
+F 0 "#PWR0122" H 2200 1650 50  0001 C CNN
 F 1 "+5V_Ref" V 2200 1950 50  0000 L CNN
 F 2 "" H 2200 1800 50  0001 C CNN
 F 3 "" H 2200 1800 50  0001 C CNN
@@ -228,10 +228,10 @@ $EndComp
 Wire Wire Line
 	2200 1800 2250 1800
 $Comp
-L ElectricGoKart:+3V3_Ref #PWR?
+L ElectricGoKart:+3V3_Ref #PWR0123
 U 1 1 60414DFF
 P 2200 1900
-F 0 "#PWR?" H 2200 1750 50  0001 C CNN
+F 0 "#PWR0123" H 2200 1750 50  0001 C CNN
 F 1 "+3V3_Ref" V 2200 2050 50  0000 L CNN
 F 2 "" H 2200 1900 50  0001 C CNN
 F 3 "" H 2200 1900 50  0001 C CNN
@@ -241,10 +241,10 @@ $EndComp
 Wire Wire Line
 	2200 1900 2250 1900
 $Comp
-L power:+15V #PWR?
+L power:+15V #PWR0124
 U 1 1 60415C9F
 P 2200 2000
-F 0 "#PWR?" H 2200 1850 50  0001 C CNN
+F 0 "#PWR0124" H 2200 1850 50  0001 C CNN
 F 1 "+15V" V 2200 2150 50  0000 L CNN
 F 2 "" H 2200 2000 50  0001 C CNN
 F 3 "" H 2200 2000 50  0001 C CNN
@@ -252,10 +252,10 @@ F 3 "" H 2200 2000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:-15V #PWR?
+L power:-15V #PWR0125
 U 1 1 60416212
 P 2200 2100
-F 0 "#PWR?" H 2200 2200 50  0001 C CNN
+F 0 "#PWR0125" H 2200 2200 50  0001 C CNN
 F 1 "-15V" V 2200 2250 50  0000 L CNN
 F 2 "" H 2200 2100 50  0001 C CNN
 F 3 "" H 2200 2100 50  0001 C CNN
@@ -270,7 +270,7 @@ Text HLabel 2200 3000 0    50   Output ~ 0
 Phase1_Meas
 Text HLabel 2200 3100 0    50   Output ~ 0
 Phase2_Meas
-Text HLabel 2200 3200 0    50   Output ~ 0
+Text HLabel 2200 3200 0    50   Input ~ 0
 Torque_Meas
 NoConn ~ 2250 3300
 NoConn ~ 2250 3400
