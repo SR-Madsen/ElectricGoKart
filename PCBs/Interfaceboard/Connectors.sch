@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 4
-Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
-Date "2021-03-04"
+Sheet 4 5
+Title "Analog Board for Control of PMAC Motor in Electric Go-Kart"
+Date "2021-03-13"
 Rev "Version 1"
 Comp "University of Southern Denmark"
 Comment1 "Group 1"
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J1
+L ElectricGoKart:TSW-105-07-T-D J301
 U 1 1 6040AB8C
 P 2250 1700
-F 0 "J1" H 2700 1965 50  0000 C CNN
+F 0 "J301" H 2700 1965 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 2700 1874 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 3000 1800 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 3000 1700 50  0001 L CNN
@@ -26,10 +26,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 3000 1700 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J2
+L ElectricGoKart:TSW-105-07-T-D J304
 U 1 1 6040AF1F
 P 4250 1700
-F 0 "J2" H 4700 1965 50  0000 C CNN
+F 0 "J304" H 4700 1965 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 4700 1874 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 5000 1800 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 5000 1700 50  0001 L CNN
@@ -38,10 +38,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 5000 1700 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J4
+L ElectricGoKart:TSW-105-07-T-D J305
 U 1 1 6040B5C6
 P 4250 3000
-F 0 "J4" H 4700 3265 50  0000 C CNN
+F 0 "J305" H 4700 3265 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 4700 3174 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 5000 3100 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 5000 3000 50  0001 L CNN
@@ -50,10 +50,10 @@ F 4 "10 Position, Classic PCB Header Strips, 0.100&quot; pitch" H 5000 3000 50  
 	1    0    0    -1  
 $EndComp
 $Comp
-L ElectricGoKart:TSW-105-07-T-D J3
+L ElectricGoKart:TSW-105-07-T-D J302
 U 1 1 6040BAA5
 P 2250 3000
-F 0 "J3" H 2700 3265 50  0000 C CNN
+F 0 "J302" H 2700 3265 50  0000 C CNN
 F 1 "TSW-105-07-T-D" H 2700 3174 50  0000 C CNN
 F 2 "ElectricGoKart:TSW-105-07-T-D" H 3000 3100 50  0001 L CNN
 F 3 "http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf" H 3000 3000 50  0001 L CNN
@@ -354,4 +354,150 @@ Wire Notes Line
 	5400 2600 3600 2600
 Text Notes 3600 3800 0    50   ~ 0
 J305 connector, Zybo digital I/O
+$Comp
+L Connector:TestPoint TP?
+U 1 1 604D3648
+P 1750 4200
+AR Path="/6040B450/604D3648" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/604D3648" Ref="TP4"  Part="1" 
+F 0 "TP4" H 1800 4300 50  0000 L CNN
+F 1 "TestPoint" H 1800 4200 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 1950 4200 50  0001 C CNN
+F 3 "~" H 1950 4200 50  0001 C CNN
+	1    1750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 604D4879
+P 2250 4200
+AR Path="/6040B450/604D4879" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/604D4879" Ref="TP5"  Part="1" 
+F 0 "TP5" H 2300 4300 50  0000 L CNN
+F 1 "TestPoint" H 2300 4200 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 2450 4200 50  0001 C CNN
+F 3 "~" H 2450 4200 50  0001 C CNN
+	1    2250 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 604D6984
+P 1750 4250
+F 0 "#PWR01" H 1750 4000 50  0001 C CNN
+F 1 "GND" H 1750 4100 50  0000 C CNN
+F 2 "" H 1750 4250 50  0001 C CNN
+F 3 "" H 1750 4250 50  0001 C CNN
+	1    1750 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 604D6D89
+P 2250 4250
+F 0 "#PWR02" H 2250 4000 50  0001 C CNN
+F 1 "GND" H 2250 4100 50  0000 C CNN
+F 2 "" H 2250 4250 50  0001 C CNN
+F 3 "" H 2250 4250 50  0001 C CNN
+	1    2250 4250
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	1600 4500 1600 3900
+Text Notes 1600 4600 0    50   ~ 0
+Test points for ground
+Wire Wire Line
+	1750 4250 1750 4200
+Wire Wire Line
+	2250 4250 2250 4200
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60507096
+P 2700 4200
+AR Path="/6040B450/60507096" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/60507096" Ref="TP6"  Part="1" 
+F 0 "TP6" H 2750 4300 50  0000 L CNN
+F 1 "TestPoint" H 2750 4200 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 2900 4200 50  0001 C CNN
+F 3 "~" H 2900 4200 50  0001 C CNN
+	1    2700 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 6050709C
+P 3200 4200
+AR Path="/6040B450/6050709C" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/6050709C" Ref="TP7"  Part="1" 
+F 0 "TP7" H 3250 4300 50  0000 L CNN
+F 1 "TestPoint" H 3250 4200 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 3400 4200 50  0001 C CNN
+F 3 "~" H 3400 4200 50  0001 C CNN
+	1    3200 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 605070A2
+P 2700 4250
+F 0 "#PWR03" H 2700 4000 50  0001 C CNN
+F 1 "GND" H 2700 4100 50  0000 C CNN
+F 2 "" H 2700 4250 50  0001 C CNN
+F 3 "" H 2700 4250 50  0001 C CNN
+	1    2700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 605070A8
+P 3200 4250
+F 0 "#PWR010" H 3200 4000 50  0001 C CNN
+F 1 "GND" H 3200 4100 50  0000 C CNN
+F 2 "" H 3200 4250 50  0001 C CNN
+F 3 "" H 3200 4250 50  0001 C CNN
+	1    3200 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 4250 2700 4200
+Wire Wire Line
+	3200 4250 3200 4200
+Wire Notes Line
+	3400 4500 3400 3900
+Wire Notes Line
+	1600 3900 3400 3900
+Wire Notes Line
+	1600 4500 3400 4500
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 604D7436
+P 3900 4200
+F 0 "H1" H 4000 4246 50  0000 L CNN
+F 1 "M2 Mount" H 4000 4155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 3900 4200 50  0001 C CNN
+F 3 "~" H 3900 4200 50  0001 C CNN
+	1    3900 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 604D793D
+P 4700 4200
+F 0 "H2" H 4800 4246 50  0000 L CNN
+F 1 "M2 Mount" H 4800 4155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 4700 4200 50  0001 C CNN
+F 3 "~" H 4700 4200 50  0001 C CNN
+	1    4700 4200
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	3600 3900 3600 4500
+Wire Notes Line
+	3600 4500 5400 4500
+Wire Notes Line
+	5400 4500 5400 3900
+Wire Notes Line
+	5400 3900 3600 3900
+Text Notes 3600 4600 0    50   ~ 0
+Mounting holes
 $EndSCHEMATC

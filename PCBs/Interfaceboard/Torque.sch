@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 4
-Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
-Date "2021-03-04"
+Sheet 3 5
+Title "Analog Board for Control of PMAC Motor in Electric Go-Kart"
+Date "2021-03-13"
 Rev "Version 1"
 Comp "University of Southern Denmark"
 Comment1 "Group 1"
@@ -313,10 +313,10 @@ L Device:D_Zener_Small D3
 U 1 1 6049516C
 P 1900 2000
 F 0 "D3" V 1854 2070 50  0000 L CNN
-F 1 "2.5 V" V 1945 2070 50  0000 L CNN
+F 1 "3.3 V" V 1945 2070 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-523" V 1900 2000 50  0001 C CNN
 F 3 "https://www.mouser.dk/datasheet/2/308/ESD5Z2_5T1_D-1522641.pdf" V 1900 2000 50  0001 C CNN
-F 4 "ESD5Z2.5T5G" V 1900 2000 50  0001 C CNN "Name"
+F 4 "ESD5Z3.3T1G" V 1900 2000 50  0001 C CNN "Name"
 	1    1900 2000
 	0    1    1    0   
 $EndComp
@@ -326,4 +326,19 @@ Wire Wire Line
 	1900 2100 1900 2200
 Text Notes 900  3450 0    50   ~ 0
 R_pot = 0 Ohm to 7.5 kOhm\n\nTorque output:\n3.3 V * (R_pot || R_L) / (R_pot || R_L + R_H) = 0 V to 1 V
+$Comp
+L Connector:TestPoint TP?
+U 1 1 604E435E
+P 4500 1700
+AR Path="/6040B450/604E435E" Ref="TP?"  Part="1" 
+AR Path="/6040B46E/604E435E" Ref="TP3"  Part="1" 
+F 0 "TP3" H 4550 1850 50  0000 L CNN
+F 1 "TestPoint" H 4550 1750 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 4700 1700 50  0001 C CNN
+F 3 "~" H 4700 1700 50  0001 C CNN
+	1    4500 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1700 4500 1850
 $EndSCHEMATC
