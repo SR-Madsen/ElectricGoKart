@@ -28,6 +28,8 @@ $Comp
 L ElectricGoKart:+3V3_Ref #PWR04
 U 1 1 604F5CD0
 P 2050 1450
+AR Path="/604F5CD0" Ref="#PWR04"  Part="1" 
+AR Path="/604F3ED7/604F5CD0" Ref="#PWR04"  Part="1" 
 F 0 "#PWR04" H 2050 1300 50  0001 C CNN
 F 1 "+3V3_Ref" V 2050 1600 50  0000 L CNN
 F 2 "" H 2050 1450 50  0001 C CNN
@@ -37,19 +39,6 @@ F 3 "" H 2050 1450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2050 1450 2150 1450
-$Comp
-L Device:R R20
-U 1 1 604F671F
-P 2650 3550
-F 0 "R20" V 2650 3700 50  0000 L CNN
-F 1 "10k" V 2650 3500 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 3550 50  0001 C CNN
-F 3 "~" H 2650 3550 50  0001 C CNN
-	1    2650 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 3800 2650 3700
 Text HLabel 3150 1450 2    50   BiDi ~ 0
 Dig1
 Wire Wire Line
@@ -69,6 +58,8 @@ $Comp
 L ElectricGoKart:+3V3_Ref #PWR05
 U 1 1 604FA2FB
 P 2050 1900
+AR Path="/604FA2FB" Ref="#PWR05"  Part="1" 
+AR Path="/604F3ED7/604FA2FB" Ref="#PWR05"  Part="1" 
 F 0 "#PWR05" H 2050 1750 50  0001 C CNN
 F 1 "+3V3_Ref" V 2050 2050 50  0000 L CNN
 F 2 "" H 2050 1900 50  0001 C CNN
@@ -97,6 +88,8 @@ $Comp
 L ElectricGoKart:+3V3_Ref #PWR06
 U 1 1 604FB2D3
 P 2050 2300
+AR Path="/604FB2D3" Ref="#PWR06"  Part="1" 
+AR Path="/604F3ED7/604FB2D3" Ref="#PWR06"  Part="1" 
 F 0 "#PWR06" H 2050 2150 50  0001 C CNN
 F 1 "+3V3_Ref" V 2050 2450 50  0000 L CNN
 F 2 "" H 2050 2300 50  0001 C CNN
@@ -110,80 +103,10 @@ Text HLabel 3150 2300 2    50   BiDi ~ 0
 Dig3
 Wire Wire Line
 	2550 2300 2850 2300
-$Comp
-L Switch:SW_Push SW4
-U 1 1 604FB2DC
-P 2350 2750
-F 0 "SW4" H 2350 3035 50  0000 C CNN
-F 1 "PTS645" H 2350 2944 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 2350 2950 50  0001 C CNN
-F 3 "~" H 2350 2950 50  0001 C CNN
-	1    2350 2750
-	1    0    0    -1  
-$EndComp
-$Comp
-L ElectricGoKart:+3V3_Ref #PWR07
-U 1 1 604FB2E2
-P 2050 2750
-F 0 "#PWR07" H 2050 2600 50  0001 C CNN
-F 1 "+3V3_Ref" V 2050 2900 50  0000 L CNN
-F 2 "" H 2050 2750 50  0001 C CNN
-F 3 "" H 2050 2750 50  0001 C CNN
-	1    2050 2750
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2050 2750 2150 2750
-Text HLabel 3150 2750 2    50   BiDi ~ 0
+Text HLabel 1950 2950 0    50   BiDi ~ 0
 Dig4
-Wire Wire Line
-	2550 2750 2750 2750
-$Comp
-L Switch:SW_Push SW5
-U 1 1 604FBCDC
-P 2350 3200
-F 0 "SW5" H 2350 3485 50  0000 C CNN
-F 1 "PTS645" H 2350 3394 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 2350 3400 50  0001 C CNN
-F 3 "~" H 2350 3400 50  0001 C CNN
-	1    2350 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L ElectricGoKart:+3V3_Ref #PWR08
-U 1 1 604FBCE2
-P 2050 3200
-F 0 "#PWR08" H 2050 3050 50  0001 C CNN
-F 1 "+3V3_Ref" V 2050 3350 50  0000 L CNN
-F 2 "" H 2050 3200 50  0001 C CNN
-F 3 "" H 2050 3200 50  0001 C CNN
-	1    2050 3200
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2050 3200 2150 3200
-Text HLabel 3150 3200 2    50   BiDi ~ 0
+Text HLabel 1950 3500 0    50   BiDi ~ 0
 Dig5
-Wire Wire Line
-	2550 3200 2650 3200
-Wire Wire Line
-	2650 3200 2650 3400
-Connection ~ 2650 3200
-Wire Wire Line
-	2650 3200 3150 3200
-$Comp
-L Device:R R21
-U 1 1 604FDDE6
-P 2750 3550
-F 0 "R21" V 2750 3700 50  0000 L CNN
-F 1 "10k" V 2750 3500 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2680 3550 50  0001 C CNN
-F 3 "~" H 2750 3550 50  0001 C CNN
-	1    2750 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 3800 2750 3700
 $Comp
 L Device:R R22
 U 1 1 604FE09F
@@ -198,12 +121,12 @@ $EndComp
 $Comp
 L power:GND #PWR09
 U 1 1 604FE0A5
-P 2850 3800
-F 0 "#PWR09" H 2850 3550 50  0001 C CNN
-F 1 "GND" H 2850 3650 50  0000 C CNN
-F 2 "" H 2850 3800 50  0001 C CNN
-F 3 "" H 2850 3800 50  0001 C CNN
-	1    2850 3800
+P 2950 3800
+F 0 "#PWR09" H 2950 3550 50  0001 C CNN
+F 1 "GND" H 2950 3650 50  0000 C CNN
+F 2 "" H 2950 3800 50  0001 C CNN
+F 3 "" H 2950 3800 50  0001 C CNN
+	1    2950 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -235,11 +158,6 @@ $EndComp
 Wire Wire Line
 	3050 3800 3050 3700
 Wire Wire Line
-	2750 3400 2750 2750
-Connection ~ 2750 2750
-Wire Wire Line
-	2750 2750 3150 2750
-Wire Wire Line
 	2850 3400 2850 2300
 Connection ~ 2850 2300
 Wire Wire Line
@@ -255,12 +173,6 @@ Connection ~ 3050 1450
 Wire Wire Line
 	3050 1450 3150 1450
 Wire Wire Line
-	2650 3800 2750 3800
-Connection ~ 2750 3800
-Wire Wire Line
-	2750 3800 2850 3800
-Connection ~ 2850 3800
-Wire Wire Line
 	2850 3800 2950 3800
 Connection ~ 2950 3800
 Wire Wire Line
@@ -274,5 +186,37 @@ Wire Notes Line
 Wire Notes Line
 	1500 1100 3500 1100
 Text Notes 1500 4150 0    50   ~ 0
-Buttons for digital connections
+Buttons for digital connections and test connections
+$Comp
+L Connector:TestPoint TP?
+U 1 1 604FFBAF
+P 2150 2950
+AR Path="/6040B450/604FFBAF" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/604FFBAF" Ref="TP?"  Part="1" 
+AR Path="/604F3ED7/604FFBAF" Ref="TP8"  Part="1" 
+F 0 "TP8" H 2200 3050 50  0000 L CNN
+F 1 "TestPoint" H 2200 2950 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 2350 2950 50  0001 C CNN
+F 3 "~" H 2350 2950 50  0001 C CNN
+	1    2150 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 2950 2150 2950
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60500240
+P 2150 3500
+AR Path="/6040B450/60500240" Ref="TP?"  Part="1" 
+AR Path="/6040B42D/60500240" Ref="TP?"  Part="1" 
+AR Path="/604F3ED7/60500240" Ref="TP9"  Part="1" 
+F 0 "TP9" H 2200 3600 50  0000 L CNN
+F 1 "TestPoint" H 2200 3500 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 2350 3500 50  0001 C CNN
+F 3 "~" H 2350 3500 50  0001 C CNN
+	1    2150 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 3500 2150 3500
 $EndSCHEMATC

@@ -326,19 +326,4 @@ Wire Wire Line
 	1900 2100 1900 2200
 Text Notes 900  3550 0    50   ~ 0
 R_pot = 0 Ohm to 7.5 kOhm\n\nTorque output:\n3.3 V * (R_pot || R_L) / (R_pot || R_L + R_H) = 0 V to 0.9 V\n\n> 0.9 V means pedal disconnected.
-$Comp
-L Connector:TestPoint TP?
-U 1 1 604E435E
-P 4500 1700
-AR Path="/6040B450/604E435E" Ref="TP?"  Part="1" 
-AR Path="/6040B46E/604E435E" Ref="TP3"  Part="1" 
-F 0 "TP3" H 4550 1850 50  0000 L CNN
-F 1 "TestPoint" H 4550 1750 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 4700 1700 50  0001 C CNN
-F 3 "~" H 4700 1700 50  0001 C CNN
-	1    4500 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4500 1700 4500 1850
 $EndSCHEMATC

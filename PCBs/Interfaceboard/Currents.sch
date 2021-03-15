@@ -218,66 +218,12 @@ F 3 "" H 3350 950 50  0001 C CNN
 	1    3350 950 
 	-1   0    0    1   
 $EndComp
-$Comp
-L ElectricGoKart:+3V3_Ref #PWR0106
-U 1 1 60491C07
-P 3050 5100
-F 0 "#PWR0106" H 3050 4950 50  0001 C CNN
-F 1 "+3V3_Ref" H 2850 5250 50  0000 L CNN
-F 2 "" H 3050 5100 50  0001 C CNN
-F 3 "" H 3050 5100 50  0001 C CNN
-	1    3050 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R13
-U 1 1 60492701
-P 3450 5100
-F 0 "R13" V 3350 5100 50  0000 C CNN
-F 1 "5.6k" V 3450 5100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3380 5100 50  0001 C CNN
-F 3 "~" H 3450 5100 50  0001 C CNN
-	1    3450 5100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 60492EE9
-P 4050 5100
-F 0 "R14" V 3950 5100 50  0000 C CNN
-F 1 "1k" V 4050 5100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3980 5100 50  0001 C CNN
-F 3 "~" H 4050 5100 50  0001 C CNN
-	1    4050 5100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3600 5100 3750 5100
-$Comp
-L power:GND #PWR0107
-U 1 1 604933C2
-P 4250 5500
-F 0 "#PWR0107" H 4250 5250 50  0001 C CNN
-F 1 "GND" H 4250 5350 50  0000 C CNN
-F 2 "" H 4250 5500 50  0001 C CNN
-F 3 "" H 4250 5500 50  0001 C CNN
-	1    4250 5500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 5100 4250 5100
-Text Label 3700 5100 0    50   ~ 0
-0V5
 Text Label 4300 2000 1    50   ~ 0
 0V5
 Wire Wire Line
 	4300 2000 4300 1850
 Wire Wire Line
 	4800 1550 4700 1550
-Wire Notes Line
-	2800 4850 4400 4850
-Text Notes 2800 5800 0    50   ~ 0
-Offset voltage
 Wire Wire Line
 	4400 1850 4400 2000
 Wire Wire Line
@@ -456,8 +402,6 @@ Wire Wire Line
 	2650 2200 3350 2200
 Wire Wire Line
 	2550 2200 2650 2200
-Wire Wire Line
-	4800 1550 4950 1550
 Connection ~ 4800 1550
 Text Notes 1900 1500 0    50   ~ 0
 P = 0.73 W
@@ -480,35 +424,6 @@ Wire Wire Line
 	1750 2200 2550 2200
 Wire Wire Line
 	1550 1700 1750 1700
-$Comp
-L Device:C C12
-U 1 1 6049BC99
-P 3750 5300
-F 0 "C12" H 3865 5346 50  0000 L CNN
-F 1 "100n" H 3865 5255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3788 5150 50  0001 C CNN
-F 3 "~" H 3750 5300 50  0001 C CNN
-	1    3750 5300
-	1    0    0    -1  
-$EndComp
-Connection ~ 3750 5100
-Wire Wire Line
-	3750 5100 3900 5100
-Wire Wire Line
-	3750 5100 3750 5150
-Text Notes 3500 5350 0    50   ~ 0
-sot
-Wire Wire Line
-	4250 5100 4250 5500
-Wire Wire Line
-	3750 5450 3750 5500
-Wire Wire Line
-	3750 5500 4250 5500
-Connection ~ 4250 5500
-Wire Notes Line
-	4400 5700 2800 5700
-Wire Notes Line
-	2800 4850 2800 5700
 $Comp
 L power:GND #PWR0108
 U 1 1 604B0FBF
@@ -732,8 +647,6 @@ Wire Wire Line
 	2650 4250 3350 4250
 Wire Wire Line
 	2550 4250 2650 4250
-Wire Wire Line
-	4800 3600 4950 3600
 Connection ~ 4800 3600
 Text Notes 1900 3550 0    50   ~ 0
 P = 0.73 W
@@ -777,12 +690,6 @@ Phase 1 current measurement
 Text Notes 1000 4700 0    50   ~ 0
 Phase 2 current measurement
 Wire Wire Line
-	3050 5100 3300 5100
-Wire Notes Line
-	4400 5700 4400 4850
-Text Notes 2800 5950 0    50   ~ 0
-3.3 V * 1000/(5600+1000) = 0.5 V
-Wire Wire Line
 	2100 4950 2100 5050
 Wire Wire Line
 	2100 5350 2100 5500
@@ -823,40 +730,6 @@ Text Notes 2900 3650 0    50   ~ 0
 Caps 5%
 Text Notes 1800 4350 0    50   ~ 0
 Tolerance =<1%
-Text Notes 3450 4950 0    50   ~ 0
-Tolerance <1%
-$Comp
-L Connector:TestPoint TP2
-U 1 1 604BAD99
-P 4950 3450
-F 0 "TP2" H 5000 3600 50  0000 L CNN
-F 1 "TestPoint" H 5000 3500 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 5150 3450 50  0001 C CNN
-F 3 "~" H 5150 3450 50  0001 C CNN
-	1    4950 3450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 3450 4950 3600
-Wire Wire Line
-	4950 3600 5000 3600
-Connection ~ 4950 3600
-$Comp
-L Connector:TestPoint TP1
-U 1 1 604C69A1
-P 4950 1400
-F 0 "TP1" H 5000 1550 50  0000 L CNN
-F 1 "TestPoint" H 5000 1450 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Plated_Hole_D2.0mm" H 5150 1400 50  0001 C CNN
-F 3 "~" H 5150 1400 50  0001 C CNN
-	1    4950 1400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 1400 4950 1550
-Wire Wire Line
-	5000 1550 4950 1550
-Connection ~ 4950 1550
 $Comp
 L Device:R R11
 U 1 1 604E9E51
@@ -904,4 +777,114 @@ F 4 "ERJ-14NF54R9U" V 2150 3700 50  0001 C CNN "Name"
 	1    2150 3700
 	0    1    1    0   
 $EndComp
+$Comp
+L ElectricGoKart:+3V3_Ref #PWR07
+U 1 1 604FDECB
+P 3100 5100
+F 0 "#PWR07" H 3100 4950 50  0001 C CNN
+F 1 "+3V3_Ref" H 2900 5250 50  0000 L CNN
+F 2 "" H 3100 5100 50  0001 C CNN
+F 3 "" H 3100 5100 50  0001 C CNN
+	1    3100 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 604FDED1
+P 3450 5100
+F 0 "R13" V 3350 5100 50  0000 C CNN
+F 1 "5.1k" V 3450 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3380 5100 50  0001 C CNN
+F 3 "~" H 3450 5100 50  0001 C CNN
+	1    3450 5100
+	0    1    1    0   
+$EndComp
+Text Label 4300 5100 2    50   ~ 0
+0V5
+Text Notes 2850 5800 0    50   ~ 0
+Offset voltage
+Wire Notes Line
+	2850 4850 2850 5700
+Text Notes 2850 5950 0    50   ~ 0
+1.225 V * 1000/(1450+1000) = 0.5 V
+$Comp
+L ElectricGoKart:LM4041CFTA D4
+U 1 1 60504C24
+P 3750 5500
+F 0 "D4" V 3950 5750 50  0000 R CNN
+F 1 "LM4041CFTA" V 3850 6100 50  0000 R CNN
+F 2 "ElectricGoKart:LM4041" H 3750 5700 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/115/LM4041-10542.pdf" H 3750 5700 50  0001 C CNN
+	1    3750 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3750 5100 3750 5200
+$Comp
+L power:GND #PWR08
+U 1 1 6050AF5E
+P 3750 5500
+F 0 "#PWR08" H 3750 5250 50  0001 C CNN
+F 1 "GND" H 3750 5350 50  0000 C CNN
+F 2 "" H 3750 5500 50  0001 C CNN
+F 3 "" H 3750 5500 50  0001 C CNN
+	1    3750 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 6051185B
+P 4000 5100
+F 0 "R14" V 3900 5100 50  0000 C CNN
+F 1 "1.43k" V 4000 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3930 5100 50  0001 C CNN
+F 3 "~" H 4000 5100 50  0001 C CNN
+	1    4000 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 5100 3850 5100
+Connection ~ 3750 5100
+$Comp
+L Device:R R20
+U 1 1 6051721E
+P 4300 5350
+F 0 "R20" V 4200 5350 50  0000 C CNN
+F 1 "1k" V 4300 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 5350 50  0001 C CNN
+F 3 "~" H 4300 5350 50  0001 C CNN
+	1    4300 5350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 5100 4300 5100
+Wire Wire Line
+	4300 5100 4300 5200
+$Comp
+L power:GND #PWR011
+U 1 1 6051D44D
+P 4300 5500
+F 0 "#PWR011" H 4300 5250 50  0001 C CNN
+F 1 "GND" H 4300 5350 50  0000 C CNN
+F 2 "" H 4300 5500 50  0001 C CNN
+F 3 "" H 4300 5500 50  0001 C CNN
+	1    4300 5500
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	4500 4850 4500 5700
+Wire Notes Line
+	4500 5700 2850 5700
+Wire Notes Line
+	2850 4850 4500 4850
+Text Notes 2900 5550 0    50   ~ 0
+1.225 V reference
+Wire Wire Line
+	3100 5100 3300 5100
+Wire Wire Line
+	3600 5100 3750 5100
+Wire Wire Line
+	4800 1550 5000 1550
+Wire Wire Line
+	4800 3600 5000 3600
 $EndSCHEMATC
