@@ -26,9 +26,10 @@ L Device:R R4
 U 1 1 6045F72E
 P 2150 1750
 F 0 "R4" V 2250 1750 50  0000 C CNN
-F 1 "sot" V 2150 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 2080 1750 50  0001 C CNN
-F 3 "~" H 2150 1750 50  0001 C CNN
+F 1 "56" V 2150 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 1750 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 2150 1750 50  0001 C CNN
+F 4 "RC1210FR-0756RL" V 2150 1750 50  0001 C CNN "Name"
 	1    2150 1750
 	0    1    1    0   
 $EndComp
@@ -49,7 +50,7 @@ L Device:R R6
 U 1 1 60462548
 P 2650 1950
 F 0 "R6" H 2600 1950 50  0000 R CNN
-F 1 "sot" V 2650 2000 50  0000 R CNN
+F 1 "DNP" V 2650 2050 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 1950 50  0001 C CNN
 F 3 "~" H 2650 1950 50  0001 C CNN
 	1    2650 1950
@@ -412,9 +413,10 @@ L Device:R R5
 U 1 1 60477681
 P 2550 1950
 F 0 "R5" H 2700 1950 50  0000 R CNN
-F 1 "sot" V 2550 2000 50  0000 R CNN
+F 1 "3.09" V 2550 2050 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 2480 1950 50  0001 C CNN
-F 3 "~" H 2550 1950 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf" H 2550 1950 50  0001 C CNN
+F 4 "CRCW06033R09FKEA" H 2550 1950 50  0001 C CNN "Name"
 	1    2550 1950
 	-1   0    0    1   
 $EndComp
@@ -423,9 +425,10 @@ L Device:R R2
 U 1 1 60477860
 P 2150 1650
 F 0 "R2" V 2050 1650 50  0000 C CNN
-F 1 "sot" V 2150 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 2080 1650 50  0001 C CNN
-F 3 "~" H 2150 1650 50  0001 C CNN
+F 1 "54.9" V 2150 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 1650 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf" H 2150 1650 50  0001 C CNN
+F 4 "ERJ-14NF54R9U" V 2150 1650 50  0001 C CNN "Name"
 	1    2150 1650
 	0    1    1    0   
 $EndComp
@@ -456,8 +459,8 @@ Wire Wire Line
 Wire Wire Line
 	4800 1550 4950 1550
 Connection ~ 4800 1550
-Text Notes 1950 1500 0    50   ~ 0
-P = 0.7 W
+Text Notes 1900 1500 0    50   ~ 0
+P = 0.73 W
 Wire Wire Line
 	2550 1700 2650 1700
 Wire Wire Line
@@ -506,28 +509,6 @@ Wire Notes Line
 	4400 5700 2800 5700
 Wire Notes Line
 	2800 4850 2800 5700
-$Comp
-L Device:R R10
-U 1 1 604B0FAD
-P 2150 3800
-F 0 "R10" V 2250 3800 50  0000 C CNN
-F 1 "sot" V 2150 3800 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 2080 3800 50  0001 C CNN
-F 3 "~" H 2150 3800 50  0001 C CNN
-	1    2150 3800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R12
-U 1 1 604B0FB9
-P 2650 4000
-F 0 "R12" H 2600 4000 50  0000 R CNN
-F 1 "sot" V 2650 4050 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 4000 50  0001 C CNN
-F 3 "~" H 2650 4000 50  0001 C CNN
-	1    2650 4000
-	-1   0    0    1   
-$EndComp
 $Comp
 L power:GND #PWR0108
 U 1 1 604B0FBF
@@ -727,28 +708,6 @@ Wire Wire Line
 	2850 3050 3350 3050
 Text Notes 2400 4200 0    50   ~ 0
 P = 0.08 W
-$Comp
-L Device:R R11
-U 1 1 604B102B
-P 2550 4000
-F 0 "R11" H 2750 4000 50  0000 R CNN
-F 1 "sot" V 2550 4050 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2480 4000 50  0001 C CNN
-F 3 "~" H 2550 4000 50  0001 C CNN
-	1    2550 4000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R8
-U 1 1 604B1031
-P 2150 3700
-F 0 "R8" V 2050 3700 50  0000 C CNN
-F 1 "sot" V 2150 3700 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric" V 2080 3700 50  0001 C CNN
-F 3 "~" H 2150 3700 50  0001 C CNN
-	1    2150 3700
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2550 4150 2550 4250
 Wire Wire Line
@@ -776,8 +735,8 @@ Wire Wire Line
 Wire Wire Line
 	4800 3600 4950 3600
 Connection ~ 4800 3600
-Text Notes 1950 3550 0    50   ~ 0
-P = 0.7 W
+Text Notes 1900 3550 0    50   ~ 0
+P = 0.73 W
 Wire Wire Line
 	2550 3750 2650 3750
 Wire Wire Line
@@ -858,12 +817,12 @@ F 4 "HZ0805D152R-10" V 1700 6050 50  0001 C CNN "Name"
 $EndComp
 Text Notes 2900 1600 0    50   ~ 0
 Caps 5%
-Text Notes 1850 2300 0    50   ~ 0
-Tolerance <1%
+Text Notes 1800 2300 0    50   ~ 0
+Tolerance =<1%
 Text Notes 2900 3650 0    50   ~ 0
 Caps 5%
-Text Notes 1850 4350 0    50   ~ 0
-Tolerance <1%
+Text Notes 1800 4350 0    50   ~ 0
+Tolerance =<1%
 Text Notes 3450 4950 0    50   ~ 0
 Tolerance <1%
 $Comp
@@ -898,4 +857,51 @@ Wire Wire Line
 Wire Wire Line
 	5000 1550 4950 1550
 Connection ~ 4950 1550
+$Comp
+L Device:R R11
+U 1 1 604E9E51
+P 2550 4000
+F 0 "R11" H 2700 4000 50  0000 R CNN
+F 1 "3.09" V 2550 4100 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2480 4000 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf" H 2550 4000 50  0001 C CNN
+F 4 "CRCW06033R09FKEA" H 2550 4000 50  0001 C CNN "Name"
+	1    2550 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 604EA7D1
+P 2650 4000
+F 0 "R12" H 2600 4000 50  0000 R CNN
+F 1 "DNP" V 2650 4100 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 4000 50  0001 C CNN
+F 3 "~" H 2650 4000 50  0001 C CNN
+	1    2650 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 604F4513
+P 2150 3800
+F 0 "R10" V 2250 3800 50  0000 C CNN
+F 1 "56" V 2150 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 3800 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 2150 3800 50  0001 C CNN
+F 4 "RC1210FR-0756RL" V 2150 3800 50  0001 C CNN "Name"
+	1    2150 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 604F451A
+P 2150 3700
+F 0 "R8" V 2050 3700 50  0000 C CNN
+F 1 "54.9" V 2150 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 3700 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf" H 2150 3700 50  0001 C CNN
+F 4 "ERJ-14NF54R9U" V 2150 3700 50  0001 C CNN "Name"
+	1    2150 3700
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

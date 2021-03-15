@@ -29,7 +29,7 @@ L Device:R R15
 U 1 1 60536ECE
 P 1700 1500
 F 0 "R15" H 1750 1500 50  0000 L CNN
-F 1 "9.88k" V 1700 1400 50  0000 L CNN
+F 1 "11.5k" V 1700 1400 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 1630 1500 50  0001 C CNN
 F 3 "~" H 1700 1500 50  0001 C CNN
 	1    1700 1500
@@ -324,8 +324,8 @@ Wire Wire Line
 	1900 1750 1900 1900
 Wire Wire Line
 	1900 2100 1900 2200
-Text Notes 900  3450 0    50   ~ 0
-R_pot = 0 Ohm to 7.5 kOhm\n\nTorque output:\n3.3 V * (R_pot || R_L) / (R_pot || R_L + R_H) = 0 V to 1 V
+Text Notes 900  3550 0    50   ~ 0
+R_pot = 0 Ohm to 7.5 kOhm\n\nTorque output:\n3.3 V * (R_pot || R_L) / (R_pot || R_L + R_H) = 0 V to 0.9 V\n\n> 0.9 V means pedal disconnected.
 $Comp
 L Connector:TestPoint TP?
 U 1 1 604E435E
