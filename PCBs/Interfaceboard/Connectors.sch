@@ -298,23 +298,23 @@ Wire Wire Line
 	4200 1800 4250 1800
 Wire Wire Line
 	4200 1900 4250 1900
-Text HLabel 4200 3000 0    50   BiDi ~ 0
+Text HLabel 4200 3000 0    50   Input ~ 0
 Digital1
 Wire Wire Line
 	4200 3000 4250 3000
-Text HLabel 4200 3100 0    50   BiDi ~ 0
+Text HLabel 4200 3100 0    50   Output ~ 0
 Digital2
 Wire Wire Line
 	4200 3100 4250 3100
-Text HLabel 4200 3200 0    50   BiDi ~ 0
+Text HLabel 4200 3200 0    50   Output ~ 0
 Digital3
 Wire Wire Line
 	4200 3200 4250 3200
-Text HLabel 4200 3300 0    50   BiDi ~ 0
+Text HLabel 4200 3300 0    50   Output ~ 0
 Digital4
 Wire Wire Line
 	4200 3300 4250 3300
-Text HLabel 4200 3400 0    50   BiDi ~ 0
+Text HLabel 4200 3400 0    50   Output ~ 0
 Digital5
 Wire Wire Line
 	4200 3400 4250 3400

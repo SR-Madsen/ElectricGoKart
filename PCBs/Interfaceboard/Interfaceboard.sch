@@ -20,8 +20,8 @@ F0 "Currents" 50
 F1 "Currents.sch" 50
 F2 "Phase1_In" I R 4500 2500 50 
 F3 "Phase2_In" I R 4500 2600 50 
-F4 "Phase1_ADC" O R 4500 2800 50 
-F5 "Phase2_ADC" O R 4500 2900 50 
+F4 "Phase1_ADC" O R 4500 2900 50 
+F5 "Phase2_ADC" O R 4500 2800 50 
 $EndSheet
 $Sheet
 S 6350 2400 900  550 
@@ -54,22 +54,22 @@ F4 "Torque_Meas" I R 6100 2500 50
 F5 "ADC3" I L 4900 2800 50 
 F6 "ADC4" I L 4900 2900 50 
 F7 "ADC1" I R 6100 2800 50 
-F8 "Digital1" B R 6100 3300 50 
-F9 "Digital2" B R 6100 3400 50 
-F10 "Digital3" B R 6100 3500 50 
-F11 "Digital4" B R 6100 3600 50 
-F12 "Digital5" B R 6100 3700 50 
+F8 "Digital1" I R 6100 3300 50 
+F9 "Digital2" O R 6100 3400 50 
+F10 "Digital3" O R 6100 3500 50 
+F11 "Digital4" O R 6100 3600 50 
+F12 "Digital5" O R 6100 3700 50 
 $EndSheet
 $Sheet
 S 6350 3200 900  600 
 U 604F3ED7
 F0 "Buttons" 50
 F1 "Buttons.sch" 50
-F2 "Dig1" B L 6350 3300 50 
-F3 "Dig2" B L 6350 3400 50 
-F4 "Dig3" B L 6350 3500 50 
-F5 "Dig4" B L 6350 3600 50 
-F6 "Dig5" B L 6350 3700 50 
+F2 "Dig1" O L 6350 3300 50 
+F3 "Dig2" I L 6350 3400 50 
+F4 "Dig3" I L 6350 3500 50 
+F5 "Dig4" I L 6350 3600 50 
+F6 "Dig5" I L 6350 3700 50 
 $EndSheet
 Wire Wire Line
 	6350 3300 6100 3300

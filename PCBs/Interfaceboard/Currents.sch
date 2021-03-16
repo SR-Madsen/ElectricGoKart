@@ -14,13 +14,13 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text HLabel 1550 1700 0    50   Input ~ 0
-Phase1_In
-Text HLabel 1550 3750 0    50   Input ~ 0
 Phase2_In
+Text HLabel 1550 3750 0    50   Input ~ 0
+Phase1_In
 Text HLabel 5000 1550 2    50   Output ~ 0
-Phase1_ADC
-Text HLabel 5000 3600 2    50   Output ~ 0
 Phase2_ADC
+Text HLabel 5000 3600 2    50   Output ~ 0
+Phase1_ADC
 $Comp
 L Device:R R4
 U 1 1 6045F72E
@@ -686,9 +686,9 @@ Wire Notes Line
 Wire Notes Line
 	1000 4600 1000 2750
 Text Notes 1000 2650 0    50   ~ 0
-Phase 1 current measurement
-Text Notes 1000 4700 0    50   ~ 0
 Phase 2 current measurement
+Text Notes 1000 4700 0    50   ~ 0
+Phase 1 current measurement
 Wire Wire Line
 	2100 4950 2100 5050
 Wire Wire Line
