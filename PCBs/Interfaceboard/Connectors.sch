@@ -477,8 +477,8 @@ L Mechanical:MountingHole H1
 U 1 1 604D7436
 P 3900 4200
 F 0 "H1" H 4000 4246 50  0000 L CNN
-F 1 "M2 Mount" H 4000 4155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.1mm" H 3900 4200 50  0001 C CNN
+F 1 "M3 Mount" H 4000 4155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 3900 4200 50  0001 C CNN
 F 3 "~" H 3900 4200 50  0001 C CNN
 	1    3900 4200
 	1    0    0    -1  
@@ -488,8 +488,8 @@ L Mechanical:MountingHole H2
 U 1 1 604D793D
 P 4700 4200
 F 0 "H2" H 4800 4246 50  0000 L CNN
-F 1 "M2 Mount" H 4800 4155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.1mm" H 4700 4200 50  0001 C CNN
+F 1 "M3 Mount" H 4800 4155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4700 4200 50  0001 C CNN
 F 3 "~" H 4700 4200 50  0001 C CNN
 	1    4700 4200
 	1    0    0    -1  
