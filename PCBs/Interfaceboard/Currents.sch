@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
-Title "Interface Board for Control of PMAC Motor in Electric Go-Kart"
-Date "2021-03-04"
+Sheet 2 5
+Title "Analog Board for Control of PMAC Motor in Electric Go-Kart"
+Date "2021-03-13"
 Rev "Version 1"
 Comp "University of Southern Denmark"
 Comment1 "Group 1"
@@ -13,4 +13,878 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 1550 1700 0    50   Input ~ 0
+Phase2_In
+Text HLabel 1550 3750 0    50   Input ~ 0
+Phase1_In
+Text HLabel 5000 1550 2    50   Output ~ 0
+Phase2_ADC
+Text HLabel 5000 3600 2    50   Output ~ 0
+Phase1_ADC
+$Comp
+L Device:R R4
+U 1 1 6045F72E
+P 2150 1750
+F 0 "R4" V 2250 1750 50  0000 C CNN
+F 1 "56" V 2150 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 1750 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 2150 1750 50  0001 C CNN
+F 4 "RC1210FR-0756RL" V 2150 1750 50  0001 C CNN "Name"
+	1    2150 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_TVS D1
+U 1 1 60460985
+P 1750 1950
+F 0 "D1" V 1704 2030 50  0000 L CNN
+F 1 "5 V" V 1795 2030 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 1750 1950 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/115/DESD5V0U1BB-553022.pdf" H 1750 1950 50  0001 C CNN
+F 4 "DESD5V0U1BB-7" V 1750 1950 50  0001 C CNN "Name"
+	1    1750 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 60462548
+P 2650 1950
+F 0 "R6" H 2600 1950 50  0000 R CNN
+F 1 "DNP" V 2650 2050 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 1950 50  0001 C CNN
+F 3 "~" H 2650 1950 50  0001 C CNN
+	1    2650 1950
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 6046361F
+P 2650 2250
+F 0 "#PWR0101" H 2650 2000 50  0001 C CNN
+F 1 "GND" H 2655 2077 50  0000 C CNN
+F 2 "" H 2650 2250 50  0001 C CNN
+F 3 "" H 2650 2250 50  0001 C CNN
+	1    2650 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L ElectricGoKart:AD8420ARMZ U1
+U 1 1 6046677D
+P 3900 1350
+F 0 "U1" H 4400 1400 50  0000 L CNN
+F 1 "AD8420ARMZ" H 4400 1300 50  0000 L CNN
+F 2 "ElectricGoKart:AD8420ARMZ" H 4300 1500 50  0001 L CNN
+F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf" H 4300 1400 50  0001 L CNN
+F 4 "Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP" H 4300 1400 50  0001 L CNN "Description"
+	1    3900 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+15V #PWR0102
+U 1 1 60469F81
+P 1400 4950
+F 0 "#PWR0102" H 1400 4800 50  0001 C CNN
+F 1 "+15V" V 1400 5100 50  0000 L CNN
+F 2 "" H 1400 4950 50  0001 C CNN
+F 3 "" H 1400 4950 50  0001 C CNN
+	1    1400 4950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-15V #PWR0103
+U 1 1 6046A5E6
+P 1400 6050
+F 0 "#PWR0103" H 1400 6150 50  0001 C CNN
+F 1 "-15V" V 1400 6300 50  0000 C CNN
+F 2 "" H 1400 6050 50  0001 C CNN
+F 3 "" H 1400 6050 50  0001 C CNN
+	1    1400 6050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Ferrite_Bead_Small FB1
+U 1 1 6046E503
+P 1700 4950
+F 0 "FB1" V 1550 4950 50  0000 C CNN
+F 1 "400 mA, 1k5" V 1450 4950 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric" V 1630 4950 50  0001 C CNN
+F 3 "https://www.mouser.com/catalog/specsheets/Laird_10092020_Laird%20MCP%20Catalog-EMI%20Filtering%20and%20RF%20Inductor%20Sep%202020.pdf" H 1700 4950 50  0001 C CNN
+F 4 "HZ0805D152R-10" V 1700 4950 50  0001 C CNN "Name"
+	1    1700 4950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 6046F6B4
+P 4050 1100
+F 0 "C1" V 4000 1000 50  0000 C CNN
+F 1 "100n" V 4100 950 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4088 950 50  0001 C CNN
+F 3 "~" H 4050 1100 50  0001 C CNN
+	1    4050 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C13
+U 1 1 60471DB3
+P 2100 5800
+F 0 "C13" H 2200 5850 50  0000 L CNN
+F 1 "10µ" H 2200 5750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2138 5650 50  0001 C CNN
+F 3 "~" H 2100 5800 50  0001 C CNN
+	1    2100 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C11
+U 1 1 6047233E
+P 2100 5200
+F 0 "C11" H 2200 5250 50  0000 L CNN
+F 1 "10µ" H 2200 5150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2138 5050 50  0001 C CNN
+F 3 "~" H 2100 5200 50  0001 C CNN
+	1    2100 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 60472932
+P 3950 2000
+F 0 "C5" V 3900 1900 50  0000 C CNN
+F 1 "100n" V 4000 1850 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3988 1850 50  0001 C CNN
+F 3 "~" H 3950 2000 50  0001 C CNN
+	1    3950 2000
+	0    1    1    0   
+$EndComp
+Connection ~ 4200 1100
+Wire Wire Line
+	4200 1100 4200 1250
+Wire Wire Line
+	1400 6050 1600 6050
+Wire Wire Line
+	1400 4950 1600 4950
+Wire Wire Line
+	1800 6050 2100 6050
+Wire Wire Line
+	1800 4950 2100 4950
+$Comp
+L power:GND #PWR0104
+U 1 1 60475103
+P 2150 5500
+F 0 "#PWR0104" H 2150 5250 50  0001 C CNN
+F 1 "GND" V 2150 5300 50  0000 C CNN
+F 2 "" H 2150 5500 50  0001 C CNN
+F 3 "" H 2150 5500 50  0001 C CNN
+	1    2150 5500
+	0    -1   -1   0   
+$EndComp
+Text Label 2550 6050 2    50   ~ 0
+-15V_Filt
+Text Label 2550 4950 2    50   ~ 0
++15V_Filt
+Connection ~ 2100 6050
+Wire Wire Line
+	2100 6050 2550 6050
+Connection ~ 2100 4950
+Wire Wire Line
+	2100 4950 2550 4950
+Wire Notes Line
+	1000 4850 2700 4850
+Wire Notes Line
+	2700 4850 2700 6150
+Wire Notes Line
+	2700 6150 1000 6150
+Wire Notes Line
+	1000 6150 1000 4850
+Text Notes 1000 6250 0    50   ~ 0
+Power supply stabilization
+Wire Wire Line
+	2100 5500 2150 5500
+Text Label 4200 750  3    50   ~ 0
++15V_Filt
+Text Label 4200 2400 1    50   ~ 0
+-15V_Filt
+Wire Wire Line
+	4200 750  4200 1100
+$Comp
+L power:GND #PWR0105
+U 1 1 60490128
+P 3350 950
+F 0 "#PWR0105" H 3350 700 50  0001 C CNN
+F 1 "GND" H 3350 800 50  0000 C CNN
+F 2 "" H 3350 950 50  0001 C CNN
+F 3 "" H 3350 950 50  0001 C CNN
+	1    3350 950 
+	-1   0    0    1   
+$EndComp
+Text Label 4300 2000 1    50   ~ 0
+0V5
+Wire Wire Line
+	4300 2000 4300 1850
+Wire Wire Line
+	4800 1550 4700 1550
+Wire Wire Line
+	4400 1850 4400 2000
+Wire Wire Line
+	4400 2000 4800 2000
+Wire Wire Line
+	4800 1550 4800 2000
+Wire Wire Line
+	1750 1700 1750 1800
+Wire Wire Line
+	1750 2100 1750 2200
+Wire Wire Line
+	2650 1700 2650 1800
+Wire Wire Line
+	2650 2100 2650 2200
+Wire Wire Line
+	2650 2250 2650 2200
+Wire Wire Line
+	3700 2000 3800 2000
+Wire Wire Line
+	4200 1850 4200 2000
+Wire Wire Line
+	4100 2000 4200 2000
+Connection ~ 4200 2000
+Wire Wire Line
+	4200 2000 4200 2400
+$Comp
+L Device:R R3
+U 1 1 604A5686
+P 3050 1700
+F 0 "R3" V 3150 1700 50  0000 C CNN
+F 1 "20k" V 3050 1700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2980 1700 50  0001 C CNN
+F 3 "~" H 3050 1700 50  0001 C CNN
+	1    3050 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 604A77EA
+P 3350 1550
+F 0 "C3" H 3465 1596 50  0000 L CNN
+F 1 "1n" H 3465 1505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 1400 50  0001 C CNN
+F 3 "~" H 3350 1550 50  0001 C CNN
+	1    3350 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1700 3350 1700
+Wire Wire Line
+	3900 1650 3700 1650
+Wire Wire Line
+	3700 1650 3700 1700
+Wire Wire Line
+	3700 1700 3350 1700
+Connection ~ 3350 1700
+Connection ~ 3350 1400
+Wire Wire Line
+	3350 1400 3700 1400
+Wire Wire Line
+	3700 1400 3700 1450
+Wire Wire Line
+	3700 1450 3900 1450
+Wire Wire Line
+	3350 950  3350 1000
+Wire Wire Line
+	3350 1000 3700 1000
+Wire Wire Line
+	3700 1000 3700 1100
+Wire Wire Line
+	3700 1100 3900 1100
+Wire Wire Line
+	3700 2000 3700 2200
+Wire Wire Line
+	3350 2100 3350 2200
+Connection ~ 3350 2200
+Wire Wire Line
+	3350 2200 3700 2200
+Text Notes 5600 2950 0    50   ~ 0
+RFI Filter:\nf_c,diff = 1/(2*pi*R*(2*C_common+C_ground)) = 3789 Hz\nf_c,comm = 1/(2*pi*R*C_ground) = 79577 Hz\n\nDifferential phase delay at 333 Hz:\n-arctan(2*pi*333*R*(2*C_common+C_ground)) = -5 degrees
+$Comp
+L Device:C C4
+U 1 1 604A9DDE
+P 3350 1950
+F 0 "C4" H 3465 1996 50  0000 L CNN
+F 1 "100p" H 3465 1905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 1800 50  0001 C CNN
+F 3 "~" H 3350 1950 50  0001 C CNN
+	1    3350 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1800 3350 1700
+$Comp
+L Device:C C2
+U 1 1 604A982C
+P 3350 1200
+F 0 "C2" H 3465 1246 50  0000 L CNN
+F 1 "100p" H 3465 1155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 1050 50  0001 C CNN
+F 3 "~" H 3350 1200 50  0001 C CNN
+	1    3350 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1400 3350 1400
+$Comp
+L Device:R R1
+U 1 1 604A5B39
+P 3050 1400
+F 0 "R1" V 2950 1400 50  0000 C CNN
+F 1 "20k" V 3050 1400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2980 1400 50  0001 C CNN
+F 3 "~" H 3050 1400 50  0001 C CNN
+	1    3050 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2850 1400 2900 1400
+Wire Wire Line
+	3350 1400 3350 1350
+Wire Wire Line
+	3350 1050 3350 1000
+Connection ~ 3350 1000
+Wire Wire Line
+	2850 1400 2850 1000
+Wire Wire Line
+	2850 1000 3350 1000
+Text Notes 2400 2150 0    50   ~ 0
+P = 0.08 W
+$Comp
+L Device:R R5
+U 1 1 60477681
+P 2550 1950
+F 0 "R5" H 2700 1950 50  0000 R CNN
+F 1 "3.09" V 2550 2050 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2480 1950 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf" H 2550 1950 50  0001 C CNN
+F 4 "CRCW06033R09FKEA" H 2550 1950 50  0001 C CNN "Name"
+	1    2550 1950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60477860
+P 2150 1650
+F 0 "R2" V 2050 1650 50  0000 C CNN
+F 1 "54.9" V 2150 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 1650 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf" H 2150 1650 50  0001 C CNN
+F 4 "ERJ-14NF54R9U" V 2150 1650 50  0001 C CNN "Name"
+	1    2150 1650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 2100 2550 2200
+Wire Wire Line
+	1900 1700 1900 1650
+Wire Wire Line
+	1900 1650 2000 1650
+Wire Wire Line
+	1900 1700 1900 1750
+Wire Wire Line
+	1900 1750 2000 1750
+Connection ~ 1900 1700
+Wire Wire Line
+	2300 1650 2400 1650
+Wire Wire Line
+	2300 1750 2400 1750
+Connection ~ 2550 2200
+Connection ~ 2650 1700
+Wire Wire Line
+	2650 1700 2900 1700
+Connection ~ 2650 2200
+Wire Wire Line
+	2650 2200 3350 2200
+Wire Wire Line
+	2550 2200 2650 2200
+Connection ~ 4800 1550
+Text Notes 1900 1500 0    50   ~ 0
+P = 0.73 W
+Wire Wire Line
+	2550 1700 2650 1700
+Wire Wire Line
+	2400 1650 2400 1700
+Wire Wire Line
+	2550 1700 2550 1800
+Wire Wire Line
+	2550 1700 2400 1700
+Connection ~ 2550 1700
+Connection ~ 2400 1700
+Wire Wire Line
+	2400 1700 2400 1750
+Connection ~ 1750 1700
+Wire Wire Line
+	1750 1700 1900 1700
+Wire Wire Line
+	1750 2200 2550 2200
+Wire Wire Line
+	1550 1700 1750 1700
+$Comp
+L power:GND #PWR0108
+U 1 1 604B0FBF
+P 2650 4300
+F 0 "#PWR0108" H 2650 4050 50  0001 C CNN
+F 1 "GND" H 2655 4127 50  0000 C CNN
+F 2 "" H 2650 4300 50  0001 C CNN
+F 3 "" H 2650 4300 50  0001 C CNN
+	1    2650 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L ElectricGoKart:AD8420ARMZ U2
+U 1 1 604B0FC6
+P 3900 3400
+F 0 "U2" H 4400 3450 50  0000 L CNN
+F 1 "AD8420ARMZ" H 4400 3350 50  0000 L CNN
+F 2 "ElectricGoKart:AD8420ARMZ" H 4300 3550 50  0001 L CNN
+F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf" H 4300 3450 50  0001 L CNN
+F 4 "Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP" H 4300 3450 50  0001 L CNN "Description"
+	1    3900 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 604B0FCC
+P 4050 3150
+F 0 "C6" V 4000 3050 50  0000 C CNN
+F 1 "100n" V 4100 3000 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4088 3000 50  0001 C CNN
+F 3 "~" H 4050 3150 50  0001 C CNN
+	1    4050 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C10
+U 1 1 604B0FD2
+P 3950 4050
+F 0 "C10" V 3900 3950 50  0000 C CNN
+F 1 "100n" V 4000 3900 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3988 3900 50  0001 C CNN
+F 3 "~" H 3950 4050 50  0001 C CNN
+	1    3950 4050
+	0    1    1    0   
+$EndComp
+Connection ~ 4200 3150
+Wire Wire Line
+	4200 3150 4200 3300
+Text Label 4200 2800 3    50   ~ 0
++15V_Filt
+Text Label 4200 4450 1    50   ~ 0
+-15V_Filt
+Wire Wire Line
+	4200 2800 4200 3150
+$Comp
+L power:GND #PWR0109
+U 1 1 604B0FDD
+P 3350 3000
+F 0 "#PWR0109" H 3350 2750 50  0001 C CNN
+F 1 "GND" H 3350 2850 50  0000 C CNN
+F 2 "" H 3350 3000 50  0001 C CNN
+F 3 "" H 3350 3000 50  0001 C CNN
+	1    3350 3000
+	-1   0    0    1   
+$EndComp
+Text Label 4300 4050 1    50   ~ 0
+0V5
+Wire Wire Line
+	4300 4050 4300 3900
+Wire Wire Line
+	4800 3600 4700 3600
+Wire Wire Line
+	4400 3900 4400 4050
+Wire Wire Line
+	4400 4050 4800 4050
+Wire Wire Line
+	4800 3600 4800 4050
+Wire Wire Line
+	1750 3750 1750 3850
+Wire Wire Line
+	1750 4150 1750 4250
+Wire Wire Line
+	2650 3750 2650 3850
+Wire Wire Line
+	2650 4150 2650 4250
+Wire Wire Line
+	2650 4300 2650 4250
+Wire Wire Line
+	3700 4050 3800 4050
+Wire Wire Line
+	4200 3900 4200 4050
+Wire Wire Line
+	4100 4050 4200 4050
+Connection ~ 4200 4050
+Wire Wire Line
+	4200 4050 4200 4450
+$Comp
+L Device:R R9
+U 1 1 604B0FF3
+P 3050 3750
+F 0 "R9" V 3150 3750 50  0000 C CNN
+F 1 "20k" V 3050 3750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2980 3750 50  0001 C CNN
+F 3 "~" H 3050 3750 50  0001 C CNN
+	1    3050 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 604B0FF9
+P 3350 3600
+F 0 "C8" H 3465 3646 50  0000 L CNN
+F 1 "1n" H 3465 3555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 3450 50  0001 C CNN
+F 3 "~" H 3350 3600 50  0001 C CNN
+	1    3350 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 3750 3350 3750
+Wire Wire Line
+	3900 3700 3700 3700
+Wire Wire Line
+	3700 3700 3700 3750
+Wire Wire Line
+	3700 3750 3350 3750
+Connection ~ 3350 3750
+Connection ~ 3350 3450
+Wire Wire Line
+	3350 3450 3700 3450
+Wire Wire Line
+	3700 3450 3700 3500
+Wire Wire Line
+	3700 3500 3900 3500
+Wire Wire Line
+	3350 3000 3350 3050
+Wire Wire Line
+	3350 3050 3700 3050
+Wire Wire Line
+	3700 3050 3700 3150
+Wire Wire Line
+	3700 3150 3900 3150
+Wire Wire Line
+	3700 4050 3700 4250
+Wire Wire Line
+	3350 4150 3350 4250
+Connection ~ 3350 4250
+Wire Wire Line
+	3350 4250 3700 4250
+$Comp
+L Device:C C9
+U 1 1 604B1010
+P 3350 4000
+F 0 "C9" H 3465 4046 50  0000 L CNN
+F 1 "100p" H 3465 3955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 3850 50  0001 C CNN
+F 3 "~" H 3350 4000 50  0001 C CNN
+	1    3350 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 3850 3350 3750
+$Comp
+L Device:C C7
+U 1 1 604B1017
+P 3350 3250
+F 0 "C7" H 3465 3296 50  0000 L CNN
+F 1 "100p" H 3465 3205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3388 3100 50  0001 C CNN
+F 3 "~" H 3350 3250 50  0001 C CNN
+	1    3350 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 3450 3350 3450
+$Comp
+L Device:R R7
+U 1 1 604B101E
+P 3050 3450
+F 0 "R7" V 2950 3450 50  0000 C CNN
+F 1 "20k" V 3050 3450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2980 3450 50  0001 C CNN
+F 3 "~" H 3050 3450 50  0001 C CNN
+	1    3050 3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2850 3450 2900 3450
+Wire Wire Line
+	3350 3450 3350 3400
+Wire Wire Line
+	3350 3100 3350 3050
+Connection ~ 3350 3050
+Wire Wire Line
+	2850 3450 2850 3050
+Wire Wire Line
+	2850 3050 3350 3050
+Text Notes 2400 4200 0    50   ~ 0
+P = 0.08 W
+Wire Wire Line
+	2550 4150 2550 4250
+Wire Wire Line
+	1900 3750 1900 3700
+Wire Wire Line
+	1900 3700 2000 3700
+Wire Wire Line
+	1900 3750 1900 3800
+Wire Wire Line
+	1900 3800 2000 3800
+Connection ~ 1900 3750
+Wire Wire Line
+	2300 3700 2400 3700
+Wire Wire Line
+	2300 3800 2400 3800
+Connection ~ 2550 4250
+Connection ~ 2650 3750
+Wire Wire Line
+	2650 3750 2900 3750
+Connection ~ 2650 4250
+Wire Wire Line
+	2650 4250 3350 4250
+Wire Wire Line
+	2550 4250 2650 4250
+Connection ~ 4800 3600
+Text Notes 1900 3550 0    50   ~ 0
+P = 0.73 W
+Wire Wire Line
+	2550 3750 2650 3750
+Wire Wire Line
+	2400 3700 2400 3750
+Wire Wire Line
+	2550 3750 2550 3850
+Wire Wire Line
+	2550 3750 2400 3750
+Connection ~ 2550 3750
+Connection ~ 2400 3750
+Wire Wire Line
+	2400 3750 2400 3800
+Connection ~ 1750 3750
+Wire Wire Line
+	1750 3750 1900 3750
+Wire Wire Line
+	1750 4250 2550 4250
+Wire Wire Line
+	1550 3750 1750 3750
+Wire Notes Line
+	1000 700  5550 700 
+Wire Notes Line
+	5550 700  5550 2550
+Wire Notes Line
+	5550 2550 1000 2550
+Wire Notes Line
+	1000 2550 1000 700 
+Wire Notes Line
+	1000 2750 5550 2750
+Wire Notes Line
+	5550 2750 5550 4600
+Wire Notes Line
+	5550 4600 1000 4600
+Wire Notes Line
+	1000 4600 1000 2750
+Text Notes 1000 2650 0    50   ~ 0
+Phase 2 current measurement
+Text Notes 1000 4700 0    50   ~ 0
+Phase 1 current measurement
+Wire Wire Line
+	2100 4950 2100 5050
+Wire Wire Line
+	2100 5350 2100 5500
+Wire Wire Line
+	2100 6050 2100 5950
+Wire Wire Line
+	2100 5650 2100 5500
+Connection ~ 2100 5500
+$Comp
+L Device:D_TVS D2
+U 1 1 6049D318
+P 1750 4000
+F 0 "D2" V 1704 4080 50  0000 L CNN
+F 1 "5 V" V 1795 4080 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 1750 4000 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/115/DESD5V0U1BB-553022.pdf" H 1750 4000 50  0001 C CNN
+F 4 "DESD5V0U1BB-7" V 1750 4000 50  0001 C CNN "Name"
+	1    1750 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Ferrite_Bead_Small FB2
+U 1 1 6049F80E
+P 1700 6050
+F 0 "FB2" V 1550 6050 50  0000 C CNN
+F 1 "400 mA, 1k5" V 1450 6050 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric" V 1630 6050 50  0001 C CNN
+F 3 "https://www.mouser.com/catalog/specsheets/Laird_10092020_Laird%20MCP%20Catalog-EMI%20Filtering%20and%20RF%20Inductor%20Sep%202020.pdf" H 1700 6050 50  0001 C CNN
+F 4 "HZ0805D152R-10" V 1700 6050 50  0001 C CNN "Name"
+	1    1700 6050
+	0    1    1    0   
+$EndComp
+Text Notes 2900 1600 0    50   ~ 0
+Caps 5%
+Text Notes 1800 2300 0    50   ~ 0
+Tolerance =<1%
+Text Notes 2900 3650 0    50   ~ 0
+Caps 5%
+Text Notes 1800 4350 0    50   ~ 0
+Tolerance =<1%
+$Comp
+L Device:R R11
+U 1 1 604E9E51
+P 2550 4000
+F 0 "R11" H 2700 4000 50  0000 R CNN
+F 1 "3.09" V 2550 4100 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2480 4000 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf" H 2550 4000 50  0001 C CNN
+F 4 "CRCW06033R09FKEA" H 2550 4000 50  0001 C CNN "Name"
+	1    2550 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 604EA7D1
+P 2650 4000
+F 0 "R12" H 2600 4000 50  0000 R CNN
+F 1 "DNP" V 2650 4100 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 4000 50  0001 C CNN
+F 3 "~" H 2650 4000 50  0001 C CNN
+	1    2650 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 604F4513
+P 2150 3800
+F 0 "R10" V 2250 3800 50  0000 C CNN
+F 1 "56" V 2150 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 3800 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 2150 3800 50  0001 C CNN
+F 4 "RC1210FR-0756RL" V 2150 3800 50  0001 C CNN "Name"
+	1    2150 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 604F451A
+P 2150 3700
+F 0 "R8" V 2050 3700 50  0000 C CNN
+F 1 "54.9" V 2150 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 2080 3700 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf" H 2150 3700 50  0001 C CNN
+F 4 "ERJ-14NF54R9U" V 2150 3700 50  0001 C CNN "Name"
+	1    2150 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L ElectricGoKart:+3V3_Ref #PWR07
+U 1 1 604FDECB
+P 3100 5100
+F 0 "#PWR07" H 3100 4950 50  0001 C CNN
+F 1 "+3V3_Ref" H 2900 5250 50  0000 L CNN
+F 2 "" H 3100 5100 50  0001 C CNN
+F 3 "" H 3100 5100 50  0001 C CNN
+	1    3100 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 604FDED1
+P 3450 5100
+F 0 "R13" V 3350 5100 50  0000 C CNN
+F 1 "5.1k" V 3450 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3380 5100 50  0001 C CNN
+F 3 "~" H 3450 5100 50  0001 C CNN
+	1    3450 5100
+	0    1    1    0   
+$EndComp
+Text Label 4300 5100 2    50   ~ 0
+0V5
+Text Notes 2850 5800 0    50   ~ 0
+Offset voltage
+Wire Notes Line
+	2850 4850 2850 5700
+Text Notes 2850 5950 0    50   ~ 0
+1.225 V * 1000/(1450+1000) = 0.5 V
+$Comp
+L ElectricGoKart:LM4041CFTA D4
+U 1 1 60504C24
+P 3750 5500
+F 0 "D4" V 3950 5750 50  0000 R CNN
+F 1 "LM4041CFTA" V 3850 6100 50  0000 R CNN
+F 2 "ElectricGoKart:LM4041" H 3750 5700 50  0001 C CNN
+F 3 "https://www.mouser.dk/datasheet/2/115/LM4041-10542.pdf" H 3750 5700 50  0001 C CNN
+	1    3750 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3750 5100 3750 5200
+$Comp
+L power:GND #PWR08
+U 1 1 6050AF5E
+P 3750 5500
+F 0 "#PWR08" H 3750 5250 50  0001 C CNN
+F 1 "GND" H 3750 5350 50  0000 C CNN
+F 2 "" H 3750 5500 50  0001 C CNN
+F 3 "" H 3750 5500 50  0001 C CNN
+	1    3750 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 6051185B
+P 4000 5100
+F 0 "R14" V 3900 5100 50  0000 C CNN
+F 1 "1.43k" V 4000 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3930 5100 50  0001 C CNN
+F 3 "~" H 4000 5100 50  0001 C CNN
+	1    4000 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 5100 3850 5100
+Connection ~ 3750 5100
+$Comp
+L Device:R R20
+U 1 1 6051721E
+P 4300 5350
+F 0 "R20" V 4200 5350 50  0000 C CNN
+F 1 "1k" V 4300 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 5350 50  0001 C CNN
+F 3 "~" H 4300 5350 50  0001 C CNN
+	1    4300 5350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 5100 4300 5100
+Wire Wire Line
+	4300 5100 4300 5200
+$Comp
+L power:GND #PWR011
+U 1 1 6051D44D
+P 4300 5500
+F 0 "#PWR011" H 4300 5250 50  0001 C CNN
+F 1 "GND" H 4300 5350 50  0000 C CNN
+F 2 "" H 4300 5500 50  0001 C CNN
+F 3 "" H 4300 5500 50  0001 C CNN
+	1    4300 5500
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	4500 4850 4500 5700
+Wire Notes Line
+	4500 5700 2850 5700
+Wire Notes Line
+	2850 4850 4500 4850
+Text Notes 2900 5550 0    50   ~ 0
+1.225 V reference
+Wire Wire Line
+	3100 5100 3300 5100
+Wire Wire Line
+	3600 5100 3750 5100
+Wire Wire Line
+	4800 1550 5000 1550
+Wire Wire Line
+	4800 3600 5000 3600
 $EndSCHEMATC

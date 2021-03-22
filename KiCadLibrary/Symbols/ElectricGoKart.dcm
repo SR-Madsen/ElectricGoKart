@@ -10,6 +10,15 @@ D Power flag, +5V_Ref
 K power-flag
 $ENDCMP
 #
+$CMP AD8420ARMZ
+D Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP
+F http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf
+$ENDCMP
+#
+$CMP LM4041CFTA
+D LM4041 Preicsion Micropower Shunt Voltage Reference
+$ENDCMP
+#
 $CMP TSW-105-07-T-D
 D 10 Position, Classic PCB Header Strips, 0.100" pitch
 F http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf
