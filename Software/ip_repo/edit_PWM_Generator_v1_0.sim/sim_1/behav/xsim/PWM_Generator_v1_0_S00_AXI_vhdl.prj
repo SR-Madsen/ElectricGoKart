@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl   \
+"../../../../PWM_Generator_1.0/hdl/PWM_Generator_v1_0_S00_AXI.vhd" \
+
+# Do not sort compile order
+nosort
