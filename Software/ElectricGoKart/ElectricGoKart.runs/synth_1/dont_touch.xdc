@@ -19,8 +19,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==ElectricGoKart_
 # IP: bd/ElectricGoKart/ip/ElectricGoKart_xbar_0/ElectricGoKart_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==ElectricGoKart_xbar_0 || ORIG_REF_NAME==ElectricGoKart_xbar_0} -quiet] -quiet
 
-# IP: bd/ElectricGoKart/ip/ElectricGoKart_PWM_Generator_0_2/ElectricGoKart_PWM_Generator_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==ElectricGoKart_PWM_Generator_0_2 || ORIG_REF_NAME==ElectricGoKart_PWM_Generator_0_2} -quiet] -quiet
+# IP: bd/ElectricGoKart/ip/ElectricGoKart_PWM_Generator_0_0/ElectricGoKart_PWM_Generator_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==ElectricGoKart_PWM_Generator_0_0 || ORIG_REF_NAME==ElectricGoKart_PWM_Generator_0_0} -quiet] -quiet
 
 # IP: bd/ElectricGoKart/ip/ElectricGoKart_auto_pc_0/ElectricGoKart_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==ElectricGoKart_auto_pc_0 || ORIG_REF_NAME==ElectricGoKart_auto_pc_0} -quiet] -quiet

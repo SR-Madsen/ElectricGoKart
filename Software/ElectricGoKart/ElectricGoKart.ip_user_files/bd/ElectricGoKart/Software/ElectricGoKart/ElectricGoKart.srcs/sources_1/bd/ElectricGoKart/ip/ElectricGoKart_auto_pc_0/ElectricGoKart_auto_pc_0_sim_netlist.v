@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Mar 22 16:12:58 2021
+// Date        : Mon Mar 22 16:12:57 2021
 // Host        : sebastian-ZBook running 64-bit Linux Mint 20
-// Command     : write_verilog -force -mode funcsim
-//               /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_auto_pc_0/ElectricGoKart_auto_pc_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top ElectricGoKart_auto_pc_0 -prefix
+//               ElectricGoKart_auto_pc_0_ ElectricGoKart_auto_pc_0_sim_netlist.v
 // Design      : ElectricGoKart_auto_pc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -343,10 +343,10 @@ endmodule
 (* C_AXI_RUSER_WIDTH = "1" *) (* C_AXI_SUPPORTS_READ = "1" *) (* C_AXI_SUPPORTS_USER_SIGNALS = "0" *) 
 (* C_AXI_SUPPORTS_WRITE = "1" *) (* C_AXI_WUSER_WIDTH = "1" *) (* C_FAMILY = "zynq" *) 
 (* C_IGNORE_ID = "0" *) (* C_M_AXI_PROTOCOL = "2" *) (* C_S_AXI_PROTOCOL = "1" *) 
-(* C_TRANSLATION_MODE = "2" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_axi_protocol_converter" *) 
-(* P_AXI3 = "1" *) (* P_AXI4 = "0" *) (* P_AXILITE = "2" *) 
-(* P_AXILITE_SIZE = "3'b010" *) (* P_CONVERSION = "2" *) (* P_DECERR = "2'b11" *) 
-(* P_INCR = "2'b01" *) (* P_PROTECTION = "1" *) (* P_SLVERR = "2'b10" *) 
+(* C_TRANSLATION_MODE = "2" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* P_AXI3 = "1" *) 
+(* P_AXI4 = "0" *) (* P_AXILITE = "2" *) (* P_AXILITE_SIZE = "3'b010" *) 
+(* P_CONVERSION = "2" *) (* P_DECERR = "2'b11" *) (* P_INCR = "2'b01" *) 
+(* P_PROTECTION = "1" *) (* P_SLVERR = "2'b10" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_axi_protocol_converter
    (aclk,
     aresetn,
@@ -726,7 +726,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_axi_protocol_conv
         .s_axi_rvalid(s_axi_rvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s
    (s_axi_rvalid,
     s_axi_awready,
@@ -1155,7 +1154,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_ar_channel" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_ar_channel
    (Q,
     m_valid_i_reg,
@@ -1478,7 +1476,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_ar_channel
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_aw_channel" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_aw_channel
    (\state_reg[1] ,
     \axaddr_wrap_reg[3] ,
@@ -1781,7 +1778,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_aw_channel
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_b_channel" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_b_channel
    (si_rs_bvalid,
     \cnt_read_reg[1] ,
@@ -2051,7 +2047,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_b_channel
         .R(areset_d1));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_cmd_translator" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_cmd_translator
    (next_pending_r_reg,
     wrap_next_pending,
@@ -2485,7 +2480,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_cmd_translato
         .\wrap_second_len_r_reg[3]_0 (\wrap_second_len_r_reg[3] ));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_incr_cmd" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_incr_cmd
    (next_pending_r_reg_0,
     sel_first_reg_0,
@@ -3823,7 +3817,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_incr_cmd_2
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_r_channel" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_r_channel
    (\cnt_read_reg[4] ,
     \cnt_read_reg[2] ,
@@ -3986,7 +3979,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_r_channel
         .r_push_r_reg(r_push_r_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_rd_cmd_fsm" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_rd_cmd_fsm
    (\FSM_sequential_state_reg[0]_0 ,
     Q,
@@ -4520,7 +4512,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_rd_cmd_fsm
         .O(D[3]));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_simple_fifo" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_simple_fifo
    (\cnt_read_reg[1]_0 ,
     addr,
@@ -6002,7 +5993,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_simple_fifo__
         .Q31(\NLW_memory_reg[31][9]_srl32_Q31_UNCONNECTED ));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_wr_cmd_fsm" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_wr_cmd_fsm
    (m_axi_awready_0,
     m_axi_awready_1,
@@ -6440,7 +6430,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_wr_cmd_fsm
         .O(D[3]));
 endmodule
 
-(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_18_b2s_wrap_cmd" *) 
 module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_wrap_cmd
    (wrap_next_pending,
     sel_first,
@@ -7554,7 +7543,6 @@ module ElectricGoKart_auto_pc_0_axi_protocol_converter_v2_1_18_b2s_wrap_cmd_3
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_18_axi_register_slice" *) 
 module ElectricGoKart_auto_pc_0_axi_register_slice_v2_1_18_axi_register_slice
    (s_ready_i_reg,
     s_ready_i_reg_0,
@@ -7888,7 +7876,6 @@ module ElectricGoKart_auto_pc_0_axi_register_slice_v2_1_18_axi_register_slice
         .\skid_buffer_reg[46]_0 (\skid_buffer_reg[46] ));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_18_axic_register_slice" *) 
 module ElectricGoKart_auto_pc_0_axi_register_slice_v2_1_18_axic_register_slice
    (s_ready_i_reg_0,
     m_valid_i_reg_0,

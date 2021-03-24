@@ -110,8 +110,8 @@ architecture arch_imp of Encoder_Driver_v1_0_S00_AXI is
 	type state_type is (GET_ABS, ZERO, ONE, TWO, THREE);
 	signal state : state_type := GET_ABS;
 	
-	signal data_temp : std_logic_vector(DATA_LENGTH-1 downto 0) := (others => '0');
-	signal index : integer := DATA_LENGTH-1;
+	signal data_temp : std_logic_vector(DATA_LENGTH downto 0) := (others => '0');
+	signal index : integer := DATA_LENGTH;
 	
 	signal position : unsigned(DATA_LENGTH-1 downto 0) := (others => '0');
 
@@ -427,7 +427,7 @@ begin
             when GET_ABS =>
                 if falling_edge(clk_scaled) then
                     if (index = 0) then
-                        position <= unsigned(data_temp);
+                        position <= unsigned(data_temp(DATA_LENGTH-1 downto 0));
                         
                         if INC_A = '0' and INC_B = '0' then
                             state <= ZERO;

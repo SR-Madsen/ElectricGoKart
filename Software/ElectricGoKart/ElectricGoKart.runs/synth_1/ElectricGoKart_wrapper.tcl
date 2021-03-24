@@ -30,6 +30,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project]
 set_property ip_repo_paths {
+  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
+  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
 } [current_project]
@@ -43,8 +45,6 @@ set_property used_in_implementation false [get_files -all /home/sebastian/Deskto
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_xadc_wiz_0_0/ElectricGoKart_xadc_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_xbar_0/ElectricGoKart_xbar_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_auto_pc_0/ElectricGoKart_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ElectricGoKart_ooc.xdc]
 

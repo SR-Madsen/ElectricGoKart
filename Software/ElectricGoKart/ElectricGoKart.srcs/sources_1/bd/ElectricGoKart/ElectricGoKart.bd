@@ -282,17 +282,11 @@
           "PCW_ENET0_PERIPHERAL_ENABLE": {
             "value": "0"
           },
-          "PCW_ENET0_RESET_ENABLE": {
-            "value": "0"
-          },
           "PCW_ENET1_PERIPHERAL_CLKSRC": {
             "value": "IO PLL"
           },
           "PCW_ENET1_PERIPHERAL_ENABLE": {
             "value": "0"
-          },
-          "PCW_ENET_RESET_ENABLE": {
-            "value": "1"
           },
           "PCW_ENET_RESET_POLARITY": {
             "value": "Active Low"
@@ -1248,9 +1242,6 @@
           "PCW_SDIO_PERIPHERAL_CLKSRC": {
             "value": "IO PLL"
           },
-          "PCW_SDIO_PERIPHERAL_FREQMHZ": {
-            "value": "50"
-          },
           "PCW_SDIO_PERIPHERAL_VALID": {
             "value": "0"
           },
@@ -1292,6 +1283,18 @@
           },
           "PCW_SPI_PERIPHERAL_VALID": {
             "value": "0"
+          },
+          "PCW_S_AXI_HP0_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
           },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
@@ -1343,9 +1346,6 @@
           },
           "PCW_TTC1_PERIPHERAL_ENABLE": {
             "value": "0"
-          },
-          "PCW_TTC_PERIPHERAL_FREQMHZ": {
-            "value": "50"
           },
           "PCW_UART0_PERIPHERAL_ENABLE": {
             "value": "0"
@@ -1888,16 +1888,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -2026,18 +2026,6 @@
           }
         },
         "interface_nets": {
-          "ps7_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -2050,16 +2038,28 @@
               "m01_couplers/M_AXI"
             ]
           },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
           "m00_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "ps7_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           }
         },
@@ -2096,14 +2096,14 @@
       },
       "PWM_Generator_0": {
         "vlnv": "user.org:user:PWM_Generator:1.0",
-        "xci_name": "ElectricGoKart_PWM_Generator_0_2"
+        "xci_name": "ElectricGoKart_PWM_Generator_0_0"
       }
     },
     "interface_nets": {
-      "processing_system7_0_DDR": {
+      "Vaux14_0_1": {
         "interface_ports": [
-          "DDR",
-          "processing_system7_0/DDR"
+          "Vaux14_0",
+          "xadc_wiz_0/Vaux14"
         ]
       },
       "Vaux7_0_1": {
@@ -2112,28 +2112,10 @@
           "xadc_wiz_0/Vaux7"
         ]
       },
-      "Vaux14_0_1": {
+      "processing_system7_0_DDR": {
         "interface_ports": [
-          "Vaux14_0",
-          "xadc_wiz_0/Vaux14"
-        ]
-      },
-      "Vaux6_0_1": {
-        "interface_ports": [
-          "Vaux6_0",
-          "xadc_wiz_0/Vaux6"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
-        ]
-      },
-      "Vaux15_0_1": {
-        "interface_ports": [
-          "Vaux15_0",
-          "xadc_wiz_0/Vaux15"
+          "DDR",
+          "processing_system7_0/DDR"
         ]
       },
       "ps7_0_axi_periph_M00_AXI": {
@@ -2142,10 +2124,28 @@
           "xadc_wiz_0/s_axi_lite"
         ]
       },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
+        ]
+      },
       "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
+      "Vaux6_0_1": {
+        "interface_ports": [
+          "Vaux6_0",
+          "xadc_wiz_0/Vaux6"
+        ]
+      },
+      "Vaux15_0_1": {
+        "interface_ports": [
+          "Vaux15_0",
+          "xadc_wiz_0/Vaux15"
         ]
       },
       "ps7_0_axi_periph_M01_AXI": {
@@ -2165,8 +2165,8 @@
           "xadc_wiz_0/s_axi_aclk",
           "ps7_0_axi_periph/M00_ACLK",
           "ps7_0_axi_periph/ACLK",
-          "PWM_Generator_0/s00_axi_aclk",
-          "ps7_0_axi_periph/M01_ACLK"
+          "ps7_0_axi_periph/M01_ACLK",
+          "PWM_Generator_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2182,14 +2182,8 @@
           "xadc_wiz_0/s_axi_aresetn",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
-          "PWM_Generator_0/s00_axi_aresetn",
-          "ps7_0_axi_periph/M01_ARESETN"
-        ]
-      },
-      "PWM_Generator_0_XADC_conv_en": {
-        "ports": [
-          "PWM_Generator_0/XADC_conv_en",
-          "xadc_wiz_0/convst_in"
+          "ps7_0_axi_periph/M01_ARESETN",
+          "PWM_Generator_0/s00_axi_aresetn"
         ]
       },
       "PWM_Generator_0_PWM_a": {
@@ -2208,6 +2202,12 @@
         "ports": [
           "PWM_Generator_0/PWM_c",
           "PWM_c_0"
+        ]
+      },
+      "PWM_Generator_0_XADC_conv_en": {
+        "ports": [
+          "PWM_Generator_0/XADC_conv_en",
+          "xadc_wiz_0/convst_in"
         ]
       }
     },
