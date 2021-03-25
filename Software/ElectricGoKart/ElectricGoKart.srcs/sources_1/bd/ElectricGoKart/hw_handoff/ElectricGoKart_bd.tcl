@@ -164,9 +164,20 @@ proc create_root_design { parentCell } {
   set Vaux7_0 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux7_0 ]
 
   # Create ports
+  set INC_A_0 [ create_bd_port -dir I INC_A_0 ]
+  set INC_B_0 [ create_bd_port -dir I INC_B_0 ]
+  set INC_Z_0 [ create_bd_port -dir I INC_Z_0 ]
   set PWM_a_0 [ create_bd_port -dir O PWM_a_0 ]
   set PWM_b_0 [ create_bd_port -dir O PWM_b_0 ]
   set PWM_c_0 [ create_bd_port -dir O PWM_c_0 ]
+  set SERIAL_CLOCK_0 [ create_bd_port -dir O -type clk SERIAL_CLOCK_0 ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {900000} \
+ ] $SERIAL_CLOCK_0
+  set SERIAL_DATA_0 [ create_bd_port -dir I SERIAL_DATA_0 ]
+
+  # Create instance: Encoder_Driver_0, and set properties
+  set Encoder_Driver_0 [ create_bd_cell -type ip -vlnv user.org:user:Encoder_Driver:1.0 Encoder_Driver_0 ]
 
   # Create instance: PWM_Generator_0, and set properties
   set PWM_Generator_0 [ create_bd_cell -type ip -vlnv user.org:user:PWM_Generator:1.0 PWM_Generator_0 ]
@@ -897,7 +908,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
+   CONFIG.NUM_MI {3} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -938,17 +949,24 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins xadc_wiz_0/s_axi_lite]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins PWM_Generator_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins Encoder_Driver_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
 
   # Create port connections
+  connect_bd_net -net Encoder_Driver_0_SERIAL_CLOCK [get_bd_ports SERIAL_CLOCK_0] [get_bd_pins Encoder_Driver_0/SERIAL_CLOCK]
+  connect_bd_net -net INC_A_0_1 [get_bd_ports INC_A_0] [get_bd_pins Encoder_Driver_0/INC_A]
+  connect_bd_net -net INC_B_0_1 [get_bd_ports INC_B_0] [get_bd_pins Encoder_Driver_0/INC_B]
+  connect_bd_net -net INC_Z_0_1 [get_bd_ports INC_Z_0] [get_bd_pins Encoder_Driver_0/INC_Z]
   connect_bd_net -net PWM_Generator_0_PWM_a [get_bd_ports PWM_a_0] [get_bd_pins PWM_Generator_0/PWM_a]
   connect_bd_net -net PWM_Generator_0_PWM_b [get_bd_ports PWM_b_0] [get_bd_pins PWM_Generator_0/PWM_b]
   connect_bd_net -net PWM_Generator_0_PWM_c [get_bd_ports PWM_c_0] [get_bd_pins PWM_Generator_0/PWM_c]
   connect_bd_net -net PWM_Generator_0_XADC_conv_en [get_bd_pins PWM_Generator_0/XADC_conv_en] [get_bd_pins xadc_wiz_0/convst_in]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PWM_Generator_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
+  connect_bd_net -net SERIAL_DATA_0_1 [get_bd_ports SERIAL_DATA_0] [get_bd_pins Encoder_Driver_0/SERIAL_DATA]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins Encoder_Driver_0/s00_axi_aclk] [get_bd_pins PWM_Generator_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins PWM_Generator_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins Encoder_Driver_0/s00_axi_aresetn] [get_bd_pins PWM_Generator_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs Encoder_Driver_0/S00_AXI/S00_AXI_reg] SEG_Encoder_Driver_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs PWM_Generator_0/S00_AXI/S00_AXI_reg] SEG_PWM_Generator_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs xadc_wiz_0/s_axi_lite/Reg] SEG_xadc_wiz_0_Reg
 

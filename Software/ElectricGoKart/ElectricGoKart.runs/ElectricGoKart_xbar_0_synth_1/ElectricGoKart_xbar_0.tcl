@@ -33,9 +33,8 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project]
 set_property ip_repo_paths {
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
-  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
-  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
+  /home/sebastian/Desktop/Git/EmbeddedSystems/ip_repo/DefaultIP_1.0
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.cache/ip [current_project]

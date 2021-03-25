@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Wed Mar 24 17:18:50 2021
+--Date        : Thu Mar 25 17:06:42 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart_wrapper.bd
 --Design      : ElectricGoKart_wrapper
@@ -34,9 +34,14 @@ entity ElectricGoKart_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    INC_A_0 : in STD_LOGIC;
+    INC_B_0 : in STD_LOGIC;
+    INC_Z_0 : in STD_LOGIC;
     PWM_a_0 : out STD_LOGIC;
     PWM_b_0 : out STD_LOGIC;
     PWM_c_0 : out STD_LOGIC;
+    SERIAL_CLOCK_0 : out STD_LOGIC;
+    SERIAL_DATA_0 : in STD_LOGIC;
     Vaux14_0_v_n : in STD_LOGIC;
     Vaux14_0_v_p : in STD_LOGIC;
     Vaux15_0_v_n : in STD_LOGIC;
@@ -51,6 +56,16 @@ end ElectricGoKart_wrapper;
 architecture STRUCTURE of ElectricGoKart_wrapper is
   component ElectricGoKart is
   port (
+    PWM_a_0 : out STD_LOGIC;
+    PWM_b_0 : out STD_LOGIC;
+    PWM_c_0 : out STD_LOGIC;
+    SERIAL_DATA_0 : in STD_LOGIC;
+    INC_A_0 : in STD_LOGIC;
+    INC_B_0 : in STD_LOGIC;
+    INC_Z_0 : in STD_LOGIC;
+    SERIAL_CLOCK_0 : out STD_LOGIC;
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -66,23 +81,18 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    Vaux7_0_v_n : in STD_LOGIC;
-    Vaux7_0_v_p : in STD_LOGIC;
-    Vaux14_0_v_n : in STD_LOGIC;
-    Vaux14_0_v_p : in STD_LOGIC;
-    Vaux6_0_v_n : in STD_LOGIC;
-    Vaux6_0_v_p : in STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
     Vaux15_0_v_n : in STD_LOGIC;
     Vaux15_0_v_p : in STD_LOGIC;
-    PWM_a_0 : out STD_LOGIC;
-    PWM_b_0 : out STD_LOGIC;
-    PWM_c_0 : out STD_LOGIC
+    Vaux7_0_v_n : in STD_LOGIC;
+    Vaux7_0_v_p : in STD_LOGIC
   );
   end component ElectricGoKart;
 begin
@@ -109,9 +119,14 @@ ElectricGoKart_i: component ElectricGoKart
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      INC_A_0 => INC_A_0,
+      INC_B_0 => INC_B_0,
+      INC_Z_0 => INC_Z_0,
       PWM_a_0 => PWM_a_0,
       PWM_b_0 => PWM_b_0,
       PWM_c_0 => PWM_c_0,
+      SERIAL_CLOCK_0 => SERIAL_CLOCK_0,
+      SERIAL_DATA_0 => SERIAL_DATA_0,
       Vaux14_0_v_n => Vaux14_0_v_n,
       Vaux14_0_v_p => Vaux14_0_v_p,
       Vaux15_0_v_n => Vaux15_0_v_n,

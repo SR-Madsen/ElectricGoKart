@@ -11,6 +11,10 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DATA_LENGTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "CLOCK_SCALER" -parent ${Page_0}
+  ipgui::add_static_text $IPINST -name "Serial Clock" -parent ${Page_0} -text {Data Length should not be changed.
+Clock scaler is used for serial communication.
+clk_scaled = 100 MHz / Clock Scaler
+Must be no higher than 900 kHz.}
 
 
 }
