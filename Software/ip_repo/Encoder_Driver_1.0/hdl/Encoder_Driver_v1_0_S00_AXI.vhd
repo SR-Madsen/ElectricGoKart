@@ -110,7 +110,7 @@ architecture arch_imp of Encoder_Driver_v1_0_S00_AXI is
 	type state_type is (GET_ABS, ZERO, ONE, TWO, THREE);
 	signal state : state_type := GET_ABS;
 	
-	signal data_temp : std_logic_vector(DATA_LENGTH downto 0) := (others => '0');
+	signal data_temp : unsigned(DATA_LENGTH downto 0) := (others => '0');
 	signal index : integer := DATA_LENGTH;
 	
 	signal position : unsigned(DATA_LENGTH-1 downto 0) := (others => '0');
@@ -421,13 +421,13 @@ begin
     SERIAL_CLOCK <= clk_scaled;
     
     -- State Machine for both getting absolute position at startup and tracking position
-    process(S_AXI_ACLK)
+    process(S_AXI_ACLK, clk_scaled)
     begin
         case state is
             when GET_ABS =>
-                if falling_edge(clk_scaled) then
-                    if (index = 0) then
-                        position <= unsigned(data_temp(DATA_LENGTH-1 downto 0));
+                if clk_scaled'event and clk_scaled = '0' then
+                    if (index = -1) then
+                        position <= data_temp(DATA_LENGTH-1 downto 0);
                         
                         if INC_A = '0' and INC_B = '0' then
                             state <= ZERO;
@@ -438,9 +438,10 @@ begin
                         elsif INC_A = '1' and INC_B = '1' then
                             state <= THREE;
                         end if;
+                    else
+                        data_temp(index) <= SERIAL_DATA;
+                        index <= index - 1;
                     end if;
-                    data_temp(index) <= SERIAL_DATA;
-                    index <= index - 1;
                 end if;
                 
             when ZERO =>

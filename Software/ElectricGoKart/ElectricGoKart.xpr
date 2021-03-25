@@ -23,9 +23,8 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/Encoder_Driver_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/Encoder_Driver_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/PWM_Generator_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/PWM_Generator_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../EmbeddedSystems/ip_repo/DefaultIP_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -71,23 +70,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_processing_system7_0_0/ElectricGoKart_processing_system7_0_0.xci">
-          <Proxy FileSetName="ElectricGoKart_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_xbar_0/ElectricGoKart_xbar_0.xci">
+          <Proxy FileSetName="ElectricGoKart_xbar_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_xadc_wiz_0_0/ElectricGoKart_xadc_wiz_0_0.xci">
           <Proxy FileSetName="ElectricGoKart_xadc_wiz_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_processing_system7_0_0/ElectricGoKart_processing_system7_0_0.xci">
+          <Proxy FileSetName="ElectricGoKart_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0.xci">
           <Proxy FileSetName="ElectricGoKart_rst_ps7_0_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_auto_pc_0/ElectricGoKart_auto_pc_0.xci">
-          <Proxy FileSetName="ElectricGoKart_auto_pc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_xbar_0/ElectricGoKart_xbar_0.xci">
-          <Proxy FileSetName="ElectricGoKart_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ElectricGoKart.bd" FileRelPathName="ip/ElectricGoKart_PWM_Generator_0_0/ElectricGoKart_PWM_Generator_0_0.xci">
-          <Proxy FileSetName="ElectricGoKart_PWM_Generator_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/ElectricGoKart/hdl/ElectricGoKart_wrapper.vhd">
@@ -147,18 +140,6 @@
     <FileSet Name="ElectricGoKart_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ElectricGoKart_xbar_0">
       <Config>
         <Option Name="TopModule" Val="ElectricGoKart_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ElectricGoKart_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ElectricGoKart_auto_pc_0">
-      <Config>
-        <Option Name="TopModule" Val="ElectricGoKart_auto_pc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ElectricGoKart_PWM_Generator_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ElectricGoKart_PWM_Generator_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ElectricGoKart_PWM_Generator_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -233,28 +214,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ElectricGoKart_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="ElectricGoKart_auto_pc_0" Part="xc7z010clg400-1" ConstrsSet="ElectricGoKart_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ElectricGoKart_auto_pc_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ElectricGoKart_PWM_Generator_0_0_synth_1" Type="Ft3:Synth" SrcSet="ElectricGoKart_PWM_Generator_0_0" Part="xc7z010clg400-1" ConstrsSet="ElectricGoKart_PWM_Generator_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ElectricGoKart_PWM_Generator_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
@@ -322,42 +281,6 @@
     <Run Id="ElectricGoKart_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ElectricGoKart_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ElectricGoKart_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ElectricGoKart_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ElectricGoKart_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ElectricGoKart_auto_pc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ElectricGoKart_PWM_Generator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ElectricGoKart_PWM_Generator_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ElectricGoKart_PWM_Generator_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

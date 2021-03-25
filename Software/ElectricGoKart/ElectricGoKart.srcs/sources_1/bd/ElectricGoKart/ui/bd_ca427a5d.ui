@@ -2,40 +2,52 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 550 -defaultsOSRD
-preplace port PWM_b_0 -pg 1 -y 210 -defaultsOSRD
-preplace port PWM_a_0 -pg 1 -y 190 -defaultsOSRD
-preplace port Vaux7_0 -pg 1 -y 150 -defaultsOSRD
-preplace port PWM_c_0 -pg 1 -y 230 -defaultsOSRD
-preplace port Vaux14_0 -pg 1 -y 170 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 570 -defaultsOSRD
-preplace port Vaux15_0 -pg 1 -y 190 -defaultsOSRD
-preplace port Vaux6_0 -pg 1 -y 130 -defaultsOSRD
-preplace inst PWM_Generator_0 -pg 1 -lvl 3 -y 200 -defaultsOSRD
-preplace inst xadc_wiz_0 -pg 1 -lvl 1 -y 170 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 170 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -y 410 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 2 -y 590 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 2 2 NJ 550 N
-preplace netloc PWM_Generator_0_PWM_a 1 3 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 340 30 740
-preplace netloc PWM_Generator_0_PWM_b 1 3 1 N
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 3 40 30 330 310 760
-preplace netloc Vaux7_0_1 1 0 1 N
-preplace netloc PWM_Generator_0_PWM_c 1 3 1 N
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 340 700 740
-preplace netloc Vaux6_0_1 1 0 1 N
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 N
-preplace netloc Vaux15_0_1 1 0 1 N
-preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 570 N
-preplace netloc PWM_Generator_0_XADC_conv_en 1 0 4 20 10 NJ 10 NJ 10 1040
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 30 310 320 690 750
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 3 30 20 N 20 760
-preplace netloc Vaux14_0_1 1 0 1 N
-levelinfo -pg 1 0 180 540 900 1060 -top 0 -bot 710
+preplace port DDR -pg 1 -y 60 -defaultsOSRD
+preplace port PWM_b_0 -pg 1 -y 550 -defaultsOSRD
+preplace port PWM_a_0 -pg 1 -y 530 -defaultsOSRD
+preplace port Vaux7_0 -pg 1 -y 590 -defaultsOSRD
+preplace port PWM_c_0 -pg 1 -y 570 -defaultsOSRD
+preplace port SERIAL_CLOCK_0 -pg 1 -y 330 -defaultsOSRD
+preplace port INC_A_0 -pg 1 -y 200 -defaultsOSRD
+preplace port SERIAL_DATA_0 -pg 1 -y 460 -defaultsOSRD
+preplace port INC_Z_0 -pg 1 -y 440 -defaultsOSRD
+preplace port Vaux14_0 -pg 1 -y 610 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 80 -defaultsOSRD
+preplace port INC_B_0 -pg 1 -y 420 -defaultsOSRD
+preplace port Vaux15_0 -pg 1 -y 630 -defaultsOSRD
+preplace port Vaux6_0 -pg 1 -y 570 -defaultsOSRD
+preplace inst PWM_Generator_0 -pg 1 -lvl 3 -y 540 -defaultsOSRD
+preplace inst xadc_wiz_0 -pg 1 -lvl 1 -y 610 -defaultsOSRD
+preplace inst Encoder_Driver_0 -pg 1 -lvl 3 -y 330 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 250 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 100 -defaultsOSRD
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 N
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 60 NJ 60 NJ
+preplace netloc PWM_Generator_0_PWM_a 1 3 1 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 500
+preplace netloc PWM_Generator_0_PWM_b 1 3 1 NJ
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 3 50 470 520 460 860
+preplace netloc Vaux7_0_1 1 0 1 NJ
+preplace netloc INC_Z_0_1 1 0 3 NJ 440 470J 40 870J
+preplace netloc PWM_Generator_0_PWM_c 1 3 1 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 50 220 450
+preplace netloc Vaux6_0_1 1 0 1 NJ
+preplace netloc Encoder_Driver_0_SERIAL_CLOCK 1 3 1 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 830
+preplace netloc Vaux15_0_1 1 0 1 NJ
+preplace netloc INC_A_0_1 1 0 3 NJ 200 490J 70 850J
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 80 NJ 80 NJ
+preplace netloc INC_B_0_1 1 0 3 NJ 420 480J 50 860J
+preplace netloc PWM_Generator_0_XADC_conv_en 1 0 4 30 450 N 450 N 450 1160
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 210 510 90 840
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 3 40 430 N 430 820
+preplace netloc SERIAL_DATA_0_1 1 0 3 NJ 460 460J 30 880J
+preplace netloc Vaux14_0_1 1 0 1 NJ
+levelinfo -pg 1 0 250 670 1020 1180 -top 0 -bot 750
 "
 }
 {
-   "da_axi4_cnt":"3",
+   "da_axi4_cnt":"5",
    "da_ps7_cnt":"1"
 }

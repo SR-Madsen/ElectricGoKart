@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Tue Mar 23 11:50:04 2021
+--Date        : Wed Mar 24 17:18:50 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart.bd
 --Design      : ElectricGoKart
@@ -1134,7 +1134,7 @@ entity ElectricGoKart is
     Vaux7_0_v_p : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of ElectricGoKart : entity is "ElectricGoKart,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ElectricGoKart,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=10,numReposBlks=6,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of ElectricGoKart : entity is "ElectricGoKart,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ElectricGoKart,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=10,numReposBlks=6,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of ElectricGoKart : entity is "ElectricGoKart.hwdef";
 end ElectricGoKart;
@@ -1260,7 +1260,7 @@ architecture STRUCTURE of ElectricGoKart is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component ElectricGoKart_rst_ps7_0_100M_0;
-  component ElectricGoKart_PWM_Generator_0_2 is
+  component ElectricGoKart_PWM_Generator_0_0 is
   port (
     XADC_conv_en : out STD_LOGIC;
     PWM_a : out STD_LOGIC;
@@ -1288,7 +1288,7 @@ architecture STRUCTURE of ElectricGoKart is
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC
   );
-  end component ElectricGoKart_PWM_Generator_0_2;
+  end component ElectricGoKart_PWM_Generator_0_0;
   signal PWM_Generator_0_PWM_a : STD_LOGIC;
   signal PWM_Generator_0_PWM_b : STD_LOGIC;
   signal PWM_Generator_0_PWM_c : STD_LOGIC;
@@ -1454,7 +1454,7 @@ begin
   Vaux6_0_1_V_P <= Vaux6_0_v_p;
   Vaux7_0_1_V_N <= Vaux7_0_v_n;
   Vaux7_0_1_V_P <= Vaux7_0_v_p;
-PWM_Generator_0: component ElectricGoKart_PWM_Generator_0_2
+PWM_Generator_0: component ElectricGoKart_PWM_Generator_0_0
      port map (
       PWM_a => PWM_Generator_0_PWM_a,
       PWM_b => PWM_Generator_0_PWM_b,

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7580A59A1621096E",
+      "boundary_crc": "0x8D145EA9085463A5",
       "device": "xc7z010clg400-1",
       "name": "ElectricGoKart",
       "synth_flow_mode": "Hierarchical",
@@ -17,10 +17,12 @@
           "auto_pc": ""
         },
         "m00_couplers": {},
-        "m01_couplers": {}
+        "m01_couplers": {},
+        "m02_couplers": {}
       },
       "rst_ps7_0_100M": "",
-      "PWM_Generator_0": ""
+      "PWM_Generator_0": "",
+      "Encoder_Driver_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -113,6 +115,39 @@
       },
       "PWM_c_0": {
         "direction": "O"
+      },
+      "SERIAL_DATA_0": {
+        "direction": "I"
+      },
+      "INC_A_0": {
+        "direction": "I"
+      },
+      "INC_B_0": {
+        "direction": "I"
+      },
+      "INC_Z_0": {
+        "direction": "I"
+      },
+      "SERIAL_CLOCK_0": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ElectricGoKart_Encoder_Driver_0_0_SERIAL_CLOCK",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "900000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -1732,7 +1767,7 @@
         "xci_name": "ElectricGoKart_ps7_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
-            "value": "2"
+            "value": "3"
           }
         },
         "interface_ports": {
@@ -1745,6 +1780,10 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M01_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M02_AXI": {
             "mode": "Master",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
@@ -1810,6 +1849,22 @@
           "M01_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M02_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M02_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M02_ARESETN"
+              }
+            }
+          },
+          "M02_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -1818,7 +1873,7 @@
             "xci_name": "ElectricGoKart_xbar_0",
             "parameters": {
               "NUM_MI": {
-                "value": "2"
+                "value": "3"
               },
               "NUM_SI": {
                 "value": "1"
@@ -1888,16 +1943,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2023,19 +2078,67 @@
                 ]
               }
             }
+          },
+          "m02_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m02_couplers_to_m02_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
-          "s00_couplers_to_xbar": {
+          "m02_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "m01_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
+              "M02_AXI",
+              "m02_couplers/M_AXI"
             ]
           },
           "m00_couplers_to_ps7_0_axi_periph": {
@@ -2044,22 +2147,40 @@
               "m00_couplers/M_AXI"
             ]
           },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "m01_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
+            ]
+          },
           "xbar_to_m00_couplers": {
             "interface_ports": [
               "xbar/M00_AXI",
               "m00_couplers/S_AXI"
             ]
           },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
           "ps7_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
             ]
           }
         },
@@ -2072,8 +2193,10 @@
               "s00_couplers/M_ACLK",
               "m00_couplers/M_ACLK",
               "m01_couplers/M_ACLK",
+              "m02_couplers/M_ACLK",
               "m00_couplers/S_ACLK",
-              "m01_couplers/S_ACLK"
+              "m01_couplers/S_ACLK",
+              "m02_couplers/S_ACLK"
             ]
           },
           "ps7_0_axi_periph_ARESETN_net": {
@@ -2084,8 +2207,10 @@
               "s00_couplers/M_ARESETN",
               "m00_couplers/M_ARESETN",
               "m01_couplers/M_ARESETN",
+              "m02_couplers/M_ARESETN",
               "m00_couplers/S_ARESETN",
-              "m01_couplers/S_ARESETN"
+              "m01_couplers/S_ARESETN",
+              "m02_couplers/S_ARESETN"
             ]
           }
         }
@@ -2096,10 +2221,44 @@
       },
       "PWM_Generator_0": {
         "vlnv": "user.org:user:PWM_Generator:1.0",
-        "xci_name": "ElectricGoKart_PWM_Generator_0_0"
+        "xci_name": "ElectricGoKart_PWM_Generator_0_1"
+      },
+      "Encoder_Driver_0": {
+        "vlnv": "user.org:user:Encoder_Driver:1.0",
+        "xci_name": "ElectricGoKart_Encoder_Driver_0_0"
       }
     },
     "interface_nets": {
+      "ps7_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M00_AXI",
+          "xadc_wiz_0/s_axi_lite"
+        ]
+      },
+      "Vaux6_0_1": {
+        "interface_ports": [
+          "Vaux6_0",
+          "xadc_wiz_0/Vaux6"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_0/DDR"
+        ]
+      },
+      "Vaux15_0_1": {
+        "interface_ports": [
+          "Vaux15_0",
+          "xadc_wiz_0/Vaux15"
+        ]
+      },
       "Vaux14_0_1": {
         "interface_ports": [
           "Vaux14_0",
@@ -2112,46 +2271,22 @@
           "xadc_wiz_0/Vaux7"
         ]
       },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "processing_system7_0/DDR"
-        ]
-      },
-      "ps7_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M00_AXI",
-          "xadc_wiz_0/s_axi_lite"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
-        ]
-      },
       "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
         ]
       },
-      "Vaux6_0_1": {
-        "interface_ports": [
-          "Vaux6_0",
-          "xadc_wiz_0/Vaux6"
-        ]
-      },
-      "Vaux15_0_1": {
-        "interface_ports": [
-          "Vaux15_0",
-          "xadc_wiz_0/Vaux15"
-        ]
-      },
       "ps7_0_axi_periph_M01_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M01_AXI",
           "PWM_Generator_0/S00_AXI"
+        ]
+      },
+      "ps7_0_axi_periph_M02_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M02_AXI",
+          "Encoder_Driver_0/S00_AXI"
         ]
       }
     },
@@ -2166,7 +2301,9 @@
           "ps7_0_axi_periph/M00_ACLK",
           "ps7_0_axi_periph/ACLK",
           "ps7_0_axi_periph/M01_ACLK",
-          "PWM_Generator_0/s00_axi_aclk"
+          "PWM_Generator_0/s00_axi_aclk",
+          "ps7_0_axi_periph/M02_ACLK",
+          "Encoder_Driver_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2183,7 +2320,15 @@
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
           "ps7_0_axi_periph/M01_ARESETN",
-          "PWM_Generator_0/s00_axi_aresetn"
+          "PWM_Generator_0/s00_axi_aresetn",
+          "ps7_0_axi_periph/M02_ARESETN",
+          "Encoder_Driver_0/s00_axi_aresetn"
+        ]
+      },
+      "PWM_Generator_0_XADC_conv_en": {
+        "ports": [
+          "PWM_Generator_0/XADC_conv_en",
+          "xadc_wiz_0/convst_in"
         ]
       },
       "PWM_Generator_0_PWM_a": {
@@ -2204,10 +2349,34 @@
           "PWM_c_0"
         ]
       },
-      "PWM_Generator_0_XADC_conv_en": {
+      "SERIAL_DATA_0_1": {
         "ports": [
-          "PWM_Generator_0/XADC_conv_en",
-          "xadc_wiz_0/convst_in"
+          "SERIAL_DATA_0",
+          "Encoder_Driver_0/SERIAL_DATA"
+        ]
+      },
+      "INC_A_0_1": {
+        "ports": [
+          "INC_A_0",
+          "Encoder_Driver_0/INC_A"
+        ]
+      },
+      "INC_B_0_1": {
+        "ports": [
+          "INC_B_0",
+          "Encoder_Driver_0/INC_B"
+        ]
+      },
+      "INC_Z_0_1": {
+        "ports": [
+          "INC_Z_0",
+          "Encoder_Driver_0/INC_Z"
+        ]
+      },
+      "Encoder_Driver_0_SERIAL_CLOCK": {
+        "ports": [
+          "Encoder_Driver_0/SERIAL_CLOCK",
+          "SERIAL_CLOCK_0"
         ]
       }
     },
@@ -2218,6 +2387,11 @@
             "range": "4G",
             "width": "32",
             "segments": {
+              "SEG_Encoder_Driver_0_S00_AXI_reg": {
+                "address_block": "/Encoder_Driver_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C20000",
+                "range": "64K"
+              },
               "SEG_PWM_Generator_0_S00_AXI_reg": {
                 "address_block": "/PWM_Generator_0/S00_AXI/S00_AXI_reg",
                 "offset": "0x43C10000",
