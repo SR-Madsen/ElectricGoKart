@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Mar 24 17:21:11 2021
+| Date         : Fri Mar 26 13:45:30 2021
 | Host         : sebastian-ZBook running 64-bit Linux Mint 20
 | Command      : report_utilization -file ElectricGoKart_wrapper_utilization_synth.rpt -pb ElectricGoKart_wrapper_utilization_synth.pb
 | Design       : ElectricGoKart_wrapper
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   11 |     0 |       100 | 11.00 |
+| Bonded IOB                  |   27 |     0 |       100 | 27.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
@@ -146,8 +146,9 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |    8 |                  IO |
-| OBUF     |    3 |                  IO |
+| IBUF     |   17 |                  IO |
+| OBUF     |   10 |                  IO |
+| OBUFT    |    2 |                  IO |
 +----------+------+---------------------+
 
 
@@ -161,8 +162,14 @@ Table of Contents
 | ElectricGoKart_xadc_wiz_0_0           |    1 |
 | ElectricGoKart_rst_ps7_0_100M_0       |    1 |
 | ElectricGoKart_processing_system7_0_0 |    1 |
+| ElectricGoKart_axi_gpio_4_0           |    1 |
+| ElectricGoKart_axi_gpio_3_0           |    1 |
+| ElectricGoKart_axi_gpio_2_0           |    1 |
+| ElectricGoKart_axi_gpio_1_0           |    1 |
+| ElectricGoKart_axi_gpio_0_0           |    1 |
 | ElectricGoKart_auto_pc_0              |    1 |
-| ElectricGoKart_PWM_Generator_0_0      |    1 |
+| ElectricGoKart_PWM_Generator_0_1      |    1 |
+| ElectricGoKart_Encoder_Driver_0_0     |    1 |
 +---------------------------------------+------+
 
 

@@ -31,9 +31,8 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:2.0 [current_project]
 set_property ip_repo_paths {
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
-  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0
   /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
-  /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/PWM_Generator_1.0
+  /home/sebastian/Desktop/Git/EmbeddedSystems/ip_repo/DefaultIP_1.0
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.cache/ip [current_project]
@@ -45,6 +44,21 @@ set_property used_in_implementation false [get_files -all /home/sebastian/Deskto
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_xadc_wiz_0_0/ElectricGoKart_xadc_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_0_0/ElectricGoKart_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_0_0/ElectricGoKart_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_0_0/ElectricGoKart_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_1_0/ElectricGoKart_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_1_0/ElectricGoKart_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_1_0/ElectricGoKart_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_2_0/ElectricGoKart_axi_gpio_2_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_2_0/ElectricGoKart_axi_gpio_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_2_0/ElectricGoKart_axi_gpio_2_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_3_0/ElectricGoKart_axi_gpio_3_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_3_0/ElectricGoKart_axi_gpio_3_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_3_0/ElectricGoKart_axi_gpio_3_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_4_0/ElectricGoKart_axi_gpio_4_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_4_0/ElectricGoKart_axi_gpio_4_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_4_0/ElectricGoKart_axi_gpio_4_0.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_auto_pc_0/ElectricGoKart_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ElectricGoKart_ooc.xdc]
 
@@ -56,6 +70,9 @@ set_property used_in_implementation false [get_files -all /home/sebastian/Deskto
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/constrs_1/new/ElectricGoKartConstraints.xdc
+set_property used_in_implementation false [get_files /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/constrs_1/new/ElectricGoKartConstraints.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1

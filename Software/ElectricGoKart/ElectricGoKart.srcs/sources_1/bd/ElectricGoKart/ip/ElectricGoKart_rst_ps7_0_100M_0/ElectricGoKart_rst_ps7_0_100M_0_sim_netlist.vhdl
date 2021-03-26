@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Wed Mar 24 17:19:54 2021
+-- Date        : Wed Mar 24 17:19:52 2021
 -- Host        : sebastian-ZBook running 64-bit Linux Mint 20
--- Command     : write_vhdl -force -mode funcsim
---               /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_rst_ps7_0_100M_0/ElectricGoKart_rst_ps7_0_100M_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top ElectricGoKart_rst_ps7_0_100M_0 -prefix
+--               ElectricGoKart_rst_ps7_0_100M_0_ ElectricGoKart_rst_ps7_0_100M_0_sim_netlist.vhdl
 -- Design      : ElectricGoKart_rst_ps7_0_100M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity ElectricGoKart_rst_ps7_0_100M_0_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ElectricGoKart_rst_ps7_0_100M_0_cdc_sync : entity is "cdc_sync";
 end ElectricGoKart_rst_ps7_0_100M_0_cdc_sync;
 
 architecture STRUCTURE of ElectricGoKart_rst_ps7_0_100M_0_cdc_sync is
@@ -235,8 +233,6 @@ entity ElectricGoKart_rst_ps7_0_100M_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ElectricGoKart_rst_ps7_0_100M_0_upcnt_n : entity is "upcnt_n";
 end ElectricGoKart_rst_ps7_0_100M_0_upcnt_n;
 
 architecture STRUCTURE of ElectricGoKart_rst_ps7_0_100M_0_upcnt_n is
@@ -401,8 +397,6 @@ entity ElectricGoKart_rst_ps7_0_100M_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ElectricGoKart_rst_ps7_0_100M_0_lpf : entity is "lpf";
 end ElectricGoKart_rst_ps7_0_100M_0_lpf;
 
 architecture STRUCTURE of ElectricGoKart_rst_ps7_0_100M_0_lpf is
@@ -584,8 +578,6 @@ entity ElectricGoKart_rst_ps7_0_100M_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ElectricGoKart_rst_ps7_0_100M_0_sequence_psr : entity is "sequence_psr";
 end ElectricGoKart_rst_ps7_0_100M_0_sequence_psr;
 
 architecture STRUCTURE of ElectricGoKart_rst_ps7_0_100M_0_sequence_psr is
@@ -924,8 +916,6 @@ entity ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset : entity is "proc_sys_reset";
 end ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset;
 
 architecture STRUCTURE of ElectricGoKart_rst_ps7_0_100M_0_proc_sys_reset is
