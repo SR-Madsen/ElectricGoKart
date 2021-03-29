@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Fri Mar 26 13:43:46 2021
+--Date        : Mon Mar 29 09:59:02 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart.bd
 --Design      : ElectricGoKart
@@ -2794,6 +2794,35 @@ architecture STRUCTURE of ElectricGoKart is
     gpio_io_i : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component ElectricGoKart_axi_gpio_4_0;
+  component ElectricGoKart_PWM_Generator_0_1 is
+  port (
+    XADC_conv_en : out STD_LOGIC;
+    PWM_a : out STD_LOGIC;
+    PWM_b : out STD_LOGIC;
+    PWM_c : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component ElectricGoKart_PWM_Generator_0_1;
   component ElectricGoKart_Encoder_Driver_0_0 is
   port (
     SERIAL_DATA : in STD_LOGIC;
@@ -2824,35 +2853,6 @@ architecture STRUCTURE of ElectricGoKart is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component ElectricGoKart_Encoder_Driver_0_0;
-  component ElectricGoKart_PWM_Generator_0_1 is
-  port (
-    XADC_conv_en : out STD_LOGIC;
-    PWM_a : out STD_LOGIC;
-    PWM_b : out STD_LOGIC;
-    PWM_c : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component ElectricGoKart_PWM_Generator_0_1;
   signal Encoder_Driver_0_SERIAL_CLOCK : STD_LOGIC;
   signal INC_A_0_1 : STD_LOGIC;
   signal INC_B_0_1 : STD_LOGIC;

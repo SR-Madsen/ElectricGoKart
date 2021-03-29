@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1616762652">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1617004758">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="ElectricGoKart_wrapper.drc"/>
   <File Type="BG-BGN" Name="ElectricGoKart_wrapper.bgn"/>
@@ -128,5 +128,6 @@
   <BlockFileSet Type="BlockSrcs" Name="ElectricGoKart_axi_gpio_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ElectricGoKart_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ElectricGoKart_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ElectricGoKart_Encoder_Driver_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ElectricGoKart_xadc_wiz_0_0"/>
 </GenRun>

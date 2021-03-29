@@ -1,6 +1,90 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Mon Mar 29 09:58:58 2021
+| Host         : sebastian-ZBook running 64-bit Linux Mint 20
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ElectricGoKart_Encoder_Driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ElectricGoKart_Encoder_Driver_0_0 (user.org:user:Encoder_Driver:1.0) from (Rev. 9) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Mon Mar 29 09:51:47 2021
+| Host         : sebastian-ZBook running 64-bit Linux Mint 20
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ElectricGoKart_Encoder_Driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ElectricGoKart_Encoder_Driver_0_0 (user.org:user:Encoder_Driver:1.0) from (Rev. 8) to (Rev. 9)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Mon Mar 29 09:31:40 2021
+| Host         : sebastian-ZBook running 64-bit Linux Mint 20
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ElectricGoKart_PWM_Generator_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ElectricGoKart_PWM_Generator_0_1 (user.org:user:PWM_Generator:1.0) from (Rev. 19) to (Rev. 20)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Fri Mar 26 18:46:17 2021
+| Host         : sebastian-ZBook running 64-bit Linux Mint 20
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ElectricGoKart_Encoder_Driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ElectricGoKart_Encoder_Driver_0_0 (user.org:user:Encoder_Driver:1.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
 | Date         : Fri Mar 26 13:43:39 2021
 | Host         : sebastian-ZBook running 64-bit Linux Mint 20
 | Command      : upgrade_ip

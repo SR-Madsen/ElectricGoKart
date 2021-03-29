@@ -288,7 +288,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a3f8ae1d</spirit:value>
+            <spirit:value>9ac0860c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -304,7 +304,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a3f8ae1d</spirit:value>
+            <spirit:value>9ac0860c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -778,7 +778,7 @@
       <spirit:file>
         <spirit:name>hdl/Encoder_Driver_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_78f70ac9</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_86d818ae</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -917,8 +917,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Encoder Driver</xilinx:displayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-03-26T10:31:16Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-03-29T07:58:48Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3b816b1a_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1c7d74ef_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
@@ -1065,13 +1065,53 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2f411659_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@56c47780_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1f4e984_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@456cf297_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2272c4_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c47f43d_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a143548_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26e61b85_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e8c7a5c_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75b3b4c_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eb8b652_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7826143a_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74654f83_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@559b355b_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c7c3e32_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32d5d452_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9de81e9_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b8b4a22_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f583dc1_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7325f5dc_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12502935_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@414bd47b_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ee819fb_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dd9d4ce_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72f915b1_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@203f6ef3_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13cdc2a1_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@155685db_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@120e6f28_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a30951f_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bfc7f9b_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@112f9538_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2918f72f_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65eeaab0_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2436accd_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@424ebabe_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bf66383_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12360524_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b14a639_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aef3f14_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@815df6c_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8071610_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@439c0f3d_ARCHIVE_LOCATION">/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ip_repo/Encoder_Driver_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c90259e4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="539349d2"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3a97ba4f"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="81c04bf4"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="36dad159"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c20dc3cb"/>

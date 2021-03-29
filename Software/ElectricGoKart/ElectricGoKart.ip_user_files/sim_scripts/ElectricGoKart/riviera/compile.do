@@ -132,11 +132,11 @@ vcom -work xil_defaultlib -93 \
 "../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_2_0/sim/ElectricGoKart_axi_gpio_2_0.vhd" \
 "../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_3_0/sim/ElectricGoKart_axi_gpio_3_0.vhd" \
 "../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_axi_gpio_4_0/sim/ElectricGoKart_axi_gpio_4_0.vhd" \
-"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/96cc/hdl/Encoder_Driver_v1_0_S00_AXI.vhd" \
-"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/96cc/hdl/Encoder_Driver_v1_0.vhd" \
+"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/650c/hdl/Encoder_Driver_v1_0_S00_AXI.vhd" \
+"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/650c/hdl/Encoder_Driver_v1_0.vhd" \
 "../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_Encoder_Driver_0_0/sim/ElectricGoKart_Encoder_Driver_0_0.vhd" \
-"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/ff3e/hdl/PWM_Generator_v1_0_S00_AXI.vhd" \
-"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/ff3e/hdl/PWM_Generator_v1_0.vhd" \
+"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/8858/hdl/PWM_Generator_v1_0_S00_AXI.vhd" \
+"../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/8858/hdl/PWM_Generator_v1_0.vhd" \
 "../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_PWM_Generator_0_1/sim/ElectricGoKart_PWM_Generator_0_1.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_18  -v2k5 "+incdir+../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/ec67/hdl" "+incdir+../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ipshared/70cf/hdl" "+incdir+../../../../ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_processing_system7_0_0" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
