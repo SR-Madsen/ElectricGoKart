@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ElectricGoKart.srcs/sim_1/new/pwm_gen.vhd" \
+
+# Do not sort compile order
+nosort
