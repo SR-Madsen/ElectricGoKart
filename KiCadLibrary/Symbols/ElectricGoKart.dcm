@@ -10,9 +10,23 @@ D Power flag, +5V_Ref
 K power-flag
 $ENDCMP
 #
+$CMP 43045-0406
+D Molex 4-pin Micro-Fit SMD automotive connector
+F http://uk.rs-online.com/web/p/products/3249286
+$ENDCMP
+#
 $CMP AD8420ARMZ
 D Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP
 F http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf
+$ENDCMP
+#
+$CMP IPT015N10N5ATMA1
+D Infineon Power MOSFET, 100 V, 1.5 mOhm, high-current
+$ENDCMP
+#
+$CMP L6494LDTR
+D STMICROELECTRONICS - L6494LDTR - MOSFET/IGBT DRIVER, HIGH/LOW SIDE, SOIC
+F https://www.arrow.com/en/products/l6494ldtr/stmicroelectronics
 $ENDCMP
 #
 $CMP LM4041CFTA
