@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Mar 24 17:20:41 2021
+// Date        : Mon Mar 22 16:12:57 2021
 // Host        : sebastian-ZBook running 64-bit Linux Mint 20
 // Command     : write_verilog -force -mode synth_stub -rename_top ElectricGoKart_auto_pc_0 -prefix
 //               ElectricGoKart_auto_pc_0_ ElectricGoKart_auto_pc_0_stub.v

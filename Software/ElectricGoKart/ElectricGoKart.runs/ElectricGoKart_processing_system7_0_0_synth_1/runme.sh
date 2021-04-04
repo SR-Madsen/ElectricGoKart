@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/ElectricGoKart_xbar_0_synth_1'
+HD_PWD='/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/ElectricGoKart_processing_system7_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ElectricGoKart_xbar_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_xbar_0.tcl
+EAStep vivado -log ElectricGoKart_processing_system7_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_processing_system7_0_0.tcl

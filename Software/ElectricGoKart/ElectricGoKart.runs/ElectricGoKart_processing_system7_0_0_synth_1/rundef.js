@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ElectricGoKart_xbar_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_xbar_0.tcl" );
+         "-log ElectricGoKart_processing_system7_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_processing_system7_0_0.tcl" );
 
 
 

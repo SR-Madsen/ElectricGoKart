@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Fri Mar 26 10:06:41 2021
+-- Date        : Fri Mar 26 08:20:50 2021
 -- Host        : sebastian-ZBook running 64-bit Linux Mint 20
--- Command     : write_vhdl -force -mode synth_stub
---               /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_xbar_0/ElectricGoKart_xbar_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top ElectricGoKart_xbar_0 -prefix
+--               ElectricGoKart_xbar_0_ ElectricGoKart_xbar_0_stub.vhdl
 -- Design      : ElectricGoKart_xbar_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

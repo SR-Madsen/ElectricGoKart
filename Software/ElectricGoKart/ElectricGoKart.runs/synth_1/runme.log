@@ -19,29 +19,29 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28882 
+INFO: Helper process launched with PID 9340 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.000 ; gain = 86.898 ; free physical = 5420 ; free virtual = 11673
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.012 ; gain = 87.898 ; free physical = 7862 ; free virtual = 13654
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_wrapper' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/hdl/ElectricGoKart_wrapper.vhd:61]
 INFO: [Synth 8-3491] module 'ElectricGoKart' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:2501' bound to instance 'ElectricGoKart_i' of component 'ElectricGoKart' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/hdl/ElectricGoKart_wrapper.vhd:127]
 INFO: [Synth 8-638] synthesizing module 'ElectricGoKart' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:2554]
-INFO: [Synth 8-3491] module 'ElectricGoKart_Encoder_Driver_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_Encoder_Driver_0_0_stub.vhdl:5' bound to instance 'Encoder_Driver_0' of component 'ElectricGoKart_Encoder_Driver_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3158]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_Encoder_Driver_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_Encoder_Driver_0_0_stub.vhdl:37]
-INFO: [Synth 8-3491] module 'ElectricGoKart_PWM_Generator_0_1' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_PWM_Generator_0_1_stub.vhdl:5' bound to instance 'PWM_Generator_0' of component 'ElectricGoKart_PWM_Generator_0_1' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3187]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_PWM_Generator_0_1' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_PWM_Generator_0_1_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'ElectricGoKart_axi_gpio_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3215]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_1_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'ElectricGoKart_axi_gpio_1_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3238]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_1_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_1_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_2_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'ElectricGoKart_axi_gpio_2_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3261]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_2_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_2_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_3_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_3_0_stub.vhdl:5' bound to instance 'axi_gpio_3' of component 'ElectricGoKart_axi_gpio_3_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3286]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_3_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_3_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_4_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_4_0_stub.vhdl:5' bound to instance 'axi_gpio_4' of component 'ElectricGoKart_axi_gpio_4_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3309]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_4_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_4_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ElectricGoKart_processing_system7_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'ElectricGoKart_processing_system7_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3332]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_processing_system7_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_processing_system7_0_0_stub.vhdl:73]
+INFO: [Synth 8-3491] module 'ElectricGoKart_Encoder_Driver_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_Encoder_Driver_0_0_stub.vhdl:5' bound to instance 'Encoder_Driver_0' of component 'ElectricGoKart_Encoder_Driver_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3159]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_Encoder_Driver_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_Encoder_Driver_0_0_stub.vhdl:37]
+INFO: [Synth 8-3491] module 'ElectricGoKart_PWM_Generator_0_1' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_PWM_Generator_0_1_stub.vhdl:5' bound to instance 'PWM_Generator_0' of component 'ElectricGoKart_PWM_Generator_0_1' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3188]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_PWM_Generator_0_1' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_PWM_Generator_0_1_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'ElectricGoKart_axi_gpio_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3216]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_1_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'ElectricGoKart_axi_gpio_1_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3239]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_1_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_2_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'ElectricGoKart_axi_gpio_2_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3262]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_2_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_2_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_3_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_3_0_stub.vhdl:5' bound to instance 'axi_gpio_3' of component 'ElectricGoKart_axi_gpio_3_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3287]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_3_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_3_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ElectricGoKart_axi_gpio_4_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_4_0_stub.vhdl:5' bound to instance 'axi_gpio_4' of component 'ElectricGoKart_axi_gpio_4_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3310]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_axi_gpio_4_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_axi_gpio_4_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ElectricGoKart_processing_system7_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'ElectricGoKart_processing_system7_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3333]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_processing_system7_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_processing_system7_0_0_stub.vhdl:74]
 INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_ps7_0_axi_periph_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:1361]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1NK4DUL' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1NK4DUL' (1#1) [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:57]
@@ -60,16 +60,16 @@ INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_SGV5FX' (7#1) [/h
 INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_1SAUW6I' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:784]
 INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_1SAUW6I' (8#1) [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:784]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_63V1IG' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:908]
-INFO: [Synth 8-3491] module 'ElectricGoKart_auto_pc_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'ElectricGoKart_auto_pc_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:1091]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_auto_pc_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'ElectricGoKart_auto_pc_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'ElectricGoKart_auto_pc_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:1091]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_auto_pc_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_63V1IG' (9#1) [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:908]
-INFO: [Synth 8-3491] module 'ElectricGoKart_xbar_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'ElectricGoKart_xbar_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:2328]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_xbar_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'ElectricGoKart_xbar_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'ElectricGoKart_xbar_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:2328]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_xbar_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'ElectricGoKart_ps7_0_axi_periph_0' (10#1) [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:1361]
-INFO: [Synth 8-3491] module 'ElectricGoKart_rst_ps7_0_100M_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'ElectricGoKart_rst_ps7_0_100M_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3598]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_rst_ps7_0_100M_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'ElectricGoKart_xadc_wiz_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_xadc_wiz_0_0_stub.vhdl:5' bound to instance 'xadc_wiz_0' of component 'ElectricGoKart_xadc_wiz_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3611]
-INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_xadc_wiz_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-28838-sebastian-ZBook/realtime/ElectricGoKart_xadc_wiz_0_0_stub.vhdl:47]
+INFO: [Synth 8-3491] module 'ElectricGoKart_rst_ps7_0_100M_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'ElectricGoKart_rst_ps7_0_100M_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3600]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_rst_ps7_0_100M_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'ElectricGoKart_xadc_wiz_0_0' declared at '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_xadc_wiz_0_0_stub.vhdl:5' bound to instance 'xadc_wiz_0' of component 'ElectricGoKart_xadc_wiz_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:3613]
+INFO: [Synth 8-638] synthesizing module 'ElectricGoKart_xadc_wiz_0_0' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/.Xil/Vivado-9319-sebastian-ZBook/realtime/ElectricGoKart_xadc_wiz_0_0_stub.vhdl:47]
 INFO: [Synth 8-256] done synthesizing module 'ElectricGoKart' (11#1) [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/synth/ElectricGoKart.vhd:2554]
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:23615' bound to instance 'Main_Relay_tri_iobuf_0' of component 'IOBUF' [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/hdl/ElectricGoKart_wrapper.vhd:177]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:23615]
@@ -133,7 +133,7 @@ WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected
 WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.750 ; gain = 134.648 ; free physical = 5430 ; free virtual = 11683
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.762 ; gain = 135.648 ; free physical = 7887 ; free virtual = 13679
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -146,10 +146,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.750 ; gain = 134.648 ; free physical = 5431 ; free virtual = 11684
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.762 ; gain = 135.648 ; free physical = 7887 ; free virtual = 13680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.750 ; gain = 134.648 ; free physical = 5431 ; free virtual = 11684
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.762 ; gain = 135.648 ; free physical = 7887 ; free virtual = 13680
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -231,26 +231,25 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/ElectricGoKart_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5173 ; free virtual = 11427
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7672 ; free virtual = 13465
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5173 ; free virtual = 11427
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7672 ; free virtual = 13465
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5173 ; free virtual = 11427
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5174 ; free virtual = 11427
-WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'ElectricGoKart_i/ps7_0_axi_periph/s00_couplers/auto_pc' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7672 ; free virtual = 13465
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7672 ; free virtual = 13465
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5254 ; free virtual = 11508
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7717 ; free virtual = 13514
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5254 ; free virtual = 11508
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7717 ; free virtual = 13514
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -530,10 +529,10 @@ Applied set_property DONT_TOUCH = true for ElectricGoKart_i/Encoder_Driver_0. (c
 Applied set_property DONT_TOUCH = true for ElectricGoKart_i/PWM_Generator_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ElectricGoKart_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5256 ; free virtual = 11510
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7719 ; free virtual = 13515
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5256 ; free virtual = 11510
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7718 ; free virtual = 13515
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -587,7 +586,7 @@ WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected
 WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design ElectricGoKart_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5253 ; free virtual = 11509
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7715 ; free virtual = 13515
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -601,13 +600,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ElectricGoKart_i/processing_system7_0/FCLK_CLK0' to pin 'ElectricGoKart_i/processing_system7_0/bbstub_FCLK_CLK0/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5108 ; free virtual = 11365
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7584 ; free virtual = 13385
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5108 ; free virtual = 11364
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13385
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -619,7 +618,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5107 ; free virtual = 11363
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7585 ; free virtual = 13386
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -643,7 +642,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11363
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -656,7 +655,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11363
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -668,25 +667,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11363
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11363
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11362
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11362
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -741,28 +740,28 @@ Report Instance Areas:
 |4     |      s00_couplers   |s00_couplers_imp_63V1IG           |   177|
 +------+---------------------+----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5106 ; free virtual = 11362
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7583 ; free virtual = 13374
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1800.406 ; gain = 134.648 ; free physical = 5163 ; free virtual = 11419
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1800.406 ; gain = 442.305 ; free physical = 5163 ; free virtual = 11419
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1801.426 ; gain = 135.648 ; free physical = 7640 ; free virtual = 13431
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.426 ; gain = 444.312 ; free physical = 7643 ; free virtual = 13434
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5115 ; free virtual = 11371
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7593 ; free virtual = 13384
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-94 Infos, 94 Warnings, 0 Critical Warnings and 0 Errors encountered.
+94 Infos, 93 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1800.406 ; gain = 448.133 ; free physical = 5161 ; free virtual = 11418
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1800.406 ; gain = 0.000 ; free physical = 5161 ; free virtual = 11418
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1801.426 ; gain = 450.141 ; free physical = 7639 ; free virtual = 13430
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.426 ; gain = 0.000 ; free physical = 7639 ; free virtual = 13430
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.runs/synth_1/ElectricGoKart_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ElectricGoKart_wrapper_utilization_synth.rpt -pb ElectricGoKart_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 29 10:00:18 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  4 10:48:27 2021...

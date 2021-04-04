@@ -6,4 +6,4 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log ElectricGoKart_xbar_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_xbar_0.tcl
+vivado -log ElectricGoKart_processing_system7_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ElectricGoKart_processing_system7_0_0.tcl
