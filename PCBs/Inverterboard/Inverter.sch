@@ -1125,10 +1125,34 @@ Wire Wire Line
 	7500 2950 7500 3300
 Wire Wire Line
 	7500 4300 7500 4650
-Wire Wire Line
-	7500 5450 7500 5800
 Text GLabel 1650 1150 0    50   Input ~ 0
 +BATT
 Text GLabel 10650 3500 2    50   Input ~ 0
 PHASE
+Wire Wire Line
+	7500 1650 7500 1750
+Wire Wire Line
+	7500 1750 7500 1850
+Connection ~ 7500 1750
+Connection ~ 7500 1850
+Wire Wire Line
+	7500 2750 7500 2850
+Wire Wire Line
+	7500 2850 7500 2950
+Connection ~ 7500 2850
+Connection ~ 7500 2950
+Wire Wire Line
+	7500 4100 7500 4200
+Wire Wire Line
+	7500 4200 7500 4300
+Connection ~ 7500 4200
+Connection ~ 7500 4300
+Wire Wire Line
+	7500 5250 7500 5350
+Wire Wire Line
+	7500 5350 7500 5450
+Connection ~ 7500 5350
+Connection ~ 7500 5450
+Wire Wire Line
+	7500 5450 7500 5800
 $EndSCHEMATC
