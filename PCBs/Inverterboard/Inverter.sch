@@ -1127,4 +1127,8 @@ Wire Wire Line
 	7500 4300 7500 4650
 Wire Wire Line
 	7500 5450 7500 5800
+Text GLabel 1650 1150 0    50   Input ~ 0
++BATT
+Text GLabel 10650 3500 2    50   Input ~ 0
+PHASE
 $EndSCHEMATC
