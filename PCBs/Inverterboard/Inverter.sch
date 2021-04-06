@@ -142,7 +142,7 @@ L Device:C C4
 U 1 1 604F18D3
 P 3200 3600
 F 0 "C4" H 3315 3646 50  0000 L CNN
-F 1 "100µ" H 3315 3555 50  0000 L CNN
+F 1 "100n" H 3315 3555 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3238 3450 50  0001 C CNN
 F 3 "~" H 3200 3600 50  0001 C CNN
 	1    3200 3600
@@ -528,8 +528,6 @@ Wire Wire Line
 Wire Wire Line
 	10000 1550 9500 1550
 Wire Wire Line
-	1650 1150 1850 1150
-Wire Wire Line
 	10000 1550 10000 2650
 Connection ~ 10000 1550
 Wire Wire Line
@@ -706,25 +704,22 @@ t_d(on) + t_r = 36 + 30 =  66ns\nt_d(off) + t_f = 85 + 30 = 115ns\nt_dead = 200n
 Wire Wire Line
 	5050 3150 5700 3150
 $Comp
-L Device:C C10
+L Device:CP1_Small C10
 U 1 1 60639677
 P 1850 1300
 F 0 "C10" H 1965 1346 50  0000 L CNN
 F 1 "100µ" H 1965 1255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1888 1150 50  0001 C CNN
+F 2 "EEE-TKK101UAQ:CAPAE1350X1400N" H 1888 1150 50  0001 C CNN
 F 3 "~" H 1850 1300 50  0001 C CNN
 	1    1850 1300
 	1    0    0    -1  
 $EndComp
-Connection ~ 1850 1150
-Wire Wire Line
-	1850 1150 2250 1150
 $Comp
 L Device:C C11
 U 1 1 60639D6C
 P 2250 1300
 F 0 "C11" H 2365 1346 50  0000 L CNN
-F 1 "10µ" H 2365 1255 50  0000 L CNN
+F 1 "4.7µ" H 2365 1255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2288 1150 50  0001 C CNN
 F 3 "~" H 2250 1300 50  0001 C CNN
 	1    2250 1300
@@ -829,240 +824,23 @@ F 3 "" H 2950 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2000 5600 1200 5600
-$Comp
-L power:GND #PWR0102
-U 1 1 60677954
-P 850 5700
-F 0 "#PWR0102" H 850 5450 50  0001 C CNN
-F 1 "GND" H 855 5527 50  0000 C CNN
-F 2 "" H 850 5700 50  0001 C CNN
-F 3 "" H 850 5700 50  0001 C CNN
-	1    850  5700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	850  5700 850  5600
-Wire Wire Line
-	850  5600 1100 5600
-Wire Wire Line
-	850  5600 850  4800
-Wire Wire Line
-	850  4800 1100 4800
-Connection ~ 850  5600
-Wire Wire Line
 	2100 2850 2450 2850
-Text GLabel 2250 5250 2    50   Input ~ 0
+Text GLabel 2100 4900 2    50   Input ~ 0
 Enable
-Wire Wire Line
-	2000 4800 2000 5250
-Wire Wire Line
-	2000 5250 2250 5250
-Wire Wire Line
-	2000 5600 2000 5250
-Connection ~ 2000 5250
-Wire Wire Line
-	1950 6100 1150 6100
-Wire Wire Line
-	1950 6900 1150 6900
-$Comp
-L power:GND #PWR0103
-U 1 1 606FB9FB
-P 800 7000
-F 0 "#PWR0103" H 800 6750 50  0001 C CNN
-F 1 "GND" H 805 6827 50  0000 C CNN
-F 2 "" H 800 7000 50  0001 C CNN
-F 3 "" H 800 7000 50  0001 C CNN
-	1    800  7000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  7000 800  6900
-Wire Wire Line
-	800  6900 1050 6900
-Wire Wire Line
-	800  6900 800  6100
-Wire Wire Line
-	800  6100 1050 6100
-Connection ~ 800  6900
-Text GLabel 2200 6550 2    50   Input ~ 0
+Text GLabel 1450 4900 0    50   Input ~ 0
 PWM
-Wire Wire Line
-	1950 6100 1950 6550
-Wire Wire Line
-	1950 6550 2200 6550
-Wire Wire Line
-	1950 6900 1950 6550
-Connection ~ 1950 6550
-Wire Wire Line
-	4100 4800 3300 4800
-Wire Wire Line
-	4100 5600 3300 5600
-$Comp
-L power:GND #PWR0104
-U 1 1 6070759D
-P 2950 5700
-F 0 "#PWR0104" H 2950 5450 50  0001 C CNN
-F 1 "GND" H 2955 5527 50  0000 C CNN
-F 2 "" H 2950 5700 50  0001 C CNN
-F 3 "" H 2950 5700 50  0001 C CNN
-	1    2950 5700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2950 5700 2950 5600
-Wire Wire Line
-	2950 5600 3200 5600
-Wire Wire Line
-	2950 5600 2950 4800
-Wire Wire Line
-	2950 4800 3200 4800
-Connection ~ 2950 5600
-Wire Wire Line
-	4100 4800 4100 5250
-Wire Wire Line
-	4100 5250 4350 5250
-Wire Wire Line
-	4100 5600 4100 5250
-Connection ~ 4100 5250
-Wire Wire Line
-	4050 6150 3250 6150
-Wire Wire Line
-	4050 6950 3250 6950
-$Comp
-L power:GND #PWR0105
-U 1 1 60713CD6
-P 2900 7050
-F 0 "#PWR0105" H 2900 6800 50  0001 C CNN
-F 1 "GND" H 2905 6877 50  0000 C CNN
-F 2 "" H 2900 7050 50  0001 C CNN
-F 3 "" H 2900 7050 50  0001 C CNN
-	1    2900 7050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 7050 2900 6950
-Wire Wire Line
-	2900 6950 3150 6950
-Wire Wire Line
-	2900 6950 2900 6150
-Wire Wire Line
-	2900 6150 3150 6150
-Connection ~ 2900 6950
-Wire Wire Line
-	4050 6150 4050 6600
-Wire Wire Line
-	4050 6600 4300 6600
-Wire Wire Line
-	4050 6950 4050 6600
-Connection ~ 4050 6600
-$Comp
-L power:+12V #PWR0106
-U 1 1 60720CAE
-P 4350 5200
-F 0 "#PWR0106" H 4350 5050 50  0001 C CNN
-F 1 "+12V" H 4365 5373 50  0000 C CNN
-F 2 "" H 4350 5200 50  0001 C CNN
-F 3 "" H 4350 5200 50  0001 C CNN
-	1    4350 5200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3100 2600 3300 2600
 $Comp
 L power:+5V #PWR0107
 U 1 1 607376E9
-P 4300 6550
-F 0 "#PWR0107" H 4300 6400 50  0001 C CNN
-F 1 "+5V" H 4315 6723 50  0000 C CNN
-F 2 "" H 4300 6550 50  0001 C CNN
-F 3 "" H 4300 6550 50  0001 C CNN
-	1    4300 6550
+P 2550 4850
+F 0 "#PWR0107" H 2550 4700 50  0001 C CNN
+F 1 "+5V" H 2565 5023 50  0000 C CNN
+F 2 "" H 2550 4850 50  0001 C CNN
+F 3 "" H 2550 4850 50  0001 C CNN
+	1    2550 4850
 	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4300 6600 4300 6550
-Wire Wire Line
-	4350 5200 4350 5250
-Text Notes 10400 3600 0    50   ~ 0
-PHASE CONNECTOR
-Text Notes 1500 1000 0    50   ~ 0
-+BATT CONNECTOR
-Text Notes 1500 1950 0    50   ~ 0
-GND CONNECTOR
-Wire Wire Line
-	2000 4800 1200 4800
-$Comp
-L ElectricGoKart:43045-0406 J2
-U 1 1 606CAD8B
-P 1200 4800
-F 0 "J2" V 1554 4928 50  0000 L CNN
-F 1 "43045-0406" V 1645 4928 50  0000 L CNN
-F 2 "ElectricGoKart:43045-0406" H 1850 4900 50  0001 L CNN
-F 3 "http://uk.rs-online.com/web/p/products/3249286" H 1850 4800 50  0001 L CNN
-F 4 "Micro-Fit SMT r/a 3.0mm header 2x2W Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 4 Way 2 Row Right Angle PCB Header, Solder Termination, 5A" H 1850 4700 50  0001 L CNN "Description"
-F 5 "" H 1850 4600 50  0001 L CNN "Height"
-F 6 "3249286" H 1850 4500 50  0001 L CNN "RS Part Number"
-F 7 "http://uk.rs-online.com/web/p/products/3249286" H 1850 4400 50  0001 L CNN "RS Price/Stock"
-F 8 "Molex" H 1850 4300 50  0001 L CNN "Manufacturer_Name"
-F 9 "43045-0406" H 1850 4200 50  0001 L CNN "Manufacturer_Part_Number"
-F 10 "70372625" H 1850 4100 50  0001 L CNN "Allied_Number"
-	1    1200 4800
-	0    1    1    0   
-$EndComp
-$Comp
-L ElectricGoKart:43045-0406 J1
-U 1 1 606CD7D6
-P 1150 6100
-F 0 "J1" V 1504 6228 50  0000 L CNN
-F 1 "43045-0406" V 1595 6228 50  0000 L CNN
-F 2 "ElectricGoKart:43045-0406" H 1800 6200 50  0001 L CNN
-F 3 "http://uk.rs-online.com/web/p/products/3249286" H 1800 6100 50  0001 L CNN
-F 4 "Micro-Fit SMT r/a 3.0mm header 2x2W Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 4 Way 2 Row Right Angle PCB Header, Solder Termination, 5A" H 1800 6000 50  0001 L CNN "Description"
-F 5 "" H 1800 5900 50  0001 L CNN "Height"
-F 6 "3249286" H 1800 5800 50  0001 L CNN "RS Part Number"
-F 7 "http://uk.rs-online.com/web/p/products/3249286" H 1800 5700 50  0001 L CNN "RS Price/Stock"
-F 8 "Molex" H 1800 5600 50  0001 L CNN "Manufacturer_Name"
-F 9 "43045-0406" H 1800 5500 50  0001 L CNN "Manufacturer_Part_Number"
-F 10 "70372625" H 1800 5400 50  0001 L CNN "Allied_Number"
-	1    1150 6100
-	0    1    1    0   
-$EndComp
-$Comp
-L ElectricGoKart:43045-0406 J3
-U 1 1 606CEF1B
-P 3250 6150
-F 0 "J3" V 3604 6278 50  0000 L CNN
-F 1 "43045-0406" V 3695 6278 50  0000 L CNN
-F 2 "ElectricGoKart:43045-0406" H 3900 6250 50  0001 L CNN
-F 3 "http://uk.rs-online.com/web/p/products/3249286" H 3900 6150 50  0001 L CNN
-F 4 "Micro-Fit SMT r/a 3.0mm header 2x2W Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 4 Way 2 Row Right Angle PCB Header, Solder Termination, 5A" H 3900 6050 50  0001 L CNN "Description"
-F 5 "" H 3900 5950 50  0001 L CNN "Height"
-F 6 "3249286" H 3900 5850 50  0001 L CNN "RS Part Number"
-F 7 "http://uk.rs-online.com/web/p/products/3249286" H 3900 5750 50  0001 L CNN "RS Price/Stock"
-F 8 "Molex" H 3900 5650 50  0001 L CNN "Manufacturer_Name"
-F 9 "43045-0406" H 3900 5550 50  0001 L CNN "Manufacturer_Part_Number"
-F 10 "70372625" H 3900 5450 50  0001 L CNN "Allied_Number"
-	1    3250 6150
-	0    1    1    0   
-$EndComp
-$Comp
-L ElectricGoKart:43045-0406 J4
-U 1 1 606D0A41
-P 3300 4800
-F 0 "J4" V 3654 4928 50  0000 L CNN
-F 1 "43045-0406" V 3745 4928 50  0000 L CNN
-F 2 "ElectricGoKart:43045-0406" H 3950 4900 50  0001 L CNN
-F 3 "http://uk.rs-online.com/web/p/products/3249286" H 3950 4800 50  0001 L CNN
-F 4 "Micro-Fit SMT r/a 3.0mm header 2x2W Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 4 Way 2 Row Right Angle PCB Header, Solder Termination, 5A" H 3950 4700 50  0001 L CNN "Description"
-F 5 "" H 3950 4600 50  0001 L CNN "Height"
-F 6 "3249286" H 3950 4500 50  0001 L CNN "RS Part Number"
-F 7 "http://uk.rs-online.com/web/p/products/3249286" H 3950 4400 50  0001 L CNN "RS Price/Stock"
-F 8 "Molex" H 3950 4300 50  0001 L CNN "Manufacturer_Name"
-F 9 "43045-0406" H 3950 4200 50  0001 L CNN "Manufacturer_Part_Number"
-F 10 "70372625" H 3950 4100 50  0001 L CNN "Allied_Number"
-	1    3300 4800
-	0    1    1    0   
 $EndComp
 $Comp
 L ElectricGoKart:L6494LDTR IC1
@@ -1155,4 +933,45 @@ Connection ~ 7500 5350
 Connection ~ 7500 5450
 Wire Wire Line
 	7500 5450 7500 5800
+Wire Wire Line
+	1850 1450 1850 1400
+Wire Wire Line
+	1650 1150 1850 1150
+Wire Wire Line
+	1850 1200 1850 1150
+Connection ~ 1850 1150
+Wire Wire Line
+	1850 1150 2250 1150
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J1
+U 1 1 6073CEF7
+P 1800 4900
+F 0 "J1" H 1850 5117 50  0000 C CNN
+F 1 "Conn_02x02_Odd_Even" H 1850 5026 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical_SMD" H 1800 4900 50  0001 C CNN
+F 3 "~" H 1800 4900 50  0001 C CNN
+	1    1800 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 4900 1600 4900
+$Comp
+L power:+12V #PWR0106
+U 1 1 60720CAE
+P 1100 4850
+F 0 "#PWR0106" H 1100 4700 50  0001 C CNN
+F 1 "+12V" H 1115 5023 50  0000 C CNN
+F 2 "" H 1100 4850 50  0001 C CNN
+F 3 "" H 1100 4850 50  0001 C CNN
+	1    1100 4850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 5000 2550 5000
+Wire Wire Line
+	2550 4850 2550 5000
+Wire Wire Line
+	1100 4850 1100 5000
+Wire Wire Line
+	1100 5000 1600 5000
 $EndSCHEMATC

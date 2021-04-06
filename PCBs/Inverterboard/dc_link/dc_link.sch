@@ -932,4 +932,218 @@ Wire Wire Line
 	8050 5050 8400 5050
 Text GLabel 8400 5050 2    50   Input ~ 0
 PHASE_C
+$Comp
+L Device:CP C44
+U 1 1 606CDC91
+P 6550 2900
+F 0 "C44" H 6668 2946 50  0000 L CNN
+F 1 "CP" H 6668 2855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 6588 2750 50  0001 C CNN
+F 3 "~" H 6550 2900 50  0001 C CNN
+	1    6550 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C45
+U 1 1 606CDC97
+P 6900 2900
+F 0 "C45" H 7018 2946 50  0000 L CNN
+F 1 "CP" H 7018 2855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 6938 2750 50  0001 C CNN
+F 3 "~" H 6900 2900 50  0001 C CNN
+	1    6900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C43
+U 1 1 606CDC9D
+P 6200 2900
+F 0 "C43" H 6318 2946 50  0000 L CNN
+F 1 "CP" H 6318 2855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 6238 2750 50  0001 C CNN
+F 3 "~" H 6200 2900 50  0001 C CNN
+	1    6200 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C42
+U 1 1 606CDCA3
+P 5850 2900
+F 0 "C42" H 5968 2946 50  0000 L CNN
+F 1 "CP" H 5968 2855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5888 2750 50  0001 C CNN
+F 3 "~" H 5850 2900 50  0001 C CNN
+	1    5850 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C41
+U 1 1 606CDCA9
+P 5500 2900
+F 0 "C41" H 5618 2946 50  0000 L CNN
+F 1 "CP" H 5618 2855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5538 2750 50  0001 C CNN
+F 3 "~" H 5500 2900 50  0001 C CNN
+	1    5500 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2750 5500 2600
+Wire Wire Line
+	5850 2750 5850 2600
+Connection ~ 5850 2600
+Wire Wire Line
+	5850 2600 5500 2600
+Wire Wire Line
+	6200 2750 6200 2600
+Wire Wire Line
+	6900 3050 6900 3200
+Wire Wire Line
+	6200 3050 6200 3200
+Wire Wire Line
+	6200 3200 5850 3200
+Wire Wire Line
+	5850 3050 5850 3200
+Connection ~ 5850 3200
+Wire Wire Line
+	5850 3200 5500 3200
+Wire Wire Line
+	5500 3050 5500 3200
+Wire Wire Line
+	6550 3050 6550 3200
+Wire Wire Line
+	6550 3200 6200 3200
+Connection ~ 6200 3200
+Wire Wire Line
+	6550 3200 6900 3200
+Connection ~ 6550 3200
+Wire Wire Line
+	6900 2600 6550 2600
+Wire Wire Line
+	6550 2600 6550 2750
+Wire Wire Line
+	5850 2600 6200 2600
+Connection ~ 6550 2600
+Connection ~ 6200 2600
+Wire Wire Line
+	6200 2600 6550 2600
+Wire Wire Line
+	6900 2750 6900 2600
+Connection ~ 6900 3200
+Connection ~ 7250 3200
+Wire Wire Line
+	6900 3200 7250 3200
+Wire Wire Line
+	6900 2600 7250 2600
+Connection ~ 6900 2600
+Connection ~ 7250 2600
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J2
+U 1 1 606EA676
+P 6150 5200
+F 0 "J2" H 6200 5417 50  0000 C CNN
+F 1 "Conn_02x02_Odd_Even" H 6200 5326 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 6150 5200 50  0001 C CNN
+F 3 "~" H 6150 5200 50  0001 C CNN
+	1    6150 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 6100 5700 6100
+Wire Wire Line
+	5700 5650 5950 5650
+Wire Wire Line
+	5700 5200 5950 5200
+Wire Wire Line
+	5950 5300 5750 5300
+Wire Wire Line
+	5750 5300 5750 5750
+Wire Wire Line
+	5750 5750 5950 5750
+Wire Wire Line
+	5750 5750 5750 6200
+Wire Wire Line
+	5750 6200 5950 6200
+Connection ~ 5750 5750
+Wire Wire Line
+	6450 5300 6650 5300
+Wire Wire Line
+	6650 5300 6650 5750
+Wire Wire Line
+	6650 5750 6450 5750
+Wire Wire Line
+	6650 5750 6650 6200
+Wire Wire Line
+	6650 6200 6450 6200
+Connection ~ 6650 5750
+Wire Wire Line
+	6450 6100 6700 6100
+Wire Wire Line
+	6700 5650 6450 5650
+Wire Wire Line
+	6700 5200 6450 5200
+$Comp
+L power:+12V #PWR03
+U 1 1 60756BFC
+P 5200 5500
+F 0 "#PWR03" H 5200 5350 50  0001 C CNN
+F 1 "+12V" H 5215 5673 50  0000 C CNN
+F 2 "" H 5200 5500 50  0001 C CNN
+F 3 "" H 5200 5500 50  0001 C CNN
+	1    5200 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR04
+U 1 1 60757ED1
+P 7250 5500
+F 0 "#PWR04" H 7250 5350 50  0001 C CNN
+F 1 "+5V" H 7265 5673 50  0000 C CNN
+F 2 "" H 7250 5500 50  0001 C CNN
+F 3 "" H 7250 5500 50  0001 C CNN
+	1    7250 5500
+	1    0    0    -1  
+$EndComp
+Text GLabel 6700 5200 2    50   Input ~ 0
+Enable_A
+Text GLabel 5700 5200 0    50   Input ~ 0
+PWM_A
+Wire Wire Line
+	5750 5750 5200 5750
+Wire Wire Line
+	5200 5750 5200 5500
+Wire Wire Line
+	6650 5750 7250 5750
+Wire Wire Line
+	7250 5750 7250 5500
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J3
+U 1 1 607958C3
+P 6150 5650
+F 0 "J3" H 6200 5867 50  0000 C CNN
+F 1 "Conn_02x02_Odd_Even" H 6200 5776 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 6150 5650 50  0001 C CNN
+F 3 "~" H 6150 5650 50  0001 C CNN
+	1    6150 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J4
+U 1 1 607A1ECD
+P 6150 6100
+F 0 "J4" H 6200 6317 50  0000 C CNN
+F 1 "Conn_02x02_Odd_Even" H 6200 6226 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 6150 6100 50  0001 C CNN
+F 3 "~" H 6150 6100 50  0001 C CNN
+	1    6150 6100
+	1    0    0    -1  
+$EndComp
+Text GLabel 5700 5650 0    50   Input ~ 0
+PWM_B
+Text GLabel 5700 6100 0    50   Input ~ 0
+PWM_C
+Text GLabel 6700 5650 2    50   Input ~ 0
+Enable_B
+Text GLabel 6700 6100 2    50   Input ~ 0
+Enable_C
 $EndSCHEMATC
