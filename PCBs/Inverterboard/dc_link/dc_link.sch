@@ -25,17 +25,6 @@ F 3 "~" H 600 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP C2
-U 1 1 606B55D7
-P 950 2150
-F 0 "C2" H 1068 2196 50  0000 L CNN
-F 1 "CP" H 1068 2105 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 988 2000 50  0001 C CNN
-F 3 "~" H 950 2150 50  0001 C CNN
-	1    950  2150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:CP C3
 U 1 1 606B5836
 P 1300 2150
@@ -121,28 +110,6 @@ F 1 "CP" H 1768 2105 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 1688 2000 50  0001 C CNN
 F 3 "~" H 1650 2150 50  0001 C CNN
 	1    1650 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP C14
-U 1 1 606BBB01
-P 5150 2150
-F 0 "C14" H 5268 2196 50  0000 L CNN
-F 1 "CP" H 5268 2105 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5188 2000 50  0001 C CNN
-F 3 "~" H 5150 2150 50  0001 C CNN
-	1    5150 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP C15
-U 1 1 606BBC51
-P 5500 2150
-F 0 "C15" H 5618 2196 50  0000 L CNN
-F 1 "CP" H 5618 2105 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5538 2000 50  0001 C CNN
-F 3 "~" H 5500 2150 50  0001 C CNN
-	1    5500 2150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -267,16 +234,8 @@ Wire Wire Line
 	4450 1850 4100 1850
 Wire Wire Line
 	4800 2000 4800 1850
-Connection ~ 4800 1850
 Wire Wire Line
 	4800 1850 4450 1850
-Wire Wire Line
-	5150 2000 5150 1850
-Connection ~ 5150 1850
-Wire Wire Line
-	5500 2000 5500 1850
-Wire Wire Line
-	5500 1850 5150 1850
 Wire Wire Line
 	6200 2000 6200 1850
 Wire Wire Line
@@ -306,15 +265,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 2300 6200 2450
 Wire Wire Line
-	5500 2300 5500 2450
-Wire Wire Line
-	5500 2450 5150 2450
-Wire Wire Line
-	5150 2300 5150 2450
-Connection ~ 5150 2450
-Wire Wire Line
 	4800 2300 4800 2450
-Connection ~ 4800 2450
 Wire Wire Line
 	4800 2450 4450 2450
 Wire Wire Line
@@ -367,21 +318,6 @@ F 1 "GND" H 605 2427 50  0000 C CNN
 F 2 "" H 600 2600 50  0001 C CNN
 F 3 "" H 600 2600 50  0001 C CNN
 	1    600  2600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3150 5600 3150 5850
-Text Notes 3450 5450 0    50   ~ 0
-Energy Dump Resistor
-$Comp
-L Device:R R1
-U 1 1 607086F8
-P 3150 5450
-F 0 "R1" H 3220 5496 50  0000 L CNN
-F 1 "R" H 3220 5405 50  0000 L CNN
-F 2 "" V 3080 5450 50  0001 C CNN
-F 3 "~" H 3150 5450 50  0001 C CNN
-	1    3150 5450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -580,28 +516,10 @@ Wire Wire Line
 	5850 1850 5850 2000
 Connection ~ 6200 1850
 Wire Wire Line
-	5850 1850 5500 1850
-Connection ~ 5850 1850
-Connection ~ 5500 1850
-Wire Wire Line
 	5850 2300 5850 2450
 Wire Wire Line
-	5850 2450 5500 2450
-Connection ~ 5500 2450
-Wire Wire Line
 	5850 2450 6200 2450
-Connection ~ 5850 2450
 Connection ~ 6200 2450
-Wire Wire Line
-	5100 2450 5150 2450
-Wire Wire Line
-	4800 1850 5150 1850
-Wire Wire Line
-	4800 2450 5150 2450
-Wire Wire Line
-	600  2300 600  2450
-Wire Wire Line
-	600  1500 600  1850
 Wire Wire Line
 	9700 1850 9350 1850
 Wire Wire Line
@@ -658,28 +576,6 @@ Wire Wire Line
 	3400 1850 3750 1850
 Connection ~ 3400 1850
 Connection ~ 3750 1850
-Wire Wire Line
-	1300 1850 950  1850
-Wire Wire Line
-	950  1850 950  2000
-Connection ~ 1300 1850
-Wire Wire Line
-	1300 2450 950  2450
-Wire Wire Line
-	950  2450 950  2300
-Connection ~ 1300 2450
-Wire Wire Line
-	950  1850 600  1850
-Connection ~ 950  1850
-Connection ~ 600  1850
-Wire Wire Line
-	600  1850 600  2000
-Wire Wire Line
-	950  2450 600  2450
-Connection ~ 950  2450
-Connection ~ 600  2450
-Wire Wire Line
-	600  2450 600  2600
 $Comp
 L Device:CP C27
 U 1 1 606BEE14
@@ -899,17 +795,6 @@ Wire Wire Line
 Connection ~ 10400 3200
 Connection ~ 10750 2450
 $Comp
-L Comparator:LM311 U1
-U 1 1 606EF7D6
-P 5000 4600
-F 0 "U1" H 5344 4646 50  0000 L CNN
-F 1 "LM311" H 5344 4555 50  0000 L CNN
-F 2 "" H 5000 4600 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/lm311.pdf" H 5000 4600 50  0001 C CNN
-	1    5000 4600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x03 J1
 U 1 1 6071BEAC
 P 7850 4950
@@ -965,35 +850,6 @@ F 3 "~" H 6200 2900 50  0001 C CNN
 	1    6200 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:CP C42
-U 1 1 606CDCA3
-P 5850 2900
-F 0 "C42" H 5968 2946 50  0000 L CNN
-F 1 "CP" H 5968 2855 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5888 2750 50  0001 C CNN
-F 3 "~" H 5850 2900 50  0001 C CNN
-	1    5850 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP C41
-U 1 1 606CDCA9
-P 5500 2900
-F 0 "C41" H 5618 2946 50  0000 L CNN
-F 1 "CP" H 5618 2855 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5538 2750 50  0001 C CNN
-F 3 "~" H 5500 2900 50  0001 C CNN
-	1    5500 2900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 2750 5500 2600
-Wire Wire Line
-	5850 2750 5850 2600
-Connection ~ 5850 2600
-Wire Wire Line
-	5850 2600 5500 2600
 Wire Wire Line
 	6200 2750 6200 2600
 Wire Wire Line
@@ -1001,19 +857,9 @@ Wire Wire Line
 Wire Wire Line
 	6200 3050 6200 3200
 Wire Wire Line
-	6200 3200 5850 3200
-Wire Wire Line
-	5850 3050 5850 3200
-Connection ~ 5850 3200
-Wire Wire Line
-	5850 3200 5500 3200
-Wire Wire Line
-	5500 3050 5500 3200
-Wire Wire Line
 	6550 3050 6550 3200
 Wire Wire Line
 	6550 3200 6200 3200
-Connection ~ 6200 3200
 Wire Wire Line
 	6550 3200 6900 3200
 Connection ~ 6550 3200
@@ -1021,10 +867,7 @@ Wire Wire Line
 	6900 2600 6550 2600
 Wire Wire Line
 	6550 2600 6550 2750
-Wire Wire Line
-	5850 2600 6200 2600
 Connection ~ 6550 2600
-Connection ~ 6200 2600
 Wire Wire Line
 	6200 2600 6550 2600
 Wire Wire Line
@@ -1146,4 +989,156 @@ Text GLabel 6700 5650 2    50   Input ~ 0
 Enable_B
 Text GLabel 6700 6100 2    50   Input ~ 0
 Enable_C
+Wire Wire Line
+	3100 4650 3350 4650
+Text GLabel 3100 4650 0    50   Input ~ 0
+PWM_A
+Wire Wire Line
+	3100 4750 3350 4750
+Text GLabel 3100 4750 0    50   Input ~ 0
+PWM_B
+Wire Wire Line
+	3100 4850 3350 4850
+Text GLabel 3100 4850 0    50   Input ~ 0
+PWM_C
+Wire Wire Line
+	4100 4850 3850 4850
+Text GLabel 4100 4850 2    50   Input ~ 0
+Enable_C
+Wire Wire Line
+	4100 4750 3850 4750
+Text GLabel 4100 4750 2    50   Input ~ 0
+Enable_B
+Wire Wire Line
+	4100 4650 3850 4650
+Text GLabel 4100 4650 2    50   Input ~ 0
+Enable_A
+Wire Wire Line
+	3100 4550 3350 4550
+Wire Wire Line
+	4100 4550 3850 4550
+$Comp
+L power:+12V #PWR05
+U 1 1 607A1483
+P 3100 4300
+F 0 "#PWR05" H 3100 4150 50  0001 C CNN
+F 1 "+12V" H 3115 4473 50  0000 C CNN
+F 2 "" H 3100 4300 50  0001 C CNN
+F 3 "" H 3100 4300 50  0001 C CNN
+	1    3100 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 4550 3100 4300
+$Comp
+L power:+5V #PWR06
+U 1 1 607AE0E5
+P 4100 4300
+F 0 "#PWR06" H 4100 4150 50  0001 C CNN
+F 1 "+5V" H 4115 4473 50  0000 C CNN
+F 2 "" H 4100 4300 50  0001 C CNN
+F 3 "" H 4100 4300 50  0001 C CNN
+	1    4100 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 4550 4100 4300
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J5
+U 1 1 607BBFBB
+P 3550 4650
+F 0 "J5" H 3600 4967 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 3600 4876 50  0000 C CNN
+F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5569-08A2_2x04_P4.20mm_Horizontal" H 3550 4650 50  0001 C CNN
+F 3 "~" H 3550 4650 50  0001 C CNN
+	1    3550 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C42
+U 1 1 606CDCA3
+P 950 2150
+F 0 "C42" H 1068 2196 50  0000 L CNN
+F 1 "CP" H 1068 2105 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 988 2000 50  0001 C CNN
+F 3 "~" H 950 2150 50  0001 C CNN
+	1    950  2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  1850 1300 1850
+Wire Wire Line
+	1300 2450 950  2450
+Wire Wire Line
+	950  2300 950  2450
+$Comp
+L Device:CP C41
+U 1 1 606CDCA9
+P 5150 2150
+F 0 "C41" H 5268 2196 50  0000 L CNN
+F 1 "CP" H 5268 2105 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5188 2000 50  0001 C CNN
+F 3 "~" H 5150 2150 50  0001 C CNN
+	1    5150 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2000 5150 1850
+Wire Wire Line
+	5500 1850 5150 1850
+Wire Wire Line
+	5500 2450 5150 2450
+Wire Wire Line
+	5150 2300 5150 2450
+Connection ~ 5850 2450
+Connection ~ 5850 1850
+Wire Wire Line
+	5850 2450 5500 2450
+Wire Wire Line
+	5500 2300 5500 2450
+Wire Wire Line
+	5850 1850 5500 1850
+Wire Wire Line
+	5500 2000 5500 1850
+$Comp
+L Device:CP C15
+U 1 1 606BBC51
+P 5500 2150
+F 0 "C15" H 5618 2196 50  0000 L CNN
+F 1 "CP" H 5618 2105 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5538 2000 50  0001 C CNN
+F 3 "~" H 5500 2150 50  0001 C CNN
+	1    5500 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	600  1500 600  1850
+Wire Wire Line
+	600  2300 600  2450
+Connection ~ 5500 1850
+Connection ~ 5500 2450
+Connection ~ 1300 1850
+Connection ~ 1300 2450
+Wire Wire Line
+	950  2000 950  1850
+Wire Wire Line
+	950  1850 600  1850
+Connection ~ 950  1850
+Connection ~ 600  1850
+Wire Wire Line
+	600  1850 600  2000
+Wire Wire Line
+	950  2450 600  2450
+Connection ~ 950  2450
+Connection ~ 600  2450
+Wire Wire Line
+	600  2450 600  2600
+Wire Wire Line
+	5150 2450 4800 2450
+Connection ~ 5150 2450
+Connection ~ 4800 2450
+Wire Wire Line
+	4800 1850 5150 1850
+Connection ~ 4800 1850
+Connection ~ 5150 1850
 $EndSCHEMATC
