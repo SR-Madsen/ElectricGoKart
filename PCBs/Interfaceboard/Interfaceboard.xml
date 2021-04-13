@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/sebastian/Desktop/Git/SDU/ElectricGoKart/PCBs/Interfaceboard/Interfaceboard.sch</source>
+    <date>Tue 13 Apr 2021 02:51:13 PM CEST</date>
+    <tool>Eeschema 5.1.9-73d0e3b20d~88~ubuntu20.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Analog Board for Control of PMAC Motor in Electric Go-Kart</title>
+        <company>University of Southern Denmark</company>
+        <rev>Version 1</rev>
+        <date>2021-03-13</date>
+        <source>Interfaceboard.sch</source>
+        <comment number="1" value="Group 1"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Currents/" tstamps="/6040B450/">
+      <title_block>
+        <title>Analog Board for Control of PMAC Motor in Electric Go-Kart</title>
+        <company>University of Southern Denmark</company>
+        <rev>Version 1</rev>
+        <date>2021-03-13</date>
+        <source>Currents.sch</source>
+        <comment number="1" value="Group 1"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Torque/" tstamps="/6040B46E/">
+      <title_block>
+        <title>Analog Board for Control of PMAC Motor in Electric Go-Kart</title>
+        <company>University of Southern Denmark</company>
+        <rev>Version 1</rev>
+        <date>2021-03-13</date>
+        <source>Torque.sch</source>
+        <comment number="1" value="Group 1"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Connectors/" tstamps="/6040B42D/">
+      <title_block>
+        <title>Analog Board for Control of PMAC Motor in Electric Go-Kart</title>
+        <company>University of Southern Denmark</company>
+        <rev>Version 1</rev>
+        <date>2021-03-13</date>
+        <source>Connectors.sch</source>
+        <comment number="1" value="Group 1"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Buttons/" tstamps="/604F3ED7/">
+      <title_block>
+        <title>Analog Board for Control of PMAC Motor in Electric Go-Kart</title>
+        <company>University of Southern Denmark</company>
+        <rev>Version 1</rev>
+        <date>2021-03-13</date>
+        <source>Buttons.sch</source>
+        <comment number="1" value="Group 1"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R4">
+      <value>56</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf</datasheet>
+      <fields>
+        <field name="Name">RC1210FR-0756RL</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6045F72E</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>5 V</value>
+      <footprint>Diode_SMD:D_SOD-523</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/115/DESD5V0U1BB-553022.pdf</datasheet>
+      <fields>
+        <field name="Name">DESD5V0U1BB-7</field>
+      </fields>
+      <libsource lib="Device" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60460985</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60462548</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>AD8420ARMZ</value>
+      <footprint>ElectricGoKart:AD8420ARMZ</footprint>
+      <datasheet>http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf</datasheet>
+      <fields>
+        <field name="Description">Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="AD8420ARMZ" description="Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6046677D</tstamp>
+    </comp>
+    <comp ref="FB1">
+      <value>400 mA, 1k5</value>
+      <footprint>Inductor_SMD:L_0805_2012Metric</footprint>
+      <datasheet>https://www.mouser.com/catalog/specsheets/Laird_10092020_Laird%20MCP%20Catalog-EMI%20Filtering%20and%20RF%20Inductor%20Sep%202020.pdf</datasheet>
+      <fields>
+        <field name="Name">HZ0805D152R-10</field>
+      </fields>
+      <libsource lib="Device" part="Ferrite_Bead_Small" description="Ferrite bead, small symbol"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6046E503</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6046F6B4</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>10µ</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60471DB3</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>10µ</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6047233E</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60472932</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604A5686</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>1n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604A77EA</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>100p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604A9DDE</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>100p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604A982C</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604A5B39</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>3.09</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf</datasheet>
+      <fields>
+        <field name="Name">CRCW06033R09FKEA</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60477681</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>54.9</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf</datasheet>
+      <fields>
+        <field name="Name">ERJ-14NF54R9U</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60477860</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>AD8420ARMZ</value>
+      <footprint>ElectricGoKart:AD8420ARMZ</footprint>
+      <datasheet>http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf</datasheet>
+      <fields>
+        <field name="Description">Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="AD8420ARMZ" description="Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B0FC6</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B0FCC</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B0FD2</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B0FF3</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>1n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B0FF9</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>100p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B1010</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>100p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B1017</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604B101E</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>5 V</value>
+      <footprint>Diode_SMD:D_SOD-523</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/115/DESD5V0U1BB-553022.pdf</datasheet>
+      <fields>
+        <field name="Name">DESD5V0U1BB-7</field>
+      </fields>
+      <libsource lib="Device" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6049D318</tstamp>
+    </comp>
+    <comp ref="FB2">
+      <value>400 mA, 1k5</value>
+      <footprint>Inductor_SMD:L_0805_2012Metric</footprint>
+      <datasheet>https://www.mouser.com/catalog/specsheets/Laird_10092020_Laird%20MCP%20Catalog-EMI%20Filtering%20and%20RF%20Inductor%20Sep%202020.pdf</datasheet>
+      <fields>
+        <field name="Name">HZ0805D152R-10</field>
+      </fields>
+      <libsource lib="Device" part="Ferrite_Bead_Small" description="Ferrite bead, small symbol"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6049F80E</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>3.09</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/427/dcrcwe3-1762152.pdf</datasheet>
+      <fields>
+        <field name="Name">CRCW06033R09FKEA</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604E9E51</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604EA7D1</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>56</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf</datasheet>
+      <fields>
+        <field name="Name">RC1210FR-0756RL</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604F4513</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>54.9</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/315/AOA0000C304-1149620.pdf</datasheet>
+      <fields>
+        <field name="Name">ERJ-14NF54R9U</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604F451A</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>604FDED1</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>LM4041CFTA</value>
+      <footprint>ElectricGoKart:LM4041</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/115/LM4041-10542.pdf</datasheet>
+      <libsource lib="ElectricGoKart" part="LM4041CFTA" description="LM4041 Preicsion Micropower Shunt Voltage Reference"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>60504C24</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>1.43k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6051185B</tstamp>
+    </comp>
+    <comp ref="R20">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Currents/" tstamps="/6040B450/"/>
+      <tstamp>6051721E</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>11.5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>60536ECE</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>605377F3</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>7.5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053992D</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>7.5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>60539F21</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>30n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053A36B</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>56n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053B790</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>147</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053E9D7</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>33n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053EFB5</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>MCP6L01x-xOT</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/devicedoc/22140b.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="MCP6L01x-xOT" description="Single, 1 MHz, 85µA, Rail-to-Rail input and output, SOT-23-5"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6053FC25</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>605488B0</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>10µ</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>605497B3</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>3.3 V</value>
+      <footprint>Diode_SMD:D_SOD-523</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/308/ESD5Z2_5T1_D-1522641.pdf</datasheet>
+      <fields>
+        <field name="Name">ESD5Z3.3T1G</field>
+      </fields>
+      <libsource lib="Device" part="D_Zener_Small" description="Zener diode, small symbol"/>
+      <sheetpath names="/Torque/" tstamps="/6040B46E/"/>
+      <tstamp>6049516C</tstamp>
+    </comp>
+    <comp ref="J301">
+      <value>TSW-105-07-T-D</value>
+      <footprint>ElectricGoKart:TSW-105-07-T-D</footprint>
+      <datasheet>http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf</datasheet>
+      <fields>
+        <field name="Description">10 Position, Classic PCB Header Strips, 0.100&amp;quot; pitch</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="TSW-105-07-T-D" description="10 Position, Classic PCB Header Strips, 0.100&quot; pitch"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>6040AB8C</tstamp>
+    </comp>
+    <comp ref="J304">
+      <value>TSW-105-07-T-D</value>
+      <footprint>ElectricGoKart:TSW-105-07-T-D</footprint>
+      <datasheet>http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf</datasheet>
+      <fields>
+        <field name="Description">10 Position, Classic PCB Header Strips, 0.100&amp;quot; pitch</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="TSW-105-07-T-D" description="10 Position, Classic PCB Header Strips, 0.100&quot; pitch"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>6040AF1F</tstamp>
+    </comp>
+    <comp ref="J305">
+      <value>TSW-105-07-T-D</value>
+      <footprint>ElectricGoKart:TSW-105-07-T-D</footprint>
+      <datasheet>http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf</datasheet>
+      <fields>
+        <field name="Description">10 Position, Classic PCB Header Strips, 0.100&amp;quot; pitch</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="TSW-105-07-T-D" description="10 Position, Classic PCB Header Strips, 0.100&quot; pitch"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>6040B5C6</tstamp>
+    </comp>
+    <comp ref="J302">
+      <value>TSW-105-07-T-D</value>
+      <footprint>ElectricGoKart:TSW-105-07-T-D</footprint>
+      <datasheet>http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf</datasheet>
+      <fields>
+        <field name="Description">10 Position, Classic PCB Header Strips, 0.100&amp;quot; pitch</field>
+      </fields>
+      <libsource lib="ElectricGoKart" part="TSW-105-07-T-D" description="10 Position, Classic PCB Header Strips, 0.100&quot; pitch"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>6040BAA5</tstamp>
+    </comp>
+    <comp ref="TP4">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>604D3648</tstamp>
+    </comp>
+    <comp ref="TP5">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>604D4879</tstamp>
+    </comp>
+    <comp ref="TP6">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>60507096</tstamp>
+    </comp>
+    <comp ref="TP7">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>6050709C</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>M3 Mount</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>604D7436</tstamp>
+    </comp>
+    <comp ref="H2">
+      <value>M3 Mount</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/Connectors/" tstamps="/6040B42D/"/>
+      <tstamp>604D793D</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>PTS645</value>
+      <footprint>Button_Switch_SMD:SW_SPST_PTS645</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>604F43FD</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>604FE8E9</tstamp>
+    </comp>
+    <comp ref="TP8">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>604FFBAF</tstamp>
+    </comp>
+    <comp ref="TP9">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Plated_Hole_D2.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>60500240</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>270</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>6051770E</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>270</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>60517EA4</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>150060SS75000</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/445/150060SS75000-1715253.pdf</datasheet>
+      <fields>
+        <field name="Name">150060SS75000</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>6051A708</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>150060VS75000</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://www.mouser.dk/datasheet/2/445/150060VS75000-1714627.pdf</datasheet>
+      <fields>
+        <field name="Name">150060VS75000</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/Buttons/" tstamps="/604F3ED7/"/>
+      <tstamp>6051AED5</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Operational" part="MCP6L91T-EOT">
+      <aliases>
+        <alias>MCP6401T-xOT</alias>
+        <alias>MCP6001-OT</alias>
+        <alias>MCP601-xOT</alias>
+        <alias>OPA333xxDBV</alias>
+        <alias>OPA340NA</alias>
+        <alias>OPA376xxDBV</alias>
+        <alias>TS881xLx</alias>
+        <alias>TSV911xxLx</alias>
+        <alias>OPA330xxDBV</alias>
+        <alias>OPA356xxDBV</alias>
+        <alias>LMH6702MF</alias>
+        <alias>LMH6609MF</alias>
+        <alias>TLV2371DBV</alias>
+        <alias>OPA842xDBV</alias>
+        <alias>OPA843xDBV</alias>
+        <alias>OPA846xDBV</alias>
+        <alias>LT6015xS5</alias>
+        <alias>OPA197xDBV</alias>
+        <alias>OPA196xDBV</alias>
+        <alias>LPV811DBV</alias>
+        <alias>MCP6L01x-xOT</alias>
+        <alias>OPA365xxDBV</alias>
+      </aliases>
+      <description>10 MHz, 850 µA Op Amps, SOT-23-5</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/22141b.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP6L91T-EOT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="output"/>
+        <pin num="2" name="V-" type="power_in"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="-" type="input"/>
+        <pin num="5" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="TestPoint">
+      <description>test point</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Pin*</fp>
+        <fp>Test*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TestPoint</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_TVS">
+      <description>Bidirectional transient-voltage-suppression diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_TVS</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Zener_Small">
+      <description>Zener diode, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Ferrite_Bead_Small">
+      <description>Ferrite bead, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+        <fp>*Ferrite*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">FB</field>
+        <field name="Value">Ferrite_Bead_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ElectricGoKart" part="AD8420ARMZ">
+      <description>Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP</description>
+      <docs>http://www.analog.com/media/en/technical-documentation/data-sheets/AD8420.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AD8420ARMZ</field>
+        <field name="Footprint">ElectricGoKart:AD8420ARMZ</field>
+        <field name="Description">Analog Devices AD8420ARMZ Instrumentation Amplifier, 250uV Offset 250kHz GBW, CMMR 100dB, 2.7  36 V, 8-Pin MSOP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="NotConnected"/>
+        <pin num="2" name="+" type="input"/>
+        <pin num="3" name="-" type="input"/>
+        <pin num="4" name="Vs-" type="power_in"/>
+        <pin num="5" name="Vs+" type="power_in"/>
+        <pin num="6" name="Ref" type="passive"/>
+        <pin num="7" name="FB" type="passive"/>
+        <pin num="8" name="Out" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="ElectricGoKart" part="LM4041CFTA">
+      <description>LM4041 Preicsion Micropower Shunt Voltage Reference</description>
+      <fields>
+        <field name="Reference">D?</field>
+        <field name="Value">LM4041CFTA</field>
+        <field name="Footprint">ElectricGoKart:LM4041</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ElectricGoKart" part="TSW-105-07-T-D">
+      <description>10 Position, Classic PCB Header Strips, 0.100" pitch</description>
+      <docs>http://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TSW-105-07-T-D</field>
+        <field name="Footprint">ElectricGoKart:TSW-105-07-T-D</field>
+        <field name="Description">10 Position, Classic PCB Header Strips, 0.100&amp;quot; pitch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Operational">
+      <uri>/usr/share/kicad/library/Amplifier_Operational.lib</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="ElectricGoKart">
+      <uri>/home/sebastian/Desktop/Git/SDU/ElectricGoKart/KiCadLibrary/Symbols/ElectricGoKart.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/usr/share/kicad/library/Mechanical.lib</uri>
+    </library>
+    <library logical="Switch">
+      <uri>/usr/share/kicad/library/Switch.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/Buttons/Dig4">
+      <node ref="J305" pin="7"/>
+      <node ref="TP8" pin="1"/>
+    </net>
+    <net code="2" name="/Buttons/Dig1">
+      <node ref="J305" pin="1"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="R24" pin="1"/>
+    </net>
+    <net code="3" name="/Buttons/Dig2">
+      <node ref="R21" pin="2"/>
+      <node ref="J305" pin="3"/>
+    </net>
+    <net code="4" name="/Buttons/Dig3">
+      <node ref="R22" pin="2"/>
+      <node ref="J305" pin="5"/>
+    </net>
+    <net code="5" name="/Buttons/Dig5">
+      <node ref="J305" pin="9"/>
+      <node ref="TP9" pin="1"/>
+    </net>
+    <net code="6" name="/Currents/Phase1_In">
+      <node ref="R8" pin="2"/>
+      <node ref="J302" pin="1"/>
+      <node ref="D2" pin="1"/>
+      <node ref="R10" pin="2"/>
+    </net>
+    <net code="7" name="/Connectors/ADC4">
+      <node ref="U2" pin="7"/>
+      <node ref="U2" pin="8"/>
+      <node ref="J304" pin="5"/>
+    </net>
+    <net code="8" name="/Connectors/ADC1">
+      <node ref="U1" pin="7"/>
+      <node ref="U1" pin="8"/>
+      <node ref="J304" pin="1"/>
+    </net>
+    <net code="9" name="/Connectors/Torque_Meas">
+      <node ref="J302" pin="5"/>
+      <node ref="R15" pin="2"/>
+      <node ref="R19" pin="1"/>
+      <node ref="R16" pin="2"/>
+      <node ref="D3" pin="1"/>
+    </net>
+    <net code="10" name="/Connectors/ADC3">
+      <node ref="J304" pin="3"/>
+      <node ref="C17" pin="1"/>
+      <node ref="R18" pin="1"/>
+    </net>
+    <net code="11" name="/Currents/Phase2_In">
+      <node ref="D1" pin="1"/>
+      <node ref="R4" pin="2"/>
+      <node ref="J302" pin="3"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="12" name="GND">
+      <node ref="D1" pin="2"/>
+      <node ref="R6" pin="1"/>
+      <node ref="C13" pin="1"/>
+      <node ref="C2" pin="1"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C17" pin="2"/>
+      <node ref="U3" pin="2"/>
+      <node ref="D3" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="D6" pin="1"/>
+      <node ref="R24" pin="2"/>
+      <node ref="D5" pin="1"/>
+      <node ref="R19" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C9" pin="2"/>
+      <node ref="TP5" pin="1"/>
+      <node ref="TP6" pin="1"/>
+      <node ref="TP7" pin="1"/>
+      <node ref="TP4" pin="1"/>
+      <node ref="J305" pin="10"/>
+      <node ref="J305" pin="2"/>
+      <node ref="J305" pin="4"/>
+      <node ref="J305" pin="6"/>
+      <node ref="J305" pin="8"/>
+      <node ref="J302" pin="10"/>
+      <node ref="J304" pin="6"/>
+      <node ref="J302" pin="2"/>
+      <node ref="J302" pin="4"/>
+      <node ref="J302" pin="6"/>
+      <node ref="J302" pin="8"/>
+      <node ref="J301" pin="10"/>
+      <node ref="J301" pin="2"/>
+      <node ref="J301" pin="4"/>
+      <node ref="J301" pin="6"/>
+      <node ref="J301" pin="8"/>
+      <node ref="J304" pin="10"/>
+      <node ref="J304" pin="2"/>
+      <node ref="J304" pin="4"/>
+      <node ref="J304" pin="8"/>
+      <node ref="R12" pin="1"/>
+      <node ref="R11" pin="1"/>
+      <node ref="R20" pin="1"/>
+      <node ref="D4" pin="2"/>
+      <node ref="R5" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="13" name="-15V">
+      <node ref="J301" pin="9"/>
+      <node ref="FB2" pin="2"/>
+    </net>
+    <net code="14" name="Net-(J304-Pad7)">
+      <node ref="J304" pin="7"/>
+    </net>
+    <net code="15" name="Net-(J304-Pad9)">
+      <node ref="J304" pin="9"/>
+    </net>
+    <net code="16" name="+15V">
+      <node ref="J301" pin="7"/>
+      <node ref="FB1" pin="1"/>
+    </net>
+    <net code="17" name="+3V3_Ref">
+      <node ref="J301" pin="5"/>
+      <node ref="R13" pin="2"/>
+      <node ref="R15" pin="1"/>
+      <node ref="SW1" pin="1"/>
+    </net>
+    <net code="18" name="+5V_Ref">
+      <node ref="J301" pin="3"/>
+    </net>
+    <net code="19" name="+5V">
+      <node ref="C14" pin="1"/>
+      <node ref="C15" pin="1"/>
+      <node ref="J301" pin="1"/>
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="20" name="Net-(J302-Pad7)">
+      <node ref="J302" pin="7"/>
+    </net>
+    <net code="21" name="Net-(J302-Pad9)">
+      <node ref="J302" pin="9"/>
+    </net>
+    <net code="22" name="/Currents/0V5">
+      <node ref="R14" pin="1"/>
+      <node ref="U2" pin="6"/>
+      <node ref="U1" pin="6"/>
+      <node ref="R20" pin="2"/>
+    </net>
+    <net code="23" name="Net-(D4-Pad1)">
+      <node ref="R14" pin="2"/>
+      <node ref="R13" pin="1"/>
+      <node ref="D4" pin="1"/>
+    </net>
+    <net code="24" name="Net-(C2-Pad2)">
+      <node ref="R1" pin="1"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U1" pin="3"/>
+      <node ref="C3" pin="1"/>
+    </net>
+    <net code="25" name="Net-(U2-Pad1)">
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="26" name="/Currents/+15V_Filt">
+      <node ref="U1" pin="5"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="FB1" pin="2"/>
+      <node ref="U2" pin="5"/>
+      <node ref="C11" pin="1"/>
+    </net>
+    <net code="27" name="/Currents/-15V_Filt">
+      <node ref="C10" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="FB2" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="28" name="Net-(R2-Pad1)">
+      <node ref="R4" pin="1"/>
+      <node ref="R6" pin="2"/>
+      <node ref="R5" pin="2"/>
+      <node ref="R2" pin="1"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="29" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="30" name="Net-(C3-Pad2)">
+      <node ref="R3" pin="1"/>
+      <node ref="U1" pin="2"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C3" pin="2"/>
+    </net>
+    <net code="31" name="Net-(R10-Pad1)">
+      <node ref="R8" pin="1"/>
+      <node ref="R10" pin="1"/>
+      <node ref="R9" pin="2"/>
+      <node ref="R12" pin="2"/>
+      <node ref="R11" pin="2"/>
+    </net>
+    <net code="32" name="Net-(C8-Pad2)">
+      <node ref="U2" pin="2"/>
+      <node ref="R9" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C8" pin="2"/>
+    </net>
+    <net code="33" name="Net-(C7-Pad2)">
+      <node ref="U2" pin="3"/>
+      <node ref="C7" pin="2"/>
+      <node ref="R7" pin="1"/>
+      <node ref="C8" pin="1"/>
+    </net>
+    <net code="34" name="Net-(C18-Pad1)">
+      <node ref="R18" pin="2"/>
+      <node ref="C18" pin="1"/>
+      <node ref="U3" pin="1"/>
+      <node ref="U3" pin="4"/>
+    </net>
+    <net code="35" name="Net-(C16-Pad1)">
+      <node ref="U3" pin="3"/>
+      <node ref="C16" pin="1"/>
+      <node ref="R17" pin="1"/>
+    </net>
+    <net code="36" name="Net-(C18-Pad2)">
+      <node ref="C18" pin="2"/>
+      <node ref="R16" pin="1"/>
+      <node ref="R17" pin="2"/>
+    </net>
+    <net code="37" name="Net-(D6-Pad2)">
+      <node ref="D6" pin="2"/>
+      <node ref="R22" pin="1"/>
+    </net>
+    <net code="38" name="Net-(D5-Pad2)">
+      <node ref="R21" pin="1"/>
+      <node ref="D5" pin="2"/>
+    </net>
+  </nets>
+</export>
