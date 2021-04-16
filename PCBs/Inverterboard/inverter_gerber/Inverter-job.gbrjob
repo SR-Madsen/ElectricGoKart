@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.9)-1"
     },
-    "CreationDate":  "2021-04-16T14:47:50+02:00"
+    "CreationDate":  "2021-04-16T15:09:28+02:00"
   },
   "GeneralSpecs":
   {
@@ -40,27 +40,27 @@
   "FilesAttributes":
   [
     {
-      "Path":  "Inverter-F_Cu.gbr",
+      "Path":  "Inverter-F_Cu.gtl",
       "FileFunction":  "Copper,L1,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "Inverter-F_Paste.gbr",
+      "Path":  "Inverter-F_Paste.gtp",
       "FileFunction":  "SolderPaste,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "Inverter-F_SilkS.gbr",
+      "Path":  "Inverter-F_SilkS.gto",
       "FileFunction":  "Legend,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "Inverter-F_Mask.gbr",
+      "Path":  "Inverter-F_Mask.gts",
       "FileFunction":  "SolderMask,Top",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "Inverter-Edge_Cuts.gbr",
+      "Path":  "Inverter-Edge_Cuts.gm1",
       "FileFunction":  "Profile",
       "FilePolarity":  "Positive"
     }

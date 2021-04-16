@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.9)-1"
     },
-    "CreationDate":  "2021-04-16T14:49:38+02:00"
+    "CreationDate":  "2021-04-16T15:08:48+02:00"
   },
   "GeneralSpecs":
   {
@@ -40,47 +40,47 @@
   "FilesAttributes":
   [
     {
-      "Path":  "dc_link-F_Cu.gbr",
+      "Path":  "dc_link-F_Cu.gtl",
       "FileFunction":  "Copper,L1,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-B_Cu.gbr",
+      "Path":  "dc_link-B_Cu.gbl",
       "FileFunction":  "Copper,L2,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-F_Paste.gbr",
+      "Path":  "dc_link-F_Paste.gtp",
       "FileFunction":  "SolderPaste,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-B_Paste.gbr",
+      "Path":  "dc_link-B_Paste.gbp",
       "FileFunction":  "SolderPaste,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-F_SilkS.gbr",
+      "Path":  "dc_link-F_SilkS.gto",
       "FileFunction":  "Legend,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-B_SilkS.gbr",
+      "Path":  "dc_link-B_SilkS.gbo",
       "FileFunction":  "Legend,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "dc_link-F_Mask.gbr",
+      "Path":  "dc_link-F_Mask.gts",
       "FileFunction":  "SolderMask,Top",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "dc_link-B_Mask.gbr",
+      "Path":  "dc_link-B_Mask.gbs",
       "FileFunction":  "SolderMask,Bot",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "dc_link-Edge_Cuts.gbr",
+      "Path":  "dc_link-Edge_Cuts.gm1",
       "FileFunction":  "Profile",
       "FilePolarity":  "Positive"
     }
