@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.9)-1"
     },
-    "CreationDate":  "2021-04-16T14:35:26+02:00"
+    "CreationDate":  "2021-04-16T14:47:50+02:00"
   },
   "GeneralSpecs":
   {
@@ -45,11 +45,6 @@
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "Inverter-B_Cu.gbr",
-      "FileFunction":  "Copper,L2,Bot",
-      "FilePolarity":  "Positive"
-    },
-    {
       "Path":  "Inverter-F_Paste.gbr",
       "FileFunction":  "SolderPaste,Top",
       "FilePolarity":  "Positive"
@@ -62,11 +57,6 @@
     {
       "Path":  "Inverter-F_Mask.gbr",
       "FileFunction":  "SolderMask,Top",
-      "FilePolarity":  "Negative"
-    },
-    {
-      "Path":  "Inverter-B_Mask.gbr",
-      "FileFunction":  "SolderMask,Bot",
       "FilePolarity":  "Negative"
     },
     {
@@ -97,14 +87,6 @@
       "Type":  "Dielectric",
       "Material":  "FR4",
       "Notes":  "Layers L1/L2"
-    },
-    {
-      "Type":  "Copper",
-      "Notes":  "Layer B.Cu"
-    },
-    {
-      "Type":  "SolderMask",
-      "Notes":  "Layer B.Mask"
     }
   ]
 }
