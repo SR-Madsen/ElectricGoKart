@@ -1,0 +1,20 @@
+/*
+ * axiinterface.c
+ *
+ *  Created on: Apr 27, 2021
+ *      Author: sebastian
+ */
+
+#include "axiinterface.h"
+
+
+// Functions
+// See header file for documentation
+void readPosition(u32 *raw_pos) {
+
+}
+
+
+void setDutyCycles(dutycycles_t *duties) {
+
+}

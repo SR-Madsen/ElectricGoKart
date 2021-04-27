@@ -1,0 +1,33 @@
+/*
+ * axiinterface.h
+ *
+ *  Created on: Apr 27, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_AXIINTERFACE_H_
+#define SRC_AXIINTERFACE_H_
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+
+// Defines
+
+
+// Structs
+typedef struct dutycycles_t {
+	u32 duty1;
+	u32 duty2;
+	u32 duty3;
+} dutycycles_t;
+
+// Variables
+
+
+// Functions
+void readPosition();
+
+void setDutyCycles();
+
+#endif /* SRC_AXIINTERFACE_H_ */
