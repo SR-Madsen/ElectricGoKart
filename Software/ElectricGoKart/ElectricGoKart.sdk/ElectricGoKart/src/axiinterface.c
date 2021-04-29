@@ -8,14 +8,16 @@
 #include "axiinterface.h"
 
 
-// Functions
+/*
+ *  Functions
+ */
 // See header file for documentation
 
-void readPosition(u32 *raw_pos) {
+void readPosition(u16 *raw_pos) {
 	*raw_pos = ENCODER_DRIVER_mReadReg(ENCODER_DRIVER_BASEADDR, ENCODER_DRIVER_S00_AXI_SLV_REG0_OFFSET);
 }
 
-void rawToRads(u32 raw_pos, LONG *pos_rad) {
+void rawToRads(u16 raw_pos, LONG *pos_rad) {
 	*pos_rad = (LONG)(2.0*PI)/(255.0) * raw_pos;
 }
 

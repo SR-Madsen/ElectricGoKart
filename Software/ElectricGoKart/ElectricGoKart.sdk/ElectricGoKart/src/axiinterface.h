@@ -23,24 +23,24 @@
 
 // Structs
 typedef struct ocvvalues_t {
-	u32 ocv1;
-	u32 ocv2;
-	u32 ocv3;
+	u16 ocv1;
+	u16 ocv2;
+	u16 ocv3;
 } ocvvalues_t;
 
 // Variables
 
 
-// Functions
+// Function prototypes
 // Read the motor position from the encoder.
 // Output: raw position value from 0 to 255 indicating motor position.
 // Must be re-calculated as radians.
-void readPosition(u32 *raw_pos);
+void readPosition(u16 *raw_pos);
 
 // Takes raw motor position and turns it into radians.
 // Input: raw motor position from 0 to 255.
 // Output: motor position in radians between 0 and 2*pi.
-void rawToRads(u32 raw_pos, LONG *pos_rad);
+void rawToRads(u16 raw_pos, LONG *pos_rad);
 
 // Sets the three phase duty cycles of the PWM generator.
 // Input: OCV values between 0 and 1172 to be used by PWM generator.

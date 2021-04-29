@@ -1,0 +1,38 @@
+/*
+ * xadc.h
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_XADC_H_
+#define SRC_XADC_H_
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xadcps.h"
+
+
+// Defines
+#define XADC_DEVICE_ID XPAR_XADCPS_0_DEVICE_ID
+
+// Variables
+XAdcPs XAdc;
+XAdcPs_Config *XAdcConfigPtr;
+
+// Structs
+
+
+// Function prototypes
+u8 initXADC();
+
+u16 getBatteryRaw();
+u16 getTorqueRaw();
+u16 getPhaseARaw();
+u16 getPhaseBRaw();
+
+u16 getXAdcAuxData(u8 channel);
+
+
+#endif /* SRC_XADC_H_ */

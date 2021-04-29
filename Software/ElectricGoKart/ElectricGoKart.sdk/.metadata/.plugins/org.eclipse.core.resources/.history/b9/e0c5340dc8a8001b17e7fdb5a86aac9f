@@ -1,0 +1,53 @@
+/*
+ * xadc.h
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_XADC_H_
+#define SRC_XADC_H_
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xadcps.h"
+
+
+// Defines
+#define XADC_DEVICE_ID XPAR_XADCPS_0_DEVICE_ID
+
+// Structs
+
+
+// Variables
+extern XAdcPs XAdc;
+XAdcPs_Config *XAdcConfigPtr;
+
+
+// Function prototypes
+// Initialize the XADC with Vivado configuration
+u8 initXAdc();
+
+// Gets the raw battery voltage value.
+// Output: Value from 0 to 4095 depending on voltage.
+// Maximum voltage measured is xxxxx????
+void getBatteryRaw(u16 *raw);
+
+// Gets the raw torque value.
+// Output: Value from 0 to 4095 depending on torque.
+// Maximum expected torque value is 3685 (plus tolerances). Any higher means it is disconnected.
+void getTorqueRaw(u16 *raw);
+
+// Gets the raw Phase A value.
+// Output: Value from 0 to 4095 depending on current.
+// Maximum expected current value is 3902 (plus tolerances). Any higher means short-circuit.
+void getPhaseARaw(u16 *raw);
+
+// Gets the raw Phase B value.
+// Output: Value from 0 to 4095 depending on current.
+// Maximum expected current value is 3902 (plus tolerances). Any higher means short-circuit.
+void getPhaseBRaw(u16 *raw);
+
+
+#endif /* SRC_XADC_H_ */

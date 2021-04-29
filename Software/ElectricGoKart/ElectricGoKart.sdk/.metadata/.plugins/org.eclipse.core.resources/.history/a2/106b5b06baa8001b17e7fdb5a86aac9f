@@ -1,0 +1,49 @@
+/*
+ * xadc.h
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_XADC_H_
+#define SRC_XADC_H_
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xadcps.h"
+
+
+// Defines
+#define XADC_DEVICE_ID XPAR_XADCPS_0_DEVICE_ID
+
+// Structs
+
+
+// Variables
+XAdcPs XAdc;
+XAdcPs_Config *XAdcConfigPtr;
+
+
+// Function prototypes
+// Initialize the XADC with Vivado configuration
+u8 initXADC();
+
+// Gets the raw battery voltage value.
+// Output: Value from 0 to 4095 depending on voltage.
+void getBatteryRaw(u16 *raw);
+
+// Gets the raw torque value.
+// Output: Value from 0 to 4095 depending on torque.
+void getTorqueRaw(u16 *raw);
+
+// Gets the raw Phase A value.
+// Output: Value from 0 to 4095 depending on current.
+void getPhaseARaw(u16 *raw);
+
+// Gets the raw Phase B value.
+// Output: Value from 0 to 4095 depending on current.
+void getPhaseBRaw(u16 *raw);
+
+
+#endif /* SRC_XADC_H_ */
