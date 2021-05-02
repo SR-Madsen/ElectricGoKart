@@ -1,0 +1,160 @@
+/*
+ * gpios.c
+ *
+ *  Created on: May 1, 2021
+ *      Author: sebastian
+ */
+
+#include "gpios.h"
+
+/*
+ * 	Examples of use
+ */
+
+/*
+
+
+
+
+*/
+
+
+/*
+ *  Functions
+ */
+// See header file for documentation
+
+u8 initGpios() {
+	u8 status;
+
+	status = initGpio(DIGITAL_IO);
+	status |= initGpio(PRECHARGE_RELAY);
+	status |= initGpio(MAIN_RELAY);
+	status |= initGpio(OVERTEMP);
+	status |= initGpio(DRIVE_SWITCH);
+
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIOs Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Set direction of digital I/O to out, with the exception of overcurrent switch
+	XGpio_SetDataDirection(&Gpio[DIGITAL_IO], CHANNEL_ONE, IO_DIRECTION);
+
+	// Set direction of precharge relay enable to out
+	XGpio_SetDataDirection(&Gpio[PRECHARGE_RELAY], CHANNEL_ONE, PRECHARGE_DIRECTION);
+
+	// Set direction of main relay enable to out
+	XGpio_SetDataDirection(&Gpio[MAIN_RELAY], CHANNEL_ONE, MAIN_DIRECTION);
+
+	// Set direction of overtemperature measurement to in
+	XGpio_SetDataDirection(&Gpio[OVERTEMP], CHANNEL_ONE, OVERTEMP_DIRECTION);
+
+	// Set direction of drive switch status measurement to in
+	XGpio_SetDataDirection(&Gpio[DRIVE_SWITCH], CHANNEL_ONE, SWITCH_DIRECTION);
+
+	return XST_SUCCESS;
+}
+
+u8 initGpio(u8 deviceID) {
+	u8 status;
+
+	// Look up GPIO configuration
+	GpioConfigPtr[deviceID] = XGpio_LookupConfig(deviceID);
+	if (GpioConfigPtr[deviceID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[deviceID], GpioConfigPtr[deviceID], GpioConfigPtr[deviceID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[deviceID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}
+
+void enableLED1() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp | LED1_MASK));
+}
+
+void disableLED1() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp & ~LED1_MASK));
+}
+
+void enableLED2() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp | LED2_MASK));
+}
+
+void disableLED2() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp & ~LED2_MASK));
+}
+
+void enableTP1() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp | TP1_MASK));
+}
+
+void disableTP1() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp & ~TP1_MASK));
+}
+
+void enableTP2() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp | TP2_MASK));
+}
+
+void disableTP2() {
+	u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+	XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp & ~TP2_MASK));
+}
+
+void checkOvercurrentSwitch(u16 *res) {
+	*res = (XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE) & OVERCURRENT_MASK);
+}
+
+void enablePrecharge() {
+	XGpio_DiscreteWrite(&Gpio[PRECHARGE_RELAY], CHANNEL_ONE, PRECHARGE_MASK);
+}
+
+void disablePrecharge() {
+	XGpio_DiscreteWrite(&Gpio[PRECHARGE_RELAY], CHANNEL_ONE, ~PRECHARGE_MASK);
+}
+
+void enableMainRelay() {
+	XGpio_DiscreteWrite(&Gpio[MAIN_RELAY], CHANNEL_ONE, MAIN_RELAY_MASK);
+}
+
+void disableMainRelay() {
+	XGpio_DiscreteWrite(&Gpio[MAIN_RELAY], CHANNEL_ONE, ~MAIN_RELAY_MASK);
+}
+
+void checkMainRelay(u16 *res) {
+	*res = ((XGpio_DiscreteRead(&Gpio[MAIN_RELAY], CHANNEL_ONE) & MAIN_STATUS_MASK) >> 1);
+}
+
+void checkOvertemp(u16 *res) {
+	*res = XGpio_DiscreteRead(&Gpio[OVERTEMP], CHANNEL_ONE);
+}
+
+void checkEnableSwitch(u16 *res) {
+	*res = ((XGpio_DiscreteRead(&Gpio[DRIVE_SWITCH], CHANNEL_ONE) & ENABLE_SW_MASK) >> 1);
+}
+
+void checkFootSwitch(u16 *res) {
+	*res = (XGpio_DiscreteRead(&Gpio[DRIVE_SWITCH], CHANNEL_ONE) & FOOT_SW_MASK);
+}

@@ -1,0 +1,103 @@
+/*
+ * gpios.c
+ *
+ *  Created on: May 1, 2021
+ *      Author: sebastian
+ */
+
+#include "gpios.h"
+
+/*
+ * 	Examples of use
+ */
+
+/*
+
+
+
+
+*/
+
+
+/*
+ *  Functions
+ */
+// See header file for documentation
+
+u8 initGpios() {
+	u8 status;
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_0_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_0_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of BRAM module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_0_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_1_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_1_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of BRAM module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_1_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}
+
+
+
+void enableDigital(u8 number);
+void disableDigital(u8 number);
+
+void enablePrecharge();
+void disablePrecharge();
+
+void enableMainRelay();
+void disableMainRelay();
+
+void checkOvertemp(u16 *res);
+void checkDriveSwitch(u16 *res);
+
+// Sets the direction (input or output) of pins in the GPIO device (1 in mask = input, 0 = output)
+void setGpioDirection(u8 deviceID, u32 mask) {
+	XGpio_SetDataDirection(&Gpio[deviceID], 1, mask);
+}
+
+// Reads the pins in the GPIO device
+u32 readGpio(u8 deviceID) {
+	return XGpio_DiscreteRead(&Gpio[deviceID], 1);
+}
+
+// Writes a value to the pins in the GPIO device
+void writeGpio(u8 deviceID, u32 mask) {
+	XGpio_DiscreteWrite(&Gpio[deviceID], 1, mask);
+}

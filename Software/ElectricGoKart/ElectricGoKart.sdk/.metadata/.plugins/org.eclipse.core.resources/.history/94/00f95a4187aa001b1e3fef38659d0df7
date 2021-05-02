@@ -1,0 +1,72 @@
+/*
+ * gpios.h
+ *
+ *  Created on: May 1, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_GPIOS_H_
+#define SRC_GPIOS_H_
+
+#include "platform.h"
+#include "xparameters.h"
+#include "xgpio.h"
+
+
+// Defines
+#define DIGITAL_IO 		XPAR_GPIO_0_DEVICE_ID
+#define PRECHARGE_RELAY XPAR_GPIO_1_DEVICE_ID
+#define MAIN_RELAY 		XPAR_GPIO_2_DEVICE_ID
+#define OVERTEMP 		XPAR_GPIO_3_DEVICE_ID
+#define DRIVE_SWITCH 	XPAR_GPIO_4_DEVICE_ID
+
+#define CHANNEL_ONE		1
+#define GPIO_OUTPUT		0
+#define GPIO_INPUT		1
+
+// Structs
+
+
+// Variables
+XGpio Gpio[XPAR_XGPIO_NUM_INSTANCES];
+XGpio_Config *GpioConfigPtr[XPAR_XGPIO_NUM_INSTANCES];
+
+
+// Function prototypes
+// Initialize all AXI GPIOs to be used
+u8 initGpios();
+
+// Enable one of the digital IO connections on the analog interface board (LED or via).
+// Input: Number of the IO to be enabled.
+void enableDigital(u8 number);
+
+// Disable one of the digital IO connections on the analog interface board (LED or via).
+// Input: Number of the IO to be disabled.
+void disableDigital(u8 number);
+
+// Check the current value of the overcurrent switch.
+// Output: Value (either 0 or 1) depending on whether switch is pressed or not.
+void checkOvercurrentSwitch(u16 *res);
+
+// Enables the pre-charge relay.
+void enablePrecharge();
+
+// Disables the pre-charge relay.
+void disablePrecharge();
+
+// Enables main relay.
+void enableMainRelay();
+
+// Disables main relay.
+void disableMainRelay();
+
+// Check the status of the temperature circuit.
+// Output: Value (either 0 or 1) depending on whether the motor is too hot.
+void checkOvertemp(u16 *res);
+
+// Check the status of the drive switch.
+// Output: Value (either 0 or 1) depending on whether the drive switch is activated or not.
+void checkDriveSwitch(u16 *res);
+
+
+#endif /* SRC_GPIOS_H_ */

@@ -1,0 +1,38 @@
+/*
+ * gpios.h
+ *
+ *  Created on: May 1, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_GPIOS_H_
+#define SRC_GPIOS_H_
+
+#include "platform.h"
+#include "xparameters.h"
+#include "xgpio.h"
+
+
+// Defines
+#define DIGITAL_IO XPAR_GPIO_0_DEVICE_ID
+#define PRECHARGE_RELAY XPAR_GPIO_1_DEVICE_ID
+#define MAIN_RELAY XPAR_GPIO_2_DEVICE_ID
+#define OVERTEMP XPAR_GPIO_3_DEVICE_ID
+#define ON_SWITCH XPAR_GPIO_4_DEVICE_ID
+
+// Variables
+XGpio Gpio[XPAR_XGPIO_NUM_INSTANCES];
+XGpio_Config *GpioConfigPtr[XPAR_XGPIO_NUM_INSTANCES];
+
+// Structs
+
+
+// Function prototypes
+u8 initGpio(u8 deviceID);
+
+void setGpioDirection(u8 deviceID, u32 mask);
+u32 readGpio(u8 deviceID);
+void writeGpio(u8 deviceID, u32 mask);
+
+
+#endif /* SRC_GPIOS_H_ */

@@ -1,0 +1,203 @@
+/*
+ * gpios.c
+ *
+ *  Created on: May 1, 2021
+ *      Author: sebastian
+ */
+
+#include "gpios.h"
+
+/*
+ * 	Examples of use
+ */
+
+/*
+
+
+
+
+*/
+
+
+/*
+ *  Functions
+ */
+// See header file for documentation
+
+u8 initGpios() {
+	u8 status;
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_0_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_0_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_0_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_0_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_1_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_1_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_1_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_1_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_2_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_2_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_2_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_2_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_2_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_2_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_2_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_3_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_3_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_3_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_3_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_3_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_3_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_3_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+
+	// Look up GPIO configuration
+	GpioConfigPtr[XPAR_GPIO_4_DEVICE_ID] = XGpio_LookupConfig(XPAR_GPIO_4_DEVICE_ID);
+	if (GpioConfigPtr[XPAR_GPIO_4_DEVICE_ID] == (XGpio_Config *) NULL) {
+		xil_printf("GPIO Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize GPIO from configuration
+	status = XGpio_CfgInitialize(&Gpio[XPAR_GPIO_4_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_4_DEVICE_ID], GpioConfigPtr[XPAR_GPIO_4_DEVICE_ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of GPIO module to check that it's functional
+	status = XGpio_SelfTest(&Gpio[XPAR_GPIO_4_DEVICE_ID]);
+	if (status != XST_SUCCESS) {
+		xil_printf("GPIO Selftest failed");
+		return XST_FAILURE;
+	}
+
+	// Set direction of digital I/O to out, with the exception of overcurrent switch
+	XGpio_SetDataDirection(&Gpio[XPAR_GPIO_0_DEVICE_ID], CHANNEL_ONE, IO_DIRECTION);
+
+	// Set direction of precharge relay enable to out
+	XGpio_SetDataDirection(&Gpio[XPAR_GPIO_1_DEVICE_ID], CHANNEL_ONE, GPIO_OUTPUT);
+
+	// Set direction of main relay enable to out
+	XGpio_SetDataDirection(&Gpio[XPAR_GPIO_2_DEVICE_ID], CHANNEL_ONE, GPIO_OUTPUT);
+
+	// Set direction of overtemperature measurement to in
+	XGpio_SetDataDirection(&Gpio[XPAR_GPIO_3_DEVICE_ID], CHANNEL_ONE, GPIO_INPUT);
+
+	// Set direction of drive switch status measurement to in
+	XGpio_SetDataDirection(&Gpio[XPAR_GPIO_4_DEVICE_ID], CHANNEL_ONE, SWITCH_INPUT);
+
+	return XST_SUCCESS;
+}
+
+void enableDigital(u8 number) {
+	XGpio_DiscreteWrite(&Gpio[XPAR_GPIO_0_DEVICE_ID], 1, number);
+}
+
+void disableDigital(u8 number) {
+
+}
+
+void checkOvercurrentSwitch(u16 *res) {
+
+}
+
+void enablePrecharge() {
+
+}
+
+void disablePrecharge() {
+
+}
+
+void enableMainRelay() {
+
+}
+
+void disableMainRelay() {
+
+}
+
+void checkOvertemp(u16 *res) {
+
+}
+
+void checkDriveSwitch(u16 *res) {
+
+}
+
+
+
+// Reads the pins in the GPIO device
+u32 readGpio(u8 deviceID) {
+	return XGpio_DiscreteRead(&Gpio[deviceID], 1);
+}
+
+// Writes a value to the pins in the GPIO device
+void writeGpio(u8 deviceID, u32 mask) {
+	XGpio_DiscreteWrite(&Gpio[deviceID], 1, mask);
+}

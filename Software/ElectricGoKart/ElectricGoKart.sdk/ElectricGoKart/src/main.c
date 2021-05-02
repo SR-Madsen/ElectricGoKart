@@ -9,6 +9,7 @@
 // User includes
 #include "axiinterface.h"
 #include "xadc.h"
+#include "gpios.h"
 
 // User defines
 
@@ -42,6 +43,7 @@ int main()
 
     initXAdc();
     initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+    initGpios();
 
     /************************
      * INSERT CODE HERE
@@ -57,7 +59,6 @@ static void XAdcInterruptHandler(XAdcPs *XAdc) {
 	getPhaseARaw(&Adc_conversions.phaseA_raw);
 	getPhaseBRaw(&Adc_conversions.phaseB_raw);
 
-	// Consider unifying these two, or perhaps passing along the entire struct to one function that does.
 	readPosition(&motor_position.position_raw);
-	rawToRads(motor_position.position_raw, &motor_position.position_rads);
+	rawToRadsEl(motor_position.position_raw, &motor_position.position_rads); // Alternatively use readPositionRadsEl();
 }

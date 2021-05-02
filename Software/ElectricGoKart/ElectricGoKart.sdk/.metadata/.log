@@ -11328,3 +11328,83 @@ Each I/O pin of the AXI GPIO is individually programmable as an input or output 
 
 !ENTRY com.xilinx.sdk.utils 0 0 2021-04-29 11:36:57.365
 !MESSAGE XSCT command with result: [::hsi::utils::closesw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_bsp/system.mss], Result: [null, ]. Thread: main
+!SESSION 2021-05-01 14:56:01.522 -----------------------------------------------
+eclipse.buildId=2018.3
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk
+
+!ENTRY org.eclipse.ui 2 0 2021-05-01 14:56:04.597
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2021-05-01 14:56:04.597
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2021-05-01 14:56:07.562
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2021-05-01 14:56:07.562
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:28.275
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-8
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:28.275
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-21
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:28.285
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-21
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:28.287
+!MESSAGE XSCT Command: [setws /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk], Thread: Thread-21
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:36.740
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-8
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:36.741
+!MESSAGE XSCT command with result: [setws /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk], Result: [null, ]. Thread: Thread-21
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:36.784
+!MESSAGE XSCT Command: [::hsi::utils::openhw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf], Thread: Worker-9
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-01 14:56:40.630
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf], Result: [null, ]. Thread: Worker-9
+!SESSION 2021-05-02 09:42:33.784 -----------------------------------------------
+eclipse.buildId=2018.3
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk
+
+!ENTRY org.eclipse.ui 2 0 2021-05-02 09:42:40.954
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2021-05-02 09:42:40.955
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2021-05-02 09:42:48.684
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2021-05-02 09:42:48.684
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:43:41.726
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:43:41.726
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-22
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:43:41.736
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-22
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:43:41.737
+!MESSAGE XSCT Command: [setws /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk], Thread: Thread-22
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:44:09.157
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:44:09.158
+!MESSAGE XSCT command with result: [setws /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk], Result: [null, ]. Thread: Thread-22
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:44:09.209
+!MESSAGE XSCT Command: [::hsi::utils::openhw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-05-02 09:44:21.540
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf], Result: [null, ]. Thread: Worker-7

@@ -2905,3 +2905,2051 @@ arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
   34020	   1928	  22632	  58580	   e4d4	ElectricGoKart.elf
 Finished building: ElectricGoKart.elf.size
  
+14:57:10 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+In file included from ../src/axiinterface.c:8:0:
+../src/axiinterface.h:23:9: error: macro names must be identifiers
+ #define 8_BIT_MAX 255.0
+         ^~~~~~~~~
+../src/axiinterface.h:24:8: error: no macro name given in #define directive
+ #define
+        ^
+make: *** [src/subdir.mk:32: src/axiinterface.o] Error 1
+14:57:27 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34020	   1928	  22632	  58580	   e4d4	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+14:57:42 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34020	   1928	  22632	  58580	   e4d4	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+14:57:52 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34020	   1928	  22632	  58580	   e4d4	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+14:58:21 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34020	   1928	  22632	  58580	   e4d4	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+14:58:32 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main.o: In function `XAdcInterruptHandler':
+/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/../src/main.c:62: undefined reference to `rawToRads'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:41: ElectricGoKart.elf] Error 1
+14:58:34 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'XAdcInterruptHandler':
+../src/main.c:62:2: warning: implicit declaration of function 'rawToRads'; did you mean 'rawToRadsEl'? [-Wimplicit-function-declaration]
+  rawToRads(motor_position.position_raw, &motor_position.position_rads);
+  ^~~~~~~~~
+  rawToRadsEl
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main.o: In function `XAdcInterruptHandler':
+/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/../src/main.c:62: undefined reference to `rawToRads'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:41: ElectricGoKart.elf] Error 1
+14:59:02 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'XAdcInterruptHandler':
+../src/main.c:62:2: warning: implicit declaration of function 'rawToRads'; did you mean 'rawToRadsEl'? [-Wimplicit-function-declaration]
+  rawToRads(motor_position.position_raw, &motor_position.position_rads);
+  ^~~~~~~~~
+  rawToRadsEl
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main.o: In function `XAdcInterruptHandler':
+/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/../src/main.c:62: undefined reference to `rawToRads'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:41: ElectricGoKart.elf] Error 1
+14:59:19 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main.o: In function `XAdcInterruptHandler':
+/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/../src/main.c:62: undefined reference to `rawToRads'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:41: ElectricGoKart.elf] Error 1
+14:59:32 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34148	   1928	  22632	  58708	   e554	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:42:44 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  34148	   1928	  22632	  58708	   e554	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:42:50 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:43:24 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c:27:1: error: unknown type name 'u8'
+ u8 initGpio(u8 deviceID) {
+ ^~
+../src/gpios.c:27:13: error: unknown type name 'u8'
+ u8 initGpio(u8 deviceID) {
+             ^~
+../src/gpios.c:54:23: error: unknown type name 'u8'
+ void setGpioDirection(u8 deviceID, u32 mask) {
+                       ^~
+../src/gpios.c:54:36: error: unknown type name 'u32'
+ void setGpioDirection(u8 deviceID, u32 mask) {
+                                    ^~~
+../src/gpios.c:59:1: error: unknown type name 'u32'
+ u32 readGpio(u8 deviceID) {
+ ^~~
+../src/gpios.c:59:14: error: unknown type name 'u8'
+ u32 readGpio(u8 deviceID) {
+              ^~
+../src/gpios.c:64:16: error: unknown type name 'u8'
+ void writeGpio(u8 deviceID, u32 mask) {
+                ^~
+../src/gpios.c:64:29: error: unknown type name 'u32'
+ void writeGpio(u8 deviceID, u32 mask) {
+                             ^~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+15:43:27 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36000	   2008	  22728	  60736	   ed40	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:45:41 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36000	   2008	  22728	  60736	   ed40	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:45:46 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36000	   2008	  22728	  60736	   ed40	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:47:16 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36000	   2008	  22728	  60736	   ed40	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:47:33 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36000	   2008	  22728	  60736	   ed40	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:49:12 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  35936	   2008	  22728	  60672	   ed00	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:49:31 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  35936	   2008	  22728	  60672	   ed00	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:49:37 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  35936	   2008	  22728	  60672	   ed00	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:50:01 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36128	   2008	  22728	  60864	   edc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:51:43 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36128	   2008	  22728	  60864	   edc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:52:52 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:52:55 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:56:01 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+15:56:17 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:05:16 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:05:46 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:06:03 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:07:15 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:07:23 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:08:38 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:09:00 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:09:14 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36640	   2008	  22728	  61376	   efc0	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:11:00 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:11:55 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:12:26 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:12:30 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:12:52 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:13:03 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'initGpios':
+../src/gpios.c:157:68: error: expected expression before ')' token
+  XGpio_SetDataDirection(&Gpio[XPAR_GPIO_1_DEVICE_ID], CHANNEL_ONE, );
+                                                                    ^
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+16:13:18 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'initGpios':
+../src/gpios.c:157:80: error: expected expression before ')' token
+  XGpio_SetDataDirection(&Gpio[XPAR_GPIO_1_DEVICE_ID], CHANNEL_ONE, IO_DIRECTION);
+                                                                                ^
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+16:14:49 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+16:15:09 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:32:21 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:33:48 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36704	   2008	  22728	  61440	   f000	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:34:09 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:34:33 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:34:38 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+21:34:59 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:45:05 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'initGpios':
+../src/gpios.c:143:68: error: 'GPIO_OUTPUT' undeclared (first use in this function)
+  XGpio_SetDataDirection(&Gpio[XPAR_GPIO_1_DEVICE_ID], CHANNEL_ONE, GPIO_OUTPUT);
+                                                                    ^~~~~~~~~~~
+../src/gpios.c:143:68: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c:149:68: error: 'GPIO_INPUT' undeclared (first use in this function); did you mean 'GPIO_OUTPUT'?
+  XGpio_SetDataDirection(&Gpio[XPAR_GPIO_3_DEVICE_ID], CHANNEL_ONE, GPIO_INPUT);
+                                                                    ^~~~~~~~~~
+                                                                    GPIO_OUTPUT
+../src/gpios.c:152:68: error: 'SWITCH_INPUT' undeclared (first use in this function); did you mean 'GPIO_INPUT'?
+  XGpio_SetDataDirection(&Gpio[XPAR_GPIO_4_DEVICE_ID], CHANNEL_ONE, SWITCH_INPUT);
+                                                                    ^~~~~~~~~~~~
+                                                                    GPIO_INPUT
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:45:23 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:46:04 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37024	   2008	  22728	  61760	   f140	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:47:20 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'initGpio':
+../src/gpios.c:147:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = XGpio_CfgInitialize(&Gpio[deviceID], GpioConfigPtr[deviceID], GpioConfigPtr[deviceID]->BaseAddress);
+  ^~~~~~
+  XStatus
+../src/gpios.c:147:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c:159:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:47:31 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'initGpio':
+../src/gpios.c:161:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37088	   2008	  22728	  61824	   f180	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:47:40 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37088	   2008	  22728	  61824	   f180	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:48:09 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37216	   2008	  22728	  61952	   f200	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:48:47 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36540	   2008	  22728	  61276	   ef5c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:49:43 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36540	   2008	  22728	  61276	   ef5c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:50:41 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36540	   2008	  22728	  61276	   ef5c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:50:53 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+In file included from ../src/gpios.c:8:0:
+../src/gpios.h:47:1: error: expected identifier or '(' before numeric constant
+ 0x02 and 0x04 are LEDs, 0x08 and 0x10 are vias.
+ ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:50:56 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36540	   2008	  22728	  61276	   ef5c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:54:30 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:55:27 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:56:04 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:57:57 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+09:59:10 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:00:25 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:03:36 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:04:15 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:04:52 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/gpios.c: In function 'enableLED1':
+../src/gpios.c:97:6: warning: unused variable 'temp' [-Wunused-variable]
+  u16 temp = XGpio_DiscreteRead(&Gpio[DIGITAL_IO], CHANNEL_ONE);
+      ^~~~
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:06:24 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'enableDigital':
+../src/gpios.c:88:27: error: 'deviceID' undeclared (first use in this function)
+  XGpio_DiscreteRead(&Gpio[deviceID], 1);
+                           ^~~~~~~~
+../src/gpios.c:88:27: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:07:09 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+../src/gpios.c: In function 'disableLED1':
+../src/gpios.c:93:63: error: 'LED_MASK' undeclared (first use in this function); did you mean 'LED1_MASK'?
+  XGpio_DiscreteWrite(&Gpio[DIGITAL_IO], CHANNEL_ONE, (temp & !LED_MASK));
+                                                               ^~~~~~~~
+                                                               LED1_MASK
+../src/gpios.c:93:63: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:35: src/gpios.o] Error 1
+10:07:15 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36668	   2008	  22728	  61404	   efdc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:08:07 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36668	   2008	  22728	  61404	   efdc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:08:30 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36732	   2008	  22728	  61468	   f01c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:08:39 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36796	   2008	  22728	  61532	   f05c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:08:48 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36860	   2008	  22728	  61596	   f09c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:08:55 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36924	   2008	  22728	  61660	   f0dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:09:06 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36988	   2008	  22728	  61724	   f11c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:09:18 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36988	   2008	  22728	  61724	   f11c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:10:53 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36988	   2008	  22728	  61724	   f11c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:11:01 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36988	   2008	  22728	  61724	   f11c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:11:18 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37052	   2008	  22728	  61788	   f15c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:11:49 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37052	   2008	  22728	  61788	   f15c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:11:53 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37052	   2008	  22728	  61788	   f15c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:12:04 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37116	   2008	  22728	  61852	   f19c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:12:32 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:12:43 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:13:15 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37116	   2008	  22728	  61852	   f19c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:13:53 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37116	   2008	  22728	  61852	   f19c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:14:26 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37116	   2008	  22728	  61852	   f19c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:15:03 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:15:26 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:16:59 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:17:07 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:17:34 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:17:58 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:20:12 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:21:06 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37180	   2008	  22728	  61916	   f1dc	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:21:49 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+../src/axiinterface.c: In function 'readPositionRadsMech':
+../src/axiinterface.c:23:25: warning: passing argument 2 of 'rawToRadsMech' from incompatible pointer type [-Wincompatible-pointer-types]
+  rawToRadsMech(raw_pos, &pos_rad);
+                         ^
+In file included from ../src/axiinterface.c:8:0:
+../src/axiinterface.h:53:6: note: expected 'LONG * {aka long int *}' but argument is of type 'LONG ** {aka long int **}'
+ void rawToRadsMech(u16 raw_pos, LONG *pos_rad);
+      ^~~~~~~~~~~~~
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37308	   2008	  22728	  62044	   f25c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:21:57 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37308	   2008	  22728	  62044	   f25c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:22:16 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37308	   2008	  22728	  62044	   f25c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+10:22:50 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37308	   2008	  22728	  62044	   f25c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 

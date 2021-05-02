@@ -17,8 +17,24 @@ void readPosition(u16 *raw_pos) {
 	*raw_pos = ENCODER_DRIVER_mReadReg(ENCODER_DRIVER_BASEADDR, ENCODER_DRIVER_S00_AXI_SLV_REG0_OFFSET);
 }
 
-void rawToRads(u16 raw_pos, LONG *pos_rad) {
-	*pos_rad = (LONG)(2.0*PI)/(255.0) * raw_pos;
+void readPositionRadsMech(LONG *pos_rad) {
+	u16 raw_pos;
+	readPosition(&raw_pos);
+	rawToRadsMech(raw_pos, pos_rad);
+}
+
+void readPositionRadsEl(LONG *pos_rad) {
+	u16 raw_pos;
+	readPosition(&raw_pos);
+	rawToRadsEl(raw_pos, pos_rad);
+}
+
+void rawToRadsMech(u16 raw_pos, LONG *pos_rad) {
+	*pos_rad = (LONG)(2.0*PI)/(EIGHT_BIT_MAX) * raw_pos;
+}
+
+void rawToRadsEl(u16 raw_pos, LONG *pos_rad) {
+	*pos_rad = (LONG)POLE_PAIRS*(2.0*PI)/(EIGHT_BIT_MAX) * raw_pos;
 }
 
 void setDutyCycles(ocvvalues_t *ocvs) {

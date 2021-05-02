@@ -20,6 +20,8 @@
 #define PWM_GENERATOR_BASEADDR XPAR_PWM_GENERATOR_0_S00_AXI_BASEADDR
 
 #define PI 3.14159265358979323846
+#define EIGHT_BIT_MAX 255.0
+#define POLE_PAIRS 4
 
 // Structs
 typedef struct ocvvalues_t {
@@ -32,15 +34,28 @@ typedef struct ocvvalues_t {
 
 
 // Function prototypes
-// Read the motor position from the encoder.
+// Read the raw motor position from the encoder.
 // Output: raw position value from 0 to 255 indicating motor position.
 // Must be re-calculated as radians.
 void readPosition(u16 *raw_pos);
 
-// Takes raw motor position and turns it into radians.
+// Read the motor position from the encoder and return it as mechanical position in radians.
+// Output: mechanical motor position in radians between 0 and 2*pi.
+void readPositionRadsMech(LONG *pos_rad);
+
+// Read the motor position from the encoder and return it as electrical position in radians.
+// Output: electrical motor position in radians between 0 and 8*pi.
+void readPositionRadsEl(LONG *pos_rad);
+
+// Takes raw motor position and turns it into mechanical motor position in radians.
 // Input: raw motor position from 0 to 255.
-// Output: motor position in radians between 0 and 2*pi.
-void rawToRads(u16 raw_pos, LONG *pos_rad);
+// Output: mechanical motor position in radians between 0 and 2*pi.
+void rawToRadsMech(u16 raw_pos, LONG *pos_rad);
+
+// Takes raw motor position and turns it into electrical motor position in radians.
+// Input: raw motor position from 0 to 255.
+// Output: electrical motor position in radians between 0 and 8*pi.
+void rawToRadsEl(u16 raw_pos, LONG *pos_rad);
 
 // Sets the three phase duty cycles of the PWM generator.
 // Input: OCV values between 0 and 1172 to be used by PWM generator.
