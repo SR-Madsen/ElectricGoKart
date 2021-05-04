@@ -147,6 +147,7 @@ int main()
     	 // ENCODER CLK: PMOD JB3
     	 // ENCODER DATA: PMOD JB4
 
+
     	usleep(500000);
     	xil_printf("Setting duty cycles to 0.\r\n");
     	ocvs.ocv1 = 0; // PMOD JD4
@@ -165,6 +166,7 @@ int main()
     	usleep(500000);
     }
 	*/
+
 
     cleanup_platform();
     return 0;

@@ -127,7 +127,6 @@ int main()
     /*
      * CODE FOR TEST OF AXI DRIVER
      */
-    /*
     u16 motor_position = 0;
     LONG motor_position_rads = 0;
     xil_printf("Starting test of AXI driver.\r\n");
@@ -140,12 +139,13 @@ int main()
     	readPosition(&motor_position);
     	rawToRadsEl(motor_position, &motor_position_rads);
     	xil_printf("Raw position read: %d\r\n", motor_position);
-
-    	 // ENCODER A: PMOD JB2
-    	 // ENCODER B: PMOD JB1
-    	 // ENCODER Z: PMOD JB7
-    	 // ENCODER CLK: PMOD JB3
-    	 // ENCODER DATA: PMOD JB4
+    	/*
+    	 * ENCODER A: PMOD JB2
+    	 * ENCODER B: PMOD JB1
+    	 * ENCODER Z: PMOD JB7
+    	 * ENCODER CLK: PMOD JB3
+    	 * ENCODER DATA: PMOD JB4
+    	 */
 
     	usleep(500000);
     	xil_printf("Setting duty cycles to 0.\r\n");
@@ -161,10 +161,8 @@ int main()
     	ocvs.ocv2 = 1172; // PMOD JD2
     	ocvs.ocv3 = 1172; // PMOD JD7
     	setDutyCycles(&ocvs);
-
-    	usleep(500000);
     }
-	*/
+
 
     cleanup_platform();
     return 0;

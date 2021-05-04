@@ -26,3 +26,10 @@
 09:44:09 INFO  : Successfully done setting SDK workspace  
 09:44:09 INFO  : Processing command line option -hwspec /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
 09:44:09 INFO  : Checking for hwspec changes in the project ElectricGoKart_wrapper_hw_platform_0.
+17:52:16 INFO  : Registering command handlers for SDK TCF services
+17:52:19 INFO  : Launching XSCT server: xsct -n -interactive /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/temp_xsdb_launch_script.tcl
+17:52:27 INFO  : XSCT server has started successfully.
+17:52:37 INFO  : Successfully done setting XSCT server connection channel  
+17:52:37 INFO  : Successfully done setting SDK workspace  
+17:52:37 INFO  : Processing command line option -hwspec /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
+17:52:37 INFO  : Checking for hwspec changes in the project ElectricGoKart_wrapper_hw_platform_0.

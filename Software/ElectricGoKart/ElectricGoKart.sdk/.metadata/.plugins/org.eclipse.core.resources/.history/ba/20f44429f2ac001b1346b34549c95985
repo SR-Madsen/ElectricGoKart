@@ -1,0 +1,101 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+
+// User defines
+
+
+// User prototypes
+
+/*
+ * PROTOTYPE FOR TEST OF XADC DRIVER
+ */
+//static void XAdcInterruptHandler(XAdcPs *XAdc);
+
+// User structs
+// Move all structs to a different file eventually.
+// Alternative for conversion structs: One for each, with raw, filtered, re-calculated (into Volts or Amps) etc.
+typedef struct rawConvs_t {
+	u16 battery_raw;
+	u16 torque_raw;
+	u16 phaseA_raw;
+	u16 phaseB_raw;
+} rawConvs_t;
+rawConvs_t Adc_conversions;
+
+typedef struct position_t {
+	u16 position_raw;
+	LONG position_rads;
+} position_t;
+position_t motor_position;
+
+// User variables
+
+/*
+ * VARIABLES FOR TEST OF XADC DRIVER
+ */
+u8 flag = 0;
+u32 counter = 0;
+
+int main()
+{
+    init_platform();
+
+    /*
+     * CODE FOR TEST OF XADC DRIVER
+     */
+    /*
+    initXAdc();
+    initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+    xil_printf("XADC and GIC initialized.\r\n");
+    xil_printf("Now going into infinite loop to test XADC conversion values.\r\n");
+
+    while(1) {
+    	while(!flag);
+    	flag = 0;
+    	xil_printf("Battery raw: %d\r\n", Adc_conversions.battery_raw);
+    	xil_printf("Torque raw: %d\r\n", Adc_conversions.torque_raw);
+    	xil_printf("Phase A raw: %d\r\n", Adc_conversions.phaseA_raw);
+    	xil_printf("Phase B raw: %d\r\n", Adc_conversions.phaseB_raw);
+    }
+    */
+
+    /*
+     * CODE FOR TEST OF GPIO DRIVER
+     */
+    initGpios();
+
+
+
+
+    cleanup_platform();
+    return 0;
+}
+
+/*
+ * FUNCTION FOR TEST OF XADC DRIVER
+ */
+/*
+static void XAdcInterruptHandler(XAdcPs *XAdc) {
+	if (counter++ >= 250000) {
+		flag = 1;
+		getBatteryRaw(&Adc_conversions.battery_raw);
+		getTorqueRaw(&Adc_conversions.torque_raw);
+		getPhaseARaw(&Adc_conversions.phaseA_raw);
+		getPhaseBRaw(&Adc_conversions.phaseB_raw);
+		counter = 0;
+	}
+
+	//readPosition(&motor_position.position_raw);
+	//rawToRadsEl(motor_position.position_raw, &motor_position.position_rads); // Alternatively use readPositionRadsEl();
+}
+*/

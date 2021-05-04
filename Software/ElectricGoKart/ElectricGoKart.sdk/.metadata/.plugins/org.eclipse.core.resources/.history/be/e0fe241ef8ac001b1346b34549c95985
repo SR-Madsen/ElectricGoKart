@@ -12,7 +12,7 @@
 #include "gpios.h"
 
 /*
- * INCLUDE FOR TEST OF GPIO DRIVER AND AXI DRIVER
+ * INCLUDE FOR TEST OF GPIO DRIVER
  */
 //#include "sleep.h"
 
@@ -127,44 +127,14 @@ int main()
     /*
      * CODE FOR TEST OF AXI DRIVER
      */
-    /*
-    u16 motor_position = 0;
-    LONG motor_position_rads = 0;
-    xil_printf("Starting test of AXI driver.\r\n");
+    xil_printf("Starting test of AXI driver.");
     while(1) {
-    	xil_printf("Setting duty cycles to 0.5.\r\n");
-    	ocvs.ocv1 = 0.5 * 1172; // PMOD JD4
-    	ocvs.ocv2 = 0.5 * 1172; // PMOD JD2
-    	ocvs.ocv3 = 0.5 * 1172; // PMOD JD7
+    	ocvs.ocv1 = 0.5; // PMOD JD4
+    	ocvs.ocv2 = 0.5; // PMOD JD2
+    	ocvs.ocv3 = 0.5; // PMOD JD7
     	setDutyCycles(&ocvs);
-    	readPosition(&motor_position);
-    	rawToRadsEl(motor_position, &motor_position_rads);
-    	xil_printf("Raw position read: %d\r\n", motor_position);
-
-    	 // ENCODER A: PMOD JB2
-    	 // ENCODER B: PMOD JB1
-    	 // ENCODER Z: PMOD JB7
-    	 // ENCODER CLK: PMOD JB3
-    	 // ENCODER DATA: PMOD JB4
-
-    	usleep(500000);
-    	xil_printf("Setting duty cycles to 0.\r\n");
-    	ocvs.ocv1 = 0; // PMOD JD4
-    	ocvs.ocv2 = 0; // PMOD JD2
-    	ocvs.ocv3 = 0; // PMOD JD7
-    	setDutyCycles(&ocvs);
-    	readPositionRadsEl(&motor_position_rads);
-
-    	usleep(500000);
-    	xil_printf("Setting duty cycles to 1.\r\n");
-    	ocvs.ocv1 = 1172; // PMOD JD4
-    	ocvs.ocv2 = 1172; // PMOD JD2
-    	ocvs.ocv3 = 1172; // PMOD JD7
-    	setDutyCycles(&ocvs);
-
-    	usleep(500000);
     }
-	*/
+
 
     cleanup_platform();
     return 0;
