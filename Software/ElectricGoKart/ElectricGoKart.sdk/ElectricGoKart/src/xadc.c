@@ -12,8 +12,49 @@
  */
 
 /*
+	#include "xadc.h"
 
+	static void XAdcInterruptHandler(XAdcPs *XAdc);
 
+	typedef struct rawConvs_t {
+		u16 battery_raw;
+		u16 torque_raw;
+		u16 phaseA_raw;
+		u16 phaseB_raw;
+	} rawConvs_t;
+	rawConvs_t Adc_conversions;
+
+	u8 flag = 0;
+	u32 counter = 0;
+	u8 switcher = 1;
+
+	int main () {
+		initXAdc();
+		initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+		xil_printf("XADC and GIC initialized.\r\n");
+		xil_printf("Now going into infinite loop to test XADC conversion values.\r\n");
+
+		while(1) {
+			while(!flag);
+			flag = 0;
+			xil_printf("Battery raw: %d\r\n", Adc_conversions.battery_raw); // PMOD JA1
+			xil_printf("Torque raw: %d\r\n", Adc_conversions.torque_raw); // PMOD JA4
+			xil_printf("Phase A raw: %d\r\n", Adc_conversions.phaseA_raw); // PMOD JA2
+			xil_printf("Phase B raw: %d\r\n", Adc_conversions.phaseB_raw); // PMOD JA3
+			xil_printf("\r\n");
+		}
+	}
+
+	static void XAdcInterruptHandler(XAdcPs *XAdc) {
+		if (counter++ >= 25000) {
+			flag = 1;
+			getBatteryRaw(&Adc_conversions.battery_raw);
+			getTorqueRaw(&Adc_conversions.torque_raw);
+			getPhaseARaw(&Adc_conversions.phaseA_raw);
+			getPhaseBRaw(&Adc_conversions.phaseB_raw);
+			counter = 0;
+		}
+	}
 */
 
 
@@ -92,17 +133,17 @@ u8 initGicXAdc(Xil_ExceptionHandler handler) {
 }
 
 void getBatteryRaw(u16 *raw) {
-	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + 14) >> 4);
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + BATTERY_CHANNEL) >> LOWER_TWELVE_SHIFT);
 }
 
 void getTorqueRaw(u16 *raw) {
-	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + 6) >> 4);
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + TORQUE_CHANNEL) >> LOWER_TWELVE_SHIFT);
 }
 
 void getPhaseARaw(u16 *raw) {
-	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + 7) >> 4);
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + PHASE_A_CHANNEL) >> LOWER_TWELVE_SHIFT);
 }
 
 void getPhaseBRaw(u16 *raw) {
-	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + 15) >> 4);
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + PHASE_B_CHANNEL) >> LOWER_TWELVE_SHIFT);
 }

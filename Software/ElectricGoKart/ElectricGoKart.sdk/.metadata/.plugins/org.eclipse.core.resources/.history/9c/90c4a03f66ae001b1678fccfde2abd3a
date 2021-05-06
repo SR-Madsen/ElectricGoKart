@@ -1,0 +1,147 @@
+/*
+ * xadc.c
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: sebastian
+ */
+
+#include "xadc.h"
+
+/*
+ * 	Examples of use
+ */
+
+/*
+	static void XAdcInterruptHandler(XAdcPs *XAdc);
+
+	typedef struct rawConvs_t {
+		u16 battery_raw;
+		u16 torque_raw;
+		u16 phaseA_raw;
+		u16 phaseB_raw;
+	} rawConvs_t;
+	rawConvs_t Adc_conversions;
+
+	u8 flag = 0;
+	u32 counter = 0;
+	u8 switcher = 1;
+
+	int main () {
+		initXAdc();
+		initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+		xil_printf("XADC and GIC initialized.\r\n");
+		xil_printf("Now going into infinite loop to test XADC conversion values.\r\n");
+
+		while(1) {
+			while(!flag);
+			flag = 0;
+			xil_printf("Battery raw: %d\r\n", Adc_conversions.battery_raw); // PMOD JA1
+			xil_printf("Torque raw: %d\r\n", Adc_conversions.torque_raw); // PMOD JA4
+			xil_printf("Phase A raw: %d\r\n", Adc_conversions.phaseA_raw); // PMOD JA2
+			xil_printf("Phase B raw: %d\r\n", Adc_conversions.phaseB_raw); // PMOD JA3
+			xil_printf("\r\n");
+		}
+	}
+
+	static void XAdcInterruptHandler(XAdcPs *XAdc) {
+		if (counter++ >= 25000) {
+			flag = 1;
+			getBatteryRaw(&Adc_conversions.battery_raw);
+			getTorqueRaw(&Adc_conversions.torque_raw);
+			getPhaseARaw(&Adc_conversions.phaseA_raw);
+			getPhaseBRaw(&Adc_conversions.phaseB_raw);
+			counter = 0;
+		}
+	}
+*/
+
+
+/*
+ * 	Functions
+ */
+// See header file for documentation
+
+u8 initXAdc() {
+	u8 status;
+
+	XAdcConfigPtr = XAdcPs_LookupConfig(XADC_DEVICE_ID);
+	if (XAdcConfigPtr == (XAdcPs_Config *) NULL) {
+		xil_printf("XADC Config lookup failed");
+		return XST_FAILURE;
+	}
+
+	// Initialize XADC from configuration
+	status = XAdcPs_CfgInitialize(&XAdc, XAdcConfigPtr, XAdcConfigPtr->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("XADC Initialization failed");
+		return XST_FAILURE;
+	}
+
+	// Do selftest of BRAM module to check that it's functional
+	status = XAdcPs_SelfTest(&XAdc);
+	if (status != XST_SUCCESS) {
+		xil_printf("XADC Selftest failed");
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}
+
+u8 initGicXAdc(Xil_ExceptionHandler handler) {
+	u8 status = XST_SUCCESS;
+
+	// Initialize the interrupt controller driver with configuration so that it is ready to use.
+	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	if (NULL == IntcConfig) {
+		return XST_FAILURE;
+	}
+
+	status = XScuGic_CfgInitialize(&InterruptController, IntcConfig,
+					IntcConfig->CpuBaseAddress);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+    // Initialize the exception vector table.
+	Xil_ExceptionInit();
+
+	// Register the interrupt controller handler with the exception table.
+	Xil_ExceptionRegisterHandler(IRQ_F2P,
+				(Xil_ExceptionHandler) XScuGic_InterruptHandler,
+				&InterruptController);
+
+	// Connect the GIC to the interrupt handler so that it is called when an interrupt occurs.
+	status = XScuGic_Connect(&InterruptController, XADC_EOS,
+				(Xil_ExceptionHandler)handler,
+				&XAdc);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	// Enable interrupt for XADC End-of-Sequence signal.
+	XScuGic_Enable(&InterruptController, XADC_EOS);
+
+	// Configure interrupt to high priority, rising-edge sensitive.
+	XScuGic_SetPriorityTriggerType(&InterruptController, XADC_EOS, HIGH_PRIORITY, RISING_EDGE);
+
+	// Enable exceptions globally.
+	Xil_ExceptionEnable();
+
+	return status;
+}
+
+void getBatteryRaw(u16 *raw) {
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + BATTERY_CHANNEL) >> LOWER_TWELVE_SHIFT);
+}
+
+void getTorqueRaw(u16 *raw) {
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + TORQUE_CHANNEL) >> LOWER_TWELVE_SHIFT);
+}
+
+void getPhaseARaw(u16 *raw) {
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + PHASE_A_CHANNEL) >> LOWER_TWELVE_SHIFT);
+}
+
+void getPhaseBRaw(u16 *raw) {
+	*raw = (XAdcPs_GetAdcData(&XAdc, XADCPS_CH_AUX_MIN + PHASE_B_CHANNEL) >> LOWER_TWELVE_SHIFT);
+}

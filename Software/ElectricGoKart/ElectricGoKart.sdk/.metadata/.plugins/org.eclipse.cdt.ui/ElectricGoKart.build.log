@@ -1,4 +1,4 @@
-10:22:50 **** Auto Build of configuration Debug for project ElectricGoKart ****
+14:28:22 **** Auto Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -6,6 +6,11 @@ Building file: ../src/main.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 Finished building: ../src/main.c
+ 
+Building file: ../src/xadc.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xadc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xadc.d" -MT"src/xadc.o" -o "src/xadc.o" "../src/xadc.c"
+Finished building: ../src/xadc.c
  
 Building target: ElectricGoKart.elf
 Invoking: ARM v7 gcc linker
@@ -15,9 +20,9 @@ Finished building target: ElectricGoKart.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  37308	   2008	  22728	  62044	   f25c	ElectricGoKart.elf
+  37180	   2008	  22712	  61900	   f1cc	ElectricGoKart.elf
 Finished building: ElectricGoKart.elf.size
  
 
-10:22:51 Build Finished (took 560ms)
+14:28:23 Build Finished (took 613ms)
 

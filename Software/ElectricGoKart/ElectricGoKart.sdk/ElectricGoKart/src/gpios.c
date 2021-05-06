@@ -12,10 +12,52 @@
  */
 
 /*
+	#include "sleep.h"
+	#include "gpios.h"
+
+	int main() {
+		u16 overcurrentswitch = 0, relay = 0, overtemp = 0, enableswitch = 0, footswitch = 0;
+		initGpios();
+		xil_printf("GPIOs initialized.\r\n");
+		xil_printf("Now going into infinite loop to test GPIO read and write.\r\n");
+
+		while(1) {
+			checkOvercurrentSwitch(&overcurrentswitch); // PMOD JC1
+			checkMainRelay(&relay); // PMOD JE3
+			checkOvertemp(&overtemp); // PMOD JE4
+			checkEnableSwitch(&enableswitch); // PMOD JE8
+			checkFootSwitch(&footswitch); // PMOD JE9
+
+			xil_printf("Status of readings:\r\n");
+			xil_printf("Overcurrent button: %d\r\n", overcurrentswitch);
+			xil_printf("Relay status: %d\r\n", relay);
+			xil_printf("Overtemperature: %d\r\n", overtemp);
+			xil_printf("Enable switch: %d\r\n", enableswitch);
+			xil_printf("Foot switch: %d\r\n", footswitch);
+
+			usleep(500000);
+			xil_printf("Enabling all GPIOs.\r\n");
+			enableLED1(); // PMOD JC2
+			enableLED2(); // PMOD JC3
+			enableTP1(); // PMOD JC4
+			enableTP2(); // PMOD JC7
+			enablePrecharge(); // PMOD JE1
+			enableMainRelay(); // PMOD JE2
 
 
+			usleep(1000000);
+			xil_printf("Disabling all GPIOs.\r\n");
+			disableLED1(); // PMOD JC2
+			disableLED2(); // PMOD JC3
+			disableTP1(); // PMOD JC4
+			disableTP2(); // PMOD JC7
+			disablePrecharge(); // PMOD JE1
+			disableMainRelay(); // PMOD JE2
 
 
+			usleep(1000000);
+		}
+	}
 */
 
 
