@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Sun Apr  4 10:47:00 2021
+--Date        : Thu May  6 13:01:04 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart_wrapper.bd
 --Design      : ElectricGoKart_wrapper
@@ -28,7 +28,7 @@ entity ElectricGoKart_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
-    Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_io : inout STD_LOGIC_VECTOR ( 4 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -69,24 +69,6 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     INC_A_0 : in STD_LOGIC;
     INC_B_0 : in STD_LOGIC;
     INC_Z_0 : in STD_LOGIC;
-    Overtemp_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Vaux6_0_v_n : in STD_LOGIC;
-    Vaux6_0_v_p : in STD_LOGIC;
-    Vaux14_0_v_n : in STD_LOGIC;
-    Vaux14_0_v_p : in STD_LOGIC;
-    Vaux15_0_v_n : in STD_LOGIC;
-    Vaux15_0_v_p : in STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    Switch_Status_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Vaux7_0_v_n : in STD_LOGIC;
-    Vaux7_0_v_p : in STD_LOGIC;
-    Precharge_En_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -102,9 +84,29 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
     Main_Relay_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     Main_Relay_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Main_Relay_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    Main_Relay_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Vaux7_0_v_n : in STD_LOGIC;
+    Vaux7_0_v_p : in STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
+    Overtemp_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Precharge_En_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC;
+    Switch_Status_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component ElectricGoKart;
   component IOBUF is
@@ -115,6 +117,26 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     IO : inout STD_LOGIC
   );
   end component IOBUF;
+  signal Digital_IO_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Digital_IO_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal Digital_IO_tri_i_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal Digital_IO_tri_i_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal Digital_IO_tri_i_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal Digital_IO_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Digital_IO_tri_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal Digital_IO_tri_io_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal Digital_IO_tri_io_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal Digital_IO_tri_io_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal Digital_IO_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Digital_IO_tri_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal Digital_IO_tri_o_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal Digital_IO_tri_o_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal Digital_IO_tri_o_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal Digital_IO_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Digital_IO_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal Digital_IO_tri_t_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal Digital_IO_tri_t_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal Digital_IO_tri_t_4 : STD_LOGIC_VECTOR ( 4 to 4 );
   signal Main_Relay_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Main_Relay_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
   signal Main_Relay_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -124,6 +146,41 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
   signal Main_Relay_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Main_Relay_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
 begin
+Digital_IO_tri_iobuf_0: component IOBUF
+     port map (
+      I => Digital_IO_tri_o_0(0),
+      IO => Digital_IO_tri_io(0),
+      O => Digital_IO_tri_i_0(0),
+      T => Digital_IO_tri_t_0(0)
+    );
+Digital_IO_tri_iobuf_1: component IOBUF
+     port map (
+      I => Digital_IO_tri_o_1(1),
+      IO => Digital_IO_tri_io(1),
+      O => Digital_IO_tri_i_1(1),
+      T => Digital_IO_tri_t_1(1)
+    );
+Digital_IO_tri_iobuf_2: component IOBUF
+     port map (
+      I => Digital_IO_tri_o_2(2),
+      IO => Digital_IO_tri_io(2),
+      O => Digital_IO_tri_i_2(2),
+      T => Digital_IO_tri_t_2(2)
+    );
+Digital_IO_tri_iobuf_3: component IOBUF
+     port map (
+      I => Digital_IO_tri_o_3(3),
+      IO => Digital_IO_tri_io(3),
+      O => Digital_IO_tri_i_3(3),
+      T => Digital_IO_tri_t_3(3)
+    );
+Digital_IO_tri_iobuf_4: component IOBUF
+     port map (
+      I => Digital_IO_tri_o_4(4),
+      IO => Digital_IO_tri_io(4),
+      O => Digital_IO_tri_i_4(4),
+      T => Digital_IO_tri_t_4(4)
+    );
 ElectricGoKart_i: component ElectricGoKart
      port map (
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -141,7 +198,21 @@ ElectricGoKart_i: component ElectricGoKart
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
-      Digital_IO_tri_o(4 downto 0) => Digital_IO_tri_o(4 downto 0),
+      Digital_IO_tri_i(4) => Digital_IO_tri_i_4(4),
+      Digital_IO_tri_i(3) => Digital_IO_tri_i_3(3),
+      Digital_IO_tri_i(2) => Digital_IO_tri_i_2(2),
+      Digital_IO_tri_i(1) => Digital_IO_tri_i_1(1),
+      Digital_IO_tri_i(0) => Digital_IO_tri_i_0(0),
+      Digital_IO_tri_o(4) => Digital_IO_tri_o_4(4),
+      Digital_IO_tri_o(3) => Digital_IO_tri_o_3(3),
+      Digital_IO_tri_o(2) => Digital_IO_tri_o_2(2),
+      Digital_IO_tri_o(1) => Digital_IO_tri_o_1(1),
+      Digital_IO_tri_o(0) => Digital_IO_tri_o_0(0),
+      Digital_IO_tri_t(4) => Digital_IO_tri_t_4(4),
+      Digital_IO_tri_t(3) => Digital_IO_tri_t_3(3),
+      Digital_IO_tri_t(2) => Digital_IO_tri_t_2(2),
+      Digital_IO_tri_t(1) => Digital_IO_tri_t_1(1),
+      Digital_IO_tri_t(0) => Digital_IO_tri_t_0(0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),

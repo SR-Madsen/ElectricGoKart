@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Sun Apr  4 10:47:00 2021
+--Date        : Thu May  6 13:01:03 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart.bd
 --Design      : ElectricGoKart
@@ -2515,7 +2515,9 @@ entity ElectricGoKart is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -2545,10 +2547,10 @@ entity ElectricGoKart is
     Vaux7_0_v_n : in STD_LOGIC;
     Vaux7_0_v_p : in STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of ElectricGoKart : entity is "ElectricGoKart,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ElectricGoKart,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=12,numNonXlnxBlks=2,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of ElectricGoKart : entity is "ElectricGoKart.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of ElectricGoKart : entity is "ElectricGoKart,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ElectricGoKart,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=12,numNonXlnxBlks=2,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of ElectricGoKart : entity is "ElectricGoKart.hwdef";
 end ElectricGoKart;
 
 architecture STRUCTURE of ElectricGoKart is
@@ -2694,7 +2696,9 @@ architecture STRUCTURE of ElectricGoKart is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_o : out STD_LOGIC_VECTOR ( 4 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio_io_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio_io_t : out STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component ElectricGoKart_axi_gpio_0_0;
   component ElectricGoKart_axi_gpio_1_0 is
@@ -2871,7 +2875,9 @@ architecture STRUCTURE of ElectricGoKart is
   signal Vaux6_0_1_V_P : STD_LOGIC;
   signal Vaux7_0_1_V_N : STD_LOGIC;
   signal Vaux7_0_1_V_P : STD_LOGIC;
+  signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal axi_gpio_0_GPIO_TRI_T : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_1_GPIO_TRI_O : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_2_GPIO_TRI_I : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_gpio_2_GPIO_TRI_O : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -3090,50 +3096,53 @@ architecture STRUCTURE of ElectricGoKart is
   signal NLW_xadc_wiz_0_eoc_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_channel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
-  attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
-  attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
-  attribute X_INTERFACE_INFO of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
-  attribute X_INTERFACE_INFO of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
-  attribute X_INTERFACE_INFO of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
-  attribute X_INTERFACE_INFO of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
-  attribute X_INTERFACE_INFO of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
-  attribute X_INTERFACE_INFO of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
-  attribute X_INTERFACE_INFO of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
-  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
-  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
-  attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
-  attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
-  attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute X_INTERFACE_INFO of SERIAL_CLOCK_0 : signal is "xilinx.com:signal:clock:1.0 CLK.SERIAL_CLOCK_0 CLK";
-  attribute X_INTERFACE_PARAMETER of SERIAL_CLOCK_0 : signal is "XIL_INTERFACENAME CLK.SERIAL_CLOCK_0, CLK_DOMAIN ElectricGoKart_Encoder_Driver_0_0_SERIAL_CLOCK, FREQ_HZ 900000, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of Vaux14_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_N";
-  attribute X_INTERFACE_INFO of Vaux14_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_P";
-  attribute X_INTERFACE_INFO of Vaux15_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_N";
-  attribute X_INTERFACE_INFO of Vaux15_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_P";
-  attribute X_INTERFACE_INFO of Vaux6_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_N";
-  attribute X_INTERFACE_INFO of Vaux6_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_P";
-  attribute X_INTERFACE_INFO of Vaux7_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_N";
-  attribute X_INTERFACE_INFO of Vaux7_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_P";
-  attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
-  attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
-  attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
-  attribute X_INTERFACE_INFO of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
-  attribute X_INTERFACE_INFO of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
-  attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
-  attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
-  attribute X_INTERFACE_INFO of Digital_IO_tri_o : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_O";
-  attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute X_INTERFACE_INFO of Main_Relay_tri_i : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_I";
-  attribute X_INTERFACE_INFO of Main_Relay_tri_o : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_O";
-  attribute X_INTERFACE_INFO of Main_Relay_tri_t : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_T";
-  attribute X_INTERFACE_INFO of Overtemp_tri_i : signal is "xilinx.com:interface:gpio:1.0 Overtemp TRI_I";
-  attribute X_INTERFACE_INFO of Precharge_En_tri_o : signal is "xilinx.com:interface:gpio:1.0 Precharge_En TRI_O";
-  attribute X_INTERFACE_INFO of Switch_Status_tri_i : signal is "xilinx.com:interface:gpio:1.0 Switch_Status TRI_I";
+  attribute x_interface_info : string;
+  attribute x_interface_info of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
+  attribute x_interface_info of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
+  attribute x_interface_info of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
+  attribute x_interface_info of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
+  attribute x_interface_info of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
+  attribute x_interface_info of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
+  attribute x_interface_info of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
+  attribute x_interface_info of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
+  attribute x_interface_info of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
+  attribute x_interface_info of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
+  attribute x_interface_info of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
+  attribute x_interface_info of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
+  attribute x_interface_info of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
+  attribute x_interface_info of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute x_interface_info of SERIAL_CLOCK_0 : signal is "xilinx.com:signal:clock:1.0 CLK.SERIAL_CLOCK_0 CLK";
+  attribute x_interface_parameter of SERIAL_CLOCK_0 : signal is "XIL_INTERFACENAME CLK.SERIAL_CLOCK_0, CLK_DOMAIN ElectricGoKart_Encoder_Driver_0_0_SERIAL_CLOCK, FREQ_HZ 900000, INSERT_VIP 0, PHASE 0.000";
+  attribute x_interface_info of Vaux14_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_N";
+  attribute x_interface_info of Vaux14_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_P";
+  attribute x_interface_info of Vaux15_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_N";
+  attribute x_interface_info of Vaux15_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_P";
+  attribute x_interface_info of Vaux6_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_N";
+  attribute x_interface_info of Vaux6_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_P";
+  attribute x_interface_info of Vaux7_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_N";
+  attribute x_interface_info of Vaux7_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_P";
+  attribute x_interface_info of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
+  attribute x_interface_parameter of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
+  attribute x_interface_info of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
+  attribute x_interface_info of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
+  attribute x_interface_info of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
+  attribute x_interface_info of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
+  attribute x_interface_info of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
+  attribute x_interface_info of Digital_IO_tri_i : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_I";
+  attribute x_interface_info of Digital_IO_tri_o : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_O";
+  attribute x_interface_info of Digital_IO_tri_t : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_T";
+  attribute x_interface_info of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute x_interface_info of Main_Relay_tri_i : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_I";
+  attribute x_interface_info of Main_Relay_tri_o : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_O";
+  attribute x_interface_info of Main_Relay_tri_t : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_T";
+  attribute x_interface_info of Overtemp_tri_i : signal is "xilinx.com:interface:gpio:1.0 Overtemp TRI_I";
+  attribute x_interface_info of Precharge_En_tri_o : signal is "xilinx.com:interface:gpio:1.0 Precharge_En TRI_O";
+  attribute x_interface_info of Switch_Status_tri_i : signal is "xilinx.com:interface:gpio:1.0 Switch_Status TRI_I";
 begin
   Digital_IO_tri_o(4 downto 0) <= axi_gpio_0_GPIO_TRI_O(4 downto 0);
+  Digital_IO_tri_t(4 downto 0) <= axi_gpio_0_GPIO_TRI_T(4 downto 0);
   INC_A_0_1 <= INC_A_0;
   INC_B_0_1 <= INC_B_0;
   INC_Z_0_1 <= INC_Z_0;
@@ -3153,6 +3162,7 @@ begin
   Vaux6_0_1_V_P <= Vaux6_0_v_p;
   Vaux7_0_1_V_N <= Vaux7_0_v_n;
   Vaux7_0_1_V_P <= Vaux7_0_v_p;
+  axi_gpio_0_GPIO_TRI_I(4 downto 0) <= Digital_IO_tri_i(4 downto 0);
   axi_gpio_2_GPIO_TRI_I(1 downto 0) <= Main_Relay_tri_i(1 downto 0);
   axi_gpio_3_GPIO_TRI_I(0) <= Overtemp_tri_i(0);
   axi_gpio_4_GPIO_TRI_I(1 downto 0) <= Switch_Status_tri_i(1 downto 0);
@@ -3215,7 +3225,9 @@ PWM_Generator_0: component ElectricGoKart_PWM_Generator_0_1
     );
 axi_gpio_0: component ElectricGoKart_axi_gpio_0_0
      port map (
+      gpio_io_i(4 downto 0) => axi_gpio_0_GPIO_TRI_I(4 downto 0),
       gpio_io_o(4 downto 0) => axi_gpio_0_GPIO_TRI_O(4 downto 0),
+      gpio_io_t(4 downto 0) => axi_gpio_0_GPIO_TRI_T(4 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M03_AXI_ARADDR(8 downto 0),
       s_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),

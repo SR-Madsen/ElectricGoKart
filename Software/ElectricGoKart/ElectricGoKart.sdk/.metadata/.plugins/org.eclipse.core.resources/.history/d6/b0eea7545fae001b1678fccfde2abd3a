@@ -1,0 +1,73 @@
+/*
+ * xadc.h
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_XADC_H_
+#define SRC_XADC_H_
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xadcps.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+
+// Defines
+#define XADC_DEVICE_ID XPAR_XADCPS_0_DEVICE_ID
+#define INTC_DEVICE_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define IRQ_F2P XIL_EXCEPTION_ID_INT
+#define XADC_EOS 61
+#define HIGH_PRIORITY 0
+#define RISING_EDGE 0b11
+
+#define BATTERY_CHANNEL 14
+#define TORQUE_CHANNEL 6
+#define PHASE_A_CHANNEL 7
+#define PHASE_B_CHANNEL 15
+
+// Structs
+
+
+// Variables
+XScuGic InterruptController;
+XScuGic_Config *IntcConfig;
+XAdcPs XAdc;
+XAdcPs_Config *XAdcConfigPtr;
+
+
+// Function prototypes
+// Initialize the XADC with Vivado configuration.
+// Output: Status variable, either success or not.
+u8 initXAdc();
+
+// Initialize the GIC and set up End-of-Sequence interrupt.
+// Input: Function to handle interrupt.
+// Output: Status variable, either success or not.
+u8 initGicXAdc(Xil_InterruptHandler handler);
+
+// Gets the raw battery voltage value.
+// Output: Value from 0 to 4095 depending on voltage.
+// Maximum voltage measured is xxxxx????
+void getBatteryRaw(u16 *raw);
+
+// Gets the raw torque value.
+// Output: Value from 0 to 4095 depending on torque.
+// Maximum expected torque value is 3685 (plus tolerances). Any higher means it is disconnected.
+void getTorqueRaw(u16 *raw);
+
+// Gets the raw Phase A value.
+// Output: Value from 0 to 4095 depending on current.
+// Maximum expected current value is 3902 (plus tolerances). Any higher means short-circuit.
+void getPhaseARaw(u16 *raw);
+
+// Gets the raw Phase B value.
+// Output: Value from 0 to 4095 depending on current.
+// Maximum expected current value is 3902 (plus tolerances). Any higher means short-circuit.
+void getPhaseBRaw(u16 *raw);
+
+
+#endif /* SRC_XADC_H_ */

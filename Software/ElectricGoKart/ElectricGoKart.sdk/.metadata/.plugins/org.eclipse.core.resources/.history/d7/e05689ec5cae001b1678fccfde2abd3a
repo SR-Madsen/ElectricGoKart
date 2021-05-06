@@ -1,0 +1,193 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+
+/*
+ * INCLUDE FOR TEST OF GPIO DRIVER AND AXI DRIVER
+ */
+#include "sleep.h"
+
+// User defines
+
+
+// User prototypes
+
+/*
+ * PROTOTYPE FOR TEST OF XADC DRIVER
+ */
+//static void XAdcInterruptHandler(XAdcPs *XAdc);
+
+// User structs
+// Move all structs to a different file eventually.
+// Alternative for conversion structs: One for each, with raw, filtered, re-calculated (into Volts or Amps) etc.
+typedef struct rawConvs_t {
+	u16 battery_raw;
+	u16 torque_raw;
+	u16 phaseA_raw;
+	u16 phaseB_raw;
+} rawConvs_t;
+rawConvs_t Adc_conversions;
+
+typedef struct position_t {
+	u16 position_raw;
+	LONG position_rads;
+} position_t;
+position_t motor_position;
+
+/*
+ * STRUCT FOR TEST OF AXI DRIVER
+ */
+//ocvvalues_t ocvs = {0.5, 0.5, 0.5};
+
+// User variables
+
+/*
+ * VARIABLES FOR TEST OF XADC DRIVER
+ */
+//u8 flag = 0;
+//u32 counter = 0;
+
+int main()
+{
+    init_platform();
+
+    /*
+     * CODE FOR TEST OF XADC DRIVER
+     */
+    /*
+    initXAdc();
+    initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+    xil_printf("XADC and GIC initialized.\r\n");
+    xil_printf("Now going into infinite loop to test XADC conversion values.\r\n");
+
+    while(1) {
+    	while(!flag);
+    	flag = 0;
+    	xil_printf("Battery raw: %d\r\n", Adc_conversions.battery_raw); // PMOD JA1
+    	xil_printf("Torque raw: %d\r\n", Adc_conversions.torque_raw); // PMOD JA4
+    	xil_printf("Phase A raw: %d\r\n", Adc_conversions.phaseA_raw); // PMOD JA2
+    	xil_printf("Phase B raw: %d\r\n", Adc_conversions.phaseB_raw); // PMOD JA3
+    }
+    */
+
+    /*
+     * CODE FOR TEST OF GPIO DRIVER
+     */
+    /*
+    u16 overcurrentswitch = 0, relay = 0, overtemp = 0, enableswitch = 0, footswitch = 0;
+    initGpios();
+    xil_printf("GPIOs initialized.\r\n");
+    xil_printf("Now going into infinite loop to test GPIO read and write.\r\n");
+
+    while(1) {
+    	checkOvercurrentSwitch(&overcurrentswitch); // PMOD JC1
+    	checkMainRelay(&relay); // PMOD JE3
+    	checkOvertemp(&overtemp); // PMOD JE4
+    	checkEnableSwitch(&enableswitch); // PMOD JE8
+    	checkFootSwitch(&footswitch); // PMOD JE9
+
+    	xil_printf("Status of readings:\r\n");
+    	xil_printf("Overcurrent button: %d\r\n", overcurrentswitch);
+    	xil_printf("Relay status: %d\r\n", relay);
+    	xil_printf("Overtemperature: %d\r\n", overtemp);
+    	xil_printf("Enable switch: %d\r\n", enableswitch);
+    	xil_printf("Foot switch: %d\r\n", footswitch);
+
+    	usleep(500000);
+    	xil_printf("Enabling all GPIOs.\r\n");
+    	enableLED1(); // PMOD JC2
+    	enableLED2(); // PMOD JC3
+    	enableTP1(); // PMOD JC4
+    	enableTP2(); // PMOD JC7
+    	enablePrecharge(); // PMOD JE1
+    	enableMainRelay(); // PMOD JE2
+
+
+    	usleep(1000000);
+    	xil_printf("Disabling all GPIOs.\r\n");
+    	disableLED1(); // PMOD JC2
+    	disableLED2(); // PMOD JC3
+    	disableTP1(); // PMOD JC4
+    	disableTP2(); // PMOD JC7
+    	disablePrecharge(); // PMOD JE1
+    	disableMainRelay(); // PMOD JE2
+
+
+    	usleep(1000000);
+    }
+	*/
+
+
+    /*
+     * CODE FOR TEST OF AXI DRIVER
+     */
+    /*
+    u16 motor_position = 0;
+    LONG motor_position_rads = 0;
+    xil_printf("Starting test of AXI driver.\r\n");
+    while(1) {
+    	xil_printf("Setting duty cycles to 0.5.\r\n");
+    	ocvs.ocv1 = 0.5 * OCR_MAX; // PMOD JD4
+    	ocvs.ocv2 = 0.5 * OCR_MAX; // PMOD JD2
+    	ocvs.ocv3 = 0.5 * OCR_MAX; // PMOD JD7
+    	setDutyCycles(&ocvs);
+    	readPosition(&motor_position);
+    	rawToRadsEl(motor_position, &motor_position_rads);
+    	xil_printf("Raw position read: %d\r\n", motor_position);
+
+    	 // ENCODER A: PMOD JB2
+    	 // ENCODER B: PMOD JB1
+    	 // ENCODER Z: PMOD JB7
+    	 // ENCODER CLK: PMOD JB3
+    	 // ENCODER DATA: PMOD JB4
+
+    	usleep(1500000);
+    	xil_printf("Setting duty cycles to 0.\r\n");
+    	ocvs.ocv1 = 0; // PMOD JD4
+    	ocvs.ocv2 = 0; // PMOD JD2
+    	ocvs.ocv3 = 0; // PMOD JD7
+    	setDutyCycles(&ocvs);
+    	readPositionRadsEl(&motor_position_rads);
+
+    	usleep(1500000);
+    	xil_printf("Setting duty cycles to 1.\r\n");
+    	ocvs.ocv1 = OCR_MAX; // PMOD JD4
+    	ocvs.ocv2 = OCR_MAX; // PMOD JD2
+    	ocvs.ocv3 = OCR_MAX; // PMOD JD7
+    	setDutyCycles(&ocvs);
+
+    	usleep(1500000);
+    }
+    */
+
+    cleanup_platform();
+    return 0;
+}
+
+/*
+ * FUNCTION FOR TEST OF XADC DRIVER
+ */
+/*
+static void XAdcInterruptHandler(XAdcPs *XAdc) {
+	if (counter++ >= 250000) {
+		flag = 1;
+		getBatteryRaw(&Adc_conversions.battery_raw);
+		getTorqueRaw(&Adc_conversions.torque_raw);
+		getPhaseARaw(&Adc_conversions.phaseA_raw);
+		getPhaseBRaw(&Adc_conversions.phaseB_raw);
+		counter = 0;
+	}
+
+	//readPosition(&motor_position.position_raw);
+	//rawToRadsEl(motor_position.position_raw, &motor_position.position_rads); // Alternatively use readPositionRadsEl();
+}
+*/

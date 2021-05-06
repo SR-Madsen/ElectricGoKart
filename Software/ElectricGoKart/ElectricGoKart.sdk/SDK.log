@@ -33,3 +33,1455 @@
 17:52:37 INFO  : Successfully done setting SDK workspace  
 17:52:37 INFO  : Processing command line option -hwspec /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
 17:52:37 INFO  : Checking for hwspec changes in the project ElectricGoKart_wrapper_hw_platform_0.
+11:30:46 INFO  : Registering command handlers for SDK TCF services
+11:30:49 INFO  : Launching XSCT server: xsct -n -interactive /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/temp_xsdb_launch_script.tcl
+11:30:56 INFO  : XSCT server has started successfully.
+11:30:56 INFO  : Successfully done setting XSCT server connection channel  
+11:31:09 INFO  : Successfully done setting SDK workspace  
+11:31:09 INFO  : Processing command line option -hwspec /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
+11:31:09 INFO  : Checking for hwspec changes in the project ElectricGoKart_wrapper_hw_platform_0.
+11:34:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:35:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:35:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:35:13 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+11:35:13 INFO  : 'jtag frequency' command is executed.
+11:35:13 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:35:13 INFO  : Context for 'APU' is selected.
+11:35:13 INFO  : System reset is completed.
+11:35:16 INFO  : 'after 3000' command is executed.
+11:35:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+11:35:17 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+11:35:17 INFO  : Context for 'APU' is selected.
+11:35:17 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+11:35:17 INFO  : 'configparams force-mem-access 1' command is executed.
+11:35:17 INFO  : Context for 'APU' is selected.
+11:35:18 INFO  : 'ps7_init' command is executed.
+11:35:18 INFO  : 'ps7_post_config' command is executed.
+11:35:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:18 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:35:18 INFO  : 'configparams force-mem-access 0' command is executed.
+11:35:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:35:18 INFO  : Memory regions updated for context APU
+11:35:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:18 INFO  : 'con' command is executed.
+11:35:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+11:35:18 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+11:40:53 INFO  : Disconnected from the channel tcfchan#1.
+11:40:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:40:54 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+11:40:54 INFO  : 'jtag frequency' command is executed.
+11:40:54 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:40:54 INFO  : Context for 'APU' is selected.
+11:40:54 INFO  : System reset is completed.
+11:40:57 INFO  : 'after 3000' command is executed.
+11:40:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+11:40:58 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+11:40:59 INFO  : Context for 'APU' is selected.
+11:41:00 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+11:41:00 INFO  : 'configparams force-mem-access 1' command is executed.
+11:41:00 INFO  : Context for 'APU' is selected.
+11:41:00 INFO  : 'ps7_init' command is executed.
+11:41:00 INFO  : 'ps7_post_config' command is executed.
+11:41:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:00 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:41:00 INFO  : 'configparams force-mem-access 0' command is executed.
+11:41:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:41:00 INFO  : Memory regions updated for context APU
+11:41:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:00 INFO  : 'con' command is executed.
+11:41:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+11:41:00 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+11:41:20 INFO  : Disconnected from the channel tcfchan#2.
+11:41:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:41:21 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+11:41:21 INFO  : 'jtag frequency' command is executed.
+11:41:21 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:41:21 INFO  : Context for 'APU' is selected.
+11:41:21 INFO  : System reset is completed.
+11:41:24 INFO  : 'after 3000' command is executed.
+11:41:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+11:41:26 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+11:41:26 INFO  : Context for 'APU' is selected.
+11:41:27 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+11:41:27 INFO  : 'configparams force-mem-access 1' command is executed.
+11:41:27 INFO  : Context for 'APU' is selected.
+11:41:27 INFO  : 'ps7_init' command is executed.
+11:41:27 INFO  : 'ps7_post_config' command is executed.
+11:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:27 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:41:27 INFO  : 'configparams force-mem-access 0' command is executed.
+11:41:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:41:27 INFO  : Memory regions updated for context APU
+11:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:27 INFO  : 'con' command is executed.
+11:41:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+11:41:27 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+11:48:10 INFO  : Disconnected from the channel tcfchan#3.
+11:48:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:48:11 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+11:48:11 INFO  : 'jtag frequency' command is executed.
+11:48:11 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:48:11 INFO  : Context for 'APU' is selected.
+11:48:11 INFO  : System reset is completed.
+11:48:14 INFO  : 'after 3000' command is executed.
+11:48:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+11:48:15 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+11:48:15 INFO  : Context for 'APU' is selected.
+11:48:16 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+11:48:16 INFO  : 'configparams force-mem-access 1' command is executed.
+11:48:16 INFO  : Context for 'APU' is selected.
+11:48:17 INFO  : 'ps7_init' command is executed.
+11:48:17 INFO  : 'ps7_post_config' command is executed.
+11:48:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:17 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:48:17 INFO  : 'configparams force-mem-access 0' command is executed.
+11:48:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:48:17 INFO  : Memory regions updated for context APU
+11:48:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:17 INFO  : 'con' command is executed.
+11:48:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+11:48:17 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:04:13 INFO  : Disconnected from the channel tcfchan#4.
+12:04:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:04:14 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:04:14 INFO  : 'jtag frequency' command is executed.
+12:04:14 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:04:14 INFO  : Context for 'APU' is selected.
+12:04:14 INFO  : System reset is completed.
+12:04:17 INFO  : 'after 3000' command is executed.
+12:04:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:04:19 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:04:19 INFO  : Context for 'APU' is selected.
+12:04:20 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:04:20 INFO  : 'configparams force-mem-access 1' command is executed.
+12:04:20 INFO  : Context for 'APU' is selected.
+12:04:20 INFO  : 'ps7_init' command is executed.
+12:04:20 INFO  : 'ps7_post_config' command is executed.
+12:04:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:20 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:04:20 INFO  : 'configparams force-mem-access 0' command is executed.
+12:04:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:04:20 INFO  : Memory regions updated for context APU
+12:04:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:20 INFO  : 'con' command is executed.
+12:04:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:04:20 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:16:03 INFO  : Disconnected from the channel tcfchan#5.
+12:16:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:16:04 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:16:04 INFO  : 'jtag frequency' command is executed.
+12:16:04 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:16:04 INFO  : Context for 'APU' is selected.
+12:16:04 INFO  : System reset is completed.
+12:16:07 INFO  : 'after 3000' command is executed.
+12:16:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:16:08 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:16:08 INFO  : Context for 'APU' is selected.
+12:16:09 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:16:09 INFO  : 'configparams force-mem-access 1' command is executed.
+12:16:09 INFO  : Context for 'APU' is selected.
+12:16:10 INFO  : 'ps7_init' command is executed.
+12:16:10 INFO  : 'ps7_post_config' command is executed.
+12:16:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:16:10 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:16:10 INFO  : 'configparams force-mem-access 0' command is executed.
+12:16:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:16:10 INFO  : Memory regions updated for context APU
+12:16:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:16:10 INFO  : 'con' command is executed.
+12:16:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:16:10 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:26:39 INFO  : Disconnected from the channel tcfchan#6.
+12:26:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:26:40 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:26:40 INFO  : 'jtag frequency' command is executed.
+12:26:40 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:26:40 INFO  : Context for 'APU' is selected.
+12:26:40 INFO  : System reset is completed.
+12:26:43 INFO  : 'after 3000' command is executed.
+12:26:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:26:44 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:26:44 INFO  : Context for 'APU' is selected.
+12:26:45 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:26:45 INFO  : 'configparams force-mem-access 1' command is executed.
+12:26:45 INFO  : Context for 'APU' is selected.
+12:26:46 INFO  : 'ps7_init' command is executed.
+12:26:46 INFO  : 'ps7_post_config' command is executed.
+12:26:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:46 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:26:46 INFO  : 'configparams force-mem-access 0' command is executed.
+12:26:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:26:46 INFO  : Memory regions updated for context APU
+12:26:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:46 INFO  : 'con' command is executed.
+12:26:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:26:46 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:43:19 INFO  : Disconnected from the channel tcfchan#7.
+12:43:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:43:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+12:43:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:43:48 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:43:48 INFO  : 'jtag frequency' command is executed.
+12:43:48 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:43:48 INFO  : Context for 'APU' is selected.
+12:43:48 INFO  : System reset is completed.
+12:43:51 INFO  : 'after 3000' command is executed.
+12:43:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:43:53 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:43:53 INFO  : Context for 'APU' is selected.
+12:43:54 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:43:54 INFO  : 'configparams force-mem-access 1' command is executed.
+12:43:54 INFO  : Context for 'APU' is selected.
+12:43:54 INFO  : 'ps7_init' command is executed.
+12:43:54 INFO  : 'ps7_post_config' command is executed.
+12:43:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:43:54 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:43:54 INFO  : 'configparams force-mem-access 0' command is executed.
+12:43:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:43:54 INFO  : Memory regions updated for context APU
+12:43:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:43:54 INFO  : 'con' command is executed.
+12:43:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:43:54 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:53:36 INFO  : Disconnected from the channel tcfchan#8.
+12:53:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:53:38 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:53:38 INFO  : 'jtag frequency' command is executed.
+12:53:38 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:53:38 INFO  : Context for 'APU' is selected.
+12:53:38 INFO  : System reset is completed.
+12:53:41 INFO  : 'after 3000' command is executed.
+12:53:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:53:42 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:53:42 INFO  : Context for 'APU' is selected.
+12:53:43 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:53:43 INFO  : 'configparams force-mem-access 1' command is executed.
+12:53:43 INFO  : Context for 'APU' is selected.
+12:53:43 INFO  : 'ps7_init' command is executed.
+12:53:43 INFO  : 'ps7_post_config' command is executed.
+12:53:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:53:43 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:53:43 INFO  : 'configparams force-mem-access 0' command is executed.
+12:53:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:53:43 INFO  : Memory regions updated for context APU
+12:53:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:53:44 INFO  : 'con' command is executed.
+12:53:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:53:44 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:54:10 INFO  : Disconnected from the channel tcfchan#9.
+12:54:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:54:11 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:54:11 INFO  : 'jtag frequency' command is executed.
+12:54:11 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:54:11 INFO  : Context for 'APU' is selected.
+12:54:11 INFO  : System reset is completed.
+12:54:14 INFO  : 'after 3000' command is executed.
+12:54:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:54:15 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:54:15 INFO  : Context for 'APU' is selected.
+12:54:16 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:54:16 INFO  : 'configparams force-mem-access 1' command is executed.
+12:54:16 INFO  : Context for 'APU' is selected.
+12:54:16 INFO  : 'ps7_init' command is executed.
+12:54:16 INFO  : 'ps7_post_config' command is executed.
+12:54:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:54:17 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:54:17 INFO  : 'configparams force-mem-access 0' command is executed.
+12:54:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:54:17 INFO  : Memory regions updated for context APU
+12:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:54:17 INFO  : 'con' command is executed.
+12:54:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:54:17 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:55:26 INFO  : Disconnected from the channel tcfchan#10.
+12:55:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:55:27 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:55:27 INFO  : 'jtag frequency' command is executed.
+12:55:27 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:55:27 INFO  : Context for 'APU' is selected.
+12:55:27 INFO  : System reset is completed.
+12:55:30 INFO  : 'after 3000' command is executed.
+12:55:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:55:32 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:55:32 INFO  : Context for 'APU' is selected.
+12:55:33 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:55:33 INFO  : 'configparams force-mem-access 1' command is executed.
+12:55:33 INFO  : Context for 'APU' is selected.
+12:55:33 INFO  : 'ps7_init' command is executed.
+12:55:33 INFO  : 'ps7_post_config' command is executed.
+12:55:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:55:33 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:55:33 INFO  : 'configparams force-mem-access 0' command is executed.
+12:55:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:55:33 INFO  : Memory regions updated for context APU
+12:55:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:55:33 INFO  : 'con' command is executed.
+12:55:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:55:33 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:56:18 INFO  : Disconnected from the channel tcfchan#11.
+12:56:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:56:19 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:56:19 INFO  : 'jtag frequency' command is executed.
+12:56:19 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:56:20 INFO  : Context for 'APU' is selected.
+12:56:20 INFO  : System reset is completed.
+12:56:23 INFO  : 'after 3000' command is executed.
+12:56:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:56:24 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:56:24 INFO  : Context for 'APU' is selected.
+12:56:25 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:56:25 INFO  : 'configparams force-mem-access 1' command is executed.
+12:56:25 INFO  : Context for 'APU' is selected.
+12:56:25 INFO  : 'ps7_init' command is executed.
+12:56:25 INFO  : 'ps7_post_config' command is executed.
+12:56:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:56:26 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:56:26 INFO  : 'configparams force-mem-access 0' command is executed.
+12:56:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:56:26 INFO  : Memory regions updated for context APU
+12:56:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:56:26 INFO  : 'con' command is executed.
+12:56:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:56:26 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+12:59:23 INFO  : Disconnected from the channel tcfchan#12.
+12:59:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:59:24 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+12:59:24 INFO  : 'jtag frequency' command is executed.
+12:59:24 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:59:25 INFO  : Context for 'APU' is selected.
+12:59:25 INFO  : System reset is completed.
+12:59:28 INFO  : 'after 3000' command is executed.
+12:59:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+12:59:29 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+12:59:29 INFO  : Context for 'APU' is selected.
+12:59:30 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+12:59:30 INFO  : 'configparams force-mem-access 1' command is executed.
+12:59:30 INFO  : Context for 'APU' is selected.
+12:59:30 INFO  : 'ps7_init' command is executed.
+12:59:30 INFO  : 'ps7_post_config' command is executed.
+12:59:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:59:30 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:59:30 INFO  : 'configparams force-mem-access 0' command is executed.
+12:59:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:59:30 INFO  : Memory regions updated for context APU
+12:59:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:59:31 INFO  : 'con' command is executed.
+12:59:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+12:59:31 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:15:11 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1620299696000,  Project:1617526181000
+13:15:11 INFO  : Project ElectricGoKart_wrapper_hw_platform_0's source hardware specification located at /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+13:15:15 INFO  : Copied contents of /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf into /ElectricGoKart_wrapper_hw_platform_0/system.hdf.
+13:15:17 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:15:19 INFO  : 
+13:15:19 INFO  : Updating hardware inferred compiler options for ElectricGoKart.
+13:15:19 INFO  : Clearing existing target manager status.
+13:15:19 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:15:21 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:18:15 INFO  : Disconnected from the channel tcfchan#13.
+13:18:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:18:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+13:18:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:18:32 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:18:32 INFO  : 'jtag frequency' command is executed.
+13:18:32 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:18:32 INFO  : Context for 'APU' is selected.
+13:18:32 INFO  : System reset is completed.
+13:18:35 INFO  : 'after 3000' command is executed.
+13:18:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:18:36 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:18:36 INFO  : Context for 'APU' is selected.
+13:18:37 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:18:37 INFO  : 'configparams force-mem-access 1' command is executed.
+13:18:37 INFO  : Context for 'APU' is selected.
+13:18:37 INFO  : 'ps7_init' command is executed.
+13:18:37 INFO  : 'ps7_post_config' command is executed.
+13:18:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:18:37 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:18:37 INFO  : 'configparams force-mem-access 0' command is executed.
+13:18:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:18:37 INFO  : Memory regions updated for context APU
+13:18:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:18:37 INFO  : 'con' command is executed.
+13:18:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:18:37 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:21:17 INFO  : Disconnected from the channel tcfchan#14.
+13:21:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:21:18 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:21:18 INFO  : 'jtag frequency' command is executed.
+13:21:18 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:21:18 INFO  : Context for 'APU' is selected.
+13:21:18 INFO  : System reset is completed.
+13:21:21 INFO  : 'after 3000' command is executed.
+13:21:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:21:22 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:21:22 INFO  : Context for 'APU' is selected.
+13:21:24 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:21:24 INFO  : 'configparams force-mem-access 1' command is executed.
+13:21:24 INFO  : Context for 'APU' is selected.
+13:21:24 INFO  : 'ps7_init' command is executed.
+13:21:24 INFO  : 'ps7_post_config' command is executed.
+13:21:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:21:24 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:21:24 INFO  : 'configparams force-mem-access 0' command is executed.
+13:21:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:21:24 INFO  : Memory regions updated for context APU
+13:21:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:21:24 INFO  : 'con' command is executed.
+13:21:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:21:24 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:23:08 INFO  : Disconnected from the channel tcfchan#15.
+13:23:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:23:09 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:23:09 INFO  : 'jtag frequency' command is executed.
+13:23:09 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:23:09 INFO  : Context for 'APU' is selected.
+13:23:10 INFO  : System reset is completed.
+13:23:13 INFO  : 'after 3000' command is executed.
+13:23:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:23:14 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:23:14 INFO  : Context for 'APU' is selected.
+13:23:14 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:23:14 INFO  : 'configparams force-mem-access 1' command is executed.
+13:23:14 INFO  : Context for 'APU' is selected.
+13:23:14 INFO  : 'ps7_init' command is executed.
+13:23:14 INFO  : 'ps7_post_config' command is executed.
+13:23:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:23:14 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:23:14 INFO  : 'configparams force-mem-access 0' command is executed.
+13:23:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:23:14 INFO  : Memory regions updated for context APU
+13:23:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:23:14 INFO  : 'con' command is executed.
+13:23:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:23:14 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:24:19 INFO  : Disconnected from the channel tcfchan#16.
+13:24:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:24:20 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:24:20 INFO  : 'jtag frequency' command is executed.
+13:24:20 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:24:20 INFO  : Context for 'APU' is selected.
+13:24:21 INFO  : System reset is completed.
+13:24:24 INFO  : 'after 3000' command is executed.
+13:24:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:24:25 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:24:25 INFO  : Context for 'APU' is selected.
+13:24:25 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:24:25 INFO  : 'configparams force-mem-access 1' command is executed.
+13:24:25 INFO  : Context for 'APU' is selected.
+13:24:25 INFO  : 'ps7_init' command is executed.
+13:24:25 INFO  : 'ps7_post_config' command is executed.
+13:24:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:24:25 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:24:25 INFO  : 'configparams force-mem-access 0' command is executed.
+13:24:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:24:25 INFO  : Memory regions updated for context APU
+13:24:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:24:25 INFO  : 'con' command is executed.
+13:24:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:24:25 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:33:05 INFO  : Disconnected from the channel tcfchan#17.
+13:33:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:33:06 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:33:06 INFO  : 'jtag frequency' command is executed.
+13:33:06 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:33:06 INFO  : Context for 'APU' is selected.
+13:33:07 INFO  : System reset is completed.
+13:33:10 INFO  : 'after 3000' command is executed.
+13:33:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:33:11 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:33:11 INFO  : Context for 'APU' is selected.
+13:33:11 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:33:11 INFO  : 'configparams force-mem-access 1' command is executed.
+13:33:11 INFO  : Context for 'APU' is selected.
+13:33:11 INFO  : 'ps7_init' command is executed.
+13:33:11 INFO  : 'ps7_post_config' command is executed.
+13:33:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:33:11 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:33:11 INFO  : 'configparams force-mem-access 0' command is executed.
+13:33:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:33:11 INFO  : Memory regions updated for context APU
+13:33:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:33:11 INFO  : 'con' command is executed.
+13:33:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:33:11 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:35:13 INFO  : Disconnected from the channel tcfchan#18.
+13:38:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:39:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+13:39:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:39:28 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:39:28 INFO  : 'jtag frequency' command is executed.
+13:39:28 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:39:28 INFO  : Context for 'APU' is selected.
+13:39:28 INFO  : System reset is completed.
+13:39:31 INFO  : 'after 3000' command is executed.
+13:39:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:39:32 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:39:32 INFO  : Context for 'APU' is selected.
+13:39:32 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:39:32 INFO  : 'configparams force-mem-access 1' command is executed.
+13:39:32 INFO  : Context for 'APU' is selected.
+13:39:33 INFO  : 'ps7_init' command is executed.
+13:39:33 INFO  : 'ps7_post_config' command is executed.
+13:39:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:39:33 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:39:33 INFO  : 'configparams force-mem-access 0' command is executed.
+13:39:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:39:33 INFO  : Memory regions updated for context APU
+13:39:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:39:33 INFO  : 'con' command is executed.
+13:39:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:39:33 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:42:51 INFO  : Disconnected from the channel tcfchan#19.
+13:42:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:42:52 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:42:52 INFO  : 'jtag frequency' command is executed.
+13:42:52 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:42:52 INFO  : Context for 'APU' is selected.
+13:42:53 INFO  : System reset is completed.
+13:42:56 INFO  : 'after 3000' command is executed.
+13:42:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:42:57 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:42:57 INFO  : Context for 'APU' is selected.
+13:42:57 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:42:57 INFO  : 'configparams force-mem-access 1' command is executed.
+13:42:57 INFO  : Context for 'APU' is selected.
+13:42:57 INFO  : 'ps7_init' command is executed.
+13:42:57 INFO  : 'ps7_post_config' command is executed.
+13:42:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:42:57 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:42:57 INFO  : 'configparams force-mem-access 0' command is executed.
+13:42:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:42:57 INFO  : Memory regions updated for context APU
+13:42:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:42:57 INFO  : 'con' command is executed.
+13:42:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:42:57 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:45:51 INFO  : Disconnected from the channel tcfchan#20.
+13:45:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:45:53 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:45:53 INFO  : 'jtag frequency' command is executed.
+13:45:53 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:45:53 INFO  : Context for 'APU' is selected.
+13:45:53 INFO  : System reset is completed.
+13:45:56 INFO  : 'after 3000' command is executed.
+13:45:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:45:57 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:45:57 INFO  : Context for 'APU' is selected.
+13:45:57 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:45:57 INFO  : 'configparams force-mem-access 1' command is executed.
+13:45:57 INFO  : Context for 'APU' is selected.
+13:45:57 INFO  : 'ps7_init' command is executed.
+13:45:57 INFO  : 'ps7_post_config' command is executed.
+13:45:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:45:58 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:45:58 INFO  : 'configparams force-mem-access 0' command is executed.
+13:45:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:45:58 INFO  : Memory regions updated for context APU
+13:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:45:58 INFO  : 'con' command is executed.
+13:45:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:45:58 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:47:28 INFO  : Disconnected from the channel tcfchan#21.
+13:47:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:47:29 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:47:29 INFO  : 'jtag frequency' command is executed.
+13:47:29 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:47:30 INFO  : Context for 'APU' is selected.
+13:47:30 INFO  : System reset is completed.
+13:47:33 INFO  : 'after 3000' command is executed.
+13:47:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:47:34 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:47:34 INFO  : Context for 'APU' is selected.
+13:47:34 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:47:34 INFO  : 'configparams force-mem-access 1' command is executed.
+13:47:34 INFO  : Context for 'APU' is selected.
+13:47:34 INFO  : 'ps7_init' command is executed.
+13:47:34 INFO  : 'ps7_post_config' command is executed.
+13:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:47:34 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:47:34 INFO  : 'configparams force-mem-access 0' command is executed.
+13:47:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:47:34 INFO  : Memory regions updated for context APU
+13:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:47:34 INFO  : 'con' command is executed.
+13:47:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:47:34 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:48:12 INFO  : Disconnected from the channel tcfchan#22.
+13:48:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:48:14 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:48:14 INFO  : 'jtag frequency' command is executed.
+13:48:14 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:48:14 INFO  : Context for 'APU' is selected.
+13:48:14 INFO  : System reset is completed.
+13:48:17 INFO  : 'after 3000' command is executed.
+13:48:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:48:18 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:48:18 INFO  : Context for 'APU' is selected.
+13:48:18 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:48:18 INFO  : 'configparams force-mem-access 1' command is executed.
+13:48:18 INFO  : Context for 'APU' is selected.
+13:48:18 INFO  : 'ps7_init' command is executed.
+13:48:18 INFO  : 'ps7_post_config' command is executed.
+13:48:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:48:18 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:48:18 INFO  : 'configparams force-mem-access 0' command is executed.
+13:48:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:48:18 INFO  : Memory regions updated for context APU
+13:48:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:48:19 INFO  : 'con' command is executed.
+13:48:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:48:19 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:50:30 INFO  : Disconnected from the channel tcfchan#23.
+13:50:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:50:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+13:50:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:50:48 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:50:48 INFO  : 'jtag frequency' command is executed.
+13:50:48 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:50:48 INFO  : Context for 'APU' is selected.
+13:50:48 INFO  : System reset is completed.
+13:50:51 INFO  : 'after 3000' command is executed.
+13:50:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:50:53 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:50:53 INFO  : Context for 'APU' is selected.
+13:50:53 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:50:53 INFO  : 'configparams force-mem-access 1' command is executed.
+13:50:53 INFO  : Context for 'APU' is selected.
+13:50:53 INFO  : 'ps7_init' command is executed.
+13:50:53 INFO  : 'ps7_post_config' command is executed.
+13:50:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:50:53 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:50:53 INFO  : 'configparams force-mem-access 0' command is executed.
+13:50:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:50:53 INFO  : Memory regions updated for context APU
+13:50:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:50:53 INFO  : 'con' command is executed.
+13:50:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:50:53 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:51:17 INFO  : Disconnected from the channel tcfchan#24.
+13:51:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:51:18 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:51:18 INFO  : 'jtag frequency' command is executed.
+13:51:18 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:51:18 INFO  : Context for 'APU' is selected.
+13:51:18 INFO  : System reset is completed.
+13:51:21 INFO  : 'after 3000' command is executed.
+13:51:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:51:22 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:51:22 INFO  : Context for 'APU' is selected.
+13:51:22 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:51:22 INFO  : 'configparams force-mem-access 1' command is executed.
+13:51:22 INFO  : Context for 'APU' is selected.
+13:51:23 INFO  : 'ps7_init' command is executed.
+13:51:23 INFO  : 'ps7_post_config' command is executed.
+13:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:51:23 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:51:23 INFO  : 'configparams force-mem-access 0' command is executed.
+13:51:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:51:23 INFO  : Memory regions updated for context APU
+13:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:51:23 INFO  : 'con' command is executed.
+13:51:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:51:23 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+13:52:08 INFO  : Disconnected from the channel tcfchan#25.
+13:52:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:52:09 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+13:52:09 INFO  : 'jtag frequency' command is executed.
+13:52:09 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:52:09 INFO  : Context for 'APU' is selected.
+13:52:09 INFO  : System reset is completed.
+13:52:12 INFO  : 'after 3000' command is executed.
+13:52:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+13:52:13 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+13:52:13 INFO  : Context for 'APU' is selected.
+13:52:13 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+13:52:13 INFO  : 'configparams force-mem-access 1' command is executed.
+13:52:13 INFO  : Context for 'APU' is selected.
+13:52:13 INFO  : 'ps7_init' command is executed.
+13:52:13 INFO  : 'ps7_post_config' command is executed.
+13:52:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:52:14 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:52:14 INFO  : 'configparams force-mem-access 0' command is executed.
+13:52:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:52:14 INFO  : Memory regions updated for context APU
+13:52:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:52:14 INFO  : 'con' command is executed.
+13:52:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+13:52:14 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+14:00:31 INFO  : Disconnected from the channel tcfchan#26.
+14:00:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:00:32 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+14:00:32 INFO  : 'jtag frequency' command is executed.
+14:00:32 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:00:33 INFO  : Context for 'APU' is selected.
+14:00:33 INFO  : System reset is completed.
+14:00:36 INFO  : 'after 3000' command is executed.
+14:00:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+14:00:37 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+14:00:37 INFO  : Context for 'APU' is selected.
+14:00:37 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+14:00:37 INFO  : 'configparams force-mem-access 1' command is executed.
+14:00:37 INFO  : Context for 'APU' is selected.
+14:00:37 INFO  : 'ps7_init' command is executed.
+14:00:37 INFO  : 'ps7_post_config' command is executed.
+14:00:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:37 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:00:37 INFO  : 'configparams force-mem-access 0' command is executed.
+14:00:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:00:37 INFO  : Memory regions updated for context APU
+14:00:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:37 INFO  : 'con' command is executed.
+14:00:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+14:00:37 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+14:10:06 INFO  : Disconnected from the channel tcfchan#27.
+14:10:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:10:08 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+14:10:08 INFO  : 'jtag frequency' command is executed.
+14:10:08 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:10:08 INFO  : Context for 'APU' is selected.
+14:10:08 INFO  : System reset is completed.
+14:10:11 INFO  : 'after 3000' command is executed.
+14:10:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+14:10:12 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+14:10:12 INFO  : Context for 'APU' is selected.
+14:10:12 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+14:10:12 INFO  : 'configparams force-mem-access 1' command is executed.
+14:10:12 INFO  : Context for 'APU' is selected.
+14:10:12 INFO  : 'ps7_init' command is executed.
+14:10:12 INFO  : 'ps7_post_config' command is executed.
+14:10:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:10:12 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:10:12 INFO  : 'configparams force-mem-access 0' command is executed.
+14:10:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:10:12 INFO  : Memory regions updated for context APU
+14:10:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:10:13 INFO  : 'con' command is executed.
+14:10:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+14:10:13 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+14:12:22 INFO  : Disconnected from the channel tcfchan#28.
+14:14:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:14:29 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+14:14:29 INFO  : 'jtag frequency' command is executed.
+14:14:29 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:14:29 INFO  : Context for 'APU' is selected.
+14:14:29 INFO  : System reset is completed.
+14:14:32 INFO  : 'after 3000' command is executed.
+14:14:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+14:14:34 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+14:14:34 INFO  : Context for 'APU' is selected.
+14:14:34 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+14:14:34 INFO  : 'configparams force-mem-access 1' command is executed.
+14:14:34 INFO  : Context for 'APU' is selected.
+14:14:34 INFO  : 'ps7_init' command is executed.
+14:14:34 INFO  : 'ps7_post_config' command is executed.
+14:14:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:34 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:14:34 INFO  : 'configparams force-mem-access 0' command is executed.
+14:14:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:14:34 INFO  : Memory regions updated for context APU
+14:14:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:34 INFO  : 'con' command is executed.
+14:14:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+14:14:34 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+14:17:26 INFO  : Disconnected from the channel tcfchan#29.
+14:17:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:17:27 INFO  : Jtag cable 'Digilent Zybo 210279785819A' is selected.
+14:17:27 INFO  : 'jtag frequency' command is executed.
+14:17:27 INFO  : Sourcing of '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:17:27 INFO  : Context for 'APU' is selected.
+14:17:27 INFO  : System reset is completed.
+14:17:31 INFO  : 'after 3000' command is executed.
+14:17:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1' command is executed.
+14:17:32 INFO  : FPGA configured successfully with bitstream "/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit"
+14:17:32 INFO  : Context for 'APU' is selected.
+14:17:32 INFO  : Hardware design information is loaded from '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf'.
+14:17:32 INFO  : 'configparams force-mem-access 1' command is executed.
+14:17:32 INFO  : Context for 'APU' is selected.
+14:17:32 INFO  : 'ps7_init' command is executed.
+14:17:32 INFO  : 'ps7_post_config' command is executed.
+14:17:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:32 INFO  : The application '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:17:32 INFO  : 'configparams force-mem-access 0' command is executed.
+14:17:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279785819A" && level==0} -index 1
+fpga -file /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/ElectricGoKart_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+loadhw -hw /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+dow /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart/Debug/ElectricGoKart.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:17:32 INFO  : Memory regions updated for context APU
+14:17:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:32 INFO  : 'con' command is executed.
+14:17:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279785819A"} -index 0
+con
+----------------End of Script----------------
+
+14:17:32 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
+14:28:28 INFO  : Disconnected from the channel tcfchan#30.
