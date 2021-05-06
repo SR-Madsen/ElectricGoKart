@@ -1,0 +1,28 @@
+/*
+ * tasks.h
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_TASKS_H_
+#define SRC_TASKS_H_
+
+#include "gpios.h"
+#include "xadc.h"
+#include "axiinterface.h"
+
+// Defines
+
+
+// Structs
+
+
+// Variables
+
+
+// Function prototypes
+
+
+
+#endif /* SRC_TASKS_H_ */

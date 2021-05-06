@@ -1,0 +1,10 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "gpios.h"
+#include "xadc.h"
+#include "axiinterface.h"

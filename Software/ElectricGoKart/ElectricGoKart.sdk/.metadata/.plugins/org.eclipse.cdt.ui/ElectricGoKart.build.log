@@ -1,28 +1,36 @@
-14:28:22 **** Auto Build of configuration Debug for project ElectricGoKart ****
+17:48:37 **** Auto Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/main.c
+Building file: ../src/tasks.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/xadc.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xadc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xadc.d" -MT"src/xadc.o" -o "src/xadc.o" "../src/xadc.c"
-Finished building: ../src/xadc.c
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+../src/tasks.c: In function 'sensorTask':
+../src/tasks.c:33:49: warning: unused variable 'phaseB_value' [-Wunused-variable]
+  f32 battery_value, torque_value, phaseA_value, phaseB_value;
+                                                 ^~~~~~~~~~~~
+../src/tasks.c:33:35: warning: unused variable 'phaseA_value' [-Wunused-variable]
+  f32 battery_value, torque_value, phaseA_value, phaseB_value;
+                                   ^~~~~~~~~~~~
+../src/tasks.c:33:21: warning: unused variable 'torque_value' [-Wunused-variable]
+  f32 battery_value, torque_value, phaseA_value, phaseB_value;
+                     ^~~~~~~~~~~~
+../src/tasks.c:33:6: warning: unused variable 'battery_value' [-Wunused-variable]
+  f32 battery_value, torque_value, phaseA_value, phaseB_value;
+      ^~~~~~~~~~~~~
+Finished building: ../src/tasks.c
  
 Building target: ElectricGoKart.elf
 Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/gpios.o ./src/main.o ./src/platform.o ./src/tasks.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: ElectricGoKart.elf
  
 Invoking: ARM v7 Print Size
 arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  37180	   2008	  22712	  61900	   f1cc	ElectricGoKart.elf
+  37372	   2008	  22712	  62092	   f28c	ElectricGoKart.elf
 Finished building: ElectricGoKart.elf.size
  
 
-14:28:23 Build Finished (took 613ms)
+17:48:38 Build Finished (took 563ms)
 

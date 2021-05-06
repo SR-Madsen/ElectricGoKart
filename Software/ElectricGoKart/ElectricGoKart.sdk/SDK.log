@@ -1485,3 +1485,19 @@ con
 
 14:17:32 INFO  : Launch script is exported to file '/home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_electricgokart.elf_on_local.tcl'
 14:28:28 INFO  : Disconnected from the channel tcfchan#30.
+17:30:09 INFO  : Registering command handlers for SDK TCF services
+17:30:10 INFO  : Launching XSCT server: xsct -n -interactive /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/temp_xsdb_launch_script.tcl
+17:30:12 INFO  : XSCT server has started successfully.
+17:30:12 INFO  : Successfully done setting XSCT server connection channel  
+17:30:13 INFO  : Successfully done setting SDK workspace  
+17:30:13 INFO  : Processing command line option -hwspec /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
+17:30:13 INFO  : Checking for hwspec changes in the project ElectricGoKart_wrapper_hw_platform_0.
+17:30:15 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1620314976000,  Project:1620299696000
+17:30:15 INFO  : The hardware specification for project 'ElectricGoKart_wrapper_hw_platform_0' is different from /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf.
+17:30:15 INFO  : Copied contents of /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.sdk/ElectricGoKart_wrapper.hdf into /ElectricGoKart_wrapper_hw_platform_0/system.hdf.
+17:30:23 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:30:24 INFO  : 
+17:30:25 INFO  : Updating hardware inferred compiler options for ElectricGoKart.
+17:30:25 INFO  : Clearing existing target manager status.
+17:30:25 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+17:30:26 WARN  : Linker script will not be updated automatically. Users need to update it manually.

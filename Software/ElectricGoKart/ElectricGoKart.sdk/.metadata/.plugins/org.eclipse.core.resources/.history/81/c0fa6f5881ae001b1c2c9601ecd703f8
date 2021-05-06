@@ -1,0 +1,36 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask() {
+	checkOvercurrentSwitch(&overcurrentswitch);
+	checkMainRelay(&relay);
+	checkOvertemp(&overtemp);
+	checkEnableSwitch(&enableswitch);
+	checkFootSwitch(&footswitch);
+}
+
+
+void stateMachine() {
+
+}
+
+
+void FOCTask() {
+
+}
+
+
+void communicationTask() {
+
+}

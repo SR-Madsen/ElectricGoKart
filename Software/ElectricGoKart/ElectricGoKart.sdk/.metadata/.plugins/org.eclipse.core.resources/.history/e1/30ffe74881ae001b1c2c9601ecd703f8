@@ -1,0 +1,32 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask() {
+
+}
+
+
+void stateMachine() {
+
+}
+
+
+void FOCTask() {
+
+}
+
+
+void communicationTask() {
+
+}

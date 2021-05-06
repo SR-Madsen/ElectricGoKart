@@ -1,0 +1,24 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask();
+
+// Task for controlling the state machine dependent on sensor readings
+void stateMachine();
+
+// Task for calculation of Field-Oriented Control and communication with PWM Generator in order to create SVMPWM
+void FOCTask();
+
+// Task for communication through UART with the PC, allowing getting and setting of variables.
+void communicationTask();
