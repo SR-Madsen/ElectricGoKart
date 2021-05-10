@@ -1,0 +1,46 @@
+/*
+ * motorstructs.h
+ *
+ *  Created on: May 10, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_MOTORSTRUCTS_H_
+#define SRC_MOTORSTRUCTS_H_
+
+// Type definitions
+typedef float f32;
+
+// Struct definitions
+typedef struct errors_t {
+	u8 motor_overtemp;
+	u8 overvoltage;
+	u8 undervoltage;
+	u8 torque_disc;
+	u8 phaseA_overcurr;
+	u8 phaseB_overcurr;
+} errors_t;
+
+typedef struct measurement_t {
+	u32 raw;
+	u32 flt;
+	f32 phys;
+	u32 offset;
+} measurement_t;
+
+typedef struct statemachine_t {
+	u8 relay_status;
+	u8 switches;
+	u8 clear_fault;
+} statemachine_t;
+
+// Struct assignments
+errors_t motor_errors = {0, 0, 0, 0, 0, 0};
+measurement_t battery_voltage;
+measurement_t torque;
+measurement_t phaseA;
+measurement_t phaseB;
+statemachine_t statemachine = {0, 0, 0};
+
+
+#endif /* SRC_MOTORSTRUCTS_H_ */

@@ -1,0 +1,138 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask() {
+
+	// Read all digital sensor values
+	checkOvercurrentSwitch(&overcurrentswitch);
+	checkMainRelay(&relay);
+	checkOvertemp(&overtemp);
+	checkEnableSwitch(&enableswitch);
+	checkFootSwitch(&footswitch);
+
+	// If button is pressed, start overcurrent timer
+	if (overcurrentswitch) {
+		overcurrent_timer = TEN_SECONDS;
+	}
+
+	// Write overtemperature error
+	motor_errors.motor_overtemp = overtemp;
+
+	// Write values for state machine to check
+	statemachine.relay_status = relay;
+	statemachine.switches = (enableswitch & footswitch);
+
+
+	// Read analog values from conversions
+	getBatteryRaw(&battery_voltage.raw);
+	getTorqueRaw(&torque.raw);
+	getPhaseARaw(&phaseA.raw);
+	getPhaseBRaw(&phaseB.raw);
+
+	// Remove offset from all analog values
+	// TODO: Add digital filtering here if necessary
+	battery_voltage.flt = battery_voltage.raw - battery_voltage.offset;
+	torque.flt = torque.raw - torque.offset;
+	phaseA.flt = phaseA.raw - phaseA.offset;
+	phaseB.flt = phaseB.raw - phaseB.offset;
+
+	// Check for errors and calculate all physical values from analog values
+	motor_errors.overvoltage = (battery_voltage.flt > 4025) ? 1 : 0;
+	motor_errors.undervoltage = (battery_voltage.flt < 2300) ? 1 : 0;
+	battery_voltage.phys = battery_voltage.flt * BATTERY_CONVERSION;
+
+	motor_errors.torque_disc = (torque.flt > 3800) ? 1 : 0;
+	torque.phys = (overcurrent_timer--) ? torque.flt * OVERCURR_CONVERSION : torque.flt * TORQUE_CONVERSION;
+
+	motor_errors.phaseA_overcurr = (phaseA.flt > 3950) ? 1 : 0;
+	motor_errors.phaseB_overcurr = (phaseB.flt > 3950) ? 1 : 0;
+	phaseA.phys = phaseA.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+	phaseC.phys = -phaseA.phys - phaseB.phys;
+}
+
+
+void stateMachine() {
+	// TODO: First set a variable if any motor_error value is high? Then run actual state machine depending on input.
+	// Check the statemachine struct for cool values to be used for state transitioning. Remember timing and stuff.
+	// Errors end in the fault state. Can only be left by the UART communication clear signal.
+
+	if (motor_errors.motor_overtemp | motor_errors.overvoltage | motor_errors.undervoltage |
+		motor_errors.torque_disc | motor_errors.phaseA_overcurr | motor_errors.phaseB_overcurr) {
+		statemachine.state = STATE_FAULT;
+	}
+
+	switch(statemachine.state) {
+		case STATE_INIT:
+			// TODO: Something here that resets all variables.
+			overcurrent_timer = 0;
+			motor_errors.motor_overtemp = 0;
+			motor_errors.overvoltage = 0;
+			motor_errors.undervoltage = 0;
+			motor_errors.torque_disc = 0;
+			motor_errors.phaseA_overcurr = 0;
+			motor_errors.phaseB_overcurr = 0;
+			statemachine.clear_fault = 0;
+
+			battery_voltage.offset = 0;
+			torque.offset = 0;
+			phaseA.offset = 0;
+			phaseB.offset = 0;
+
+			break;
+
+		case STATE_READY:
+			if (statemachine.switches) { statemachine.state = STATE_CALIB; }
+			break;
+
+		case STATE_CALIB:
+			// TODO: Get offset of measurements when disabling all FETs. For example by digital filtering or averaging?
+			// Then activate the pre-charge relay for a while, after which it is disabled and ready.
+			break;
+
+		case STATE_RUN:
+			// TODO: wtf happens here that isn't FOC or UART? How should this be structured at all...
+			// Place FOC here and just remove the other task or rename this one?
+			break;
+
+		case STATE_FAULT:
+			if (statemachine.clear_fault) {
+				motor_errors.motor_overtemp = 0;
+				motor_errors.overvoltage = 0;
+				motor_errors.undervoltage = 0;
+				motor_errors.torque_disc = 0;
+				motor_errors.phaseA_overcurr = 0;
+				motor_errors.phaseB_overcurr = 0;
+				statemachine.state = STATE_INIT;
+				statemachine.clear_fault = 0;
+			}
+			break;
+
+		default:
+			statemachine.state = STATE_INIT;
+			break;
+	}
+}
+
+
+void FOCTask() {
+	// TODO: Just do some math I think. Consider adding enable/disable for VHDL modules?
+	// Consider adjusting for DC voltage falling over time (see page 507, https://www.nxp.com/files-static/microcontrollers/doc/user_guide/S32K14XMCLUG.pdf)
+}
+
+
+void communicationTask() {
+	// TODO: Run this in the main loop, which will just do its thing all the time.
+	// The remaining tasks will only be run when the ADC interrupts.
+}

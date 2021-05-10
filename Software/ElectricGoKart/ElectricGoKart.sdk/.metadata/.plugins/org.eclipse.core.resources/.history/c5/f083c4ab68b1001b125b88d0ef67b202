@@ -1,0 +1,53 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+
+// User defines
+#define a_zero  (f32)0.1666666666666666666666666666666667
+#define a_one   (f32)0.0083333333333333333333333333333333
+#define a_two   (f32)0.0001984126984126984126984126984127
+#define a_three (f32)0.0000027557319223985892510950593270458
+
+// User prototypes
+
+
+// User structs (move all to a different header file eventually)
+
+
+// User variables
+
+
+int main()
+{
+    init_platform();
+
+    /*
+     * WRITE CODE HERE
+     */
+    f32 input = 0, output;
+
+    while(1) {
+    	if (input >= 2*PI) {
+    		input = -2*PI;
+    	} else {
+    		input += PI/20;
+    	}
+
+    	output = input*(1 + input*input * (-a_zero + input*input * (a_one + input*input * (-a_two + input*input * a_three))));
+
+
+    	usleep(500000);
+    }
+
+    cleanup_platform();
+    return 0;
+}

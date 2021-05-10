@@ -14,12 +14,11 @@
 #include "xil_io.h"
 #include "Encoder_Driver.h"
 #include "PWM_Generator.h"
+#include "motorstructs.h"
 
 // Defines
 #define ENCODER_DRIVER_BASEADDR XPAR_ENCODER_DRIVER_0_S00_AXI_BASEADDR
 #define PWM_GENERATOR_BASEADDR 	XPAR_PWM_GENERATOR_0_S00_AXI_BASEADDR
-
-typedef float f32;
 
 #define PI 				(f32)3.14159265358979323846
 #define EIGHT_BIT_MAX 	(f32)255.0
@@ -28,11 +27,7 @@ typedef float f32;
 #define OCR_MAX 		1173
 
 // Structs
-typedef struct ocvvalues_t {
-	u16 ocv1;
-	u16 ocv2;
-	u16 ocv3;
-} ocvvalues_t;
+
 
 // Variables
 

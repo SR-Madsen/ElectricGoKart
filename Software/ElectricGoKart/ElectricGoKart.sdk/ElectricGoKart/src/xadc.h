@@ -54,7 +54,8 @@ u8 initGicXAdc(Xil_InterruptHandler handler);
 
 // Gets the raw battery voltage value.
 // Output: Value from 0 to 4095 depending on voltage.
-// Maximum voltage measured is xxxxx????
+// Maximum expected voltage measured is 60.8 V, a value of 4016. Any higher means an error has occurred.
+// Minimum expected voltage measured is 36 V, a value of 2378. Any lower means undervoltage circuit or measurement failed.
 void getBatteryRaw(u16 *raw);
 
 // Gets the raw torque value.

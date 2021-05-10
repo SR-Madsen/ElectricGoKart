@@ -1,23 +1,10 @@
-17:48:37 **** Auto Build of configuration Debug for project ElectricGoKart ****
+16:54:19 **** Auto Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
 Building file: ../src/tasks.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
-../src/tasks.c: In function 'sensorTask':
-../src/tasks.c:33:49: warning: unused variable 'phaseB_value' [-Wunused-variable]
-  f32 battery_value, torque_value, phaseA_value, phaseB_value;
-                                                 ^~~~~~~~~~~~
-../src/tasks.c:33:35: warning: unused variable 'phaseA_value' [-Wunused-variable]
-  f32 battery_value, torque_value, phaseA_value, phaseB_value;
-                                   ^~~~~~~~~~~~
-../src/tasks.c:33:21: warning: unused variable 'torque_value' [-Wunused-variable]
-  f32 battery_value, torque_value, phaseA_value, phaseB_value;
-                     ^~~~~~~~~~~~
-../src/tasks.c:33:6: warning: unused variable 'battery_value' [-Wunused-variable]
-  f32 battery_value, torque_value, phaseA_value, phaseB_value;
-      ^~~~~~~~~~~~~
 Finished building: ../src/tasks.c
  
 Building target: ElectricGoKart.elf
@@ -28,9 +15,9 @@ Finished building target: ElectricGoKart.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  37372	   2008	  22712	  62092	   f28c	ElectricGoKart.elf
+  39868	   2008	  22968	  64844	   fd4c	ElectricGoKart.elf
 Finished building: ElectricGoKart.elf.size
  
 
-17:48:38 Build Finished (took 563ms)
+16:54:20 Build Finished (took 562ms)
 
