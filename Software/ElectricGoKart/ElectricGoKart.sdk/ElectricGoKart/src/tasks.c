@@ -13,7 +13,7 @@
 
 // See header file for documentation
 
-void sensorTask() {
+void sensorProcessing() {
 
 	// Read all digital sensor values
 	checkOvercurrentSwitch(&overcurrentswitch);
@@ -48,14 +48,12 @@ void sensorTask() {
 	phaseA.flt = phaseA.raw - phaseA.offset;
 	phaseB.flt = phaseB.raw - phaseB.offset;
 
-	// TODO: Confirm that the ranges should be set for .flt and not .raw.
-	// TODO: Consider whether ranges should be magic numbers or defined.
 	// Check for errors and calculate all physical values from analog values
-	motor_errors.overvoltage = (battery_voltage.flt > 4025) ? 1 : 0;
-	motor_errors.undervoltage = (battery_voltage.flt < 2300) ? 1 : 0;
+	motor_errors.overvoltage = (battery_voltage.flt > OVERVOLT_THRESHOLD - battery_voltage.offset) ? 1 : 0;
+	motor_errors.undervoltage = (battery_voltage.flt < UNDERVOLT_THRESHOLD - battery_voltage.offset) ? 1 : 0;
 	battery_voltage.phys = battery_voltage.flt * BATTERY_CONVERSION;
 
-	motor_errors.torque_disc = (torque.flt > 3800) ? 1 : 0;
+	motor_errors.torque_disc = (torque.flt > DISCONNECT_THRESHOLD - torque.offset) ? 1 : 0;
 	if (overcurrent_timer) {
 		torque.phys = torque.flt * OVERCURR_CONVERSION;
 		overcurrent_timer--;
@@ -63,8 +61,8 @@ void sensorTask() {
 		torque.phys = torque.flt * TORQUE_CONVERSION;
 	}
 
-	motor_errors.phaseA_overcurr = (phaseA.flt > 3950) ? 1 : 0;
-	motor_errors.phaseB_overcurr = (phaseB.flt > 3950) ? 1 : 0;
+	motor_errors.phaseA_overcurr = (phaseA.flt > OVERCURRENT_THRESHOLD - phaseA.offset) ? 1 : 0;
+	motor_errors.phaseB_overcurr = (phaseB.flt > OVERCURRENT_THRESHOLD - phaseB.offset) ? 1 : 0;
 	phaseA.phys = phaseA.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseC.phys = -phaseA.phys - phaseB.phys;
@@ -77,7 +75,7 @@ void sensorTask() {
 }
 
 
-void stateMachine() {
+void fieldOrientedControl() {
 	if (motor_errors.motor_overtemp | motor_errors.overvoltage | motor_errors.undervoltage |
 		motor_errors.torque_disc | motor_errors.phaseA_overcurr | motor_errors.phaseB_overcurr) {
 		statemachine.state = STATE_FAULT;
@@ -85,59 +83,32 @@ void stateMachine() {
 
 	switch(statemachine.state) {
 		case STATE_INIT: // This state is a one-pass that will reset all variables.
-			overcurrent_timer = 0;
-			motor_errors.motor_overtemp = 0;
-			motor_errors.overvoltage = 0;
-			motor_errors.undervoltage = 0;
-			motor_errors.torque_disc = 0;
-			motor_errors.phaseA_overcurr = 0;
-			motor_errors.phaseB_overcurr = 0;
-			statemachine.clear_fault = 0;
-
-			battery_voltage.offset = 0;
-			torque.offset = 0;
-			phaseA.offset = 0;
-			phaseB.offset = 0;
-
-			overcurrent_timer = 0;
-
-			ocvvalues.ocv1 = 0;
-			ocvvalues.ocv2 = 0;
-			ocvvalues.ocv3 = 0;
-			setDutyCycles(&ocvvalues);
-
-			calib_counter = 0;
-			calib_done = 0;
-			precharge_counter = 0;
-
-			// TODO: Reset more variables, like PI controllers, or other that can be changed by UART.
-
+			initVariables();
 			statemachine.state = STATE_READY;
-
 			break;
 
-		case STATE_READY:
+		case STATE_READY: // This state awaits the ready-signal in the form of drive and foot switch.
 			if (statemachine.switches) { statemachine.state = STATE_CALIB; }
 			break;
 
 		case STATE_CALIB: // This state gets the measurement offsets by averaging samples when idle, and pre-charges.
-			// TODO: Torque should perhaps not be averaged, as the user is likely pressing it down.
+			// TODO: Initial settling of digital filter should happen here instead of averaging
 			if (calib_counter < AVG_SAMPLES) {
 				voltage_samples[calib_counter] = battery_voltage.raw;
-				torque_samples[calib_counter] = torque.raw;
-				phaseA_samples[calib_counter] = phaseA.raw - 4095/2;
-				phaseB_samples[calib_counter] = phaseB.raw - 4095/2;
+				//torque_samples[calib_counter] = torque.raw;
+				phaseA_samples[calib_counter] = phaseA.raw - (TWELVE_BIT_MAX >> 1);
+				phaseB_samples[calib_counter] = phaseB.raw - (TWELVE_BIT_MAX >> 1);
 				calib_counter++;
 			} else {
-				u32 acc_v = 0, acc_t = 0, acc_A = 0, acc_B = 0;
+				u32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
 				for (u16 i = 0; i < calib_counter; i++) {
 					acc_v += voltage_samples[i];
-					acc_t += torque_samples[i];
+					//acc_t += torque_samples[i];
 					acc_A += phaseA_samples[i];
 					acc_B += phaseB_samples[i];
 				}
 				battery_voltage.offset = acc_v/AVG_SAMPLES;
-				torque.offset = acc_t/AVG_SAMPLES;
+				//torque.offset = acc_t/AVG_SAMPLES;
 				phaseA.offset = acc_A/AVG_SAMPLES;
 				phaseB.offset = acc_B/AVG_SAMPLES;
 
@@ -153,15 +124,35 @@ void stateMachine() {
 					statemachine.state = STATE_RUN;
 				}
 			}
+
+			if (!statemachine.switches) {
+				statemachine.state = STATE_INIT;
+			}
 			break;
 
-		case STATE_RUN:
-			// TODO: wtf happens here that isn't FOC or UART? How should this be structured at all...
-			// Place FOC here and just remove the other task or rename this one?
+		case STATE_RUN: // This state performs the Field-Oriented Control with PI controllers, as well as SVPWM
+			// TODO: Place FOC here
 			// Check the main relay - although it may not be open the first few times.
+			// Consider adding enable/disable for the VHDL modules
+
+			// Park/Clarke transformation of Ia-b-c + ThEl
+
+			// PI Controller with torque.phys and 0.
+
+			// Inverse Clarke/Park transformation of Vd-q + ThEl
+
+			// Space Vector Modulation into duty cycles for PWM generator
+
+			if (!statemachine.switches) {
+				statemachine.state = STATE_INIT;
+			}
 			break;
 
-		case STATE_FAULT:
+		case STATE_FAULT: // If any fault is detected, the duty cycle is set to 0 and a clear signal is awaited.
+			ocvvalues.ocv1 = 0;
+			ocvvalues.ocv2 = 0;
+			ocvvalues.ocv3 = 0;
+			setDutyCycles(&ocvvalues);
 			if (statemachine.clear_fault) {
 				motor_errors.motor_overtemp = 0;
 				motor_errors.overvoltage = 0;
@@ -181,13 +172,38 @@ void stateMachine() {
 }
 
 
-void FOCTask() {
-	// TODO: Just do some math I think. Consider adding enable/disable for VHDL modules?
-	// Consider adjusting for DC voltage falling over time (see page 507, https://www.nxp.com/files-static/microcontrollers/doc/user_guide/S32K14XMCLUG.pdf)
-}
-
-
 void communicationTask() {
 	// TODO: Run this in the main loop, which will just do its thing all the time.
 	// The remaining tasks will only be run when the ADC interrupts.
+}
+
+void initVariables() {
+    enableEncoder();
+
+	motor_errors.motor_overtemp = 0;
+	motor_errors.overvoltage = 0;
+	motor_errors.undervoltage = 0;
+	motor_errors.torque_disc = 0;
+	motor_errors.phaseA_overcurr = 0;
+	motor_errors.phaseB_overcurr = 0;
+	statemachine.clear_fault = 0;
+
+	battery_voltage.offset = 0;
+	torque.offset = 0;
+	phaseA.offset = 0;
+	phaseB.offset = 0;
+
+	overcurrent_timer = 0;
+
+	calib_counter = 0;
+	calib_done = 0;
+	precharge_counter = 0;
+
+	// TODO: Reset more variables, like PI controllers, or other things that can be changed by UART.
+
+	ocvvalues.ocv1 = 0;
+	ocvvalues.ocv2 = 0;
+	ocvvalues.ocv3 = 0;
+	setDutyCycles(&ocvvalues);
+	enablePWM();
 }

@@ -47,7 +47,7 @@ typedef struct encoder_t {
 	f32 th_mech;
 } encoder_t;
 
-//TODO: Add PI Controller, Park/Clarke transformations, position/speed, more?
+//TODO: Add PI Controller, Park/Clarke transformations, more?
 
 // Struct assignments
 errors_t motor_errors;

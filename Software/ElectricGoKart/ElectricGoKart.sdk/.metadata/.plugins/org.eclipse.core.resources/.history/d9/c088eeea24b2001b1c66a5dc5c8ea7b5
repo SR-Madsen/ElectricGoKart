@@ -1,0 +1,48 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+#include "tasks.h"
+#include "motorstructs.h"
+
+// User defines
+
+
+// User prototypes
+static void XAdcInterruptHandler(XAdcPs *XAdc);
+
+// User variables
+
+
+// XADC Interrupt Handler, which ensures timing of sensor measurements and Field-Oriented Control
+static void XAdcInterruptHandler(XAdcPs *XAdc) {
+		sensorTask();
+		// StateMachine + FOC
+}
+
+int main()
+{
+    init_platform();
+
+    initGpios();
+    initXAdc();
+    initVariables();
+    initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+
+    while(1) {
+        /*
+         * RUN UART COMMUNICATION AND OTHER CODE THAT IS NOT TIMING RELATED
+         */
+    }
+
+    cleanup_platform();
+    return 0;
+}

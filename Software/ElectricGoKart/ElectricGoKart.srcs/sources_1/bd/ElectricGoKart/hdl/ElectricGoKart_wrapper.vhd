@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Thu May  6 13:01:04 2021
+--Date        : Tue May 11 12:10:01 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart_wrapper.bd
 --Design      : ElectricGoKart_wrapper
@@ -69,27 +69,14 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     INC_A_0 : in STD_LOGIC;
     INC_B_0 : in STD_LOGIC;
     INC_Z_0 : in STD_LOGIC;
-    DDR_cas_n : inout STD_LOGIC;
-    DDR_cke : inout STD_LOGIC;
-    DDR_ck_n : inout STD_LOGIC;
-    DDR_ck_p : inout STD_LOGIC;
-    DDR_cs_n : inout STD_LOGIC;
-    DDR_reset_n : inout STD_LOGIC;
-    DDR_odt : inout STD_LOGIC;
-    DDR_ras_n : inout STD_LOGIC;
-    DDR_we_n : inout STD_LOGIC;
-    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
-    DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
-    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
-    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    Vaux15_0_v_n : in STD_LOGIC;
-    Vaux15_0_v_p : in STD_LOGIC;
+    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 );
     Main_Relay_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     Main_Relay_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Main_Relay_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
     Vaux7_0_v_n : in STD_LOGIC;
     Vaux7_0_v_p : in STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -105,8 +92,21 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     Vaux6_0_v_n : in STD_LOGIC;
     Vaux6_0_v_p : in STD_LOGIC;
     Switch_Status_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 )
+    DDR_cas_n : inout STD_LOGIC;
+    DDR_cke : inout STD_LOGIC;
+    DDR_ck_n : inout STD_LOGIC;
+    DDR_ck_p : inout STD_LOGIC;
+    DDR_cs_n : inout STD_LOGIC;
+    DDR_reset_n : inout STD_LOGIC;
+    DDR_odt : inout STD_LOGIC;
+    DDR_ras_n : inout STD_LOGIC;
+    DDR_we_n : inout STD_LOGIC;
+    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
+    DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
+    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component ElectricGoKart;
   component IOBUF is

@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Mon Mar 29 09:59:02 2021
+--Date        : Tue May 11 12:10:01 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart.bd
 --Design      : ElectricGoKart
@@ -2515,7 +2515,9 @@ entity ElectricGoKart is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -2593,6 +2595,7 @@ architecture STRUCTURE of ElectricGoKart is
     M_AXI_GP0_BRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    IRQ_F2P : in STD_LOGIC_VECTOR ( 0 to 0 );
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -2693,7 +2696,9 @@ architecture STRUCTURE of ElectricGoKart is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_o : out STD_LOGIC_VECTOR ( 4 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio_io_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio_io_t : out STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component ElectricGoKart_axi_gpio_0_0;
   component ElectricGoKart_axi_gpio_1_0 is
@@ -2794,35 +2799,6 @@ architecture STRUCTURE of ElectricGoKart is
     gpio_io_i : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component ElectricGoKart_axi_gpio_4_0;
-  component ElectricGoKart_PWM_Generator_0_1 is
-  port (
-    XADC_conv_en : out STD_LOGIC;
-    PWM_a : out STD_LOGIC;
-    PWM_b : out STD_LOGIC;
-    PWM_c : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component ElectricGoKart_PWM_Generator_0_1;
   component ElectricGoKart_Encoder_Driver_0_0 is
   port (
     SERIAL_DATA : in STD_LOGIC;
@@ -2853,6 +2829,35 @@ architecture STRUCTURE of ElectricGoKart is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component ElectricGoKart_Encoder_Driver_0_0;
+  component ElectricGoKart_PWM_Generator_0_1 is
+  port (
+    XADC_conv_en : out STD_LOGIC;
+    PWM_a : out STD_LOGIC;
+    PWM_b : out STD_LOGIC;
+    PWM_c : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component ElectricGoKart_PWM_Generator_0_1;
   signal Encoder_Driver_0_SERIAL_CLOCK : STD_LOGIC;
   signal INC_A_0_1 : STD_LOGIC;
   signal INC_B_0_1 : STD_LOGIC;
@@ -2870,7 +2875,9 @@ architecture STRUCTURE of ElectricGoKart is
   signal Vaux6_0_1_V_P : STD_LOGIC;
   signal Vaux7_0_1_V_N : STD_LOGIC;
   signal Vaux7_0_1_V_P : STD_LOGIC;
+  signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal axi_gpio_0_GPIO_TRI_T : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_1_GPIO_TRI_O : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_2_GPIO_TRI_I : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_gpio_2_GPIO_TRI_O : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -3079,6 +3086,7 @@ architecture STRUCTURE of ElectricGoKart is
   signal ps7_0_axi_periph_M07_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M07_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xadc_wiz_0_eos_out : STD_LOGIC;
   signal NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -3086,7 +3094,6 @@ architecture STRUCTURE of ElectricGoKart is
   signal NLW_xadc_wiz_0_alarm_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_busy_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_eoc_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_xadc_wiz_0_eos_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_channel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
   attribute X_INTERFACE_INFO : string;
@@ -3123,7 +3130,9 @@ architecture STRUCTURE of ElectricGoKart is
   attribute X_INTERFACE_INFO of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
   attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
+  attribute X_INTERFACE_INFO of Digital_IO_tri_i : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_I";
   attribute X_INTERFACE_INFO of Digital_IO_tri_o : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_O";
+  attribute X_INTERFACE_INFO of Digital_IO_tri_t : signal is "xilinx.com:interface:gpio:1.0 Digital_IO TRI_T";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
   attribute X_INTERFACE_INFO of Main_Relay_tri_i : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_I";
   attribute X_INTERFACE_INFO of Main_Relay_tri_o : signal is "xilinx.com:interface:gpio:1.0 Main_Relay TRI_O";
@@ -3133,6 +3142,7 @@ architecture STRUCTURE of ElectricGoKart is
   attribute X_INTERFACE_INFO of Switch_Status_tri_i : signal is "xilinx.com:interface:gpio:1.0 Switch_Status TRI_I";
 begin
   Digital_IO_tri_o(4 downto 0) <= axi_gpio_0_GPIO_TRI_O(4 downto 0);
+  Digital_IO_tri_t(4 downto 0) <= axi_gpio_0_GPIO_TRI_T(4 downto 0);
   INC_A_0_1 <= INC_A_0;
   INC_B_0_1 <= INC_B_0;
   INC_Z_0_1 <= INC_Z_0;
@@ -3152,6 +3162,7 @@ begin
   Vaux6_0_1_V_P <= Vaux6_0_v_p;
   Vaux7_0_1_V_N <= Vaux7_0_v_n;
   Vaux7_0_1_V_P <= Vaux7_0_v_p;
+  axi_gpio_0_GPIO_TRI_I(4 downto 0) <= Digital_IO_tri_i(4 downto 0);
   axi_gpio_2_GPIO_TRI_I(1 downto 0) <= Main_Relay_tri_i(1 downto 0);
   axi_gpio_3_GPIO_TRI_I(0) <= Overtemp_tri_i(0);
   axi_gpio_4_GPIO_TRI_I(1 downto 0) <= Switch_Status_tri_i(1 downto 0);
@@ -3214,7 +3225,9 @@ PWM_Generator_0: component ElectricGoKart_PWM_Generator_0_1
     );
 axi_gpio_0: component ElectricGoKart_axi_gpio_0_0
      port map (
+      gpio_io_i(4 downto 0) => axi_gpio_0_GPIO_TRI_I(4 downto 0),
       gpio_io_o(4 downto 0) => axi_gpio_0_GPIO_TRI_O(4 downto 0),
+      gpio_io_t(4 downto 0) => axi_gpio_0_GPIO_TRI_T(4 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M03_AXI_ARADDR(8 downto 0),
       s_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -3350,6 +3363,7 @@ processing_system7_0: component ElectricGoKart_processing_system7_0_0
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
+      IRQ_F2P(0) => xadc_wiz_0_eos_out,
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,
       M_AXI_GP0_ARADDR(31 downto 0) => processing_system7_0_M_AXI_GP0_ARADDR(31 downto 0),
@@ -3615,7 +3629,7 @@ xadc_wiz_0: component ElectricGoKart_xadc_wiz_0_0
       channel_out(4 downto 0) => NLW_xadc_wiz_0_channel_out_UNCONNECTED(4 downto 0),
       convst_in => PWM_Generator_0_XADC_conv_en,
       eoc_out => NLW_xadc_wiz_0_eoc_out_UNCONNECTED,
-      eos_out => NLW_xadc_wiz_0_eos_out_UNCONNECTED,
+      eos_out => xadc_wiz_0_eos_out,
       ip2intc_irpt => NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(10 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(10 downto 0),

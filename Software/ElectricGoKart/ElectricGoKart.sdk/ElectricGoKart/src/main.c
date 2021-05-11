@@ -13,6 +13,8 @@
 #include "tasks.h"
 #include "motorstructs.h"
 
+#include "sleep.h"
+
 // User defines
 
 
@@ -20,25 +22,28 @@
 static void XAdcInterruptHandler(XAdcPs *XAdc);
 
 // User variables
-u32 overcurrent_timer = 0;
 
-// XADC Interrupt Handler, which ensures timing of sensor measurements and Field-Oriented Control
+
+// XADC interrupt handler, which ensures timing of sensor measurements and Field-Oriented Control
 static void XAdcInterruptHandler(XAdcPs *XAdc) {
-		sensorTask();
-		// StateMachine + FOC
+		sensorProcessing();
+		fieldOrientedControl();
 }
 
 int main()
 {
     init_platform();
 
+    initGpios();
     initXAdc();
     initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
-    initGpios();
+    initVariables();
 
-    /*
-     * WRITE CODE HERE
-     */
+    while(1) {
+        /*
+         * RUN UART COMMUNICATION AND OTHER CODE THAT IS NOT TIMING RELATED
+         */
+    }
 
     cleanup_platform();
     return 0;

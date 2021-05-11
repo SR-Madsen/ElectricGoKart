@@ -17,11 +17,18 @@
 #define TEN_SECONDS 100000
 #define SIX_TENTHS_SECOND 6000
 
+#define OVERVOLT_THRESHOLD 4025
+#define UNDERVOLT_THRESHOLD 2300
+#define DISCONNECT_THRESHOLD 3800
+#define OVERCURRENT_THRESHOLD 3950
+
 #define BATTERY_CONVERSION (f32)0.015140415140415140415140415140415
 #define TORQUE_CONVERSION (f32)0.046
 #define OVERCURR_CONVERSION (f32)0.127
 #define CURRENT_CONVERSION (f32)0.1586914
 #define CURRENT_OFFSET (f32)325.0
+
+#define TWELVE_BIT_MAX 4095
 
 #define STATE_INIT 0
 #define STATE_READY 1
@@ -36,7 +43,7 @@
 
 // Variables
 u16 overcurrentswitch, relay, overtemp, enableswitch, footswitch;
-extern u32 overcurrent_timer;
+u32 overcurrent_timer;
 u16 calib_counter;
 u8 calib_done;
 u16 precharge_counter;
@@ -48,16 +55,16 @@ u16 phaseB_samples[AVG_SAMPLES];
 
 // Function prototypes
 // Task for reading all sensor values and converting to physical values, as well as error-checking
-void sensorTask();
+void sensorProcessing();
 
-// Task for controlling the state machine dependent on sensor readings
-void stateMachine();
-
-// Task for calculation of Field-Oriented Control and communication with PWM Generator in order to create SVMPWM
-void FOCTask();
+// Task for controlling the state machine dependent on sensor readings, as well as performing FOC with SVPWM
+void fieldOrientedControl();
 
 // Task for communication through UART with the PC, allowing getting and setting of variables.
 void communicationTask();
+
+// Function for initializing the variables used for Field-Oriented Control and the state machine
+void initVariables();
 
 
 #endif /* SRC_TASKS_H_ */

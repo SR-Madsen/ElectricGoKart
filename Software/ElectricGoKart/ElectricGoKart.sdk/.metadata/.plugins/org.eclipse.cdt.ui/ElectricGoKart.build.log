@@ -1,4 +1,4 @@
-16:54:19 **** Auto Build of configuration Debug for project ElectricGoKart ****
+12:45:51 **** Auto Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -15,9 +15,9 @@ Finished building target: ElectricGoKart.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  39868	   2008	  22968	  64844	   fd4c	ElectricGoKart.elf
+  40060	   2008	  22968	  65036	   fe0c	ElectricGoKart.elf
 Finished building: ElectricGoKart.elf.size
  
 
-16:54:20 Build Finished (took 562ms)
+12:45:51 Build Finished (took 568ms)
 
