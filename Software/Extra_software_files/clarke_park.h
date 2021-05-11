@@ -1,0 +1,86 @@
+/*
+ * clarke_park.h
+ *
+ *  Created on: Apr 29, 2021
+ *      Author: jakob
+ */
+
+#ifndef SRC_CLARKE_PARK_H_
+#define SRC_CLARKE_PARK_H_
+
+/***************************** Include Files *********************************/
+
+/************************** Constant Definitions *****************************/
+
+#define PI 3.14159265
+
+/**************************** Type Definitions *******************************/
+
+typedef struct three_phased_current_t {
+	float I_a;
+	float I_b;
+	float I_c;
+} three_phased_current_t;
+
+typedef struct two_phased_current_stationary_t {
+	float I_alpha;
+	float I_beta;
+} two_phased_current_stationary_t;
+
+typedef struct two_phased_current_rotating_t {
+	float I_d;
+	float I_q;
+} two_phased_current_rotating_t;
+
+typedef struct three_phased_voltage_t {
+	float V_a;
+	float V_b;
+	float V_c;
+} three_phased_voltage_t;
+
+typedef struct two_phased_voltage_stationary_t {
+	float V_alpha;
+	float V_beta;
+} two_phased_voltage_stationary_t;
+
+typedef struct two_phased_voltage_rotating_t {
+	float V_d;
+	float V_q;
+} two_phased_voltage_rotating_t;
+
+/************************** Function Declarations *****************************/
+
+/*********************************************************
+ * Clarke transformation
+ * Input: Three-phased current (I_a, I_b, I_c)
+ * Output: Two-phased current in stationary reference frame (I_alpha, I_beta)
+ *********************************************************/
+void clarkeTransform( three_phased_current_t *input, two_phased_current_stationary_t *output );
+
+/*********************************************************
+ * Park transformation
+ * Input: Two-phased current in stationary reference frame (I_alpha, I_beta)
+ * 		  Rotation angle (theta)
+ * Output: Two-phased current in rotating reference frame (I_d, I_q)
+ *********************************************************/
+void parkTransform( two_phased_current_stationary_t *input, float input_angle, two_phased_current_rotating_t *output );
+
+/*********************************************************
+ * Inverse Clarke transformation
+ * Input: Two_phased voltage in stationary reference frame (V_alpha, V_beta)
+ * Output: Three-phased voltage (V_a, V_b, V_c)
+ *********************************************************/
+void invClarkeTransform( two_phased_voltage_stationary_t *input, three_phased_voltage_t *output );
+
+/*********************************************************
+ * Inverse Park transformation
+ * Input: Two_phased voltage in stationary reference frame (V_d, V_q)
+ * 		  Rotation angle (theta)
+ * Output: Two_phased voltage in stationary reference frame (V_alpha, V_beta)
+ *********************************************************/
+void invParkTransform( two_phased_voltage_rotating_t *input, float input_angle, two_phased_voltage_stationary_t *output );
+
+float sin( float x );
+float cos( float x );
+
+#endif /* SRC_CLARKE_PARK_H_ */
