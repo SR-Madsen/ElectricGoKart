@@ -12,6 +12,8 @@
 #include "xadc.h"
 #include "axiinterface.h"
 #include "motorstructs.h"
+#include "clarke_park.h"
+#include "pi_controller.h"
 
 // Defines
 #define TEN_SECONDS 100000
@@ -38,6 +40,15 @@
 
 #define AVG_SAMPLES 16
 
+#define qPI_a0 0.1
+#define qPI_a1 0.1
+#define qPI_a2 1
+#define qPI_lim 60
+#define dPI_a0 0.1
+#define dPI_a1 0.1
+#define dPI_a2 1
+#define dPI_lim 60
+
 // Structs
 
 
@@ -51,6 +62,7 @@ u16 voltage_samples[AVG_SAMPLES];
 u16 torque_samples[AVG_SAMPLES];
 u16 phaseA_samples[AVG_SAMPLES];
 u16 phaseB_samples[AVG_SAMPLES];
+f32 err_q, err_d;
 
 
 // Function prototypes

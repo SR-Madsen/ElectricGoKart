@@ -8,6 +8,8 @@
 #ifndef SRC_MOTORSTRUCTS_H_
 #define SRC_MOTORSTRUCTS_H_
 
+#include "xil_types.h"
+
 // Type definitions
 typedef float f32;
 
@@ -47,17 +49,49 @@ typedef struct encoder_t {
 	f32 th_mech;
 } encoder_t;
 
-//TODO: Add PI Controller, Park/Clarke transformations, more?
+typedef struct three_phased_t {
+	f32 arg1;
+	f32 arg2;
+	f32 arg3;
+} three_phased_t;
+
+typedef struct two_phased_t {
+	f32 arg1;
+	f32 arg2;
+} two_phased_t;
+
+typedef struct controllerPI_t {
+	f32 a_0;
+	f32 a_1;
+	f32 b_1;
+	f32 limit;
+	f32 prev_sample;
+	f32 prev_output;
+} controllerPI_t;
+
 
 // Struct assignments
 errors_t motor_errors;
+
 measurement_t battery_voltage;
 measurement_t torque;
 measurement_t phaseA;
 measurement_t phaseB;
 measurement_t phaseC;
+
 statemachine_t statemachine;
+
 ocvvalues_t ocvvalues;
 encoder_t position;
+
+three_phased_t currentsABC;
+three_phased_t voltagesABC;
+two_phased_t currentsAlphBe;
+two_phased_t voltagesAlphBe;
+two_phased_t currentsDQ;
+two_phased_t voltagesDQ;
+
+controllerPI_t dController;
+controllerPI_t qController;
 
 #endif /* SRC_MOTORSTRUCTS_H_ */

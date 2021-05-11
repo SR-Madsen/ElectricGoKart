@@ -67,6 +67,10 @@ void sensorProcessing() {
 	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseC.phys = -phaseA.phys - phaseB.phys;
 
+	currentsABC.arg1 = phaseA.phys;
+	currentsABC.arg2 = phaseB.phys;
+	currentsABC.arg3 = phaseC.phys;
+
 
 	// Read the motor's position from encoder driver
 	readPosition(&position.pos_raw);
@@ -131,15 +135,24 @@ void fieldOrientedControl() {
 			break;
 
 		case STATE_RUN: // This state performs the Field-Oriented Control with PI controllers, as well as SVPWM
-			// TODO: Place FOC here
-			// Check the main relay - although it may not be open the first few times.
-			// Consider adding enable/disable for the VHDL modules
+			// TODO: Check the main relay - although it may not be open the first few times.
 
-			// Park/Clarke transformation of Ia-b-c + ThEl
+			clarkeTransform(&currentsABC, &currentsAlphBe);
+			parkTransform(&currentsAlphBe, position.th_el, &currentsDQ);
 
-			// PI Controller with torque.phys and 0.
 
-			// Inverse Clarke/Park transformation of Vd-q + ThEl
+			qController.limit = battery_voltage.phys;
+			dController.limit = battery_voltage.phys;
+
+			err_q = torque.phys - currentsDQ.arg2;
+			err_d = -currentsDQ.arg1;
+			newSample(&qController, err_q, &voltagesDQ.arg1);
+			newSample(&dController, err_d, &voltagesDQ.arg2);
+
+
+			invParkTransform(&voltagesDQ, position.th_el, &voltagesAlphBe);
+			invClarkeTransform(&voltagesAlphBe, &voltagesABC);
+
 
 			// Space Vector Modulation into duty cycles for PWM generator
 
@@ -199,7 +212,13 @@ void initVariables() {
 	calib_done = 0;
 	precharge_counter = 0;
 
-	// TODO: Reset more variables, like PI controllers, or other things that can be changed by UART.
+	dController = createPI( dPI_a0, dPI_a1, dPI_a2, dPI_lim);
+	qController = createPI( qPI_a0, qPI_a1, qPI_a2, qPI_lim);
+
+	err_q = 0;
+	err_d = 0;
+
+	// TODO: Reset more variables that can be changed by UART?
 
 	ocvvalues.ocv1 = 0;
 	ocvvalues.ocv2 = 0;
