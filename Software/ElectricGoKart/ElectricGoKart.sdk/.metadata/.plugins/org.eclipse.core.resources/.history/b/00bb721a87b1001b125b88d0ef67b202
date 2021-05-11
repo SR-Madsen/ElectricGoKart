@@ -1,0 +1,70 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask() {
+
+	// Read all digital sensor values
+	checkOvercurrentSwitch(&overcurrentswitch);
+	checkMainRelay(&relay);
+	checkOvertemp(&overtemp);
+	checkEnableSwitch(&enableswitch);
+	checkFootSwitch(&footswitch);
+
+	// If button is pressed, start overcurrent timer
+	if (overcurrentswitch) {
+		overcurrent_timer = TEN_SECONDS;
+	}
+
+	// Write overtemperature error
+	motor_errors.motor_overtemp = overtemp;
+
+	// Write values for state machine to check
+	statemachine.relay_status = relay;
+	statemachine.switches = (enableswitch & footswitch);
+
+
+	// Remove offset from all analog values
+	battery_voltage.flt = battery_voltage.raw - battery_voltage.offset;
+	torque.flt = torque.raw - torque.offset;
+	phaseA.flt = phaseA.raw - phaseA.offset;
+	phaseB.flt = phaseB.raw - phaseB.offset;
+
+	// Convert all analog values to physical values and run errors
+	motor_errors.overvoltage = (battery_voltage.flt > 4025) ? 1 : 0;
+	motor_errors.undervoltage = (battery_voltage.flt < 2300) ? 1 : 0;
+	battery_voltage.phys = battery_voltage.flt * BATTERY_CONVERSION;
+
+	motor_errors.torque_disc = (torque.flt > 3800) ? 1 : 0;
+	torque.phys = (overcurrent_timer--) ? torque.flt * OVERCURR_CONVERSION : torque.flt * TORQUE_CONVERSION;
+
+	motor_errors.phaseA_overcurr = (phaseA.flt > 3950) ? 1 : 0;
+	motor_errors.phaseB_overcurr = (phaseB.flt > 3950) ? 1 : 0;
+	phaseA.phys = phaseA.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+}
+
+
+void stateMachine() {
+
+}
+
+
+void FOCTask() {
+
+}
+
+
+void communicationTask() {
+
+}

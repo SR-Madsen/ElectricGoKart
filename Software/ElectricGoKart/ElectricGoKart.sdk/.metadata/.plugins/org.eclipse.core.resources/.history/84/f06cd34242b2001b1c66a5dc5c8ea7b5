@@ -1,0 +1,114 @@
+/*
+ * axiinterface.c
+ *
+ *  Created on: Apr 27, 2021
+ *      Author: sebastian
+ */
+
+#include "axiinterface.h"
+
+/*
+ * EXAMPLES OF USE
+ */
+
+/*
+	#include "sleep.h"
+	#include "axiinterface.h"
+
+	typedef struct position_t {
+		u16 position_raw;
+		f32 position_rads;
+	} position_t;
+	position_t motor_position;
+
+	ocvvalues_t ocvs = {0.5, 0.5, 0.5};
+
+	int main() {
+		u16 motor_position = 0;
+		f32 motor_position_rads = 0;
+		xil_printf("Starting test of AXI driver.\r\n");
+
+		while(1) {
+			xil_printf("Setting duty cycles to 0.5.\r\n");
+			ocvs.ocv1 = 0.5 * OCR_MAX; // PMOD JD4
+			ocvs.ocv2 = 0.5 * OCR_MAX; // PMOD JD2
+			ocvs.ocv3 = 0.5 * OCR_MAX; // PMOD JD7
+			setDutyCycles(&ocvs);
+			readPosition(&motor_position);
+			rawToRadsMech(motor_position, &motor_position_rads);
+			xil_printf("Raw position read: %d\r\n", motor_position);
+			printf("Rads position read: %f\r\n", motor_position_rads);
+
+			 // ENCODER A: PMOD JB2
+			 // ENCODER B: PMOD JB1
+			 // ENCODER Z: PMOD JB7
+			 // ENCODER CLK: PMOD JB3
+			 // ENCODER DATA: PMOD JB4
+
+			usleep(1500000);
+			xil_printf("Setting duty cycles to 0.\r\n");
+			ocvs.ocv1 = 0; // PMOD JD4
+			ocvs.ocv2 = 0; // PMOD JD2
+			ocvs.ocv3 = 0; // PMOD JD7
+			setDutyCycles(&ocvs);
+			readPositionRadsEl(&motor_position_rads);
+
+			usleep(1500000);
+			xil_printf("Setting duty cycles to 1.\r\n");
+			ocvs.ocv1 = OCR_MAX; // PMOD JD4
+			ocvs.ocv2 = OCR_MAX; // PMOD JD2
+			ocvs.ocv3 = OCR_MAX; // PMOD JD7
+			setDutyCycles(&ocvs);
+
+			usleep(1500000);
+		}
+	}
+ */
+
+/*
+ *  Functions
+ */
+// See header file for documentation
+
+void readPosition(u16 *raw_pos) {
+	*raw_pos = ENCODER_DRIVER_mReadReg(ENCODER_DRIVER_BASEADDR, ENCODER_DRIVER_S00_AXI_SLV_REG0_OFFSET);
+}
+
+void readPositionRadsMech(f32 *pos_rad) {
+	u16 raw_pos;
+	readPosition(&raw_pos);
+	rawToRadsMech(raw_pos, pos_rad);
+}
+
+void readPositionRadsEl(f32 *pos_rad) {
+	u16 raw_pos;
+	readPosition(&raw_pos);
+	rawToRadsEl(raw_pos, pos_rad);
+}
+
+void rawToRadsMech(u16 raw_pos, f32 *pos_rad) {
+	*pos_rad = (f32)(2.0*PI)/(EIGHT_BIT_MAX) * raw_pos;
+}
+
+void rawToRadsEl(u16 raw_pos, f32 *pos_rad) {
+	*pos_rad = (f32)POLE_PAIRS*(2.0*PI)/(EIGHT_BIT_MAX) * raw_pos;
+}
+
+void disableEncoder() {
+	ENCODER_DRIVER_mWriteReg(ENCODER_DRIVER_BASEADDR, ENCODER_DRIVER_S00_AXI_SLV_REG1_OFFSET, 0);
+}
+
+void enableEncoder() {
+	ENCODER_DRIVER_mWriteReg(ENCODER_DRIVER_BASEADDR, ENCODER_DRIVER_S00_AXI_SLV_REG1_OFFSET, 1);
+}
+
+void disablePWM();
+
+
+void enablePWM();
+
+void setDutyCycles(ocvvalues_t *ocvs) {
+	PWM_GENERATOR_mWriteReg(PWM_GENERATOR_BASEADDR, PWM_GENERATOR_S00_AXI_SLV_REG0_OFFSET, ocvs->ocv1);
+	PWM_GENERATOR_mWriteReg(PWM_GENERATOR_BASEADDR, PWM_GENERATOR_S00_AXI_SLV_REG1_OFFSET, ocvs->ocv2);
+	PWM_GENERATOR_mWriteReg(PWM_GENERATOR_BASEADDR, PWM_GENERATOR_S00_AXI_SLV_REG2_OFFSET, ocvs->ocv3);
+}

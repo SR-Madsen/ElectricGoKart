@@ -1,0 +1,62 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+
+// User defines
+#define a_zero  (f32)0.1666666666666666666666666666666667
+#define a_one   (f32)0.0083333333333333333333333333333333
+#define a_two   (f32)0.0001984126984126984126984126984127
+#define a_three (f32)0.0000027557319223985892510950593270458
+#include "sleep.h"
+
+// User prototypes
+
+
+// User structs (move all to a different header file eventually)
+
+
+// User variables
+
+
+int main()
+{
+    init_platform();
+
+    /*
+     * WRITE CODE HERE
+     */
+
+    initGpios();
+
+    f32 input = -PI, output;
+
+    xil_printf("Starting sine calculation test.\r\n");
+
+    while(1) {
+    	if (input >= PI) {
+    		input = -PI;
+    	} else {
+    		input += PI/20;
+    	}
+
+    	enablePrecharge();
+    	output = input*(1 + input*input * (-a_zero + input*input * (a_one + input*input * (-a_two + input*input * a_three))));
+    	disablePrecharge();
+
+    	printf("Calculated value is: %f\r\n", output);
+
+    	usleep(500000);
+    }
+
+    cleanup_platform();
+    return 0;
+}

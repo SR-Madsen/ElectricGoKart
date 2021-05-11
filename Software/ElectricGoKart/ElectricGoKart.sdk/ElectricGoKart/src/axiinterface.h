@@ -14,12 +14,14 @@
 #include "xil_io.h"
 #include "Encoder_Driver.h"
 #include "PWM_Generator.h"
+#include "motorstructs.h"
 
 // Defines
 #define ENCODER_DRIVER_BASEADDR XPAR_ENCODER_DRIVER_0_S00_AXI_BASEADDR
 #define PWM_GENERATOR_BASEADDR 	XPAR_PWM_GENERATOR_0_S00_AXI_BASEADDR
 
-typedef float f32;
+#define DISABLE 0
+#define ENABLE 1
 
 #define PI 				(f32)3.14159265358979323846
 #define EIGHT_BIT_MAX 	(f32)255.0
@@ -28,11 +30,7 @@ typedef float f32;
 #define OCR_MAX 		1173
 
 // Structs
-typedef struct ocvvalues_t {
-	u16 ocv1;
-	u16 ocv2;
-	u16 ocv3;
-} ocvvalues_t;
+
 
 // Variables
 
@@ -61,9 +59,21 @@ void rawToRadsMech(u16 raw_pos, f32 *pos_rad);
 // Output: electrical motor position in radians between 0 and 8*pi.
 void rawToRadsEl(u16 raw_pos, f32 *pos_rad);
 
+// Disables the encoder driver
+void disableEncoder();
+
+// Enables the encoder driver
+void enableEncoder();
+
+// Disables the PWM generator
+void disablePWM();
+
+// Enables the PWM generator
+void enablePWM();
+
 // Sets the three phase duty cycles of the PWM generator.
-// Input: OCV values between 0 and 1172 to be used by PWM generator.
-// OCV = D * 1172
+// Input: OCV values between 0 and 1173 to be used by PWM generator.
+// OCV = D * 1173
 void setDutyCycles(ocvvalues_t *ocvs);
 
 #endif /* SRC_AXIINTERFACE_H_ */

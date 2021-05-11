@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Thu May  6 13:12:07 2021
+| Date             : Tue May 11 12:12:35 2021
 | Host             : sebastian-ZBook running 64-bit Linux Mint 20
 | Command          : report_power -file ElectricGoKart_wrapper_power_routed.rpt -pb ElectricGoKart_wrapper_power_summary_routed.pb -rpx ElectricGoKart_wrapper_power_routed.rpx
 | Design           : ElectricGoKart_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.649        |
+| Total On-Chip Power (W)  | 1.648        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.526        |
+| Dynamic (W)              | 1.525        |
 | Device Static (W)        | 0.123        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 66.0         |
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.008 |        7 |       --- |             --- |
-| Slice Logic             |     0.002 |     3667 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1332 |     17600 |            7.57 |
+| Slice Logic             |     0.002 |     3686 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1350 |     17600 |            7.67 |
 |   CARRY4                |    <0.001 |       66 |      4400 |            1.50 |
-|   Register              |    <0.001 |     1638 |     35200 |            4.65 |
+|   Register              |    <0.001 |     1637 |     35200 |            4.65 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                |     0.000 |      251 |       --- |             --- |
-| Signals                 |     0.003 |     2722 |       --- |             --- |
+| Signals                 |     0.003 |     2734 |       --- |             --- |
 | I/O                     |     0.002 |       27 |       100 |           27.00 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | PS7                     |     1.509 |        1 |       --- |             --- |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.014 |      0.007 |
+| Vccint    |       1.000 |     0.020 |       0.013 |      0.007 |
 | Vccaux    |       1.800 |     0.008 |       0.000 |      0.008 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,14 +152,14 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| ElectricGoKart_wrapper   |     1.526 |
-|   ElectricGoKart_i       |     1.524 |
+| ElectricGoKart_wrapper   |     1.525 |
+|   ElectricGoKart_i       |     1.523 |
 |     Encoder_Driver_0     |     0.001 |
 |       U0                 |     0.001 |
 |     PWM_Generator_0      |     0.002 |
 |       U0                 |     0.002 |
-|     processing_system7_0 |     1.510 |
-|       inst               |     1.510 |
+|     processing_system7_0 |     1.509 |
+|       inst               |     1.509 |
 |     ps7_0_axi_periph     |     0.006 |
 |       s00_couplers       |     0.005 |
 |       xbar               |     0.001 |

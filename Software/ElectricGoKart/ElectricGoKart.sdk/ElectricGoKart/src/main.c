@@ -10,26 +10,40 @@
 #include "axiinterface.h"
 #include "xadc.h"
 #include "gpios.h"
+#include "tasks.h"
+#include "motorstructs.h"
+
+#include "sleep.h"
 
 // User defines
 
 
 // User prototypes
-
-
-// User structs (move all to a different header file eventually)
-
+static void XAdcInterruptHandler(XAdcPs *XAdc);
 
 // User variables
 
+
+// XADC interrupt handler, which ensures timing of sensor measurements and Field-Oriented Control
+static void XAdcInterruptHandler(XAdcPs *XAdc) {
+		sensorProcessing();
+		fieldOrientedControl();
+}
 
 int main()
 {
     init_platform();
 
-    /*
-     * WRITE CODE HERE
-     */
+    initGpios();
+    initXAdc();
+    initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+    initVariables();
+
+    while(1) {
+        /*
+         * RUN UART COMMUNICATION AND OTHER CODE THAT IS NOT TIMING RELATED
+         */
+    }
 
     cleanup_platform();
     return 0;

@@ -1,0 +1,64 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+// See header file for documentation
+
+void sensorTask() {
+
+	// Read all digital sensor values
+	checkOvercurrentSwitch(&overcurrentswitch);
+	checkMainRelay(&relay);
+	checkOvertemp(&overtemp);
+	checkEnableSwitch(&enableswitch);
+	checkFootSwitch(&footswitch);
+
+	// If button is pressed, start overcurrent timer
+	if (overcurrentswitch) {
+		overcurrent_timer = TEN_SECONDS;
+	}
+
+	// Write overtemperature error
+	motor_errors.motor_overtemp = overtemp;
+
+	// Write values for state machine to check
+	// statemachine.relaystatus = relay;
+	// statemachine.switches = (enableswitch & footswitch);
+
+
+	// Convert all analog values to physical values and run errors
+	// motor_errors.overvoltage = (battery_raw > 4025) ? 1 : 0;
+	// motor_errors.undervoltage = (battery_raw < 2300) ? 1 : 0;
+	// battery_value = battery_raw * BATTERY_CONVERSION
+
+	// motor_errors.torque_disc = (torque_raw > 3800) ? 1 : 0;
+	//iq_target = (overcurrent_timer--) ? torque_raw * OVERCURR_CONVERSION : torque_raw * TORQUE_CONVERSION;
+
+	// motor_errors.phaseA_overcurr = (phaseA_raw > 3950) ? 1 : 0;
+	// motor_errors.phaseB_overcurr = (phaseB_raw > 3950) ? 1 : 0;
+	// phaseA_value = phaseA_raw * CURRENT_CONVERSION - CURRENT_OFFSET;
+	// phaseB_value = phaseB_raw * CURRENT_CONVERSION - CURRENT_OFFSET;
+}
+
+
+void stateMachine() {
+
+}
+
+
+void FOCTask() {
+
+}
+
+
+void communicationTask() {
+
+}

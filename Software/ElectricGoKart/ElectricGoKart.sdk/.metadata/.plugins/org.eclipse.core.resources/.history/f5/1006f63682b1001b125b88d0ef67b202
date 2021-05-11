@@ -1,0 +1,24 @@
+/*
+ * motorstructs.h
+ *
+ *  Created on: May 10, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_MOTORSTRUCTS_H_
+#define SRC_MOTORSTRUCTS_H_
+
+// Structs
+typedef struct errors_t {
+	u8 motor_overtemp;
+	u8 overvoltage;
+	u8 undervoltage;
+	u8 torque_disc;
+	u8 phaseA_overcurr;
+	u8 phaseB_overcurr;
+
+} errors_t;
+errors_t errors;
+
+
+#endif /* SRC_MOTORSTRUCTS_H_ */
