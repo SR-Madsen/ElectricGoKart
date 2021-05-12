@@ -14,6 +14,7 @@
 #include "motorstructs.h"
 #include "clarke_park.h"
 #include "pi_controller.h"
+#include "svpwm.h"
 
 // Defines
 #define TEN_SECONDS 100000
@@ -58,10 +59,10 @@ u32 overcurrent_timer;
 u16 calib_counter;
 u8 calib_done;
 u16 precharge_counter;
-u16 voltage_samples[AVG_SAMPLES];
-u16 torque_samples[AVG_SAMPLES];
-u16 phaseA_samples[AVG_SAMPLES];
-u16 phaseB_samples[AVG_SAMPLES];
+s32 voltage_samples[AVG_SAMPLES];
+s32 torque_samples[AVG_SAMPLES];
+s32 phaseA_samples[AVG_SAMPLES];
+s32 phaseB_samples[AVG_SAMPLES];
 f32 err_q, err_d;
 
 

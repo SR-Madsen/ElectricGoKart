@@ -1,0 +1,22 @@
+/*
+ * svpwm.c
+ *
+ *  Created on: May 12, 2021
+ *      Author: sebastian
+ */
+
+#include "svpwm.h"
+
+/************************** Function Definitions *****************************/
+// See header file for documentation
+
+void spaceVectorModulation(three_phased_t* vabc, ocvvalues_t* ocvs) {
+	f32 max_phase, min_phase;
+	if ((vabc->arg1 > vabc->arg2) && (vabc->arg1 > vabc->arg3)) {
+		max_phase = vabc->arg1;
+	} else if (vabc->arg2 > vabc->arg3) {
+		max_phase = vabc->arg2;
+	} else {
+		max_phase = vabc->arg3;
+	}
+}

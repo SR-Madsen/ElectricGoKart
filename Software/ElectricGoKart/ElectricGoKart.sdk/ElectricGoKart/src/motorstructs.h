@@ -27,7 +27,7 @@ typedef struct measurement_t {
 	u16 raw;
 	u16 flt;
 	f32 phys;
-	u16 offset;
+	s32 offset;
 } measurement_t;
 
 typedef struct statemachine_t {

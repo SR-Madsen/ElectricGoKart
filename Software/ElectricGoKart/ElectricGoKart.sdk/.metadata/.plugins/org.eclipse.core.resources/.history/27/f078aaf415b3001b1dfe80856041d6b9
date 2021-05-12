@@ -1,0 +1,77 @@
+/************ ELECTRIC GO-KART MAIN ************/
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// User includes
+#include "axiinterface.h"
+#include "xadc.h"
+#include "gpios.h"
+#include "tasks.h"
+#include "motorstructs.h"
+#include "clarke_park.h"
+#include "pi_controller.h"
+#include "svpwm.h"
+
+// User defines
+
+
+// User prototypes
+static void XAdcInterruptHandler(XAdcPs *XAdc);
+
+// User variables
+f32 duty1 = 1, duty2 = 1, duty3 = 1;
+u8 direction = 0;
+
+// XADC interrupt handler, which ensures timing of sensor measurements and Field-Oriented Control
+static void XAdcInterruptHandler(XAdcPs *XAdc) {
+	if (direction) {
+		duty1 += 0.1;
+		duty2 += 0.1;
+		duty3 += 0.1;
+		if (duty1 >= 0.99) {
+			direction = 0;
+			duty1 = 1;
+			duty2 = 1;
+			duty3 = 1;
+		}
+	} else {
+		duty1 -= 0.1;
+		duty2 -= 0.1;
+		duty3 -= 0.1;
+		if (duty1 <= 0.01) {
+			direction = 1;
+			duty1 = 0;
+			duty2 = 0;
+			duty3 = 0;
+		}
+	}
+	ocvvalues.ocv1 = OCR_MAX * duty1;
+	ocvvalues.ocv2 = OCR_MAX * duty2;
+	ocvvalues.ocv3 = OCR_MAX * duty3;
+	setDutyCycles(&ocvvalues);
+	//sensorProcessing();
+	//fieldOrientedControl();
+}
+
+int main()
+{
+    init_platform();
+
+    initGpios();
+    initXAdc();
+    initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
+    initVariables();
+
+    while(1) {
+        /*
+         * RUN UART COMMUNICATION AND OTHER CODE THAT IS NOT TIMING RELATED
+         */
+    }
+
+    cleanup_platform();
+    return 0;
+}

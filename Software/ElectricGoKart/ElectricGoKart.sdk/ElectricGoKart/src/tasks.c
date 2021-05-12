@@ -42,7 +42,7 @@ void sensorProcessing() {
 	getPhaseBRaw(&phaseB.raw);
 
 	// Remove offset from all analog values
-	// TODO: Add digital filtering here if necessary
+	// TODO: Add digital filtering here if necessary.
 	battery_voltage.flt = battery_voltage.raw - battery_voltage.offset;
 	torque.flt = torque.raw - torque.offset;
 	phaseA.flt = phaseA.raw - phaseA.offset;
@@ -104,7 +104,7 @@ void fieldOrientedControl() {
 				phaseB_samples[calib_counter] = phaseB.raw - (TWELVE_BIT_MAX >> 1);
 				calib_counter++;
 			} else {
-				u32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
+				s32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
 				for (u16 i = 0; i < calib_counter; i++) {
 					acc_v += voltage_samples[i];
 					//acc_t += torque_samples[i];
@@ -154,7 +154,9 @@ void fieldOrientedControl() {
 			invClarkeTransform(&voltagesAlphBe, &voltagesABC);
 
 
-			// Space Vector Modulation into duty cycles for PWM generator
+			spaceVectorModulation(&voltagesABC, battery_voltage.phys, &ocvvalues);
+			setDutyCycles(&ocvvalues);
+
 
 			if (!statemachine.switches) {
 				statemachine.state = STATE_INIT;
@@ -186,8 +188,124 @@ void fieldOrientedControl() {
 
 
 void communicationTask() {
-	// TODO: Run this in the main loop, which will just do its thing all the time.
-	// The remaining tasks will only be run when the ADC interrupts.
+	// TODO: Finish this UART communication task (implement UART driver).
+
+	/*
+	 * #define STATES ----
+	 * const char* states[] = {"INIT\0", "READY\0", "CALIB\0", "RUN\0", "FAULT\0"};
+	 *
+	 * u8 uart_state = MAIN_MENU;
+	 *
+	 *
+	 *
+	 * u8 uart_cmd;
+	 * uart_cmd = uart_receive_byte(UART_DEVICE_ID);
+		if ((uart_cmd > 47) && (uart_cmd < 58)) {
+			uart_cmd -= 48;
+		}
+
+	switch (uart_state) {
+	case MAIN_MENU:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("This is the main menu for the live-view of the Zybo go-kart inverter.\r\n");
+		xil_printf("Press 1 to access State Machine screen.\r\n");
+		xil_printf("Press 2 to access Motor Error screen.\r\n");
+		xil_printf("Press 3 to access PI Controller screen.\r\n");
+		xil_printf("Press 4 to access Sensor Values screen.\r\n"); // TODO: Both XADC and Encoder values
+		xil_printf("Press 5 to access Duty Cycle screen.\r\n");
+
+		if ((uart_cmd > 0) && (uart_cmd < 6)) {
+			uart_state = uart_cmd;
+		}
+		break;
+
+
+	case STATE_MACHINE:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("State Machine\r\n\r\n");
+		xil_printf("The current state is: %d\r\n", states[statemachine.state]);
+		xil_printf("The calib_done variable is: %d\r\n", calib_done);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = MAIN_MENU;
+		}
+		break;
+
+
+	case MOTOR_ERROR:
+		xil_printf("%c[2J", 27);
+		xil_printf("Motor Errors\r\n\r\n");
+		xil_printf("Motor overtemperature: %d\r\n", motor_errors.motor_overtemp);
+		xil_printf("Battery overvoltage: %d\r\n", motor_errors.overvoltage);
+		xil_printf("Battery undervoltage: %d\r\n", motor_errors.undervoltage);
+		xil_printf("Torque disconnected: %d\r\n", motor_errors.torque_disc);
+		xil_printf("Phase A overcurrent: %d\r\n", motor_errors.phaseA_overcurr);
+		xil_printf("Phase B overcurrent: %d\r\n\r\n", motor_errors.phaseB_overcurr);
+
+		xil_printf("Press 1 to clear all errors.\r\n");
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = MAIN_MENU;
+		} else if (uart_cmd == 1) {
+			statemachine.clear_fault = 1;
+		}
+		break;
+
+	//////////////////////////////// FROM HERE
+	case PI_CONTROLLER:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("PI Controller values\r\n\r\n");
+		xil_printf("d-direction controller:\r\n");
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+		xil_printf("limit: %d\r\n", whole, comma?);
+
+		xil_printf("q-direction controller:\r\n");
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+		xil_printf("limit: %d\r\n", whole, comma?);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = MAIN_MENU;
+		}
+		break;
+
+
+	case SENSORS:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Sensor Values\r\n\r\n");
+		// TODO: Make these display as floats with physical values instead
+		xil_printf("Battery voltage value: %d\r\n", battery_voltage.raw);
+		xil_printf("Torque position value: %d\r\n", torque.raw);
+		xil_printf("Phase A current value: %d\r\n", phaseA.raw);
+		xil_printf("Phase B current value: %d\r\n", phaseB.raw);
+		xil_printf("Encoder position value: %d\r\n", position.pos_raw);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (cmd == 27) {
+			uart_state = MAIN_MENU;
+		}
+		break;
+
+
+	case DUTY_CYCLE:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Duty Cycle Values\r\n\r\n");
+		xil_printf("OCV1: %d\r\n", ocvvalues.ocv1);
+		xil_printf("OCV2: %d\r\n", ocvvalues.ocv2);
+		xil_printf("OCV3: %d\r\n", ocvvalues.ocv3);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (cmd == 27) {
+			state = MAIN_MENU;
+		}
+		break;
+	}
+	 */
 }
 
 void initVariables() {
