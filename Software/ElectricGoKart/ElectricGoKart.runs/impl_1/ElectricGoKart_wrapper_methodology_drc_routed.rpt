@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Tue May 11 12:12:35 2021
+| Date         : Thu May 13 10:00:04 2021
 | Host         : sebastian-ZBook running 64-bit Linux Mint 20
 | Command      : report_methodology -file ElectricGoKart_wrapper_methodology_drc_routed.rpt -pb ElectricGoKart_wrapper_methodology_drc_routed.pb -rpx ElectricGoKart_wrapper_methodology_drc_routed.rpx
 | Design       : ElectricGoKart_wrapper
@@ -23,15 +23,21 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 6
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
+| TIMING-16 | Warning  | Large setup violation         | 1          |
 | TIMING-18 | Warning  | Missing input or output delay | 5          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.083 ns between ElectricGoKart_i/Encoder_Driver_0/U0/Encoder_Driver_v1_0_S00_AXI_inst/slv_reg1_reg[29]/C (clocked by clk_fpga_0) and SERIAL_CLOCK_0 (clocked by VIRTUAL_ElectricGoKart_i/Encoder_Driver_0/U0/Encoder_Driver_v1_0_S00_AXI_inst/temp_clock). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on Digital_IO_tri_io[0] relative to clock(s) clk_fpga_0

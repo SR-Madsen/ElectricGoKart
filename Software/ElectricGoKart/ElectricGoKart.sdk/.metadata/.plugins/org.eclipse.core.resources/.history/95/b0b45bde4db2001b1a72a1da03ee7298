@@ -1,0 +1,108 @@
+/*
+ * led_matrix.c
+ *
+ *  Created on: Mar 24, 2021
+ *      Author: jakob
+ */
+
+/***************************** Include Files *********************************/
+#include "clarke_park.h"
+
+
+/************************** Function Definitions *****************************/
+// See header file for documentation
+
+void clarkeTransform( three_phased_t *input, two_phased_t *output )
+{
+	//two_phased_t temp_output;
+
+	output->arg1 = input->arg1;
+	output->arg2 = RECI_SQRT_3*(input->arg1 + 2*input->arg2);
+
+	//temp_output.I_alpha = input->I_a;
+	//temp_output.I_beta 	= 0.5774*(input->I_a + 2*input->I_b); // 1/sqrt(3) = 0.5774
+
+	//*output = temp_output;
+}
+
+
+void parkTransform( two_phased_t *input, f32 input_angle, two_phased_t *output )
+{
+	two_phased_current_rotating_t temp_output;
+	temp_output.I_d = input->I_alpha*cos( input_angle ) + input->I_beta*sin( input_angle );
+	temp_output.I_q = input->I_beta*cos( input_angle ) - input->I_alpha*sin( input_angle );
+
+	*output = temp_output;
+}
+
+
+void invClarkeTransform( two_phased_voltage_stationary_t *input, three_phased_voltage_t *output )
+{
+	three_phased_voltage_t temp_output;
+
+	temp_output.V_a = input->V_alpha;
+	temp_output.V_b = -0.5*input->V_alpha + 0.866*input->V_beta;	// sqrt(3)/2 = 0.8660
+	temp_output.V_c = -0.5*input->V_alpha - 0.866*input->V_beta;	// sqrt(3)/2 = 0.8660
+
+	*output = temp_output;
+}
+
+
+void invParkTransform( two_phased_voltage_rotating_t *input, float input_angle, two_phased_voltage_stationary_t *output )
+{
+	two_phased_voltage_stationary_t temp_output;
+
+	temp_output.V_alpha = input->V_d*cos( input_angle ) - input->V_q*sin( input_angle );
+	temp_output.V_beta 	= input->V_q*cos( input_angle ) + input->V_d*sin( input_angle );
+
+	*output = temp_output;
+}
+
+float sin( float x )
+{
+	float temp_output = 0;
+
+	float d1 = 1;
+	float d3 = -0.1667; 		// -1/factorial(3)
+	float d5 = 0.0083; 			//	1/factorial(5)
+	float d7 = -0.00019841;		// -1/factorial(7)
+	float d9 = 0.0000027557;	//	1/factorial(9)
+
+	if( x > PI )
+	{
+		while( x > PI )
+		{
+			x = x - 2*PI;
+		}
+	}
+	else if( x < -PI )
+	{
+		while( x < -PI )
+		{
+			x = x + 2*PI;
+		}
+	}
+
+	temp_output = x*(d1+x*x*(d3+x*x*(d5+x*x*(d7+x*x*d9))));
+
+	return( temp_output );
+}
+
+float cos( float x )
+{
+	float temp_output = 0;
+
+	// |x|
+	if( x < 0 )
+	{
+		x = -x;
+	}
+
+	// Displace x (pi/2+|x|)
+	x = PI/2 + x;
+
+	temp_output = sin(x);
+
+	return( temp_output );
+}
+

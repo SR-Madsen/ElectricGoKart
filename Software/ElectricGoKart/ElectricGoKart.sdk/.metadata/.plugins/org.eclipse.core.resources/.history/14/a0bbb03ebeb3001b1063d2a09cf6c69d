@@ -1,0 +1,69 @@
+/*
+ * uart.h
+ *
+ *  Created on: May 13, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_UART_H_
+#define SRC_UART_H_
+
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xuartps.h"
+
+// Defines
+
+
+// Structs
+
+
+// Variables
+XUartPs UART_PS[XPAR_XUARTPS_NUM_INSTANCES];
+XUartPs_Config *UART_CFG[XPAR_XUARTPS_NUM_INSTANCES];
+
+// Functions
+// -------------------------------------------------
+// Initialization function
+// Input: UART Module ID
+// Output: Failure/success check
+// Function: Initializes the UART hardware and runs checks as needed
+int initUart(u16 ID);
+
+// Receive byte function
+// Input: UART Module ID
+// Output: Unsigned 8-bit integer with data
+// Function: Reads the first entry in the UART FIFO and returns the values
+u8 uart_receive_byte(u16 ID);
+
+// Receive multiple bytes function
+// Input: Pointer to u8 buffer, amount of bytes, UART Module ID
+// Output: Number of bytes actually received
+// Function: Attempts to read the specified amount of bytes and store in buffer
+u32 uart_receive_multi(u8 *buffer, u32 num, u16 ID);
+
+// Transmit byte function
+// Input: Unsigned 8-bit integer with data, UART Module ID
+// Output: None
+// Function: Writes data to the UART FIFO to be sent
+void uart_transmit_byte(u8 data, u16 ID);
+
+// Transmit multiple bytes function
+// Input: Pointer to u8 buffer, amount of bytes, UART Module ID
+// Output: Number of bytes actually transmitted
+// Function: Attempts to send the specified amount of bytes from buffer
+u32 uart_transmit_multi(u8 *buffer, u32 num, u16 ID);
+
+// Transmit ready function
+// Input: UART Module ID
+// Output: True/false
+// Function: Checks whether transmit FIFO is not full, returns true if at least 1 byte is free
+int uart_transmit_ready(u16 ID);
+
+// Receive ready function
+// Input: UART Module ID
+// Output: True/false
+// Function: Checks whether receive FIFO is not empty, returns true if at least 1 byte is filled
+int uart_receive_ready(u16 ID);
+
+#endif /* SRC_UART_H_ */

@@ -1,0 +1,26 @@
+/*
+ * svpwm.h
+ *
+ *  Created on: May 12, 2021
+ *      Author: sebastian
+ */
+
+#ifndef SRC_SVPWM_H_
+#define SRC_SVPWM_H_
+
+#include "motorstructs.h"
+
+// Defines
+
+
+// Structs
+
+
+// Variables
+
+
+/************************** Function Declarations *****************************/
+void spaceVectorModulation(*three_phased_t vabc, *ocvvalues_t ocvs);
+
+
+#endif /* SRC_SVPWM_H_ */

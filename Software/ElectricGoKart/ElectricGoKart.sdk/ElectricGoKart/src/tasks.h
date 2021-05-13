@@ -12,6 +12,10 @@
 #include "xadc.h"
 #include "axiinterface.h"
 #include "motorstructs.h"
+#include "clarke_park.h"
+#include "pi_controller.h"
+#include "svpwm.h"
+#include "uart.h"
 
 // Defines
 #define TEN_SECONDS 100000
@@ -23,8 +27,8 @@
 #define OVERCURRENT_THRESHOLD 3950
 
 #define BATTERY_CONVERSION (f32)0.015140415140415140415140415140415
-#define TORQUE_CONVERSION (f32)0.046
-#define OVERCURR_CONVERSION (f32)0.127
+#define TORQUE_CONVERSION (f32)0.027628815628815629051873159482966
+#define OVERCURR_CONVERSION (f32)0.075978021978021978021978021978022
 #define CURRENT_CONVERSION (f32)0.1586914
 #define CURRENT_OFFSET (f32)325.0
 
@@ -36,7 +40,25 @@
 #define STATE_RUN 3
 #define STATE_FAULT 4
 
+#define UART_MAIN 0
+#define UART_SMACH 1
+#define UART_ERROR 2
+#define UART_PI 3
+#define UART_SENS 4
+#define UART_DUTY 5
+#define UART_SET_D 6
+#define UART_SET_Q 7
+
 #define AVG_SAMPLES 16
+
+#define qPI_a0 0.1
+#define qPI_a1 0.1
+#define qPI_a2 1
+#define qPI_lim 60
+#define dPI_a0 0.1
+#define dPI_a1 0.1
+#define dPI_a2 1
+#define dPI_lim 60
 
 // Structs
 
@@ -47,10 +69,11 @@ u32 overcurrent_timer;
 u16 calib_counter;
 u8 calib_done;
 u16 precharge_counter;
-u16 voltage_samples[AVG_SAMPLES];
-u16 torque_samples[AVG_SAMPLES];
-u16 phaseA_samples[AVG_SAMPLES];
-u16 phaseB_samples[AVG_SAMPLES];
+s32 voltage_samples[AVG_SAMPLES];
+s32 torque_samples[AVG_SAMPLES];
+s32 phaseA_samples[AVG_SAMPLES];
+s32 phaseB_samples[AVG_SAMPLES];
+f32 err_q, err_d;
 
 
 // Function prototypes

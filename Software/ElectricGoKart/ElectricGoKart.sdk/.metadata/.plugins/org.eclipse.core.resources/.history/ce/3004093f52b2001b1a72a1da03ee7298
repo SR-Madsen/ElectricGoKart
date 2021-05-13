@@ -1,0 +1,91 @@
+/*
+ * led_matrix.c
+ *
+ *  Created on: Mar 24, 2021
+ *      Author: jakob
+ */
+
+/***************************** Include Files *********************************/
+#include "pi_controller.h"
+
+
+/*
+ * EXAMPLES OF USE
+ */
+
+    /*
+	float test;
+	test = sin(PI);
+	test = sin(87);
+	test = cos(65);
+	test = cos(PI);
+
+	three_phased_current_t 			motor_current;
+	two_phased_current_stationary_t stationary_current;
+	two_phased_current_rotating_t	rotating_current;
+	two_phased_voltage_rotating_t	rotating_voltage;
+	two_phased_voltage_stationary_t	stationary_voltage;
+	three_phased_voltage_t			motor_voltage;
+	float rotation_angle;
+
+	pi_t PI_d = createPI( 0.1, 0.2, 1, 10);		// random controller (a0, a1, b1, limit)
+	pi_t PI_q = createPI( 0.1, 0.2, 1, 10);		// random controller (a0, a1, b1, limit)
+
+	motor_current = (three_phased_current_t){ 1, 1, 1 };	// readMotorCurrents();
+	rotation_angle = 1.1;									// readRotationAngle();
+
+	clarkeTransform( &motor_current, &stationary_current );
+	parkTransform( &stationary_current, rotation_angle, &rotating_current );
+
+	newSample( &PI_d, rotating_current.I_d, &rotating_voltage.V_d );
+	newSample( &PI_q, rotating_current.I_q, &rotating_voltage.V_q );
+
+	invParkTransform( &rotating_voltage, rotation_angle, &stationary_voltage );
+	invClarkeTransform( &stationary_voltage, &motor_voltage );
+
+	// motor_voltage is input to PWM generator or something
+	*/
+
+
+/************************** Function Definitions *****************************/
+
+controllerPI_t createPI( f32 a_0, f32 a_1, f32 b_1, f32 limit )
+{
+	controllerPI_t temp_PI;
+
+	temp_PI.a_0 = a_0;
+	temp_PI.a_1 = a_1;
+	temp_PI.b_1 = b_1;
+	temp_PI.limit = limit;
+	temp_PI.prev_sample = 0;
+	temp_PI.prev_output = 0;
+
+	return( temp_PI );
+}
+
+void newSample( controllerPI_t *cont, f32 new_sample, f32 *output )
+{
+	f32 temp_output;
+
+	temp_output = cont->b_1*cont->prev_output + cont->a_0*new_sample - cont->a_1*cont->prev_sample;
+
+	if( temp_output > cont->limit )
+	{
+		temp_output = cont->limit;
+	}
+	else if( temp_output < (-cont->limit) )
+	{
+		temp_output = -cont->limit;
+	}
+
+	cont->prev_output = temp_output;
+	cont->prev_sample = new_sample;
+
+	*output = temp_output;
+}
+
+void clearPI( controllerPI_t *cont )
+{
+	cont->prev_output = 0;
+	cont->prev_sample = 0;
+}

@@ -1,0 +1,65 @@
+/*
+ * uart.c
+ *
+ *  Created on: May 13, 2021
+ *      Author: sebastian
+ */
+
+#include "uart.h"
+
+// Functions
+// See header file for documentation.
+
+int initUart(u16 ID) {
+	int status = XST_SUCCESS;
+
+	// Find hardware configuration from Vivado's generated file xparameters.h
+	UartConfigPtr[ID] = XUartPs_LookupConfig(ID);
+	if (UartConfigPtr[ID] == NULL) {
+		return XST_FAILURE;
+	}
+
+	// Initialize hardware configuration
+	status = XUartPs_CfgInitialize(&Uart[ID], UartConfigPtr[ID], UartConfigPtr[ID]->BaseAddress);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	// Check that hardware is correctly built
+	status = XUartPs_SelfTest(&Uart[ID]);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	return status;
+}
+
+
+u8 uartReceiveByte(u16 ID) {
+	return XUartPs_ReadReg(UartConfigPtr[ID]->BaseAddress, XUARTPS_FIFO_OFFSET);
+}
+
+
+u32 uartReceiveMulti(u8 *buffer, u32 num, u16 ID) {
+	return XUartPs_Recv(&Uart[ID], buffer, num);
+}
+
+
+void uartTransmitByte(u8 data, u16 ID) {
+	XUartPs_WriteReg(UartConfigPtr[ID]->BaseAddress, XUARTPS_FIFO_OFFSET, data);
+}
+
+
+u32 uartTransmitMulti(u8 *buffer, u32 num, u16 ID) {
+	return XUartPs_Send(&Uart[ID], buffer, num);
+}
+
+
+int uartTransmitReady(u16 ID) {
+	return (!XUartPs_IsTransmitFull(UartConfigPtr[ID]->BaseAddress));
+}
+
+
+int uartReceiveReady(u16 ID) {
+	return XUartPs_IsReceiveData(UartConfigPtr[ID]->BaseAddress);
+}

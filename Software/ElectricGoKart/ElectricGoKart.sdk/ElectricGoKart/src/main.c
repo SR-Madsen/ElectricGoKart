@@ -12,9 +12,12 @@
 #include "gpios.h"
 #include "tasks.h"
 #include "motorstructs.h"
+#include "clarke_park.h"
+#include "pi_controller.h"
+#include "svpwm.h"
+#include "uart.h"
 
 #include "sleep.h"
-
 // User defines
 
 
@@ -26,8 +29,8 @@ static void XAdcInterruptHandler(XAdcPs *XAdc);
 
 // XADC interrupt handler, which ensures timing of sensor measurements and Field-Oriented Control
 static void XAdcInterruptHandler(XAdcPs *XAdc) {
-		sensorProcessing();
-		fieldOrientedControl();
+	sensorProcessing();
+	fieldOrientedControl();
 }
 
 int main()
@@ -35,14 +38,14 @@ int main()
     init_platform();
 
     initGpios();
+    initUart();
     initXAdc();
     initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
     initVariables();
 
     while(1) {
-        /*
-         * RUN UART COMMUNICATION AND OTHER CODE THAT IS NOT TIMING RELATED
-         */
+        communicationTask();
+        usleep(250000);
     }
 
     cleanup_platform();

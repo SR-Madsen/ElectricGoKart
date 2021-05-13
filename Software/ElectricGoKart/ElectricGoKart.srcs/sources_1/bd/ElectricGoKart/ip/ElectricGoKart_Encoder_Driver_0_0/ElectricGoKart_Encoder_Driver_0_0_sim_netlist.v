@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Tue May 11 12:11:02 2021
+// Date        : Thu May 13 09:58:07 2021
 // Host        : sebastian-ZBook running 64-bit Linux Mint 20
 // Command     : write_verilog -force -mode funcsim
 //               /home/sebastian/Desktop/Git/SDU/ElectricGoKart/Software/ElectricGoKart/ElectricGoKart.srcs/sources_1/bd/ElectricGoKart/ip/ElectricGoKart_Encoder_Driver_0_0/ElectricGoKart_Encoder_Driver_0_0_sim_netlist.v
@@ -126,19 +126,19 @@ endmodule
 (* ORIG_REF_NAME = "Encoder_Driver_v1_0" *) 
 module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0
    (S_AXI_AWREADY,
+    SERIAL_CLOCK,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
     s00_axi_rvalid,
     s00_axi_bvalid,
-    SERIAL_CLOCK,
+    s00_axi_wvalid,
+    s00_axi_awvalid,
     INC_Z,
     INC_B,
     INC_A,
     s00_axi_aclk,
     s00_axi_awaddr,
-    s00_axi_wvalid,
-    s00_axi_awvalid,
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_arvalid,
@@ -148,19 +148,19 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0
     s00_axi_bready,
     s00_axi_rready);
   output S_AXI_AWREADY;
+  output SERIAL_CLOCK;
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
-  output SERIAL_CLOCK;
+  input s00_axi_wvalid;
+  input s00_axi_awvalid;
   input INC_Z;
   input INC_B;
   input INC_A;
   input s00_axi_aclk;
   input [1:0]s00_axi_awaddr;
-  input s00_axi_wvalid;
-  input s00_axi_awvalid;
   input [31:0]s00_axi_wdata;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
@@ -221,19 +221,19 @@ endmodule
 (* ORIG_REF_NAME = "Encoder_Driver_v1_0_S00_AXI" *) 
 module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
    (S_AXI_AWREADY,
+    SERIAL_CLOCK,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
     s00_axi_rvalid,
     s00_axi_bvalid,
-    SERIAL_CLOCK,
+    s00_axi_wvalid,
+    s00_axi_awvalid,
     INC_Z,
     INC_B,
     INC_A,
     s00_axi_aclk,
     s00_axi_awaddr,
-    s00_axi_wvalid,
-    s00_axi_awvalid,
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_arvalid,
@@ -243,19 +243,19 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     s00_axi_bready,
     s00_axi_rready);
   output S_AXI_AWREADY;
+  output SERIAL_CLOCK;
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
-  output SERIAL_CLOCK;
+  input s00_axi_wvalid;
+  input s00_axi_awvalid;
   input INC_Z;
   input INC_B;
   input INC_A;
   input s00_axi_aclk;
   input [1:0]s00_axi_awaddr;
-  input s00_axi_wvalid;
-  input s00_axi_awvalid;
   input [31:0]s00_axi_wdata;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
@@ -275,10 +275,23 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire INC_B;
   wire INC_Z;
   wire SERIAL_CLOCK;
-  wire SERIAL_CLOCK_i_1_n_0;
-  wire SERIAL_CLOCK_i_2_n_0;
-  wire SERIAL_CLOCK_i_3_n_0;
-  wire SERIAL_CLOCK_i_4_n_0;
+  wire SERIAL_CLOCK_INST_0_i_10_n_0;
+  wire SERIAL_CLOCK_INST_0_i_11_n_0;
+  wire SERIAL_CLOCK_INST_0_i_12_n_0;
+  wire SERIAL_CLOCK_INST_0_i_13_n_0;
+  wire SERIAL_CLOCK_INST_0_i_14_n_0;
+  wire SERIAL_CLOCK_INST_0_i_15_n_0;
+  wire SERIAL_CLOCK_INST_0_i_16_n_0;
+  wire SERIAL_CLOCK_INST_0_i_17_n_0;
+  wire SERIAL_CLOCK_INST_0_i_1_n_0;
+  wire SERIAL_CLOCK_INST_0_i_2_n_0;
+  wire SERIAL_CLOCK_INST_0_i_3_n_0;
+  wire SERIAL_CLOCK_INST_0_i_4_n_0;
+  wire SERIAL_CLOCK_INST_0_i_5_n_0;
+  wire SERIAL_CLOCK_INST_0_i_6_n_0;
+  wire SERIAL_CLOCK_INST_0_i_7_n_0;
+  wire SERIAL_CLOCK_INST_0_i_8_n_0;
+  wire SERIAL_CLOCK_INST_0_i_9_n_0;
   wire SERIAL_DATA;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
@@ -291,8 +304,8 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire axi_arready0;
   wire \axi_awaddr[2]_i_1_n_0 ;
   wire \axi_awaddr[3]_i_1_n_0 ;
-  wire axi_awready0;
   wire axi_awready_i_1_n_0;
+  wire axi_awready_i_2_n_0;
   wire axi_bvalid_i_1_n_0;
   wire axi_rvalid_i_1_n_0;
   wire axi_wready0;
@@ -338,6 +351,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire clk_div0_carry_i_4_n_0;
   wire clk_div0_carry_i_5_n_0;
   wire clk_div0_carry_i_6_n_0;
+  wire clk_div0_carry_i_7_n_0;
   wire clk_div0_carry_n_0;
   wire clk_div0_carry_n_1;
   wire clk_div0_carry_n_2;
@@ -420,6 +434,10 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire \data_temp[5]_i_2_n_0 ;
   wire \data_temp[6]_i_1_n_0 ;
   wire \data_temp[7]_i_10_n_0 ;
+  wire \data_temp[7]_i_11_n_0 ;
+  wire \data_temp[7]_i_12_n_0 ;
+  wire \data_temp[7]_i_13_n_0 ;
+  wire \data_temp[7]_i_14_n_0 ;
   wire \data_temp[7]_i_1_n_0 ;
   wire \data_temp[7]_i_2_n_0 ;
   wire \data_temp[7]_i_3_n_0 ;
@@ -430,16 +448,11 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire \data_temp[7]_i_8_n_0 ;
   wire \data_temp[7]_i_9_n_0 ;
   wire index;
-  wire \index[0]_i_10_n_0 ;
-  wire \index[0]_i_11_n_0 ;
-  wire \index[0]_i_12_n_0 ;
   wire \index[0]_i_1_n_0 ;
   wire \index[0]_i_4_n_0 ;
   wire \index[0]_i_5_n_0 ;
   wire \index[0]_i_6_n_0 ;
   wire \index[0]_i_7_n_0 ;
-  wire \index[0]_i_8_n_0 ;
-  wire \index[0]_i_9_n_0 ;
   wire \index[12]_i_2_n_0 ;
   wire \index[12]_i_3_n_0 ;
   wire \index[12]_i_4_n_0 ;
@@ -558,20 +571,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire \position[7]_i_13_n_0 ;
   wire \position[7]_i_14_n_0 ;
   wire \position[7]_i_15_n_0 ;
-  wire \position[7]_i_16_n_0 ;
-  wire \position[7]_i_17_n_0 ;
-  wire \position[7]_i_18_n_0 ;
-  wire \position[7]_i_19_n_0 ;
   wire \position[7]_i_1_n_0 ;
-  wire \position[7]_i_20_n_0 ;
-  wire \position[7]_i_21_n_0 ;
-  wire \position[7]_i_22_n_0 ;
-  wire \position[7]_i_23_n_0 ;
-  wire \position[7]_i_24_n_0 ;
-  wire \position[7]_i_25_n_0 ;
-  wire \position[7]_i_26_n_0 ;
-  wire \position[7]_i_27_n_0 ;
-  wire \position[7]_i_28_n_0 ;
   wire \position[7]_i_2_n_0 ;
   wire \position[7]_i_3_n_0 ;
   wire \position[7]_i_4_n_0 ;
@@ -607,7 +607,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   wire \slv_reg3[31]_i_1_n_0 ;
   wire \slv_reg3[7]_i_1_n_0 ;
   wire slv_reg_rden;
-  wire slv_reg_wren__2;
+  wire slv_reg_wren__0;
   wire [2:0]state__0;
   wire temp_clock;
   wire temp_clock_i_1_n_0;
@@ -643,7 +643,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I2(\FSM_sequential_state[1]_i_2_n_0 ),
         .I3(\index[0]_i_1_n_0 ),
         .O(\FSM_sequential_state[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h0F0FF01B)) 
     \FSM_sequential_state[1]_i_2 
@@ -661,7 +661,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I2(\FSM_sequential_state[2]_i_2_n_0 ),
         .I3(\index[0]_i_1_n_0 ),
         .O(\FSM_sequential_state[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h00000F04)) 
     \FSM_sequential_state[2]_i_2 
@@ -701,51 +701,168 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .D(\FSM_sequential_state[2]_i_1_n_0 ),
         .Q(state__0[2]),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFECECECE)) 
-    SERIAL_CLOCK_i_1
-       (.I0(SERIAL_CLOCK),
-        .I1(SERIAL_CLOCK_i_2_n_0),
-        .I2(SERIAL_CLOCK_i_3_n_0),
-        .I3(SERIAL_CLOCK_i_4_n_0),
+  LUT5 #(
+    .INIT(32'hFFFFFFFD)) 
+    SERIAL_CLOCK_INST_0
+       (.I0(SERIAL_CLOCK_INST_0_i_1_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_2_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_3_n_0),
+        .I3(SERIAL_CLOCK_INST_0_i_4_n_0),
         .I4(temp_clock),
-        .I5(\index[0]_i_1_n_0 ),
-        .O(SERIAL_CLOCK_i_1_n_0));
+        .O(SERIAL_CLOCK));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    SERIAL_CLOCK_INST_0_i_1
+       (.I0(slv_reg1[2]),
+        .I1(slv_reg1[1]),
+        .I2(slv_reg1[0]),
+        .I3(SERIAL_CLOCK_INST_0_i_5_n_0),
+        .I4(SERIAL_CLOCK_INST_0_i_6_n_0),
+        .I5(SERIAL_CLOCK_INST_0_i_7_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
-    .INIT(32'h00001000)) 
-    SERIAL_CLOCK_i_2
-       (.I0(\index[0]_i_4_n_0 ),
-        .I1(\index[0]_i_5_n_0 ),
-        .I2(\index[0]_i_6_n_0 ),
-        .I3(\index[0]_i_7_n_0 ),
-        .I4(\position[7]_i_8_n_0 ),
-        .O(SERIAL_CLOCK_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+    .INIT(32'h80000000)) 
+    SERIAL_CLOCK_INST_0_i_10
+       (.I0(index_reg[12]),
+        .I1(index_reg[13]),
+        .I2(index_reg[14]),
+        .I3(index_reg[15]),
+        .I4(SERIAL_CLOCK_INST_0_i_14_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_10_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
-    .INIT(32'h02020222)) 
-    SERIAL_CLOCK_i_3
-       (.I0(s00_axi_aresetn),
-        .I1(index_reg[31]),
-        .I2(state__0[2]),
-        .I3(state__0[0]),
-        .I4(state__0[1]),
-        .O(SERIAL_CLOCK_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT3 #(
-    .INIT(8'h1F)) 
-    SERIAL_CLOCK_i_4
-       (.I0(state__0[1]),
-        .I1(state__0[0]),
-        .I2(state__0[2]),
-        .O(SERIAL_CLOCK_i_4_n_0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    SERIAL_CLOCK_reg
-       (.C(temp_clock),
-        .CE(1'b1),
-        .D(SERIAL_CLOCK_i_1_n_0),
-        .Q(SERIAL_CLOCK),
-        .R(1'b0));
+    .INIT(32'h80000000)) 
+    SERIAL_CLOCK_INST_0_i_11
+       (.I0(index_reg[2]),
+        .I1(index_reg[3]),
+        .I2(index_reg[0]),
+        .I3(index_reg[1]),
+        .I4(SERIAL_CLOCK_INST_0_i_15_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_11_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'hFFFF7FFF)) 
+    SERIAL_CLOCK_INST_0_i_12
+       (.I0(index_reg[27]),
+        .I1(index_reg[26]),
+        .I2(index_reg[25]),
+        .I3(index_reg[24]),
+        .I4(SERIAL_CLOCK_INST_0_i_16_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_12_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT5 #(
+    .INIT(32'hFFFF7FFF)) 
+    SERIAL_CLOCK_INST_0_i_13
+       (.I0(index_reg[19]),
+        .I1(index_reg[18]),
+        .I2(index_reg[17]),
+        .I3(index_reg[16]),
+        .I4(SERIAL_CLOCK_INST_0_i_17_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_13_n_0));
+  LUT4 #(
+    .INIT(16'h8000)) 
+    SERIAL_CLOCK_INST_0_i_14
+       (.I0(index_reg[11]),
+        .I1(index_reg[10]),
+        .I2(index_reg[9]),
+        .I3(index_reg[8]),
+        .O(SERIAL_CLOCK_INST_0_i_14_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    SERIAL_CLOCK_INST_0_i_15
+       (.I0(index_reg[7]),
+        .I1(index_reg[6]),
+        .I2(index_reg[5]),
+        .I3(index_reg[4]),
+        .O(SERIAL_CLOCK_INST_0_i_15_n_0));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    SERIAL_CLOCK_INST_0_i_16
+       (.I0(index_reg[28]),
+        .I1(index_reg[29]),
+        .I2(index_reg[31]),
+        .I3(index_reg[30]),
+        .O(SERIAL_CLOCK_INST_0_i_16_n_0));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    SERIAL_CLOCK_INST_0_i_17
+       (.I0(index_reg[20]),
+        .I1(index_reg[21]),
+        .I2(index_reg[22]),
+        .I3(index_reg[23]),
+        .O(SERIAL_CLOCK_INST_0_i_17_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    SERIAL_CLOCK_INST_0_i_2
+       (.I0(slv_reg1[27]),
+        .I1(slv_reg1[26]),
+        .I2(slv_reg1[25]),
+        .I3(slv_reg1[24]),
+        .I4(SERIAL_CLOCK_INST_0_i_8_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    SERIAL_CLOCK_INST_0_i_3
+       (.I0(slv_reg1[19]),
+        .I1(slv_reg1[18]),
+        .I2(slv_reg1[17]),
+        .I3(slv_reg1[16]),
+        .I4(SERIAL_CLOCK_INST_0_i_9_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_3_n_0));
+  LUT4 #(
+    .INIT(16'h0008)) 
+    SERIAL_CLOCK_INST_0_i_4
+       (.I0(SERIAL_CLOCK_INST_0_i_10_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_11_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_12_n_0),
+        .I3(SERIAL_CLOCK_INST_0_i_13_n_0),
+        .O(SERIAL_CLOCK_INST_0_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    SERIAL_CLOCK_INST_0_i_5
+       (.I0(slv_reg1[6]),
+        .I1(slv_reg1[5]),
+        .I2(slv_reg1[4]),
+        .I3(slv_reg1[3]),
+        .O(SERIAL_CLOCK_INST_0_i_5_n_0));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    SERIAL_CLOCK_INST_0_i_6
+       (.I0(slv_reg1[10]),
+        .I1(slv_reg1[9]),
+        .I2(slv_reg1[8]),
+        .I3(slv_reg1[7]),
+        .O(SERIAL_CLOCK_INST_0_i_6_n_0));
+  LUT6 #(
+    .INIT(64'h0000000100000000)) 
+    SERIAL_CLOCK_INST_0_i_7
+       (.I0(slv_reg1[11]),
+        .I1(slv_reg1[12]),
+        .I2(slv_reg1[13]),
+        .I3(slv_reg1[14]),
+        .I4(slv_reg1[15]),
+        .I5(s00_axi_aresetn),
+        .O(SERIAL_CLOCK_INST_0_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    SERIAL_CLOCK_INST_0_i_8
+       (.I0(slv_reg1[28]),
+        .I1(slv_reg1[29]),
+        .I2(slv_reg1[31]),
+        .I3(slv_reg1[30]),
+        .O(SERIAL_CLOCK_INST_0_i_8_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    SERIAL_CLOCK_INST_0_i_9
+       (.I0(slv_reg1[20]),
+        .I1(slv_reg1[21]),
+        .I2(slv_reg1[22]),
+        .I3(slv_reg1[23]),
+        .O(SERIAL_CLOCK_INST_0_i_9_n_0));
   LUT6 #(
     .INIT(64'hBFFF8CCC8CCC8CCC)) 
     aw_en_i_1
@@ -840,6 +957,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     axi_awready_i_1
        (.I0(s00_axi_aresetn),
         .O(axi_awready_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_awready_i_2
@@ -847,20 +965,20 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(s00_axi_awvalid),
         .I2(aw_en_reg_n_0),
         .I3(S_AXI_AWREADY),
-        .O(axi_awready0));
+        .O(axi_awready_i_2_n_0));
   FDRE axi_awready_reg
        (.C(s00_axi_aclk),
         .CE(1'b1),
-        .D(axi_awready0),
+        .D(axi_awready_i_2_n_0),
         .Q(S_AXI_AWREADY),
         .R(axi_awready_i_1_n_0));
   LUT6 #(
     .INIT(64'h0000FFFF80008000)) 
     axi_bvalid_i_1
        (.I0(s00_axi_wvalid),
-        .I1(S_AXI_AWREADY),
-        .I2(S_AXI_WREADY),
-        .I3(s00_axi_awvalid),
+        .I1(s00_axi_awvalid),
+        .I2(S_AXI_AWREADY),
+        .I3(S_AXI_WREADY),
         .I4(s00_axi_bready),
         .I5(s00_axi_bvalid),
         .O(axi_bvalid_i_1_n_0));
@@ -1092,8 +1210,8 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT3 #(
     .INIT(8'h08)) 
     \axi_rdata[31]_i_1 
-       (.I0(S_AXI_ARREADY),
-        .I1(s00_axi_arvalid),
+       (.I0(s00_axi_arvalid),
+        .I1(S_AXI_ARREADY),
         .I2(s00_axi_rvalid),
         .O(slv_reg_rden));
   LUT5 #(
@@ -1369,8 +1487,8 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h08F8)) 
     axi_rvalid_i_1
-       (.I0(s00_axi_arvalid),
-        .I1(S_AXI_ARREADY),
+       (.I0(S_AXI_ARREADY),
+        .I1(s00_axi_arvalid),
         .I2(s00_axi_rvalid),
         .I3(s00_axi_rready),
         .O(axi_rvalid_i_1_n_0));
@@ -1380,14 +1498,13 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .D(axi_rvalid_i_1_n_0),
         .Q(s00_axi_rvalid),
         .R(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
-    .INIT(16'h0080)) 
+    .INIT(16'h0800)) 
     axi_wready_i_1
        (.I0(s00_axi_wvalid),
         .I1(s00_axi_awvalid),
-        .I2(aw_en_reg_n_0),
-        .I3(S_AXI_WREADY),
+        .I2(S_AXI_WREADY),
+        .I3(aw_en_reg_n_0),
         .O(axi_wready0));
   FDRE axi_wready_reg
        (.C(s00_axi_aclk),
@@ -1399,9 +1516,9 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
        (.CI(1'b0),
         .CO({clk_div0_carry_n_0,clk_div0_carry_n_1,clk_div0_carry_n_2,clk_div0_carry_n_3}),
         .CYINIT(1'b1),
-        .DI({clk_div_reg[7],1'b0,clk_div0_carry_i_1_n_0,clk_div0_carry_i_2_n_0}),
+        .DI({clk_div0_carry_i_1_n_0,1'b0,clk_div0_carry_i_2_n_0,clk_div0_carry_i_3_n_0}),
         .O(NLW_clk_div0_carry_O_UNCONNECTED[3:0]),
-        .S({clk_div0_carry_i_3_n_0,clk_div0_carry_i_4_n_0,clk_div0_carry_i_5_n_0,clk_div0_carry_i_6_n_0}));
+        .S({clk_div0_carry_i_4_n_0,clk_div0_carry_i_5_n_0,clk_div0_carry_i_6_n_0,clk_div0_carry_i_7_n_0}));
   CARRY4 clk_div0_carry__0
        (.CI(clk_div0_carry_n_0),
         .CO({clk_div0_carry__0_n_0,clk_div0_carry__0_n_1,clk_div0_carry__0_n_2,clk_div0_carry__0_n_3}),
@@ -1570,44 +1687,52 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT2 #(
     .INIT(4'hE)) 
     clk_div0_carry_i_1
-       (.I0(clk_div_reg[2]),
-        .I1(clk_div_reg[3]),
-        .O(clk_div0_carry_i_1_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
-    clk_div0_carry_i_2
-       (.I0(clk_div_reg[0]),
-        .I1(clk_div_reg[1]),
-        .O(clk_div0_carry_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    clk_div0_carry_i_3
        (.I0(clk_div_reg[6]),
         .I1(clk_div_reg[7]),
-        .O(clk_div0_carry_i_3_n_0));
+        .O(clk_div0_carry_i_1_n_0));
   LUT2 #(
     .INIT(4'h8)) 
+    clk_div0_carry_i_2
+       (.I0(clk_div_reg[2]),
+        .I1(clk_div_reg[3]),
+        .O(clk_div0_carry_i_2_n_0));
+  LUT2 #(
+    .INIT(4'hE)) 
+    clk_div0_carry_i_3
+       (.I0(clk_div_reg[0]),
+        .I1(clk_div_reg[1]),
+        .O(clk_div0_carry_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h1)) 
     clk_div0_carry_i_4
-       (.I0(clk_div_reg[4]),
-        .I1(clk_div_reg[5]),
+       (.I0(clk_div_reg[7]),
+        .I1(clk_div_reg[6]),
         .O(clk_div0_carry_i_4_n_0));
   LUT2 #(
-    .INIT(4'h1)) 
+    .INIT(4'h8)) 
     clk_div0_carry_i_5
-       (.I0(clk_div_reg[3]),
-        .I1(clk_div_reg[2]),
+       (.I0(clk_div_reg[4]),
+        .I1(clk_div_reg[5]),
         .O(clk_div0_carry_i_5_n_0));
   LUT2 #(
-    .INIT(4'h1)) 
+    .INIT(4'h2)) 
     clk_div0_carry_i_6
-       (.I0(clk_div_reg[1]),
-        .I1(clk_div_reg[0]),
+       (.I0(clk_div_reg[3]),
+        .I1(clk_div_reg[2]),
         .O(clk_div0_carry_i_6_n_0));
   LUT2 #(
-    .INIT(4'hB)) 
+    .INIT(4'h1)) 
+    clk_div0_carry_i_7
+       (.I0(clk_div_reg[1]),
+        .I1(clk_div_reg[0]),
+        .O(clk_div0_carry_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFFD)) 
     \clk_div[0]_i_1 
-       (.I0(clk_div0_carry__2_n_0),
-        .I1(s00_axi_aresetn),
+       (.I0(SERIAL_CLOCK_INST_0_i_1_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_2_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_3_n_0),
+        .I3(clk_div0_carry__2_n_0),
         .O(\clk_div[0]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -1927,23 +2052,23 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .Q(clk_div_reg[9]),
         .R(\clk_div[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFBFFFFFF08000000)) 
+    .INIT(64'hFFFFFBFF00000800)) 
     \data_temp[0]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[1]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[0]),
         .O(\data_temp[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFF80000000)) 
+    .INIT(64'hFFFFBFFF00008000)) 
     \data_temp[1]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[1]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[1]),
         .O(\data_temp[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair17" *) 
@@ -1954,23 +2079,23 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(index_reg[2]),
         .O(\data_temp[1]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFBFFFFFF08000000)) 
+    .INIT(64'hFFFFFBFF00000800)) 
     \data_temp[2]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[3]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[2]),
         .O(\data_temp[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFF80000000)) 
+    .INIT(64'hFFFFBFFF00008000)) 
     \data_temp[3]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[3]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[3]),
         .O(\data_temp[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair17" *) 
@@ -1981,23 +2106,23 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(index_reg[2]),
         .O(\data_temp[3]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFBFFFFFF08000000)) 
+    .INIT(64'hFFFFFBFF00000800)) 
     \data_temp[4]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[5]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[4]),
         .O(\data_temp[4]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFF80000000)) 
+    .INIT(64'hFFFFBFFF00008000)) 
     \data_temp[5]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[5]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[5]),
         .O(\data_temp[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
@@ -2008,35 +2133,69 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(index_reg[1]),
         .O(\data_temp[5]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFBFFFFFF08000000)) 
+    .INIT(64'hFFFFFBFF00000800)) 
     \data_temp[6]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[7]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[6]),
         .O(\data_temp[6]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFF80000000)) 
+    .INIT(64'hFFFFBFFF00008000)) 
     \data_temp[7]_i_1 
        (.I0(SERIAL_DATA),
         .I1(\data_temp[7]_i_2_n_0 ),
         .I2(index_reg[0]),
         .I3(\data_temp[7]_i_3_n_0 ),
-        .I4(index),
+        .I4(\data_temp[7]_i_4_n_0 ),
         .I5(data_temp[7]),
         .O(\data_temp[7]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \data_temp[7]_i_10 
+       (.I0(index_reg[21]),
+        .I1(index_reg[20]),
+        .I2(index_reg[19]),
+        .I3(index_reg[18]),
+        .O(\data_temp[7]_i_10_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \data_temp[7]_i_11 
+       (.I0(index_reg[25]),
+        .I1(index_reg[24]),
+        .I2(index_reg[23]),
+        .I3(index_reg[22]),
+        .O(\data_temp[7]_i_11_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000001)) 
-    \data_temp[7]_i_10 
+    \data_temp[7]_i_12 
        (.I0(index_reg[26]),
         .I1(index_reg[27]),
         .I2(index_reg[28]),
         .I3(index_reg[29]),
         .I4(index_reg[31]),
         .I5(index_reg[30]),
-        .O(\data_temp[7]_i_10_n_0 ));
+        .O(\data_temp[7]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \data_temp[7]_i_13 
+       (.I0(slv_reg1[16]),
+        .I1(slv_reg1[17]),
+        .I2(slv_reg1[18]),
+        .I3(slv_reg1[19]),
+        .O(\data_temp[7]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \data_temp[7]_i_14 
+       (.I0(slv_reg1[24]),
+        .I1(slv_reg1[25]),
+        .I2(slv_reg1[26]),
+        .I3(slv_reg1[27]),
+        .O(\data_temp[7]_i_14_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'h8)) 
@@ -2044,67 +2203,68 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
        (.I0(index_reg[1]),
         .I1(index_reg[2]),
         .O(\data_temp[7]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h00040000)) 
+  LUT6 #(
+    .INIT(64'h0040004000000040)) 
     \data_temp[7]_i_3 
-       (.I0(\data_temp[7]_i_4_n_0 ),
-        .I1(\data_temp[7]_i_5_n_0 ),
-        .I2(\position[7]_i_6_n_0 ),
-        .I3(\position[7]_i_5_n_0 ),
-        .I4(\position[7]_i_4_n_0 ),
+       (.I0(\data_temp[7]_i_5_n_0 ),
+        .I1(\data_temp[7]_i_6_n_0 ),
+        .I2(SERIAL_CLOCK_INST_0_i_1_n_0),
+        .I3(\data_temp[7]_i_7_n_0 ),
+        .I4(\position[7]_i_5_n_0 ),
+        .I5(\position[7]_i_6_n_0 ),
         .O(\data_temp[7]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \data_temp[7]_i_4 
+       (.I0(state__0[1]),
+        .I1(state__0[2]),
+        .I2(state__0[0]),
+        .O(\data_temp[7]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \data_temp[7]_i_4 
-       (.I0(\data_temp[7]_i_6_n_0 ),
+    \data_temp[7]_i_5 
+       (.I0(\data_temp[7]_i_8_n_0 ),
         .I1(index_reg[11]),
         .I2(index_reg[10]),
         .I3(index_reg[9]),
         .I4(index_reg[8]),
-        .I5(\data_temp[7]_i_7_n_0 ),
-        .O(\data_temp[7]_i_4_n_0 ));
+        .I5(\data_temp[7]_i_9_n_0 ),
+        .O(\data_temp[7]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h0100000000000000)) 
-    \data_temp[7]_i_5 
+    \data_temp[7]_i_6 
        (.I0(index_reg[17]),
         .I1(index_reg[16]),
         .I2(index_reg[3]),
-        .I3(\data_temp[7]_i_8_n_0 ),
-        .I4(\data_temp[7]_i_9_n_0 ),
-        .I5(\data_temp[7]_i_10_n_0 ),
-        .O(\data_temp[7]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \data_temp[7]_i_6 
-       (.I0(index_reg[7]),
-        .I1(index_reg[6]),
-        .I2(index_reg[5]),
-        .I3(index_reg[4]),
+        .I3(\data_temp[7]_i_10_n_0 ),
+        .I4(\data_temp[7]_i_11_n_0 ),
+        .I5(\data_temp[7]_i_12_n_0 ),
         .O(\data_temp[7]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \data_temp[7]_i_7 
+       (.I0(SERIAL_CLOCK_INST_0_i_9_n_0),
+        .I1(\data_temp[7]_i_13_n_0 ),
+        .I2(SERIAL_CLOCK_INST_0_i_8_n_0),
+        .I3(\data_temp[7]_i_14_n_0 ),
+        .O(\data_temp[7]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \data_temp[7]_i_8 
+       (.I0(index_reg[7]),
+        .I1(index_reg[6]),
+        .I2(index_reg[5]),
+        .I3(index_reg[4]),
+        .O(\data_temp[7]_i_8_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \data_temp[7]_i_9 
        (.I0(index_reg[15]),
         .I1(index_reg[14]),
         .I2(index_reg[13]),
         .I3(index_reg[12]),
-        .O(\data_temp[7]_i_7_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \data_temp[7]_i_8 
-       (.I0(index_reg[21]),
-        .I1(index_reg[20]),
-        .I2(index_reg[19]),
-        .I3(index_reg[18]),
-        .O(\data_temp[7]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \data_temp[7]_i_9 
-       (.I0(index_reg[25]),
-        .I1(index_reg[24]),
-        .I2(index_reg[23]),
-        .I3(index_reg[22]),
         .O(\data_temp[7]_i_9_n_0 ));
   FDRE #(
     .INIT(1'b0),
@@ -2181,88 +2341,38 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT3 #(
     .INIT(8'hEF)) 
     \index[0]_i_1 
-       (.I0(\position[7]_i_6_n_0 ),
-        .I1(\position[7]_i_5_n_0 ),
-        .I2(\position[7]_i_4_n_0 ),
+       (.I0(SERIAL_CLOCK_INST_0_i_3_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_2_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_1_n_0),
         .O(\index[0]_i_1_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \index[0]_i_10 
-       (.I0(index_reg[1]),
-        .O(\index[0]_i_10_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \index[0]_i_11 
-       (.I0(index_reg[0]),
-        .O(\index[0]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
-    .INIT(16'h7FFF)) 
-    \index[0]_i_12 
-       (.I0(index_reg[28]),
-        .I1(index_reg[29]),
-        .I2(index_reg[31]),
-        .I3(index_reg[30]),
-        .O(\index[0]_i_12_n_0 ));
-  LUT5 #(
-    .INIT(32'h54555555)) 
+    .INIT(16'h0001)) 
     \index[0]_i_2 
-       (.I0(\position[7]_i_8_n_0 ),
-        .I1(\index[0]_i_4_n_0 ),
-        .I2(\index[0]_i_5_n_0 ),
-        .I3(\index[0]_i_6_n_0 ),
-        .I4(\index[0]_i_7_n_0 ),
+       (.I0(state__0[0]),
+        .I1(state__0[2]),
+        .I2(state__0[1]),
+        .I3(SERIAL_CLOCK_INST_0_i_4_n_0),
         .O(index));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'hFFFF7FFF)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     \index[0]_i_4 
-       (.I0(index_reg[19]),
-        .I1(index_reg[18]),
-        .I2(index_reg[17]),
-        .I3(index_reg[16]),
-        .I4(\position[7]_i_25_n_0 ),
-        .O(\index[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'hFFFF7FFF)) 
-    \index[0]_i_5 
-       (.I0(index_reg[27]),
-        .I1(index_reg[26]),
-        .I2(index_reg[25]),
-        .I3(index_reg[24]),
-        .I4(\index[0]_i_12_n_0 ),
-        .O(\index[0]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \index[0]_i_6 
-       (.I0(index_reg[2]),
-        .I1(index_reg[3]),
-        .I2(index_reg[0]),
-        .I3(index_reg[1]),
-        .I4(\position[7]_i_21_n_0 ),
-        .O(\index[0]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \index[0]_i_7 
-       (.I0(index_reg[12]),
-        .I1(index_reg[13]),
-        .I2(index_reg[14]),
-        .I3(index_reg[15]),
-        .I4(\position[7]_i_23_n_0 ),
-        .O(\index[0]_i_7_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \index[0]_i_8 
        (.I0(index_reg[3]),
-        .O(\index[0]_i_8_n_0 ));
+        .O(\index[0]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \index[0]_i_9 
+    \index[0]_i_5 
        (.I0(index_reg[2]),
-        .O(\index[0]_i_9_n_0 ));
+        .O(\index[0]_i_5_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \index[0]_i_6 
+       (.I0(index_reg[1]),
+        .O(\index[0]_i_6_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \index[0]_i_7 
+       (.I0(index_reg[0]),
+        .O(\index[0]_i_7_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \index[12]_i_2 
@@ -2418,7 +2528,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .CYINIT(1'b0),
         .DI({1'b1,1'b1,1'b1,1'b1}),
         .O({\index_reg[0]_i_3_n_4 ,\index_reg[0]_i_3_n_5 ,\index_reg[0]_i_3_n_6 ,\index_reg[0]_i_3_n_7 }),
-        .S({\index[0]_i_8_n_0 ,\index[0]_i_9_n_0 ,\index[0]_i_10_n_0 ,\index[0]_i_11_n_0 }));
+        .S({\index[0]_i_4_n_0 ,\index[0]_i_5_n_0 ,\index[0]_i_6_n_0 ,\index[0]_i_7_n_0 }));
   FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -2747,13 +2857,13 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .D(\index_reg[8]_i_1_n_6 ),
         .Q(index_reg[9]),
         .R(\index[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
     .INIT(32'h55575554)) 
     \position[0]_i_1 
        (.I0(position[0]),
-        .I1(state__0[2]),
-        .I2(state__0[1]),
+        .I1(state__0[1]),
+        .I2(state__0[2]),
         .I3(state__0[0]),
         .I4(data_temp[0]),
         .O(\position[0]_i_1_n_0 ));
@@ -2761,11 +2871,11 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     .INIT(64'hFFF2F2FF22F2F222)) 
     \position[1]_i_1 
        (.I0(data_temp[1]),
-        .I1(\position[7]_i_8_n_0 ),
+        .I1(\data_temp[7]_i_4_n_0 ),
         .I2(\position[6]_i_2_n_0 ),
         .I3(position[0]),
         .I4(position[1]),
-        .I5(\position[7]_i_15_n_0 ),
+        .I5(\position[7]_i_11_n_0 ),
         .O(\position[1]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFFEEAAFAEEEEAAA)) 
@@ -2775,7 +2885,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I2(position[0]),
         .I3(position[1]),
         .I4(position[2]),
-        .I5(\position[7]_i_15_n_0 ),
+        .I5(\position[7]_i_11_n_0 ),
         .O(\position[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
@@ -2783,20 +2893,20 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     \position[2]_i_2 
        (.I0(data_temp[2]),
         .I1(state__0[0]),
-        .I2(state__0[1]),
-        .I3(state__0[2]),
+        .I2(state__0[2]),
+        .I3(state__0[1]),
         .O(\position[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFF22F2F222)) 
     \position[3]_i_1 
        (.I0(data_temp[3]),
-        .I1(\position[7]_i_8_n_0 ),
+        .I1(\data_temp[7]_i_4_n_0 ),
         .I2(\position[6]_i_2_n_0 ),
         .I3(position[3]),
         .I4(\position[3]_i_2_n_0 ),
         .I5(\position[3]_i_3_n_0 ),
         .O(\position[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \position[3]_i_2 
@@ -2804,11 +2914,11 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(position[0]),
         .I2(position[1]),
         .O(\position[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hAAA80002)) 
     \position[3]_i_3 
-       (.I0(\position[7]_i_15_n_0 ),
+       (.I0(\position[7]_i_11_n_0 ),
         .I1(position[2]),
         .I2(position[1]),
         .I3(position[0]),
@@ -2818,11 +2928,11 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     .INIT(64'hFFF2F2FFF2F2F2F2)) 
     \position[4]_i_1 
        (.I0(data_temp[4]),
-        .I1(\position[7]_i_8_n_0 ),
+        .I1(\data_temp[7]_i_4_n_0 ),
         .I2(\position[4]_i_2_n_0 ),
         .I3(\position[5]_i_3_n_0 ),
         .I4(position[4]),
-        .I5(\position[7]_i_15_n_0 ),
+        .I5(\position[7]_i_11_n_0 ),
         .O(\position[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h2888888888888888)) 
@@ -2841,7 +2951,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(position[5]),
         .I2(\position[5]_i_3_n_0 ),
         .I3(position[4]),
-        .I4(\position[7]_i_15_n_0 ),
+        .I4(\position[7]_i_11_n_0 ),
         .O(\position[5]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h60FF6060)) 
@@ -2849,10 +2959,10 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
        (.I0(\position[5]_i_4_n_0 ),
         .I1(position[5]),
         .I2(\position[6]_i_2_n_0 ),
-        .I3(\position[7]_i_8_n_0 ),
+        .I3(\data_temp[7]_i_4_n_0 ),
         .I4(data_temp[5]),
         .O(\position[5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \position[5]_i_3 
@@ -2861,7 +2971,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I2(position[0]),
         .I3(position[3]),
         .O(\position[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \position[5]_i_4 
@@ -2875,13 +2985,13 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
     .INIT(64'hFFFFFFFFF22222F2)) 
     \position[6]_i_1 
        (.I0(data_temp[6]),
-        .I1(\position[7]_i_8_n_0 ),
+        .I1(\data_temp[7]_i_4_n_0 ),
         .I2(\position[6]_i_2_n_0 ),
         .I3(position[6]),
         .I4(\position[6]_i_3_n_0 ),
         .I5(\position[6]_i_4_n_0 ),
         .O(\position[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'hAA64)) 
     \position[6]_i_2 
@@ -2907,256 +3017,144 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .I1(state__0[0]),
         .I2(state__0[1]),
         .I3(INC_A),
-        .I4(\position[7]_i_14_n_0 ),
+        .I4(\position[7]_i_10_n_0 ),
         .I5(position[6]),
         .O(\position[6]_i_4_n_0 ));
   LUT4 #(
     .INIT(16'hFFFD)) 
     \position[7]_i_1 
-       (.I0(\position[7]_i_4_n_0 ),
-        .I1(\position[7]_i_5_n_0 ),
-        .I2(\position[7]_i_6_n_0 ),
+       (.I0(SERIAL_CLOCK_INST_0_i_1_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_2_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_3_n_0),
         .I3(INC_Z),
         .O(\position[7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFEFFF)) 
-    \position[7]_i_10 
-       (.I0(\position[7]_i_25_n_0 ),
-        .I1(\position[7]_i_26_n_0 ),
-        .I2(index_reg[28]),
-        .I3(index_reg[29]),
-        .I4(\position[7]_i_27_n_0 ),
-        .I5(\position[7]_i_28_n_0 ),
-        .O(\position[7]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hA010)) 
-    \position[7]_i_11 
-       (.I0(state__0[1]),
-        .I1(state__0[2]),
-        .I2(state__0[0]),
-        .I3(INC_A),
-        .O(\position[7]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT5 #(
-    .INIT(32'hCCCCF100)) 
-    \position[7]_i_12 
-       (.I0(state__0[0]),
-        .I1(INC_A),
-        .I2(INC_B),
-        .I3(state__0[1]),
-        .I4(state__0[2]),
-        .O(\position[7]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'hD200FFFFD200D200)) 
-    \position[7]_i_13 
-       (.I0(position[6]),
-        .I1(\position[6]_i_3_n_0 ),
-        .I2(position[7]),
-        .I3(\position[6]_i_2_n_0 ),
-        .I4(\position[7]_i_8_n_0 ),
-        .I5(data_temp[7]),
-        .O(\position[7]_i_13_n_0 ));
-  LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \position[7]_i_14 
+    \position[7]_i_10 
        (.I0(position[4]),
         .I1(position[2]),
         .I2(position[1]),
         .I3(position[0]),
         .I4(position[3]),
         .I5(position[5]),
-        .O(\position[7]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+        .O(\position[7]_i_10_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h5598)) 
-    \position[7]_i_15 
+    \position[7]_i_11 
        (.I0(INC_A),
         .I1(state__0[1]),
         .I2(state__0[0]),
         .I3(state__0[2]),
-        .O(\position[7]_i_15_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \position[7]_i_16 
-       (.I0(slv_reg1[6]),
-        .I1(slv_reg1[5]),
-        .I2(slv_reg1[4]),
-        .I3(slv_reg1[3]),
-        .O(\position[7]_i_16_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \position[7]_i_17 
-       (.I0(slv_reg1[10]),
-        .I1(slv_reg1[9]),
-        .I2(slv_reg1[8]),
-        .I3(slv_reg1[7]),
-        .O(\position[7]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000100000000)) 
-    \position[7]_i_18 
-       (.I0(slv_reg1[11]),
-        .I1(slv_reg1[12]),
-        .I2(slv_reg1[13]),
-        .I3(slv_reg1[14]),
-        .I4(slv_reg1[15]),
-        .I5(s00_axi_aresetn),
-        .O(\position[7]_i_18_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \position[7]_i_19 
-       (.I0(slv_reg1[28]),
-        .I1(slv_reg1[29]),
-        .I2(slv_reg1[31]),
-        .I3(slv_reg1[30]),
-        .O(\position[7]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFAABA)) 
-    \position[7]_i_2 
-       (.I0(\position[7]_i_7_n_0 ),
-        .I1(\position[7]_i_8_n_0 ),
-        .I2(\position[7]_i_9_n_0 ),
-        .I3(\position[7]_i_10_n_0 ),
-        .I4(\position[7]_i_11_n_0 ),
-        .I5(\position[7]_i_12_n_0 ),
-        .O(\position[7]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \position[7]_i_20 
-       (.I0(slv_reg1[20]),
-        .I1(slv_reg1[21]),
-        .I2(slv_reg1[22]),
-        .I3(slv_reg1[23]),
-        .O(\position[7]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+        .O(\position[7]_i_11_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'h8000)) 
-    \position[7]_i_21 
-       (.I0(index_reg[7]),
-        .I1(index_reg[6]),
-        .I2(index_reg[5]),
-        .I3(index_reg[4]),
-        .O(\position[7]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \position[7]_i_22 
+    \position[7]_i_12 
        (.I0(index_reg[1]),
         .I1(index_reg[0]),
         .I2(index_reg[3]),
         .I3(index_reg[2]),
-        .O(\position[7]_i_22_n_0 ));
+        .O(\position[7]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'h8000)) 
-    \position[7]_i_23 
-       (.I0(index_reg[11]),
-        .I1(index_reg[10]),
-        .I2(index_reg[9]),
-        .I3(index_reg[8]),
-        .O(\position[7]_i_23_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \position[7]_i_24 
+    \position[7]_i_13 
        (.I0(index_reg[15]),
         .I1(index_reg[14]),
         .I2(index_reg[13]),
         .I3(index_reg[12]),
-        .O(\position[7]_i_24_n_0 ));
+        .O(\position[7]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \position[7]_i_25 
-       (.I0(index_reg[20]),
-        .I1(index_reg[21]),
-        .I2(index_reg[22]),
-        .I3(index_reg[23]),
-        .O(\position[7]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \position[7]_i_26 
+    \position[7]_i_14 
        (.I0(index_reg[16]),
         .I1(index_reg[17]),
         .I2(index_reg[18]),
         .I3(index_reg[19]),
-        .O(\position[7]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \position[7]_i_27 
-       (.I0(index_reg[30]),
-        .I1(index_reg[31]),
-        .O(\position[7]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+        .O(\position[7]_i_14_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \position[7]_i_28 
+    \position[7]_i_15 
        (.I0(index_reg[24]),
         .I1(index_reg[25]),
         .I2(index_reg[26]),
         .I3(index_reg[27]),
-        .O(\position[7]_i_28_n_0 ));
+        .O(\position[7]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFAABA)) 
+    \position[7]_i_2 
+       (.I0(\position[7]_i_4_n_0 ),
+        .I1(\data_temp[7]_i_4_n_0 ),
+        .I2(\position[7]_i_5_n_0 ),
+        .I3(\position[7]_i_6_n_0 ),
+        .I4(\position[7]_i_7_n_0 ),
+        .I5(\position[7]_i_8_n_0 ),
+        .O(\position[7]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hFEABAAAA)) 
     \position[7]_i_3 
-       (.I0(\position[7]_i_13_n_0 ),
+       (.I0(\position[7]_i_9_n_0 ),
         .I1(position[6]),
-        .I2(\position[7]_i_14_n_0 ),
+        .I2(\position[7]_i_10_n_0 ),
         .I3(position[7]),
-        .I4(\position[7]_i_15_n_0 ),
+        .I4(\position[7]_i_11_n_0 ),
         .O(\position[7]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    \position[7]_i_4 
-       (.I0(slv_reg1[2]),
-        .I1(slv_reg1[1]),
-        .I2(slv_reg1[0]),
-        .I3(\position[7]_i_16_n_0 ),
-        .I4(\position[7]_i_17_n_0 ),
-        .I5(\position[7]_i_18_n_0 ),
-        .O(\position[7]_i_4_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \position[7]_i_5 
-       (.I0(slv_reg1[27]),
-        .I1(slv_reg1[26]),
-        .I2(slv_reg1[25]),
-        .I3(slv_reg1[24]),
-        .I4(\position[7]_i_19_n_0 ),
-        .O(\position[7]_i_5_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \position[7]_i_6 
-       (.I0(slv_reg1[19]),
-        .I1(slv_reg1[18]),
-        .I2(slv_reg1[17]),
-        .I3(slv_reg1[16]),
-        .I4(\position[7]_i_20_n_0 ),
-        .O(\position[7]_i_6_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h00AE)) 
-    \position[7]_i_7 
+    \position[7]_i_4 
        (.I0(state__0[2]),
         .I1(state__0[0]),
         .I2(state__0[1]),
         .I3(INC_B),
-        .O(\position[7]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
-    \position[7]_i_8 
+        .O(\position[7]_i_4_n_0 ));
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \position[7]_i_5 
+       (.I0(SERIAL_CLOCK_INST_0_i_15_n_0),
+        .I1(\position[7]_i_12_n_0 ),
+        .I2(SERIAL_CLOCK_INST_0_i_14_n_0),
+        .I3(\position[7]_i_13_n_0 ),
+        .O(\position[7]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \position[7]_i_6 
+       (.I0(SERIAL_CLOCK_INST_0_i_17_n_0),
+        .I1(\position[7]_i_14_n_0 ),
+        .I2(SERIAL_CLOCK_INST_0_i_16_n_0),
+        .I3(\position[7]_i_15_n_0 ),
+        .O(\position[7]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT4 #(
+    .INIT(16'hC010)) 
+    \position[7]_i_7 
        (.I0(state__0[2]),
         .I1(state__0[1]),
         .I2(state__0[0]),
+        .I3(INC_A),
+        .O(\position[7]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hAAAAF100)) 
+    \position[7]_i_8 
+       (.I0(INC_A),
+        .I1(state__0[0]),
+        .I2(INC_B),
+        .I3(state__0[1]),
+        .I4(state__0[2]),
         .O(\position[7]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'h8000)) 
+  LUT6 #(
+    .INIT(64'hD200FFFFD200D200)) 
     \position[7]_i_9 
-       (.I0(\position[7]_i_21_n_0 ),
-        .I1(\position[7]_i_22_n_0 ),
-        .I2(\position[7]_i_23_n_0 ),
-        .I3(\position[7]_i_24_n_0 ),
+       (.I0(position[6]),
+        .I1(\position[6]_i_3_n_0 ),
+        .I2(position[7]),
+        .I3(\position[6]_i_2_n_0 ),
+        .I4(\data_temp[7]_i_4_n_0 ),
+        .I5(data_temp[7]),
         .O(\position[7]_i_9_n_0 ));
   FDRE #(
     .INIT(1'b0),
@@ -3233,7 +3231,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg1[15]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[1]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3241,7 +3239,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg1[23]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[2]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3249,24 +3247,24 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg1[31]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[3]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
         .O(p_1_in[24]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg1[31]_i_2 
-       (.I0(s00_axi_wvalid),
+       (.I0(S_AXI_WREADY),
         .I1(S_AXI_AWREADY),
-        .I2(S_AXI_WREADY),
+        .I2(s00_axi_wvalid),
         .I3(s00_axi_awvalid),
-        .O(slv_reg_wren__2));
+        .O(slv_reg_wren__0));
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg1[7]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[0]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3466,7 +3464,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg2[15]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(p_0_in[1]),
         .I2(s00_axi_wstrb[1]),
         .I3(p_0_in[0]),
@@ -3474,7 +3472,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg2[23]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(p_0_in[1]),
         .I2(s00_axi_wstrb[2]),
         .I3(p_0_in[0]),
@@ -3482,7 +3480,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg2[31]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(p_0_in[1]),
         .I2(s00_axi_wstrb[3]),
         .I3(p_0_in[0]),
@@ -3490,7 +3488,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h0080)) 
     \slv_reg2[7]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(p_0_in[1]),
         .I2(s00_axi_wstrb[0]),
         .I3(p_0_in[0]),
@@ -3690,7 +3688,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg3[15]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[1]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3698,7 +3696,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg3[23]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[2]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3706,7 +3704,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg3[31]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[3]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3714,7 +3712,7 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg3[7]_i_1 
-       (.I0(slv_reg_wren__2),
+       (.I0(slv_reg_wren__0),
         .I1(s00_axi_wstrb[0]),
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
@@ -3911,12 +3909,14 @@ module ElectricGoKart_Encoder_Driver_0_0_Encoder_Driver_v1_0_S00_AXI
         .D(s00_axi_wdata[9]),
         .Q(slv_reg3[9]),
         .R(axi_awready_i_1_n_0));
-  LUT3 #(
-    .INIT(8'h2D)) 
+  LUT5 #(
+    .INIT(32'h0002FFFD)) 
     temp_clock_i_1
-       (.I0(s00_axi_aresetn),
-        .I1(clk_div0_carry__2_n_0),
-        .I2(temp_clock),
+       (.I0(SERIAL_CLOCK_INST_0_i_1_n_0),
+        .I1(SERIAL_CLOCK_INST_0_i_2_n_0),
+        .I2(SERIAL_CLOCK_INST_0_i_3_n_0),
+        .I3(clk_div0_carry__2_n_0),
+        .I4(temp_clock),
         .O(temp_clock_i_1_n_0));
   FDRE #(
     .INIT(1'b1)) 

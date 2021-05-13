@@ -183,6 +183,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: Encoder_Driver_0, and set properties
   set Encoder_Driver_0 [ create_bd_cell -type ip -vlnv user.org:user:Encoder_Driver:1.0 Encoder_Driver_0 ]
+  set_property -dict [ list \
+   CONFIG.CLOCK_SCALER {56} \
+ ] $Encoder_Driver_0
 
   # Create instance: PWM_Generator_0, and set properties
   set PWM_Generator_0 [ create_bd_cell -type ip -vlnv user.org:user:PWM_Generator:1.0 PWM_Generator_0 ]

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date                      : Tue May 11 12:12:18 2021
+| Date                      : Thu May 13 09:59:21 2021
 | Host                      : sebastian-ZBook running 64-bit Linux Mint 20
 | Command                   : report_io -file ElectricGoKart_wrapper_io_placed.rpt
 | Design                    : ElectricGoKart_wrapper

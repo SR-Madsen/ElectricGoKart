@@ -42,7 +42,7 @@ void sensorProcessing() {
 	getPhaseBRaw(&phaseB.raw);
 
 	// Remove offset from all analog values
-	// TODO: Add digital filtering here if necessary
+	// TODO: Add digital filtering here if necessary.
 	battery_voltage.flt = battery_voltage.raw - battery_voltage.offset;
 	torque.flt = torque.raw - torque.offset;
 	phaseA.flt = phaseA.raw - phaseA.offset;
@@ -67,6 +67,10 @@ void sensorProcessing() {
 	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseC.phys = -phaseA.phys - phaseB.phys;
 
+	currentsABC.arg1 = phaseA.phys;
+	currentsABC.arg2 = phaseB.phys;
+	currentsABC.arg3 = phaseC.phys;
+
 
 	// Read the motor's position from encoder driver
 	readPosition(&position.pos_raw);
@@ -76,6 +80,7 @@ void sensorProcessing() {
 
 
 void fieldOrientedControl() {
+	// Fault detection
 	if (motor_errors.motor_overtemp | motor_errors.overvoltage | motor_errors.undervoltage |
 		motor_errors.torque_disc | motor_errors.phaseA_overcurr | motor_errors.phaseB_overcurr) {
 		statemachine.state = STATE_FAULT;
@@ -100,7 +105,7 @@ void fieldOrientedControl() {
 				phaseB_samples[calib_counter] = phaseB.raw - (TWELVE_BIT_MAX >> 1);
 				calib_counter++;
 			} else {
-				u32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
+				s32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
 				for (u16 i = 0; i < calib_counter; i++) {
 					acc_v += voltage_samples[i];
 					//acc_t += torque_samples[i];
@@ -115,6 +120,7 @@ void fieldOrientedControl() {
 				calib_done = 1;
 			}
 
+			// After calibration, precharge the DC-link capacitors for 600 ms.
 			if (calib_done) {
 				enablePrecharge();
 				if (precharge_counter++ > SIX_TENTHS_SECOND) {
@@ -131,24 +137,40 @@ void fieldOrientedControl() {
 			break;
 
 		case STATE_RUN: // This state performs the Field-Oriented Control with PI controllers, as well as SVPWM
-			// TODO: Place FOC here
-			// Check the main relay - although it may not be open the first few times.
-			// Consider adding enable/disable for the VHDL modules
+			// TODO: Check the main relay - although it may not be open the first few times.
 
-			// Park/Clarke transformation of Ia-b-c + ThEl
+			// Transform the measured currents to the dq plane.
+			clarkeTransform(&currentsABC, &currentsAlphBe);
+			parkTransform(&currentsAlphBe, position.th_el, &currentsDQ);
 
-			// PI Controller with torque.phys and 0.
 
-			// Inverse Clarke/Park transformation of Vd-q + ThEl
+			// Limit PI controller output to newest battery voltage measurement, then calculate output
+			qController.limit = battery_voltage.phys;
+			dController.limit = battery_voltage.phys;
 
-			// Space Vector Modulation into duty cycles for PWM generator
+			err_q = torque.phys - currentsDQ.arg2;
+			err_d = -currentsDQ.arg1;
+			newSample(&qController, err_q, &voltagesDQ.arg1);
+			newSample(&dController, err_d, &voltagesDQ.arg2);
+
+
+			// Transform the calculated dq voltages to three phase voltages.
+			invParkTransform(&voltagesDQ, position.th_el, &voltagesAlphBe);
+			invClarkeTransform(&voltagesAlphBe, &voltagesABC);
+
+
+			// Perform Space Vector Modulation and set the PWM generator OCV values
+			spaceVectorModulation(&voltagesABC, battery_voltage.phys, &ocvvalues);
+			setDutyCycles(&ocvvalues);
+
 
 			if (!statemachine.switches) {
 				statemachine.state = STATE_INIT;
 			}
 			break;
 
-		case STATE_FAULT: // If any fault is detected, the duty cycle is set to 0 and a clear signal is awaited.
+		case STATE_FAULT: // If any fault is detected, the car is stopped and a clear signal is awaited.
+			disableMainRelay();
 			ocvvalues.ocv1 = 0;
 			ocvvalues.ocv2 = 0;
 			ocvvalues.ocv3 = 0;
@@ -171,13 +193,255 @@ void fieldOrientedControl() {
 	}
 }
 
+const char* states_uart[] = {"INIT\0", "READY\0", "CALIB\0", "RUN\0", "FAULT\0"};
+u8 uart_state = UART_MAIN;
+u16 whole, comma;
+
+u8 set_value[] = {0, 0, 0, 0};
+u8 read_bytes = 0;
+u8 set_variable = 0;
 
 void communicationTask() {
-	// TODO: Run this in the main loop, which will just do its thing all the time.
-	// The remaining tasks will only be run when the ADC interrupts.
+
+	u8 uart_cmd;
+	uart_cmd = uartReceiveByte();
+	if ((uart_cmd > 47) && (uart_cmd < 58)) {
+		uart_cmd -= 48;
+	}
+
+	switch (uart_state) {
+	case UART_MAIN:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("This is the main menu for the live-view of the Zybo go-kart inverter.\r\n");
+		xil_printf("Press 1 to access State Machine screen.\r\n");
+		xil_printf("Press 2 to access Motor Error screen.\r\n");
+		xil_printf("Press 3 to access PI Controller screen.\r\n");
+		xil_printf("Press 4 to access Sensor Values screen.\r\n");
+		xil_printf("Press 5 to access Duty Cycle screen.\r\n");
+
+		if ((uart_cmd > 0) && (uart_cmd < 6)) {
+			uart_state = uart_cmd;
+		}
+		break;
+
+
+	case UART_SMACH:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("State Machine\r\n\r\n");
+		xil_printf("The current state is: %s\r\n", states_uart[statemachine.state]);
+		xil_printf("The calib_done variable is: %d\r\n\r\n", calib_done);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+
+
+	case UART_ERROR:
+		xil_printf("%c[2J", 27);
+		xil_printf("Motor Errors\r\n\r\n");
+		xil_printf("Motor overtemperature: %d\r\n", motor_errors.motor_overtemp);
+		xil_printf("Battery overvoltage: %d\r\n", motor_errors.overvoltage);
+		xil_printf("Battery undervoltage: %d\r\n", motor_errors.undervoltage);
+		xil_printf("Torque disconnected: %d\r\n", motor_errors.torque_disc);
+		xil_printf("Phase A overcurrent: %d\r\n", motor_errors.phaseA_overcurr);
+		xil_printf("Phase B overcurrent: %d\r\n\r\n", motor_errors.phaseB_overcurr);
+
+		xil_printf("Press 1 to clear all errors.\r\n");
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		} else if (uart_cmd == 1) {
+			statemachine.clear_fault = 1;
+		}
+		break;
+
+
+	case UART_PI:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("PI Controller values\r\n\r\n");
+		xil_printf("d-direction controller:\r\n");
+
+		whole = dController.a_0;
+		comma = (dController.a_0 - whole) * 1000;
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+
+		whole = dController.a_1;
+		comma = (dController.a_1 - whole) * 1000;
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+
+		whole = dController.b_1;
+		comma = (dController.b_1 - whole) * 1000;
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+
+		whole = dController.limit;
+		comma = (dController.limit - whole) * 1000;
+		xil_printf("limit: %d.%03d\r\n\r\n", whole, comma);
+
+		xil_printf("q-direction controller:\r\n");
+
+		whole = qController.a_0;
+		comma = (qController.a_0 - whole) * 1000;
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+
+		whole = qController.a_1;
+		comma = (qController.a_1 - whole) * 1000;
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+
+		whole = qController.b_1;
+		comma = (qController.b_1 - whole) * 1000;
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+
+		whole = qController.limit;
+		comma = (qController.limit - whole) * 1000;
+		xil_printf("limit: %d.%03d\r\n\r\n", whole, comma);
+
+		xil_printf("Press 1 to set values for the d-direction controller.\r\n");
+		xil_printf("Press 2 to set values for the q-direction controller.\r\n");
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		} else if (uart_cmd == 1) {
+			uart_state = UART_SET_D;
+		} else if (uart_cmd == 2) {
+			uart_state = UART_SET_Q;
+		}
+		break;
+
+	case UART_SET_D:
+		if ((!read_bytes) && (!set_variable)) {
+			xil_printf("%c[2J", 27); // Clear screen
+			xil_printf("Set d-direction PI Controller Values\r\n\r\n");
+			xil_printf("Write a number for the variable you wish to change, followed by the value (0000 to 9999) it must have.\r\n");
+			xil_printf("1: a0\r\n");
+			xil_printf("2: a1\r\n");
+			xil_printf("3: b1\r\n");
+			xil_printf("4: Limit\r\n");
+
+			xil_printf("Press ESC to return to previous screen.\r\n");
+
+			if (uart_cmd == 27) {
+				uart_state = UART_PI;
+			} else if ((uart_cmd > 0) && (uart_cmd < 5)) {
+				set_variable = uart_cmd;
+			}
+		} else {
+			set_value[read_bytes] = uart_cmd;
+			read_bytes++;
+			if (read_bytes >= 4) {
+				switch (set_variable) {
+				case 1:
+					dController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 2:
+					dController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 3:
+					dController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 4:
+					dController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+				}
+				set_variable = 0;
+				read_bytes = 0;
+				uart_state = UART_PI;
+			}
+		}
+		break;
+
+	case UART_SET_Q:
+		if ((!read_bytes) && (!set_variable)) {
+			xil_printf("%c[2J", 27); // Clear screen
+			xil_printf("Set q-direction PI Controller Values\r\n\r\n");
+			xil_printf("Write a number for the variable you wish to change, followed by the value (0000 to 9999) it must have.\r\n");
+			xil_printf("1: a0\r\n");
+			xil_printf("2: a1\r\n");
+			xil_printf("3: b1\r\n");
+			xil_printf("4: Limit\r\n");
+
+			xil_printf("Press ESC to return to previous screen.\r\n");
+
+			if (uart_cmd == 27) {
+				uart_state = UART_PI;
+			} else if ((uart_cmd > 0) && (uart_cmd < 5)) {
+				set_variable = uart_cmd;
+			}
+		} else {
+			set_value[read_bytes] = uart_cmd;
+			read_bytes++;
+			if (read_bytes >= 4) {
+				switch (set_variable) {
+				case 1:
+					qController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 2:
+					qController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 3:
+					qController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 4:
+					qController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+				}
+				set_variable = 0;
+				read_bytes = 0;
+				uart_state = UART_PI;
+			}
+		}
+		break;
+
+
+	case UART_SENS:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Sensor Values\r\n\r\n");
+
+		whole = battery_voltage.phys;
+		comma = (battery_voltage.phys - whole) * 1000;
+		xil_printf("Battery voltage: %d.%03d V\r\n", whole, comma);
+
+		whole = torque.phys;
+		comma = (torque.phys - whole) * 1000;
+		xil_printf("Target iq: %d.%03d A\r\n", whole, comma);
+
+		whole = phaseA.phys;
+		comma = (phaseA.phys - whole) * 1000;
+		xil_printf("Phase A current: %d.%03d A\r\n", whole, comma);
+
+		whole = phaseB.phys;
+		comma = (phaseB.phys - whole) * 1000;
+		xil_printf("Phase B current: %d.%03d A\r\n", whole, comma);
+
+		xil_printf("Overcurrent switch: %d\r\n", overcurrentswitch);
+		xil_printf("Main relay: %d\r\n", relay);
+		xil_printf("Encoder position value: %d\r\n\r\n", position.pos_raw);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+
+
+	case UART_DUTY:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Duty Cycle Values\r\n\r\n");
+		xil_printf("OCV1: %d\r\n", ocvvalues.ocv1);
+		xil_printf("OCV2: %d\r\n", ocvvalues.ocv2);
+		xil_printf("OCV3: %d\r\n", ocvvalues.ocv3);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+	}
 }
 
 void initVariables() {
+	// Used to reset all values to default.
+	disableMainRelay();
+	disablePrecharge();
     enableEncoder();
 
 	motor_errors.motor_overtemp = 0;
@@ -199,7 +463,11 @@ void initVariables() {
 	calib_done = 0;
 	precharge_counter = 0;
 
-	// TODO: Reset more variables, like PI controllers, or other things that can be changed by UART.
+	dController = createPI( dPI_a0, dPI_a1, dPI_a2, dPI_lim);
+	qController = createPI( qPI_a0, qPI_a1, qPI_a2, qPI_lim);
+
+	err_q = 0;
+	err_d = 0;
 
 	ocvvalues.ocv1 = 0;
 	ocvvalues.ocv2 = 0;
