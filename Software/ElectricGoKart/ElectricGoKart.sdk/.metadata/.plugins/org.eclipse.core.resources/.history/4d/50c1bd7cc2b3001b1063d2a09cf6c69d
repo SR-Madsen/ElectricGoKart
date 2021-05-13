@@ -1,0 +1,339 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 6, 2021
+ *      Author: sebastian
+ */
+
+#include "tasks.h"
+
+/*
+ * Functions
+ */
+
+// See header file for documentation
+
+void sensorProcessing() {
+
+	// Read all digital sensor values
+	checkOvercurrentSwitch(&overcurrentswitch);
+	checkMainRelay(&relay);
+	checkOvertemp(&overtemp);
+	checkEnableSwitch(&enableswitch);
+	checkFootSwitch(&footswitch);
+
+	// If button is pressed, start overcurrent timer
+	if (overcurrentswitch) {
+		overcurrent_timer = TEN_SECONDS;
+	}
+
+	// Write overtemperature error
+	motor_errors.motor_overtemp = overtemp;
+
+	// Write values for state machine to check
+	statemachine.relay_status = relay;
+	statemachine.switches = (enableswitch & footswitch);
+
+
+	// Read analog values from conversions
+	getBatteryRaw(&battery_voltage.raw);
+	getTorqueRaw(&torque.raw);
+	getPhaseARaw(&phaseA.raw);
+	getPhaseBRaw(&phaseB.raw);
+
+	// Remove offset from all analog values
+	// TODO: Add digital filtering here if necessary.
+	battery_voltage.flt = battery_voltage.raw - battery_voltage.offset;
+	torque.flt = torque.raw - torque.offset;
+	phaseA.flt = phaseA.raw - phaseA.offset;
+	phaseB.flt = phaseB.raw - phaseB.offset;
+
+	// Check for errors and calculate all physical values from analog values
+	motor_errors.overvoltage = (battery_voltage.flt > OVERVOLT_THRESHOLD - battery_voltage.offset) ? 1 : 0;
+	motor_errors.undervoltage = (battery_voltage.flt < UNDERVOLT_THRESHOLD - battery_voltage.offset) ? 1 : 0;
+	battery_voltage.phys = battery_voltage.flt * BATTERY_CONVERSION;
+
+	motor_errors.torque_disc = (torque.flt > DISCONNECT_THRESHOLD - torque.offset) ? 1 : 0;
+	if (overcurrent_timer) {
+		torque.phys = torque.flt * OVERCURR_CONVERSION;
+		overcurrent_timer--;
+	} else {
+		torque.phys = torque.flt * TORQUE_CONVERSION;
+	}
+
+	motor_errors.phaseA_overcurr = (phaseA.flt > OVERCURRENT_THRESHOLD - phaseA.offset) ? 1 : 0;
+	motor_errors.phaseB_overcurr = (phaseB.flt > OVERCURRENT_THRESHOLD - phaseB.offset) ? 1 : 0;
+	phaseA.phys = phaseA.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
+	phaseC.phys = -phaseA.phys - phaseB.phys;
+
+	currentsABC.arg1 = phaseA.phys;
+	currentsABC.arg2 = phaseB.phys;
+	currentsABC.arg3 = phaseC.phys;
+
+
+	// Read the motor's position from encoder driver
+	readPosition(&position.pos_raw);
+	rawToRadsMech(position.pos_raw, &position.th_mech);
+	rawToRadsEl(position.pos_raw, &position.th_el);
+}
+
+
+void fieldOrientedControl() {
+	if (motor_errors.motor_overtemp | motor_errors.overvoltage | motor_errors.undervoltage |
+		motor_errors.torque_disc | motor_errors.phaseA_overcurr | motor_errors.phaseB_overcurr) {
+		statemachine.state = STATE_FAULT;
+	}
+
+	switch(statemachine.state) {
+		case STATE_INIT: // This state is a one-pass that will reset all variables.
+			initVariables();
+			statemachine.state = STATE_READY;
+			break;
+
+		case STATE_READY: // This state awaits the ready-signal in the form of drive and foot switch.
+			if (statemachine.switches) { statemachine.state = STATE_CALIB; }
+			break;
+
+		case STATE_CALIB: // This state gets the measurement offsets by averaging samples when idle, and pre-charges.
+			// TODO: Initial settling of digital filter should happen here instead of averaging
+			if (calib_counter < AVG_SAMPLES) {
+				voltage_samples[calib_counter] = battery_voltage.raw;
+				//torque_samples[calib_counter] = torque.raw;
+				phaseA_samples[calib_counter] = phaseA.raw - (TWELVE_BIT_MAX >> 1);
+				phaseB_samples[calib_counter] = phaseB.raw - (TWELVE_BIT_MAX >> 1);
+				calib_counter++;
+			} else {
+				s32 acc_v = 0, /*acc_t = 0,*/ acc_A = 0, acc_B = 0;
+				for (u16 i = 0; i < calib_counter; i++) {
+					acc_v += voltage_samples[i];
+					//acc_t += torque_samples[i];
+					acc_A += phaseA_samples[i];
+					acc_B += phaseB_samples[i];
+				}
+				battery_voltage.offset = acc_v/AVG_SAMPLES;
+				//torque.offset = acc_t/AVG_SAMPLES;
+				phaseA.offset = acc_A/AVG_SAMPLES;
+				phaseB.offset = acc_B/AVG_SAMPLES;
+
+				calib_done = 1;
+			}
+
+			if (calib_done) {
+				enablePrecharge();
+				if (precharge_counter++ > SIX_TENTHS_SECOND) {
+					enableMainRelay();
+					disablePrecharge();
+					precharge_counter = 0;
+					statemachine.state = STATE_RUN;
+				}
+			}
+
+			if (!statemachine.switches) {
+				statemachine.state = STATE_INIT;
+			}
+			break;
+
+		case STATE_RUN: // This state performs the Field-Oriented Control with PI controllers, as well as SVPWM
+			// TODO: Check the main relay - although it may not be open the first few times.
+
+			clarkeTransform(&currentsABC, &currentsAlphBe);
+			parkTransform(&currentsAlphBe, position.th_el, &currentsDQ);
+
+
+			qController.limit = battery_voltage.phys;
+			dController.limit = battery_voltage.phys;
+
+			err_q = torque.phys - currentsDQ.arg2;
+			err_d = -currentsDQ.arg1;
+			newSample(&qController, err_q, &voltagesDQ.arg1);
+			newSample(&dController, err_d, &voltagesDQ.arg2);
+
+
+			invParkTransform(&voltagesDQ, position.th_el, &voltagesAlphBe);
+			invClarkeTransform(&voltagesAlphBe, &voltagesABC);
+
+
+			spaceVectorModulation(&voltagesABC, battery_voltage.phys, &ocvvalues);
+			setDutyCycles(&ocvvalues);
+
+
+			if (!statemachine.switches) {
+				statemachine.state = STATE_INIT;
+			}
+			break;
+
+		case STATE_FAULT: // If any fault is detected, the duty cycle is set to 0 and a clear signal is awaited.
+			ocvvalues.ocv1 = 0;
+			ocvvalues.ocv2 = 0;
+			ocvvalues.ocv3 = 0;
+			setDutyCycles(&ocvvalues);
+			if (statemachine.clear_fault) {
+				motor_errors.motor_overtemp = 0;
+				motor_errors.overvoltage = 0;
+				motor_errors.undervoltage = 0;
+				motor_errors.torque_disc = 0;
+				motor_errors.phaseA_overcurr = 0;
+				motor_errors.phaseB_overcurr = 0;
+				statemachine.state = STATE_INIT;
+				statemachine.clear_fault = 0;
+			}
+			break;
+
+		default:
+			statemachine.state = STATE_INIT;
+			break;
+	}
+}
+
+const char* states_uart[] = {"INIT\0", "READY\0", "CALIB\0", "RUN\0", "FAULT\0"};
+u8 uart_state = UART_MAIN;
+
+void communicationTask() {
+	// TODO: Finish this UART communication task (implement UART driver).
+
+	u8 uart_cmd;
+	uart_cmd = uartReceiveByte();
+	if ((uart_cmd > 47) && (uart_cmd < 58)) {
+		uart_cmd -= 48;
+	}
+
+	switch (uart_state) {
+	case UART_MAIN:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("This is the main menu for the live-view of the Zybo go-kart inverter.\r\n");
+		xil_printf("Press 1 to access State Machine screen.\r\n");
+		xil_printf("Press 2 to access Motor Error screen.\r\n");
+		xil_printf("Press 3 to access PI Controller screen.\r\n");
+		xil_printf("Press 4 to access Sensor Values screen.\r\n");
+		xil_printf("Press 5 to access Duty Cycle screen.\r\n");
+
+		if ((uart_cmd > 0) && (uart_cmd < 6)) {
+			uart_state = uart_cmd;
+		}
+		break;
+
+
+	case UART_SMACH:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("State Machine\r\n\r\n");
+		xil_printf("The current state is: %s\r\n", states_uart[statemachine.state]);
+		xil_printf("The calib_done variable is: %d\r\n", calib_done);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+
+
+	case UART_ERROR:
+		xil_printf("%c[2J", 27);
+		xil_printf("Motor Errors\r\n\r\n");
+		xil_printf("Motor overtemperature: %d\r\n", motor_errors.motor_overtemp);
+		xil_printf("Battery overvoltage: %d\r\n", motor_errors.overvoltage);
+		xil_printf("Battery undervoltage: %d\r\n", motor_errors.undervoltage);
+		xil_printf("Torque disconnected: %d\r\n", motor_errors.torque_disc);
+		xil_printf("Phase A overcurrent: %d\r\n", motor_errors.phaseA_overcurr);
+		xil_printf("Phase B overcurrent: %d\r\n\r\n", motor_errors.phaseB_overcurr);
+
+		xil_printf("Press 1 to clear all errors.\r\n");
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		} else if (uart_cmd == 1) {
+			statemachine.clear_fault = 1;
+		}
+		break;
+
+	//////////////////////////////// FROM HERE
+	case UART_PI:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("PI Controller values\r\n\r\n");
+		xil_printf("d-direction controller:\r\n");
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+		xil_printf("limit: %d\r\n", whole, comma?);
+
+		xil_printf("q-direction controller:\r\n");
+		xil_printf("a0: %d.%03d\r\n", whole, comma);
+		xil_printf("a1: %d.%03d\r\n", whole, comma);
+		xil_printf("b1: %d.%03d\r\n", whole, comma);
+		xil_printf("limit: %d\r\n", whole, comma?);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+
+
+	case UART_SENS:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Sensor Values\r\n\r\n");
+		// TODO: Make these display as floats with physical values instead
+		xil_printf("Battery voltage value: %d\r\n", battery_voltage.raw);
+		xil_printf("Torque position value: %d\r\n", torque.raw);
+		xil_printf("Phase A current value: %d\r\n", phaseA.raw);
+		xil_printf("Phase B current value: %d\r\n", phaseB.raw);
+		xil_printf("Encoder position value: %d\r\n", position.pos_raw);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+
+
+	case UART_DUTY:
+		xil_printf("%c[2J", 27); // Clear screen
+		xil_printf("Duty Cycle Values\r\n\r\n");
+		xil_printf("OCV1: %d\r\n", ocvvalues.ocv1);
+		xil_printf("OCV2: %d\r\n", ocvvalues.ocv2);
+		xil_printf("OCV3: %d\r\n", ocvvalues.ocv3);
+
+		xil_printf("Press ESC to return to main menu.\r\n");
+		if (uart_cmd == 27) {
+			uart_state = UART_MAIN;
+		}
+		break;
+	}
+}
+
+void initVariables() {
+    enableEncoder();
+
+	motor_errors.motor_overtemp = 0;
+	motor_errors.overvoltage = 0;
+	motor_errors.undervoltage = 0;
+	motor_errors.torque_disc = 0;
+	motor_errors.phaseA_overcurr = 0;
+	motor_errors.phaseB_overcurr = 0;
+	statemachine.clear_fault = 0;
+
+	battery_voltage.offset = 0;
+	torque.offset = 0;
+	phaseA.offset = 0;
+	phaseB.offset = 0;
+
+	overcurrent_timer = 0;
+
+	calib_counter = 0;
+	calib_done = 0;
+	precharge_counter = 0;
+
+	dController = createPI( dPI_a0, dPI_a1, dPI_a2, dPI_lim);
+	qController = createPI( qPI_a0, qPI_a1, qPI_a2, qPI_lim);
+
+	err_q = 0;
+	err_d = 0;
+
+	// TODO: Reset more variables that can be changed by UART?
+
+	ocvvalues.ocv1 = 0;
+	ocvvalues.ocv2 = 0;
+	ocvvalues.ocv3 = 0;
+	setDutyCycles(&ocvvalues);
+	enablePWM();
+}

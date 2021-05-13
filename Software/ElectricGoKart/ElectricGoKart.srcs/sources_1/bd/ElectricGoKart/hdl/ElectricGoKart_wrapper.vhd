@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Tue May 11 12:10:01 2021
+--Date        : Thu May 13 09:57:35 2021
 --Host        : sebastian-ZBook running 64-bit Linux Mint 20
 --Command     : generate_target ElectricGoKart_wrapper.bd
 --Design      : ElectricGoKart_wrapper
@@ -69,29 +69,25 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     INC_A_0 : in STD_LOGIC;
     INC_B_0 : in STD_LOGIC;
     INC_Z_0 : in STD_LOGIC;
-    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Switch_Status_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
     Main_Relay_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     Main_Relay_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Main_Relay_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Vaux15_0_v_n : in STD_LOGIC;
-    Vaux15_0_v_p : in STD_LOGIC;
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC;
     Vaux7_0_v_n : in STD_LOGIC;
     Vaux7_0_v_p : in STD_LOGIC;
+    Overtemp_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    Vaux14_0_v_n : in STD_LOGIC;
-    Vaux14_0_v_p : in STD_LOGIC;
-    Overtemp_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Precharge_En_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Vaux6_0_v_n : in STD_LOGIC;
-    Vaux6_0_v_p : in STD_LOGIC;
-    Switch_Status_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -106,7 +102,11 @@ architecture STRUCTURE of ElectricGoKart_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    Precharge_En_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Digital_IO_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_o : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    Digital_IO_tri_t : out STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component ElectricGoKart;
   component IOBUF is

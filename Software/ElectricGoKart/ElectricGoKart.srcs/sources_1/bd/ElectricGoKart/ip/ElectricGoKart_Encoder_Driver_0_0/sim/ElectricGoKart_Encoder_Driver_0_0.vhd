@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: user.org:user:Encoder_Driver:1.0
--- IP Revision: 11
+-- IP Revision: 14
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -158,7 +158,7 @@ BEGIN
       C_S00_AXI_DATA_WIDTH => 32,
       C_S00_AXI_ADDR_WIDTH => 4,
       DATA_LENGTH => 8,
-      CLOCK_SCALER => 112
+      CLOCK_SCALER => 56
     )
     PORT MAP (
       SERIAL_DATA => SERIAL_DATA,

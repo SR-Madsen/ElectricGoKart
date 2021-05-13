@@ -15,6 +15,7 @@
 #include "clarke_park.h"
 #include "pi_controller.h"
 #include "svpwm.h"
+#include "uart.h"
 
 // Defines
 #define TEN_SECONDS 100000
@@ -26,8 +27,8 @@
 #define OVERCURRENT_THRESHOLD 3950
 
 #define BATTERY_CONVERSION (f32)0.015140415140415140415140415140415
-#define TORQUE_CONVERSION (f32)0.046
-#define OVERCURR_CONVERSION (f32)0.127
+#define TORQUE_CONVERSION (f32)0.027628815628815629051873159482966
+#define OVERCURR_CONVERSION (f32)0.075978021978021978021978021978022
 #define CURRENT_CONVERSION (f32)0.1586914
 #define CURRENT_OFFSET (f32)325.0
 
@@ -38,6 +39,15 @@
 #define STATE_CALIB 2
 #define STATE_RUN 3
 #define STATE_FAULT 4
+
+#define UART_MAIN 0
+#define UART_SMACH 1
+#define UART_ERROR 2
+#define UART_PI 3
+#define UART_SENS 4
+#define UART_DUTY 5
+#define UART_SET_D 6
+#define UART_SET_Q 7
 
 #define AVG_SAMPLES 16
 

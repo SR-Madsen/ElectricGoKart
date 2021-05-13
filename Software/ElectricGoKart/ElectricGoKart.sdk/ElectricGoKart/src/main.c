@@ -15,7 +15,9 @@
 #include "clarke_park.h"
 #include "pi_controller.h"
 #include "svpwm.h"
+#include "uart.h"
 
+#include "sleep.h"
 // User defines
 
 
@@ -36,13 +38,14 @@ int main()
     init_platform();
 
     initGpios();
+    initUart();
     initXAdc();
     initGicXAdc((Xil_ExceptionHandler) XAdcInterruptHandler);
     initVariables();
 
     while(1) {
-    	// TODO: Add timer to restrict UI task?
         communicationTask();
+        usleep(250000);
     }
 
     cleanup_platform();

@@ -52,7 +52,7 @@
 
 void clarkeTransform( three_phased_t *input, two_phased_t *output )
 {
-	output->arg1 = input->arg1; //TWO_THIRDS*input->arg1 - ONE_THIRD * input->arg2 - ONE_THIRD * input->arg3;
+	output->arg1 = input->arg1; //TWO_THIRDS*input->arg1 - ONE_THIRD * (input->arg2 - input->arg3);
 	output->arg2 = RECI_SQRT_3*(input->arg2 - input->arg3);
 }
 
