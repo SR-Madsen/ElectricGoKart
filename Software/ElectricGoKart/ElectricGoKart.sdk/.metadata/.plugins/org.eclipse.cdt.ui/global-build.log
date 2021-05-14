@@ -26078,3 +26078,641 @@ make pre-build main-build
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
+09:22:18 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/clarke_park.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/clarke_park.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/clarke_park.d" -MT"src/clarke_park.o" -o "src/clarke_park.o" "../src/clarke_park.c"
+Finished building: ../src/clarke_park.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/pi_controller.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/pi_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pi_controller.d" -MT"src/pi_controller.o" -o "src/pi_controller.o" "../src/pi_controller.c"
+Finished building: ../src/pi_controller.c
+ 
+Building file: ../src/svpwm.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/svpwm.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/svpwm.d" -MT"src/svpwm.o" -o "src/svpwm.o" "../src/svpwm.c"
+Finished building: ../src/svpwm.c
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building file: ../src/uart.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/uart.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/uart.d" -MT"src/uart.o" -o "src/uart.o" "../src/uart.c"
+Finished building: ../src/uart.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51760	   2080	  23320	  77160	  12d68	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:22:36 **** Incremental Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+09:24:14 **** Clean-only build of project ElectricGoKart_bsp ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+09:24:15 **** Clean-only build of configuration Debug for project ElectricGoKart ****
+make clean 
+rm -rf  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o  ./src/axiinterface.d ./src/clarke_park.d ./src/gpios.d ./src/main.d ./src/pi_controller.d ./src/platform.d ./src/svpwm.d ./src/tasks.d ./src/uart.d ./src/xadc.d  ElectricGoKart.elf.size  ElectricGoKart.elf
+ 
+09:24:16 **** Build of project ElectricGoKart_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_8/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_8/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+In file included from xtime_l.c:49:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:56:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling Encoder_Driver...
+Encoder_Driver_selftest.c: In function 'ENCODER_DRIVER_Reg_SelfTest':
+Encoder_Driver_selftest.c:52:63: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ENCODER_DRIVER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                               ^~
+Encoder_Driver_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpio
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling PWM_Generator...
+PWM_Generator_selftest.c: In function 'PWM_GENERATOR_Reg_SelfTest':
+PWM_Generator_selftest.c:52:62: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( PWM_GENERATOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                              ^~
+PWM_Generator_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sysmon
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Finished building libraries
+09:24:26 **** Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/clarke_park.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/clarke_park.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/clarke_park.d" -MT"src/clarke_park.o" -o "src/clarke_park.o" "../src/clarke_park.c"
+Finished building: ../src/clarke_park.c
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/pi_controller.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/pi_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pi_controller.d" -MT"src/pi_controller.o" -o "src/pi_controller.o" "../src/pi_controller.c"
+Finished building: ../src/pi_controller.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building file: ../src/svpwm.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/svpwm.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/svpwm.d" -MT"src/svpwm.o" -o "src/svpwm.o" "../src/svpwm.c"
+Finished building: ../src/svpwm.c
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building file: ../src/uart.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/uart.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/uart.d" -MT"src/uart.o" -o "src/uart.o" "../src/uart.c"
+Finished building: ../src/uart.c
+ 
+Building file: ../src/xadc.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xadc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xadc.d" -MT"src/xadc.o" -o "src/xadc.o" "../src/xadc.c"
+Finished building: ../src/xadc.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51760	   2080	  23320	  77160	  12d68	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:27:12 **** Clean-only build of project ElectricGoKart_bsp ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+09:27:13 **** Clean-only build of configuration Debug for project ElectricGoKart ****
+make clean 
+rm -rf  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o  ./src/axiinterface.d ./src/clarke_park.d ./src/gpios.d ./src/main.d ./src/pi_controller.d ./src/platform.d ./src/svpwm.d ./src/tasks.d ./src/uart.d ./src/xadc.d  ElectricGoKart.elf.size  ElectricGoKart.elf
+ 
+09:27:13 **** Build of project ElectricGoKart_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_8/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_8/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+In file included from xtime_l.c:49:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:56:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src
+make -C ps7_cortexa9_0/libsrc/Encoder_Driver_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling Encoder_Driver...
+Encoder_Driver_selftest.c: In function 'ENCODER_DRIVER_Reg_SelfTest':
+Encoder_Driver_selftest.c:52:63: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ENCODER_DRIVER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                               ^~
+Encoder_Driver_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpio
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src
+make -C ps7_cortexa9_0/libsrc/PWM_Generator_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling PWM_Generator...
+PWM_Generator_selftest.c: In function 'PWM_GENERATOR_Reg_SelfTest':
+PWM_Generator_selftest.c:52:62: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( PWM_GENERATOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                              ^~
+PWM_Generator_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sysmon
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Finished building libraries
+09:27:20 **** Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/axiinterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axiinterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/axiinterface.d" -MT"src/axiinterface.o" -o "src/axiinterface.o" "../src/axiinterface.c"
+Finished building: ../src/axiinterface.c
+ 
+Building file: ../src/clarke_park.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/clarke_park.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/clarke_park.d" -MT"src/clarke_park.o" -o "src/clarke_park.o" "../src/clarke_park.c"
+Finished building: ../src/clarke_park.c
+ 
+Building file: ../src/gpios.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpios.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/gpios.d" -MT"src/gpios.o" -o "src/gpios.o" "../src/gpios.c"
+Finished building: ../src/gpios.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/pi_controller.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/pi_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pi_controller.d" -MT"src/pi_controller.o" -o "src/pi_controller.o" "../src/pi_controller.c"
+Finished building: ../src/pi_controller.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building file: ../src/svpwm.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/svpwm.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/svpwm.d" -MT"src/svpwm.o" -o "src/svpwm.o" "../src/svpwm.c"
+Finished building: ../src/svpwm.c
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building file: ../src/uart.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/uart.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/uart.d" -MT"src/uart.o" -o "src/uart.o" "../src/uart.c"
+Finished building: ../src/uart.c
+ 
+Building file: ../src/xadc.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xadc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xadc.d" -MT"src/xadc.o" -o "src/xadc.o" "../src/xadc.c"
+Finished building: ../src/xadc.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51760	   2080	  23320	  77160	  12d68	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:29:07 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/clarke_park.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/clarke_park.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/clarke_park.d" -MT"src/clarke_park.o" -o "src/clarke_park.o" "../src/clarke_park.c"
+Finished building: ../src/clarke_park.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51760	   2080	  23320	  77160	  12d68	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:29:37 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51764	   2080	  23320	  77164	  12d6c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:29:46 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51828	   2080	  23320	  77228	  12dac	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:30:03 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51828	   2080	  23320	  77228	  12dac	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:31:23 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+../src/tasks.c: In function 'communicationTask':
+../src/tasks.c:330:18: warning: comparison of constant '27' with boolean expression is always false [-Wbool-compare]
+    if (!uart_cmd == 27) {
+                  ^~
+../src/tasks.c:330:18: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+../src/tasks.c:330:8: note: add parentheses around left hand side expression to silence this warning
+    if (!uart_cmd == 27) {
+        ^~~~~~~~~
+        (        )
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51124	   2080	  23320	  76524	  12aec	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:31:37 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51892	   2080	  23320	  77292	  12dec	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:32:04 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  51956	   2080	  23320	  77356	  12e2c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:33:06 **** Incremental Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+09:35:42 **** Auto Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/tasks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tasks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ElectricGoKart_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/tasks.d" -MT"src/tasks.o" -o "src/tasks.o" "../src/tasks.c"
+Finished building: ../src/tasks.c
+ 
+Building target: ElectricGoKart.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ElectricGoKart_bsp/ps7_cortexa9_0/lib -o "ElectricGoKart.elf"  ./src/axiinterface.o ./src/clarke_park.o ./src/gpios.o ./src/main.o ./src/pi_controller.o ./src/platform.o ./src/svpwm.o ./src/tasks.o ./src/uart.o ./src/xadc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ElectricGoKart.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  52212	   2080	  23320	  77612	  12f2c	ElectricGoKart.elf
+Finished building: ElectricGoKart.elf.size
+ 
+09:35:46 **** Incremental Build of configuration Debug for project ElectricGoKart ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.

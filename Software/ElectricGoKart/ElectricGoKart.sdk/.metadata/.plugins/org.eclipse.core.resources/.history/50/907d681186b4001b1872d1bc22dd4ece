@@ -52,7 +52,7 @@
 
 void clarkeTransform( three_phased_t *input, two_phased_t *output )
 {
-	output->arg1 = TWO_THIRDS*input->arg1 - ONE_THIRD * (input->arg2 - input->arg3);
+	output->arg1 = input->arg1; //TWO_THIRDS*input->arg1 - ONE_THIRD * (input->arg2 - input->arg3);
 	output->arg2 = RECI_SQRT_3*(input->arg2 - input->arg3);
 }
 
@@ -81,6 +81,8 @@ void invParkTransform( two_phased_t *input, f32 input_angle, two_phased_t *outpu
 
 f32 taylor_sin( f32 x )
 {
+	f32 temp_output = 0;
+
 	if( x > PI )
 	{
 		while( x > PI )
@@ -96,11 +98,15 @@ f32 taylor_sin( f32 x )
 		}
 	}
 
-	return x*(a0+x*x*(a1+x*x*(a2+x*x*(a3+x*x*a4))));
+	temp_output = x*(a0+x*x*(a1+x*x*(a2+x*x*(a3+x*x*a4))));
+
+	return( temp_output );
 }
 
 f32 taylor_cos( f32 x )
 {
+	f32 temp_output = 0;
+
 	// |x|
 	if( x < 0 )
 	{
@@ -110,6 +116,8 @@ f32 taylor_cos( f32 x )
 	// Displace x (pi/2+|x|)
 	x = PI/2 + x;
 
-	return taylor_sin(x);
+	temp_output = taylor_sin(x);
+
+	return( temp_output );
 }
 

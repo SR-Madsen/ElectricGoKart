@@ -1,8 +1,8 @@
-14:44:10 **** Incremental Build of configuration Debug for project ElectricGoKart ****
+09:35:46 **** Incremental Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
 
-14:44:11 Build Finished (took 512ms)
+09:35:47 Build Finished (took 514ms)
 

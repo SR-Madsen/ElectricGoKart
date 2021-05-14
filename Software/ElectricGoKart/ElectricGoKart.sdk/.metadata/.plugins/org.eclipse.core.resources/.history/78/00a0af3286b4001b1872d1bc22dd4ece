@@ -197,7 +197,7 @@ const char* states_uart[] = {"INIT\0", "READY\0", "CALIB\0", "RUN\0", "FAULT\0"}
 u8 uart_state = UART_MAIN;
 u16 whole, comma;
 
-u8 set_value[] = {0, 0, 0, 0, 0};
+u8 set_value[] = {0, 0, 0, 0};
 u8 read_bytes = 0;
 u8 set_variable = 0;
 
@@ -313,7 +313,7 @@ void communicationTask() {
 		if ((!read_bytes) && (!set_variable)) {
 			xil_printf("%c[2J", 27); // Clear screen
 			xil_printf("Set d-direction PI Controller Values\r\n\r\n");
-			xil_printf("Write a number for the variable you wish to change, followed by the value (00.00 to 99.99) it must have.\r\n");
+			xil_printf("Write a number for the variable you wish to change, followed by the value (0000 to 9999) it must have.\r\n");
 			xil_printf("1: a0\r\n");
 			xil_printf("2: a1\r\n");
 			xil_printf("3: b1\r\n");
@@ -327,29 +327,23 @@ void communicationTask() {
 				set_variable = uart_cmd;
 			}
 		} else {
-			if (!(uart_cmd == 27)) {
-				set_value[read_bytes] = uart_cmd;
-				read_bytes++;
-				xil_printf("%d", uart_cmd);
-				if (read_bytes >= 5) {
-					switch (set_variable) {
-					case 1:
-						dController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 2:
-						dController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 3:
-						dController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 4:
-						dController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-					}
-					set_variable = 0;
-					read_bytes = 0;
-					uart_state = UART_PI;
+			set_value[read_bytes] = uart_cmd;
+			read_bytes++;
+			xil_printf("%d", uart_cmd);
+			if (read_bytes >= 4) {
+				switch (set_variable) {
+				case 1:
+					dController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 2:
+					dController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 3:
+					dController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 4:
+					dController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
 				}
-			} else {
 				set_variable = 0;
 				read_bytes = 0;
 				uart_state = UART_PI;
@@ -361,7 +355,7 @@ void communicationTask() {
 		if ((!read_bytes) && (!set_variable)) {
 			xil_printf("%c[2J", 27); // Clear screen
 			xil_printf("Set q-direction PI Controller Values\r\n\r\n");
-			xil_printf("Write a number for the variable you wish to change, followed by the value (00.00 to 99.99) it must have.\r\n");
+			xil_printf("Write a number for the variable you wish to change, followed by the value (0000 to 9999) it must have.\r\n");
 			xil_printf("1: a0\r\n");
 			xil_printf("2: a1\r\n");
 			xil_printf("3: b1\r\n");
@@ -375,29 +369,23 @@ void communicationTask() {
 				set_variable = uart_cmd;
 			}
 		} else {
-			if (!(uart_cmd == 27)) {
-				set_value[read_bytes] = uart_cmd;
-				read_bytes++;
-				xil_printf("%d", uart_cmd);
-				if (read_bytes >= 5) {
-					switch (set_variable) {
-					case 1:
-						qController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 2:
-						qController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 3:
-						qController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-						break;
-					case 4:
-						qController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0 + set_value[4]/1000.0;
-					}
-					set_variable = 0;
-					read_bytes = 0;
-					uart_state = UART_PI;
+			set_value[read_bytes] = uart_cmd;
+			read_bytes++;
+			xil_printf("%d", uart_cmd);
+			if (read_bytes >= 4) {
+				switch (set_variable) {
+				case 1:
+					qController.a_0 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 2:
+					qController.a_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 3:
+					qController.b_1 = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
+					break;
+				case 4:
+					qController.limit = set_value[0]*10.0 + set_value[1] + set_value[2]/10.0 + set_value[3]/100.0;
 				}
-			} else {
 				set_variable = 0;
 				read_bytes = 0;
 				uart_state = UART_PI;
