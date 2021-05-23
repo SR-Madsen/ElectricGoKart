@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="phaseA.phys" key="selection"/>
+		<item value="TWELVE_BIT" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="TWELVE_BIT"/>
 			<item value="phaseA.phys"/>
 			<item value="ID"/>
 			<item value="Encoder"/>
@@ -15,7 +16,6 @@
 			<item value="errors."/>
 			<item value="double"/>
 			<item value="float"/>
-			<item value="XPAR_GPIO_0_DEVICE_ID"/>
 		</list>
 		<list key="replacehistory">
 			<item value="UART_DEVICE"/>

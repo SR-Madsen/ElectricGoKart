@@ -61,8 +61,10 @@ void sensorProcessing() {
 		torque.phys = torque.flt * TORQUE_CONVERSION;
 	}
 
-	motor_errors.phaseA_overcurr = (phaseA.flt > OVERCURRENT_THRESHOLD - phaseA.offset) ? 1 : 0;
-	motor_errors.phaseB_overcurr = (phaseB.flt > OVERCURRENT_THRESHOLD - phaseB.offset) ? 1 : 0;
+	motor_errors.phaseA_overcurr = ((phaseA.flt > OVERCURRENT_THRESHOLD - phaseA.offset) |
+									(phaseA.flt < NEG_OVERCURRENT_THRESHOLD - phaseA.offset)) ? 1 : 0;
+	motor_errors.phaseB_overcurr = ((phaseB.flt > OVERCURRENT_THRESHOLD - phaseB.offset) |
+									(phaseA.flt < NEG_OVERCURRENT_THRESHOLD - phaseB.offset)) ? 1 : 0;
 	phaseA.phys = phaseA.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseB.phys = phaseB.flt * CURRENT_CONVERSION - CURRENT_OFFSET;
 	phaseC.phys = -phaseA.phys - phaseB.phys;
@@ -148,10 +150,10 @@ void fieldOrientedControl() {
 			qController.limit = battery_voltage.phys;
 			dController.limit = battery_voltage.phys;
 
-			err_q = torque.phys - currentsDQ.arg2;
 			err_d = -currentsDQ.arg1;
-			newSample(&qController, err_q, &voltagesDQ.arg1);
-			newSample(&dController, err_d, &voltagesDQ.arg2);
+			err_q = torque.phys - currentsDQ.arg2;
+			newSample(&dController, err_d, &voltagesDQ.arg1);
+			newSample(&qController, err_q, &voltagesDQ.arg2);
 
 
 			// Transform the calculated dq voltages to three phase voltages.
