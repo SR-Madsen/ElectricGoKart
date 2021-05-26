@@ -76,7 +76,7 @@ void invClarkeTransform( two_phased_t *input, three_phased_t *output )
 void invParkTransform( two_phased_t *input, f32 input_angle, two_phased_t *output )
 {
 	output->arg1 = input->arg1 * taylor_cos(input_angle) - input->arg2 * taylor_sin(input_angle);
-	output->arg2 = input->arg2 * taylor_cos(input_angle) - input->arg1 * taylor_sin(input_angle);
+	output->arg2 = input->arg2 * taylor_cos(input_angle) + input->arg1 * taylor_sin(input_angle);
 }
 
 f32 taylor_sin( f32 x )
