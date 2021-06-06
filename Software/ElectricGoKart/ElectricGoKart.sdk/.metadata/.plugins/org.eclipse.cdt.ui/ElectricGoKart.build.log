@@ -1,4 +1,4 @@
-09:15:53 **** Auto Build of configuration Debug for project ElectricGoKart ****
+22:24:34 **** Incremental Build of configuration Debug for project ElectricGoKart ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -64,5 +64,5 @@ arm-none-eabi-size ElectricGoKart.elf  |tee "ElectricGoKart.elf.size"
 Finished building: ElectricGoKart.elf.size
  
 
-09:15:54 Build Finished (took 1s.112ms)
+22:24:37 Build Finished (took 3s.19ms)
 
